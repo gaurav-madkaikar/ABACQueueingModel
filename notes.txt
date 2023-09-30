@@ -1,0 +1,30 @@
+Steps to generate set of rules:
+1. Generate subject, object and environment attributes
+2. Generate a set of values for each of these attributes
+3. Generate a set of rules from the existing set of attribute-value pairs
+4. Generate a set of users with user attributes that satisfy some of these rules, while ensuring that we don't include users that don't satisfy even one of 
+   these rules
+5. Create an Access Control Matrix(ACM) from the given set of rules
+
+Elaborating Step 3:
+- No user can have the same set of attributes
+- No rule is duplicated in the ABAC Policy
+- No object can have the same set of attributes
+- We do not consider environmental attributes during the policy mining process
+- Same operation cannot be assigned to objects and subjects having the same attributes (ie. the same rule)
+- A rule is a conjunction of subject and object attribute-value pairs
+
+Difficulty in generating rules first and then assigning users and objects:
+- 
+
+Change in approach:
+First generate a set of subjects (m), followed by set of objects (n)
+Total number of rules = m * n = Total number of cells in the ACM, ie. for each subject and object pair, we have an operation defined
+
+
+-- TO BE COMPLETED --
+Statistics related to the code:
+No. of possible rules
+No. of possible subjects
+No. of possible objects
+Time associated with generating individual/group data in code (Initially, we follow a brute-force approach after which we optimize)

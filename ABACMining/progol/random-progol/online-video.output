@@ -1,0 +1,2587 @@
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(child2p,happy_feet_2,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,child2p), memberTypeU(A,premium), ageGroupU(A,
+	child), ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,
+	new).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:-77,5,8,0 up(A,B,view) :- uidU(A,child2p).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-69,10,16,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,child).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,happy_feet_2).]
+[C:71,30,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:40,30,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-144,14,38,0 up(A,B,view) :- ageGroupU(A,child).]
+[C:-25,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2).]
+[C:42,42,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:-12,18,18,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,new).]
+[C:-67,30,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-38,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g).]
+[C:-38,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2), videoTypeR(B,new).]
+[C:-51,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,new).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g).]
+[C:-51,6,6,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g), videoTypeR(B,new).]
+[C:-246,6,22,0 up(A,B,view) :- ageGroupU(A,child), videoTypeR(B,new).]
+[18 explored search nodes]
+f=71,p=30,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[30 redundant clauses retracted]
+[Generalising up(adult1p,brave,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,brave), ratingR(B,pg), videoTypeR(B,new).
+
+[C:-42,52,78,0 up(A,B,view).]
+[C:59,8,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:4,27,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:64,16,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,brave).]
+[C:25,16,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,brave), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,brave), videoTypeR(B,new).]
+[C:34,28,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:-87,8,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg), videoTypeR(B,new).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,brave).]
+[C:-6,24,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-285,12,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave), ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave), videoTypeR(B,new).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,brave), ratingR(B,pg), videoTypeR(B,new).]
+[21 explored search nodes]
+f=64,p=16,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[16 redundant clauses retracted]
+[Generalising up(teen1r,the_lion_king,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,the_lion_king), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-83,38,78,0 up(A,B,view).]
+[C:-136,4,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-58,16,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-97,4,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:7,12,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:53,6,0,0 up(A,B,view) :- ridR(B,the_lion_king).]
+[C:-25,15,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:59,12,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:6,28,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,the_lion_king).]
+[C:-58,12,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,g).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[17 explored search nodes]
+f=59,p=12,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[12 redundant clauses retracted]
+[Generalising up(teen2r,jaws,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).
+
+[C:-134,29,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen2r).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,jaws).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:1,6,4,0 up(A,B,view) :- ridR(B,jaws).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,jaws), videoTypeR(B,old).]
+[C:-25,6,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).]
+[C:-48,16,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:7,12,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,19,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[24 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[8 redundant clauses retracted]
+[Generalising up(adult1r,brave_heart,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,brave_heart), ratingR(B,r), videoTypeR(B,
+	old).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:-97,4,7,0 up(A,B,view) :- uidU(A,adult1r).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult1r), ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,adult1r), videoTypeR(B,old).]
+[C:-467,8,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:50,8,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,brave_heart).]
+[C:-662,4,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-87,8,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,r).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-370,4,20,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r), videoTypeR(B,old).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,old).]
+[19 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1p,brave,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,brave), ratingR(B,pg), videoTypeR(B,new).
+
+[C:-229,20,78,0 up(A,B,view).]
+[C:-155,2,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-124,10,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:1,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-331,4,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,brave).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-1013,4,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[4 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[Total number of clauses = 6]
+
+[Time taken 0.05s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(adult1p,happy_feet_2,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,
+	new).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:67,13,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:70,26,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,happy_feet_2).]
+[C:71,30,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:40,30,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:46,38,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,g).]
+[C:-16,14,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-51,6,6,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,g), videoTypeR(B,new).]
+[C:-25,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2).]
+[C:42,42,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:-12,18,18,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,new).]
+[C:-67,30,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-38,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g).]
+[C:-38,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2), videoTypeR(B,new).]
+[C:-51,6,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,new).]
+[18 explored search nodes]
+f=71,p=30,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[30 redundant clauses retracted]
+[Generalising up(teen2r,jaws,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).
+
+[C:-42,52,78,0 up(A,B,view).]
+[C:-136,4,9,0 up(A,B,view) :- uidU(A,teen2r).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-58,16,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,8,4,0 up(A,B,view) :- ridR(B,jaws).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,jaws), videoTypeR(B,old).]
+[C:1,8,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).]
+[C:-6,24,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:25,16,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:22,36,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,jaws).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:7,12,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[24 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[8 redundant clauses retracted]
+[Generalising up(adult2p,brave_heart,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult2p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,brave_heart), ratingR(B,r), videoTypeR(B,
+	old).
+
+[C:-52,47,78,0 up(A,B,view).]
+[C:59,8,0,0 up(A,B,view) :- uidU(A,adult2p).]
+[C:-9,23,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:64,16,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:34,28,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,brave_heart).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:67,20,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,brave_heart).]
+[C:-168,12,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:15,32,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave_heart), ratingR(B,r).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave_heart), videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,brave_heart), ratingR(B,r), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,old).]
+[17 explored search nodes]
+f=67,p=20,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[20 redundant clauses retracted]
+[Generalising up(adult1p,cloud_atlas,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,cloud_atlas), ratingR(B,r), videoTypeR(B,
+	new).
+
+[C:-127,30,78,0 up(A,B,view).]
+[C:40,4,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:-56,15,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:50,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:-87,8,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r), videoTypeR(B,new).]
+[C:-389,2,10,0 up(A,B,view) :- ridR(B,cloud_atlas).]
+[C:-662,4,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:-285,12,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r), videoTypeR(B,new).]
+[C:-370,4,20,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,new).]
+[15 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[8 redundant clauses retracted]
+[Generalising up(teen2r,toy_story,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,toy_story), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen2r).]
+[C:-467,8,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-97,4,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:1,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:40,4,0,0 up(A,B,view) :- ridR(B,toy_story).]
+[C:-63,11,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:50,8,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,g).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,toy_story).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[18 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1p,life_of_pi,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,
+	new).
+
+[C:-229,20,78,0 up(A,B,view).]
+[C:-155,2,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-124,10,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:1,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-331,4,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,life_of_pi).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-1013,4,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[4 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[Total number of clauses = 6]
+
+[Time taken 0.05s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(child2p,toy_story,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,child2p), memberTypeU(A,premium), ageGroupU(A,
+	child), ridR(B,toy_story), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:-77,5,8,0 up(A,B,view) :- uidU(A,child2p).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-69,10,16,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,child).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,toy_story).]
+[C:71,30,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:-144,14,38,0 up(A,B,view) :- ageGroupU(A,child).]
+[C:66,12,0,0 up(A,B,view) :- ridR(B,toy_story).]
+[C:42,42,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:69,24,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:37,48,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,child), ridR(B,toy_story).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- ageGroupU(A,child), videoTypeR(B,old).]
+[16 explored search nodes]
+f=71,p=30,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[30 redundant clauses retracted]
+[Generalising up(adult2r,my_cousin_vinny,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult2r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,my_cousin_vinny), ratingR(B,r), videoTypeR(B,
+	old).
+
+[C:-42,52,78,0 up(A,B,view).]
+[C:-38,6,7,0 up(A,B,view) :- uidU(A,adult2r).]
+[C:-51,6,7,0 up(A,B,view) :- uidU(A,adult2r), memberTypeU(A,regular).]
+[C:-51,6,7,0 up(A,B,view) :- uidU(A,adult2r), ageGroupU(A,adult).]
+[C:40,6,0,0 up(A,B,view) :- uidU(A,adult2r), videoTypeR(B,old).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:34,28,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,my_cousin_vinny).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:67,20,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny).]
+[C:-168,12,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:22,36,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-32,12,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,r).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-370,4,20,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny), ratingR(B,r).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny), videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny), ratingR(B,r), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r), videoTypeR(B,old).]
+[23 explored search nodes]
+f=67,p=20,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[20 redundant clauses retracted]
+[Generalising up(teen1p,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-102,34,78,0 up(A,B,view).]
+[C:-38,4,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,teen1p), ratingR(B,pg).]
+[C:-28,19,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-28,8,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:7,12,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,old).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-58,16,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,star_wars).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:7,12,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-38,4,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-48,16,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-28,8,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,19,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[24 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1r,the_lion_king,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,the_lion_king), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-127,30,78,0 up(A,B,view).]
+[C:-136,4,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-97,4,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:1,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:40,4,0,0 up(A,B,view) :- ridR(B,the_lion_king).]
+[C:-63,11,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:50,8,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,g).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,the_lion_king).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[18 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(adult1p,brave,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,brave), ratingR(B,pg), videoTypeR(B,new).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:40,4,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:-56,15,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:50,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-28,8,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:-87,8,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,brave).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-467,8,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[15 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1r,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-229,20,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-1013,4,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:1,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-136,4,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-155,2,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-124,10,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[4 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[Total number of clauses = 6]
+
+[Time taken 0.08s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(adult1r,jaws,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:-38,6,7,0 up(A,B,view) :- uidU(A,adult1r).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:46,38,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,jaws).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:69,24,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:20,8,4,0 up(A,B,view) :- ridR(B,jaws).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,jaws), videoTypeR(B,old).]
+[C:1,8,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).]
+[C:-6,24,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:37,48,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:25,16,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-32,12,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,pg).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[23 explored search nodes]
+f=69,p=24,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[24 redundant clauses retracted]
+[Generalising up(adult1p,flight,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,flight), ratingR(B,r), videoTypeR(B,new).
+
+[C:-29,58,78,0 up(A,B,view).]
+[C:56,7,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:30,42,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:62,14,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r).]
+[C:40,30,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:5,17,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:-16,14,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-389,2,10,0 up(A,B,view) :- ridR(B,flight).]
+[C:-662,4,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:-67,30,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r), videoTypeR(B,new).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r), videoTypeR(B,new).]
+[C:-370,4,20,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,new).]
+[15 explored search nodes]
+f=62,p=14,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[14 redundant clauses retracted]
+[Generalising up(teen1p,happy_feet_2,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,
+	new).
+
+[C:-55,46,78,0 up(A,B,view).]
+[C:27,9,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen).]
+[C:32,5,0,0 up(A,B,view) :- uidU(A,teen1p), ratingR(B,g).]
+[C:1,5,2,0 up(A,B,view) :- uidU(A,teen1p), videoTypeR(B,new).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen), ratingR(B,g).]
+[C:-15,5,2,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:9,9,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ratingR(B,g).]
+[C:-15,5,2,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), videoTypeR(B,new).]
+[C:1,5,0,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:-30,5,2,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:13,31,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:31,18,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:48,10,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:16,10,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,happy_feet_2).]
+[C:67,20,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:6,16,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-5,26,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:-51,6,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,new).]
+[C:-85,10,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-77,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2).]
+[C:23,28,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:-58,12,18,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,new).]
+[C:-194,16,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-97,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g).]
+[C:-97,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2), videoTypeR(B,new).]
+[C:-116,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,new).]
+[31 explored search nodes]
+f=67,p=20,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[20 redundant clauses retracted]
+[Generalising up(teen1r,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-134,29,78,0 up(A,B,view).]
+[C:-136,4,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-58,16,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,star_wars).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:7,12,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-38,4,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-28,8,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,19,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[21 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[8 redundant clauses retracted]
+[Generalising up(child1r,the_lion_king,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,child1r), memberTypeU(A,regular), ageGroupU(A,
+	child), ridR(B,the_lion_king), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:-428,2,11,0 up(A,B,view) :- uidU(A,child1r).]
+[C:-467,8,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-701,4,38,0 up(A,B,view) :- ageGroupU(A,child).]
+[C:40,4,0,0 up(A,B,view) :- ridR(B,the_lion_king).]
+[C:-63,11,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:50,8,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-409,4,22,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), ratingR(B,g).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,the_lion_king).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[15 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1p,life_of_pi,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,
+	new).
+
+[C:-229,20,78,0 up(A,B,view).]
+[C:-155,2,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-124,10,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:1,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-331,4,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,life_of_pi).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-1013,4,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[4 redundant clauses retracted]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[Total number of clauses = 6]
+
+[Time taken 0.06s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(teen1r,toy_story,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,toy_story), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:-136,4,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-5,26,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:66,12,0,0 up(A,B,view) :- ridR(B,toy_story).]
+[C:42,42,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:69,24,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:37,48,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,toy_story).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,old).]
+[C:25,16,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,toy_story).]
+[C:-58,12,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,g).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[19 explored search nodes]
+f=69,p=24,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[24 redundant clauses retracted]
+[Generalising up(adult1p,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-29,58,78,0 up(A,B,view).]
+[C:65,11,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:30,42,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:68,22,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,star_wars).]
+[C:25,16,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,old).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,star_wars), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,star_wars), videoTypeR(B,old).]
+[C:37,30,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,star_wars).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:64,16,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg), videoTypeR(B,old).]
+[C:20,8,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:1,8,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-6,24,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:25,16,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:4,27,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[22 explored search nodes]
+f=68,p=22,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[22 redundant clauses retracted]
+[Generalising up(child2p,happy_feet_2,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,child2p), memberTypeU(A,premium), ageGroupU(A,
+	child), ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,
+	new).
+
+[C:-83,38,78,0 up(A,B,view).]
+[C:-181,3,8,0 up(A,B,view) :- uidU(A,child2p).]
+[C:-9,23,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-168,6,16,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,child).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,happy_feet_2).]
+[C:59,12,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:6,16,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-441,6,38,0 up(A,B,view) :- ageGroupU(A,child).]
+[C:-77,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2).]
+[C:-97,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g).]
+[C:-97,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2), videoTypeR(B,new).]
+[C:-25,15,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:-58,12,18,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,new).]
+[C:-194,16,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-116,4,6,0 up(A,B,view) :- ridR(B,happy_feet_2), ratingR(B,g), videoTypeR(B,new).]
+[C:-38,6,6,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g).]
+[C:-51,6,6,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g), videoTypeR(B,new).]
+[C:-246,6,22,0 up(A,B,view) :- ageGroupU(A,child), videoTypeR(B,new).]
+[18 explored search nodes]
+f=59,p=12,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[12 redundant clauses retracted]
+[Generalising up(teen1r,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-134,29,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,star_wars).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:1,6,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:-25,6,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-48,16,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:7,12,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,19,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,star_wars).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,star_wars), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,star_wars), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[24 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[8 redundant clauses retracted]
+[Generalising up(adult1r,brave_heart,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,brave_heart), ratingR(B,r), videoTypeR(B,
+	old).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:-97,4,7,0 up(A,B,view) :- uidU(A,adult1r).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult1r), ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,adult1r), videoTypeR(B,old).]
+[C:-467,8,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:50,8,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,brave_heart).]
+[C:-662,4,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-87,8,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,r).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-370,4,20,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r), videoTypeR(B,old).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,old).]
+[19 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1p,brave,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,brave), ratingR(B,pg), videoTypeR(B,new).
+
+[C:-229,20,78,0 up(A,B,view).]
+[C:-155,2,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-124,10,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:1,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-331,4,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,brave).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-1013,4,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[4 redundant clauses retracted]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[Total number of clauses = 6]
+
+[Time taken 0.06s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(adult1p,brave_heart,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,brave_heart), ratingR(B,r), videoTypeR(B,
+	old).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:67,13,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:70,26,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:46,38,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,brave_heart).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:69,24,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r), videoTypeR(B,old).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,brave_heart).]
+[C:-168,12,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:37,48,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r), videoTypeR(B,old).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave_heart), ratingR(B,r).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave_heart), videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,brave_heart), ratingR(B,r), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,old).]
+[19 explored search nodes]
+f=70,p=26,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[26 redundant clauses retracted]
+[Generalising up(teen2p,the_lion_king,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,the_lion_king), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-33,56,78,0 up(A,B,view).]
+[C:27,9,4,0 up(A,B,view) :- uidU(A,teen2p).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen).]
+[C:32,5,0,0 up(A,B,view) :- uidU(A,teen2p), ratingR(B,g).]
+[C:-19,4,2,0 up(A,B,view) :- uidU(A,teen2p), videoTypeR(B,old).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen), ratingR(B,g).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:9,9,4,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ratingR(B,g).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), videoTypeR(B,old).]
+[C:1,5,0,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:13,31,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:31,18,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:48,10,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,the_lion_king).]
+[C:67,20,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:-5,26,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,the_lion_king).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,old).]
+[C:25,16,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:63,10,0,0 up(A,B,view) :- ridR(B,the_lion_king).]
+[C:30,32,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:67,20,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:22,36,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[28 explored search nodes]
+f=67,p=20,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[20 redundant clauses retracted]
+[Generalising up(teen2r,toy_story,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,toy_story), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-83,38,78,0 up(A,B,view).]
+[C:-136,4,9,0 up(A,B,view) :- uidU(A,teen2r).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-58,16,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-97,4,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:7,12,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:53,6,0,0 up(A,B,view) :- ridR(B,toy_story).]
+[C:-25,15,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:59,12,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:6,28,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,toy_story).]
+[C:-58,12,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,g).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[17 explored search nodes]
+f=59,p=12,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[12 redundant clauses retracted]
+[Generalising up(adult2r,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult2r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-134,29,78,0 up(A,B,view).]
+[C:-97,4,7,0 up(A,B,view) :- uidU(A,adult2r).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult2r), memberTypeU(A,regular).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult2r), ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,adult2r), videoTypeR(B,old).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:50,8,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:1,6,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:-25,6,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-48,16,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:7,12,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,19,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-87,8,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,star_wars).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,star_wars), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,star_wars), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[25 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen2r,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-178,24,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen2r).]
+[C:-1013,4,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,star_wars).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-38,4,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-28,8,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-66,14,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[21 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen2p,life_of_pi,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,
+	new).
+
+[C:-229,20,78,0 up(A,B,view).]
+[C:-155,2,4,0 up(A,B,view) :- uidU(A,teen2p).]
+[C:-124,10,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:1,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-331,4,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,life_of_pi).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-1013,4,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[4 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[Total number of clauses = 6]
+
+[Time taken 0.06s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.01s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(teen1p,toy_story,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,toy_story), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:27,9,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen).]
+[C:32,5,0,0 up(A,B,view) :- uidU(A,teen1p), ratingR(B,g).]
+[C:-19,4,2,0 up(A,B,view) :- uidU(A,teen1p), videoTypeR(B,old).]
+[C:9,9,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ratingR(B,g).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), videoTypeR(B,old).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen), ratingR(B,g).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:1,5,0,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:31,18,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,toy_story).]
+[C:71,30,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:-5,26,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:66,12,0,0 up(A,B,view) :- ridR(B,toy_story).]
+[C:42,42,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:69,24,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:37,48,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,toy_story).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,old).]
+[C:25,16,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[26 explored search nodes]
+f=71,p=30,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[30 redundant clauses retracted]
+[Generalising up(child2r,toy_story,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,child2r), memberTypeU(A,regular), ageGroupU(A,
+	child), ridR(B,toy_story), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-42,52,78,0 up(A,B,view).]
+[C:-428,2,11,0 up(A,B,view) :- uidU(A,child2r).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-701,4,38,0 up(A,B,view) :- ageGroupU(A,child).]
+[C:53,6,0,0 up(A,B,view) :- ridR(B,toy_story).]
+[C:-25,15,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:59,12,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:22,36,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-409,4,22,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,toy_story).]
+[C:-58,12,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), ratingR(B,g).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), videoTypeR(B,old).]
+[15 explored search nodes]
+f=59,p=12,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[12 redundant clauses retracted]
+[Generalising up(teen1p,brave,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,brave), ratingR(B,pg), videoTypeR(B,new).
+
+[C:-68,42,78,0 up(A,B,view).]
+[C:-38,4,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,teen1p), ratingR(B,pg).]
+[C:4,27,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-28,8,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,brave).]
+[C:25,16,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,brave), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,brave), videoTypeR(B,new).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,brave).]
+[C:-6,24,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-285,12,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-331,4,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave), ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,brave), videoTypeR(B,new).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,brave), ratingR(B,pg), videoTypeR(B,new).]
+[26 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[8 redundant clauses retracted]
+[Generalising up(adult1p,jaws,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).
+
+[C:-83,38,78,0 up(A,B,view).]
+[C:59,8,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:-9,23,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:64,16,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:7,12,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,old).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:27,24,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,jaws).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg), videoTypeR(B,old).]
+[C:64,16,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:1,6,4,0 up(A,B,view) :- ridR(B,jaws).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg).]
+[C:-12,6,4,0 up(A,B,view) :- ridR(B,jaws), videoTypeR(B,old).]
+[C:-25,6,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).]
+[C:-23,20,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:7,12,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-9,23,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[19 explored search nodes]
+f=64,p=16,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[16 redundant clauses retracted]
+[Generalising up(adult1r,jaws,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:-97,4,7,0 up(A,B,view) :- uidU(A,adult1r).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular).]
+[C:-116,4,7,0 up(A,B,view) :- uidU(A,adult1r), ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,adult1r), videoTypeR(B,old).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:50,8,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-38,4,4,0 up(A,B,view) :- ridR(B,jaws).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,jaws), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-28,8,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-87,8,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,jaws), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[25 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1r,jaws,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).
+
+[C:-229,20,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-1013,4,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:1,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-136,4,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-155,2,4,0 up(A,B,view) :- ridR(B,jaws).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-124,10,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[4 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[Total number of clauses = 6]
+
+[Time taken 0.08s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(teen2p,happy_feet,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,happy_feet), ratingR(B,g), videoTypeR(B,
+	new).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:27,9,4,0 up(A,B,view) :- uidU(A,teen2p).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen).]
+[C:32,5,0,0 up(A,B,view) :- uidU(A,teen2p), ratingR(B,g).]
+[C:1,5,2,0 up(A,B,view) :- uidU(A,teen2p), videoTypeR(B,new).]
+[C:9,9,4,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ratingR(B,g).]
+[C:-15,5,2,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), videoTypeR(B,new).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen), ratingR(B,g).]
+[C:-15,5,2,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:1,5,0,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:-30,5,2,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:31,18,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,happy_feet).]
+[C:71,30,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:40,30,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-5,26,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-25,6,6,0 up(A,B,view) :- ridR(B,happy_feet).]
+[C:42,42,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:-12,18,18,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,new).]
+[C:-67,30,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:-51,6,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,new).]
+[C:-85,10,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-38,6,6,0 up(A,B,view) :- ridR(B,happy_feet), ratingR(B,g).]
+[C:-38,6,6,0 up(A,B,view) :- ridR(B,happy_feet), videoTypeR(B,new).]
+[C:-51,6,6,0 up(A,B,view) :- ridR(B,happy_feet), ratingR(B,g), videoTypeR(B,new).]
+[29 explored search nodes]
+f=71,p=30,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[30 redundant clauses retracted]
+[Generalising up(adult2p,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult2p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-42,52,78,0 up(A,B,view).]
+[C:59,8,0,0 up(A,B,view) :- uidU(A,adult2p).]
+[C:4,27,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:64,16,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,star_wars).]
+[C:25,16,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,old).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,star_wars), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,star_wars), videoTypeR(B,old).]
+[C:34,28,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,star_wars).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:67,20,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:20,8,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:11,8,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:1,8,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-6,24,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:25,16,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:22,36,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[21 explored search nodes]
+f=67,p=20,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[20 redundant clauses retracted]
+[Generalising up(teen2p,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-102,34,78,0 up(A,B,view).]
+[C:-38,4,4,0 up(A,B,view) :- uidU(A,teen2p).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,teen2p), ratingR(B,pg).]
+[C:-28,19,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-28,8,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:7,12,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,old).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-58,16,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,star_wars).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:7,12,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-38,4,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,star_wars), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,old).]
+[C:-48,16,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-28,8,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,19,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[24 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1r,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-127,30,78,0 up(A,B,view).]
+[C:-136,4,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:1,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-155,2,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-155,4,9,0 up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular).]
+[C:-155,4,9,0 up(A,B,view) :- uidU(A,teen1r), ageGroupU(A,teen).]
+[C:-19,4,2,0 up(A,B,view) :- uidU(A,teen1r), videoTypeR(B,old).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen1r), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-175,4,9,0 up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[23 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[4 redundant clauses retracted]
+[Generalising up(adult1p,cloud_atlas,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,cloud_atlas), ratingR(B,r), videoTypeR(B,
+	new).
+
+[C:-127,30,78,0 up(A,B,view).]
+[C:40,4,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:-56,15,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:50,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:-87,8,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r), videoTypeR(B,new).]
+[C:-389,2,10,0 up(A,B,view) :- ridR(B,cloud_atlas).]
+[C:-662,4,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:-467,8,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,r), videoTypeR(B,new).]
+[C:-370,4,20,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,new).]
+[15 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[8 redundant clauses retracted]
+[Generalising up(teen2r,the_lion_king,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,the_lion_king), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen2r).]
+[C:-467,8,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-103,12,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-97,4,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:1,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:40,4,0,0 up(A,B,view) :- ridR(B,the_lion_king).]
+[C:-63,11,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:50,8,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,g).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,the_lion_king).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[18 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[Total number of clauses = 6]
+
+[Time taken 0.08s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(teen2p,the_lion_king,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,the_lion_king), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:27,9,4,0 up(A,B,view) :- uidU(A,teen2p).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium).]
+[C:18,9,4,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen).]
+[C:32,5,0,0 up(A,B,view) :- uidU(A,teen2p), ratingR(B,g).]
+[C:-19,4,2,0 up(A,B,view) :- uidU(A,teen2p), videoTypeR(B,old).]
+[C:9,9,4,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ratingR(B,g).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), videoTypeR(B,old).]
+[C:16,5,0,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen), ratingR(B,g).]
+[C:-38,4,2,0 up(A,B,view) :- uidU(A,teen2p), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:1,5,0,0 up(A,B,view) :- uidU(A,teen2p), memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:31,18,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,the_lion_king).]
+[C:71,30,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,old).]
+[C:-5,26,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:66,12,0,0 up(A,B,view) :- ridR(B,the_lion_king).]
+[C:42,42,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:69,24,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:37,48,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,the_lion_king).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,old).]
+[C:25,16,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[26 explored search nodes]
+f=71,p=30,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[30 redundant clauses retracted]
+[Generalising up(adult2r,my_cousin_vinny,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult2r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,my_cousin_vinny), ratingR(B,r), videoTypeR(B,
+	old).
+
+[C:-42,52,78,0 up(A,B,view).]
+[C:-38,6,7,0 up(A,B,view) :- uidU(A,adult2r).]
+[C:-51,6,7,0 up(A,B,view) :- uidU(A,adult2r), memberTypeU(A,regular).]
+[C:-51,6,7,0 up(A,B,view) :- uidU(A,adult2r), ageGroupU(A,adult).]
+[C:40,6,0,0 up(A,B,view) :- uidU(A,adult2r), videoTypeR(B,old).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:34,28,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,adult), ridR(B,my_cousin_vinny).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:67,20,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny).]
+[C:-168,12,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:22,36,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-32,12,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,r).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-370,4,20,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny), ratingR(B,r).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny), videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,my_cousin_vinny), ratingR(B,r), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r), videoTypeR(B,old).]
+[23 explored search nodes]
+f=67,p=20,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[20 redundant clauses retracted]
+[Generalising up(teen1p,life_of_pi,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,
+	new).
+
+[C:-102,34,78,0 up(A,B,view).]
+[C:-38,4,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium).]
+[C:-58,4,4,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- uidU(A,teen1p), ratingR(B,pg).]
+[C:-28,19,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-28,8,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,life_of_pi).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,life_of_pi), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,life_of_pi), videoTypeR(B,new).]
+[C:7,12,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-58,16,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-331,4,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,life_of_pi).]
+[C:-48,16,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-285,12,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,life_of_pi), ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,life_of_pi), videoTypeR(B,new).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,new).]
+[26 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[8 redundant clauses retracted]
+[Generalising up(child1r,the_lion_king,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,child1r), memberTypeU(A,regular), ageGroupU(A,
+	child), ridR(B,the_lion_king), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-127,30,78,0 up(A,B,view).]
+[C:-428,2,11,0 up(A,B,view) :- uidU(A,child1r).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-701,4,38,0 up(A,B,view) :- ageGroupU(A,child).]
+[C:40,4,0,0 up(A,B,view) :- ridR(B,the_lion_king).]
+[C:-63,11,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:50,8,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:-56,15,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-409,4,22,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,the_lion_king).]
+[C:-126,8,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), ratingR(B,g).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), videoTypeR(B,old).]
+[15 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen2r,star_wars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen2r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,star_wars), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen2r).]
+[C:-1013,4,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-194,8,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-155,2,4,0 up(A,B,view) :- ridR(B,star_wars).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-124,10,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:1,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-136,4,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[17 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[4 redundant clauses retracted]
+[Generalising up(adult1p,life_of_pi,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,
+	new).
+
+[C:-168,25,78,0 up(A,B,view).]
+[C:40,4,0,0 up(A,B,view) :- uidU(A,adult1p).]
+[C:-56,15,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:50,8,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-28,8,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-67,8,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:-87,8,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,life_of_pi).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-467,8,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[15 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[8 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[Total number of clauses = 6]
+
+[Time taken 0.06s]
+
+Mem out = 832
+CProgol Version 4.4
+
+[:- set(nodes,249)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU(+user,#memberTypeUType))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU(+user,#ageGroupUType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,ratingR(+resource,#ratingRType))? - Time taken 0.00s]
+[:- modeb(1,videoTypeR(+resource,#videoTypeRType))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,memberTypeU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_ratingR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,ageGroupU_equals_videoTypeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(adult2p,life_of_pi,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult2p), memberTypeU(A,premium), ageGroupU(A,
+	adult), ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,
+	new).
+
+[C:-0,79,78,0 up(A,B,view).]
+[C:67,13,0,0 up(A,B,view) :- uidU(A,adult2p).]
+[C:41,55,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:70,26,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).]
+[C:-19,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,life_of_pi).]
+[C:25,16,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:40,30,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:1,8,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:46,38,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg).]
+[C:-16,14,14,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,pg), videoTypeR(B,new).]
+[C:-116,4,8,0 up(A,B,view) :- ridR(B,life_of_pi).]
+[C:-6,24,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-67,30,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-106,8,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,life_of_pi), ratingR(B,pg).]
+[C:-38,4,2,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,life_of_pi), videoTypeR(B,new).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,life_of_pi), ratingR(B,pg).]
+[C:-136,4,8,0 up(A,B,view) :- ridR(B,life_of_pi), videoTypeR(B,new).]
+[C:-155,4,8,0 up(A,B,view) :- ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,new).]
+[21 explored search nodes]
+f=70,p=26,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+
+[26 redundant clauses retracted]
+[Generalising up(child1r,toy_story,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,child1r), memberTypeU(A,regular), ageGroupU(A,
+	child), ridR(B,toy_story), ratingR(B,g), videoTypeR(B,
+	old).
+
+[C:-33,56,78,0 up(A,B,view).]
+[C:-428,2,11,0 up(A,B,view) :- uidU(A,child1r).]
+[C:-103,24,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-144,14,38,0 up(A,B,view) :- ageGroupU(A,child).]
+[C:63,10,0,0 up(A,B,view) :- ridR(B,toy_story).]
+[C:30,32,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:67,20,0,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).]
+[C:22,36,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-409,4,22,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child).]
+[C:40,6,0,0 up(A,B,view) :- memberTypeU(A,regular), ridR(B,toy_story).]
+[C:-58,12,18,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g).]
+[C:53,12,0,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,g), videoTypeR(B,old).]
+[C:30,24,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,child), ridR(B,toy_story).]
+[C:29,14,6,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,child), ratingR(B,g), videoTypeR(B,old).]
+[C:-106,8,16,0 up(A,B,view) :- ageGroupU(A,child), videoTypeR(B,old).]
+[C:-116,4,6,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), ratingR(B,g).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,child), videoTypeR(B,old).]
+[19 explored search nodes]
+f=67,p=20,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+
+[20 redundant clauses retracted]
+[Generalising up(adult1r,brave_heart,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,adult1r), memberTypeU(A,regular), ageGroupU(A,
+	adult), ridR(B,brave_heart), ratingR(B,r), videoTypeR(B,
+	old).
+
+[C:-83,38,78,0 up(A,B,view).]
+[C:-97,4,7,0 up(A,B,view) :- uidU(A,adult1r).]
+[C:-285,12,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-35,11,14,0 up(A,B,view) :- ageGroupU(A,adult).]
+[C:-58,4,4,0 up(A,B,view) :- ageGroupU(A,adult), ratingR(B,r).]
+[C:50,8,0,0 up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,brave_heart).]
+[C:-662,4,36,0 up(A,B,view) :- ratingR(B,r).]
+[C:-28,19,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-87,8,14,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), ratingR(B,r).]
+[C:40,8,0,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,adult), videoTypeR(B,old).]
+[C:-370,4,20,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[C:-155,4,8,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,r), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,r), videoTypeR(B,old).]
+[16 explored search nodes]
+f=50,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1r,jaws,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1r), memberTypeU(A,regular), ageGroupU(A,
+	teen), ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).
+
+[C:-108,33,78,0 up(A,B,view).]
+[C:-350,2,9,0 up(A,B,view) :- uidU(A,teen1r).]
+[C:-1013,4,54,0 up(A,B,view) :- memberTypeU(A,regular).]
+[C:-43,18,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:20,4,0,0 up(A,B,view) :- ageGroupU(A,teen), ridR(B,jaws).]
+[C:33,12,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:40,8,0,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,old).]
+[C:-28,8,8,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-38,4,4,0 up(A,B,view) :- ridR(B,jaws).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg).]
+[C:-58,4,4,0 up(A,B,view) :- ridR(B,jaws), videoTypeR(B,old).]
+[C:-77,4,4,0 up(A,B,view) :- ridR(B,jaws), ratingR(B,pg), videoTypeR(B,old).]
+[C:-90,12,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-28,8,8,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,old).]
+[C:-66,14,24,0 up(A,B,view) :- videoTypeR(B,old).]
+[C:-331,4,18,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ageGroupU(A,teen), videoTypeR(B,old).]
+[C:-292,4,16,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,regular), ratingR(B,pg), videoTypeR(B,old).]
+[C:-214,4,12,0 up(A,B,view) :- memberTypeU(A,regular), videoTypeR(B,old).]
+[21 explored search nodes]
+f=40,p=8,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+
+[8 redundant clauses retracted]
+[Generalising up(teen1p,life_of_pi,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,life_of_pi), ratingR(B,pg), videoTypeR(B,
+	new).
+
+[C:-134,29,78,0 up(A,B,view).]
+[C:-15,5,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-30,5,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium).]
+[C:-30,5,4,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen).]
+[C:1,5,2,0 up(A,B,view) :- uidU(A,teen1p), videoTypeR(B,new).]
+[C:-46,5,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:-15,5,2,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-15,5,2,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-30,5,2,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-28,19,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-7,10,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:1,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,pg).]
+[C:16,10,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-136,4,8,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg).]
+[C:6,16,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-77,14,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:11,8,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg).]
+[C:-77,4,4,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,new).]
+[C:-85,10,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-311,2,8,0 up(A,B,view) :- ridR(B,life_of_pi).]
+[C:-175,8,24,0 up(A,B,view) :- ratingR(B,pg).]
+[C:-194,16,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[C:-77,4,4,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,pg), videoTypeR(B,new).]
+[C:-292,4,16,0 up(A,B,view) :- ratingR(B,pg), videoTypeR(B,new).]
+[24 explored search nodes]
+f=1,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+
+[4 redundant clauses retracted]
+[Generalising up(teen1p,cars,view).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium), ageGroupU(A,
+	teen), ridR(B,cars), ratingR(B,g), videoTypeR(B,new).
+
+[C:-134,29,78,0 up(A,B,view).]
+[C:-77,3,4,0 up(A,B,view) :- uidU(A,teen1p).]
+[C:-103,3,4,0 up(A,B,view) :- uidU(A,teen1p), memberTypeU(A,premium).]
+[C:-103,3,4,0 up(A,B,view) :- uidU(A,teen1p), ageGroupU(A,teen).]
+[C:1,3,0,0 up(A,B,view) :- uidU(A,teen1p), ratingR(B,g).]
+[C:-51,3,2,0 up(A,B,view) :- uidU(A,teen1p), videoTypeR(B,new).]
+[C:-28,19,24,0 up(A,B,view) :- memberTypeU(A,premium).]
+[C:-7,10,8,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen).]
+[C:27,6,0,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,g).]
+[C:-25,6,4,0 up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), videoTypeR(B,new).]
+[C:20,4,0,0 up(A,B,view) :- memberTypeU(A,premium), ridR(B,cars).]
+[C:59,12,0,0 up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).]
+[C:-19,12,12,0 up(A,B,view) :- memberTypeU(A,premium), videoTypeR(B,new).]
+[C:-77,14,26,0 up(A,B,view) :- ageGroupU(A,teen).]
+[C:-38,6,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g).]
+[C:-51,6,6,0 up(A,B,view) :- ageGroupU(A,teen), ratingR(B,g), videoTypeR(B,new).]
+[C:-194,6,18,0 up(A,B,view) :- ageGroupU(A,teen), videoTypeR(B,new).]
+[C:-77,4,6,0 up(A,B,view) :- ridR(B,cars).]
+[C:-97,4,6,0 up(A,B,view) :- ridR(B,cars), ratingR(B,g).]
+[C:-97,4,6,0 up(A,B,view) :- ridR(B,cars), videoTypeR(B,new).]
+[C:-116,4,6,0 up(A,B,view) :- ridR(B,cars), ratingR(B,g), videoTypeR(B,new).]
+[C:-25,15,18,0 up(A,B,view) :- ratingR(B,g).]
+[C:-58,12,18,0 up(A,B,view) :- ratingR(B,g), videoTypeR(B,new).]
+[C:-285,12,54,0 up(A,B,view) :- videoTypeR(B,new).]
+[24 explored search nodes]
+f=59,p=12,n=0,h=0
+[Result of search is]
+
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[12 redundant clauses retracted]
+
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,adult).
+up(A,B,view) :- ratingR(B,g), videoTypeR(B,old).
+up(A,B,view) :- ageGroupU(A,adult), videoTypeR(B,old).
+up(A,B,view) :- ageGroupU(A,teen), ratingR(B,pg), videoTypeR(B,
+	old).
+up(A,B,view) :- memberTypeU(A,premium), ageGroupU(A,teen), ratingR(B,
+	pg).
+up(A,B,view) :- memberTypeU(A,premium), ratingR(B,g).
+
+[Total number of clauses = 6]
+
+[Time taken 0.06s]
+
+Mem out = 832

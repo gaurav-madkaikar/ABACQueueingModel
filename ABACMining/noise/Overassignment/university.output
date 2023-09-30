@@ -1,0 +1,1556 @@
+==============================================
+The rule does not contain overassignment: rule(department in {admissions}; type in {application}; {read setStatus }; )
+r's UP size: 1000
+r's rule quality 250.0
+r is the 1th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {gradebook}; {readMyScores }; crsTaken ] crs)
+r's UP size: 613
+r's rule quality 204.33333333333334
+r is the 2th rule
+==============================================
+The rule does not contain overassignment: rule(department in {registrar}; type in {transcript}; {read }; )
+r's UP size: 400
+r's rule quality 133.33333333333334
+r is the 3th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {gradebook}; {readScore addScore }; crsTaught ] crs)
+r's UP size: 404
+r's rule quality 101.0
+r is the 4th rule
+==============================================
+The rule does not contain overassignment: rule(department in {registrar}; type in {roster}; {write read }; )
+r's UP size: 360
+r's rule quality 90.0
+r is the 5th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {application}; {checkStatus }; uid=student)
+r's UP size: 250
+r's rule quality 83.33333333333333
+r is the 6th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {transcript}; {read }; uid=student)
+r's UP size: 200
+r's rule quality 66.66666666666667
+r is the 7th rule
+==============================================
+The rule does not contain overassignment: rule(isChair in {true}; type in {transcript}; {read }; department=department)
+r's UP size: 200
+r's rule quality 50.0
+r is the 8th rule
+==============================================
+The rule does not contain overassignment: rule(position in {faculty}; type in {gradebook}; {assignGrade changeScore }; crsTaught ] crs)
+r's UP size: 180
+r's rule quality 36.0
+r is the 9th rule
+==============================================
+The rule does not contain overassignment: rule(position in {faculty}; type in {roster}; {read }; crsTaught ] crs)
+r's UP size: 90
+r's rule quality 22.5
+r is the 10th rule
+==============================================
+The rule contains overassignment: rule(uid in {fac7-2 stu2-11}; student in {stu4-11}, type in {transcript}; {readScore }; )
+Overassignments: [(fac7-2,readScore,transcript4-11), (stu2-11,readScore,transcript4-11)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 11th rule
+==============================================
+The rule contains overassignment: rule(uid in {app1-1 stu6-15}; student in {stu3-16}, type in {application}; {assignGrade }; )
+Overassignments: [(stu6-15,assignGrade,stu3-16application3-16), (app1-1,assignGrade,stu3-16application3-16)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 12th rule
+==============================================
+The rule contains overassignment: rule(uid in {app1-0 stu4-12}; student in {stu2-3}, type in {application}; {checkStatus }; )
+Overassignments: [(app1-0,checkStatus,stu2-3application2-3), (stu4-12,checkStatus,stu2-3application2-3)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 13th rule
+==============================================
+The rule contains overassignment: rule(uid in {registrar0 fac6-4}; student in {stu7-7}, type in {application}; {checkStatus }; )
+Overassignments: [(registrar0,checkStatus,stu7-7application7-7), (fac6-4,checkStatus,stu7-7application7-7)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 14th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu8-14 stu8-6}; student in {stu2-12}, type in {application}; {write }; )
+Overassignments: [(stu8-14,write,stu2-12application2-12), (stu8-6,write,stu2-12application2-12)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 15th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu4-8 stu5-9}; crs in {crs0-4}, type in {gradebook}; {addScore }; )
+Overassignments: [(stu4-8,addScore,gradebook0-4), (stu5-9,addScore,gradebook0-4)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 16th rule
+==============================================
+The rule contains overassignment: rule(uid in {app3-4 stu8-19}; crs in {crs4-8}, type in {gradebook}; {readScore }; )
+Overassignments: [(app3-4,readScore,gradebook4-8), (stu8-19,readScore,gradebook4-8)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 17th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu5-16 chair5}; crs in {crs3-7}, type in {gradebook}; {changeScore }; )
+Overassignments: [(stu5-16,changeScore,gradebook3-7), (chair5,changeScore,gradebook3-7)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 18th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu4-14 app7-3}; student in {stu4-13}, type in {application}; {readMyScores }; )
+Overassignments: [(stu4-14,readMyScores,stu4-13application4-13), (app7-3,readMyScores,stu4-13application4-13)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 19th rule
+==============================================
+The rule contains overassignment: rule(uid in {app0-3 fac4-0}; student in {stu4-8}, type in {application}; {write }; )
+Overassignments: [(fac4-0,write,stu4-8application4-8), (app0-3,write,stu4-8application4-8)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 20th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu1-4 app6-4}; student in {stu6-4}, type in {application}; {write }; )
+Overassignments: [(stu1-4,write,stu6-4application6-4), (app6-4,write,stu6-4application6-4)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 21th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs3-2 crs3-8}}; student in {stu8-8}, type in {application}; {write }; )
+Overassignments: [(stu3-9,write,stu8-8application8-8), (stu3-7,write,stu8-8application8-8)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 22th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu6-5 app1-1}; crs in {crs5-9}, type in {roster}; {assignGrade }; )
+Overassignments: [(app1-1,assignGrade,roster5-9), (stu6-5,assignGrade,roster5-9)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 23th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu9-16 app2-1}; student in {stu2-8}, type in {application}; {changeScore }; )
+Overassignments: [(stu9-16,changeScore,stu2-8application2-8), (app2-1,changeScore,stu2-8application2-8)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 24th rule
+==============================================
+The rule contains overassignment: rule(uid in {app3-4 stu8-6}; student in {stu4-14}, type in {application}; {assignGrade }; )
+Overassignments: [(app3-4,assignGrade,stu4-14application4-14), (stu8-6,assignGrade,stu4-14application4-14)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 25th rule
+==============================================
+The rule contains overassignment: rule(uid in {chair3 fac4-3}; student in {stu5-0}, type in {application}; {readMyScores }; )
+Overassignments: [(fac4-3,readMyScores,stu5-0application5-0), (chair3,readMyScores,stu5-0application5-0)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 26th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu7-5 stu1-14}; crs in {crs8-4}, type in {gradebook}; {checkStatus }; )
+Overassignments: [(stu1-14,checkStatus,gradebook8-4), (stu7-5,checkStatus,gradebook8-4)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 27th rule
+==============================================
+The rule contains overassignment: rule(uid in {chair1 stu1-14}; student in {stu0-0}, type in {application}; {changeScore }; )
+Overassignments: [(stu1-14,changeScore,stu0-0application0-0), (chair1,changeScore,stu0-0application0-0)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 28th rule
+==============================================
+The rule contains overassignment: rule(uid in {app4-2 stu8-2}; crs in {crs0-1}, type in {roster}; {assignGrade }; )
+Overassignments: [(stu8-2,assignGrade,roster0-1), (app4-2,assignGrade,roster0-1)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 29th rule
+==============================================
+The rule contains overassignment: rule(uid in {app1-0 stu9-6}; student in {stu2-3}, type in {transcript}; {readMyScores }; )
+Overassignments: [(app1-0,readMyScores,transcript2-3), (stu9-6,readMyScores,transcript2-3)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 30th rule
+==============================================
+The rule contains overassignment: rule(uid in {app0-1}; student in {stu7-2 stu7-18}, type in {transcript}; {changeScore }; )
+Overassignments: [(app0-1,changeScore,transcript7-2), (app0-1,changeScore,transcript7-18)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 31th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions1 stu9-3 app2-3}; student in {stu2-0}, type in {application}; {setStatus }; )
+Overassignments: [(app2-3,setStatus,stu2-0application2-0), (stu9-3,setStatus,stu2-0application2-0)] size:2
+r's UP size: 3
+r's rule quality 0.3333333333333333
+r is the 32th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions1 stu3-16 fac5-4}; student in {app2-4}, type in {application}; {setStatus }; )
+Overassignments: [(stu3-16,setStatus,application2-4), (fac5-4,setStatus,application2-4)] size:2
+r's UP size: 3
+r's rule quality 0.3333333333333333
+r is the 33th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs8-7 crs8-6} {crs9-7}}; student in {stu3-19}, type in {application}; {changeScore }; )
+Overassignments: [(fac9-3,changeScore,stu3-19application3-19), (fac8-3,changeScore,stu3-19application3-19)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 34th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions1 stu4-7}; student in {stu7-2 stu9-19}, type in {application}; {setStatus }; )
+Overassignments: [(stu4-7,setStatus,stu9-19application9-19), (stu4-7,setStatus,stu7-2application7-2)] size:2
+r's UP size: 4
+r's rule quality 0.3333333333333333
+r is the 35th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-0} {crs4-7}}, crsTaught supseteqln {{crs4-3} {crs6-3}}; student in {stu8-11}, type in {transcript}; {readScore }; )
+Overassignments: [(stu6-8,readScore,transcript8-11), (stu4-19,readScore,transcript8-11)] size:2
+r's UP size: 2
+r's rule quality 0.2857142857142857
+r is the 36th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu1-4 admissions0 admissions1 app8-4}; student in {stu1-10}, type in {application}; {setStatus }; )
+Overassignments: [(stu1-4,setStatus,stu1-10application1-10), (app8-4,setStatus,stu1-10application1-10)] size:2
+r's UP size: 4
+r's rule quality 0.2857142857142857
+r is the 37th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs4-1 crs4-9} {crs4-1 crs4-7}}; student in {stu4-15}, type in {transcript}; {checkStatus }; )
+Overassignments: [(stu4-12,checkStatus,transcript4-15), (stu4-19,checkStatus,transcript4-15)] size:2
+r's UP size: 2
+r's rule quality 0.2857142857142857
+r is the 38th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu0-9 registrar0 fac6-1 registrar1}; crs in {crs1-9}, type in {roster}; {read }; )
+Overassignments: [(stu0-9,read,roster1-9), (fac6-1,read,roster1-9)] size:2
+r's UP size: 4
+r's rule quality 0.2857142857142857
+r is the 39th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 admissions1 stu0-15 stu9-2}; student in {stu9-4}, type in {application}; {setStatus }; )
+Overassignments: [(stu0-15,setStatus,stu9-4application9-4), (stu9-2,setStatus,stu9-4application9-4)] size:2
+r's UP size: 4
+r's rule quality 0.2857142857142857
+r is the 40th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs5-5 crs5-3} {crs0-0 crs0-9}}; student in {stu9-1}, type in {application}; {assignGrade }; )
+Overassignments: [(stu5-5,assignGrade,stu9-1application9-1), (stu0-14,assignGrade,stu9-1application9-1)] size:2
+r's UP size: 2
+r's rule quality 0.2857142857142857
+r is the 41th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu7-2 admissions0 admissions1 app6-2}; student in {stu4-10}, type in {application}; {setStatus }; )
+Overassignments: [(stu7-2,setStatus,stu4-10application4-10), (app6-2,setStatus,stu4-10application4-10)] size:2
+r's UP size: 4
+r's rule quality 0.2857142857142857
+r is the 42th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs5-1 crs5-3} {crs4-8 crs4-7}}; student in {stu7-12}, type in {transcript}; {readScore }; )
+Overassignments: [(stu4-9,readScore,transcript7-12), (stu5-6,readScore,transcript7-12)] size:2
+r's UP size: 2
+r's rule quality 0.2857142857142857
+r is the 43th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 stu9-13 admissions1 stu4-6}; student in {stu5-14}, type in {application}; {read }; )
+Overassignments: [(stu4-6,read,stu5-14application5-14), (stu9-13,read,stu5-14application5-14)] size:2
+r's UP size: 4
+r's rule quality 0.2857142857142857
+r is the 44th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs3-1 crs3-8 crs3-9}}; crs in {crs7-3 crs1-8}, type in {gradebook}; {addScore }; )
+Overassignments: [(stu3-10,addScore,gradebook1-8), (stu3-10,addScore,gradebook7-3)] size:2
+r's UP size: 2
+r's rule quality 0.2857142857142857
+r is the 45th rule
+==============================================
+The rule contains overassignment: rule(uid in {app6-1}; student in {stu0-13}, type in {application}; {changeScore }; )
+Overassignments: [(app6-1,changeScore,stu0-13application0-13)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 46th rule
+==============================================
+The rule contains overassignment: rule(uid in {app7-3}; crs in {crs1-4}, type in {roster}; {changeScore }; )
+Overassignments: [(app7-3,changeScore,roster1-4)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 47th rule
+==============================================
+The rule contains overassignment: rule(uid in {app4-2}; crs in {crs2-2}, type in {roster}; {assignGrade }; )
+Overassignments: [(app4-2,assignGrade,roster2-2)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 48th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs1-4}}; student in {app3-0}, type in {application}; {addScore }; )
+Overassignments: [(fac1-2,addScore,application3-0)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 49th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs7-3 crs7-2} {crs5-4 crs5-5 crs5-6}}; student in {stu1-11}, type in {transcript}; {readScore }; )
+Overassignments: [(stu7-0,readScore,transcript1-11), (stu5-16,readScore,transcript1-11)] size:2
+r's UP size: 2
+r's rule quality 0.25
+r is the 50th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu3-9}; crs in {crs6-2}, type in {roster}; {addScore }; )
+Overassignments: [(stu3-9,addScore,roster6-2)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 51th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs4-7}}; student in {stu8-13}, type in {application}; {readMyScores }; )
+Overassignments: [(fac4-3,readMyScores,stu8-13application8-13)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 52th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs2-6}}; student in {stu5-2}, type in {application}; {write }; )
+Overassignments: [(fac2-3,write,stu5-2application5-2)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 53th rule
+==============================================
+The rule contains overassignment: rule(uid in {app9-3}; student in {stu8-4}, type in {transcript}; {checkStatus }; )
+Overassignments: [(app9-3,checkStatus,transcript8-4)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 54th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-2 crs6-0 crs6-5} {crs9-9 crs9-3}}; student in {stu0-14}, type in {transcript}; {addScore }; )
+Overassignments: [(stu9-15,addScore,transcript0-14), (stu6-5,addScore,transcript0-14)] size:2
+r's UP size: 2
+r's rule quality 0.25
+r is the 55th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs2-0 crs2-3 crs2-6} {crs3-5 crs3-6}}; student in {stu7-4}, type in {transcript}; {assignGrade }; )
+Overassignments: [(stu3-0,assignGrade,transcript7-4), (stu2-18,assignGrade,transcript7-4)] size:2
+r's UP size: 2
+r's rule quality 0.25
+r is the 56th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu8-7}; student in {stu9-6}, type in {transcript}; {changeScore }; )
+Overassignments: [(stu8-7,changeScore,transcript9-6)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 57th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs9-1 crs9-6} {crs6-7 crs6-6 crs6-5}}; student in {stu1-13}, type in {application}; {addScore }; )
+Overassignments: [(stu6-3,addScore,stu1-13application1-13), (stu9-4,addScore,stu1-13application1-13)] size:2
+r's UP size: 2
+r's rule quality 0.25
+r is the 58th rule
+==============================================
+The rule contains overassignment: rule(uid in {app0-3}; crs in {crs6-8}, type in {gradebook}; {write }; )
+Overassignments: [(app0-3,write,gradebook6-8)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 59th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs0-1}}; student in {app4-1}, type in {application}; {write }; )
+Overassignments: [(fac0-0,write,application4-1)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 60th rule
+==============================================
+The rule contains overassignment: rule(uid in {app9-4}; student in {stu8-8}, type in {transcript}; {write }; )
+Overassignments: [(app9-4,write,transcript8-8)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 61th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu6-19}; crs in {crs2-6}, type in {roster}; {checkStatus }; )
+Overassignments: [(stu6-19,checkStatus,roster2-6)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 62th rule
+==============================================
+The rule contains overassignment: rule(uid in {app6-4}; student in {stu3-16}, type in {transcript}; {write }; )
+Overassignments: [(app6-4,write,transcript3-16)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 63th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs7-6}}; crs in {crs4-2}, type in {gradebook}; {assignGrade }; )
+Overassignments: [(fac7-3,assignGrade,gradebook4-2)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 64th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu2-18}; student in {stu6-8}, type in {transcript}; {addScore }; )
+Overassignments: [(stu2-18,addScore,transcript6-8)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 65th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs7-4 crs7-8 crs7-6} {crs0-3 crs0-4}}; student in {stu5-9}, type in {application}; {checkStatus }; )
+Overassignments: [(stu0-9,checkStatus,stu5-9application5-9), (stu7-5,checkStatus,stu5-9application5-9)] size:2
+r's UP size: 2
+r's rule quality 0.25
+r is the 66th rule
+==============================================
+The rule contains overassignment: rule(uid in {app2-3}; student in {stu1-17}, type in {transcript}; {write }; )
+Overassignments: [(app2-3,write,transcript1-17)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 67th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-8 crs0-4} {crs0-8 crs0-1}}, crsTaught supseteqln {{crs0-3} {crs0-0}}; student in {stu9-17}, type in {transcript}; {changeScore }; )
+Overassignments: [(stu0-11,changeScore,transcript9-17), (stu0-19,changeScore,transcript9-17)] size:2
+r's UP size: 2
+r's rule quality 0.2222222222222222
+r is the 68th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs9-8 crs9-1 crs9-7} {crs3-5 crs3-0 crs3-8}}; student in {stu2-7}, type in {transcript}; {changeScore }; )
+Overassignments: [(stu3-3,changeScore,transcript2-7), (stu9-0,changeScore,transcript2-7)] size:2
+r's UP size: 2
+r's rule quality 0.2222222222222222
+r is the 69th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-7 crs6-6 crs6-5} {crs4-1 crs4-3 crs4-8}}; student in {stu0-5}, type in {transcript}; {write }; )
+Overassignments: [(stu4-5,write,transcript0-5), (stu6-3,write,transcript0-5)] size:2
+r's UP size: 2
+r's rule quality 0.2222222222222222
+r is the 70th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs3-0 crs3-1}}; crs in {crs9-6}, type in {roster}; {readScore }; )
+Overassignments: [(fac3-0,readScore,roster9-6)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 71th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs8-1 crs8-0}}; crs in {crs9-1}, type in {roster}; {changeScore }; )
+Overassignments: [(fac8-0,changeScore,roster9-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 72th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs3-4 crs3-8}}; student in {stu0-11}, type in {application}; {addScore }; )
+Overassignments: [(stu3-19,addScore,stu0-11application0-11)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 73th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions1 fac5-2}; student in {stu6-15}, type in {application}; {read }; )
+Overassignments: [(fac5-2,read,stu6-15application6-15)] size:1
+r's UP size: 2
+r's rule quality 0.2
+r is the 74th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-5 crs0-0}}; student in {stu5-7}, type in {transcript}; {readMyScores }; )
+Overassignments: [(stu0-6,readMyScores,transcript5-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 75th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-1 crs6-6}}; crs in {crs5-3}, type in {gradebook}; {readMyScores }; )
+Overassignments: [(stu6-2,readMyScores,gradebook5-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 76th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs1-3 crs1-0}}; crs in {crs5-6}, type in {roster}; {changeScore }; )
+Overassignments: [(stu1-18,changeScore,roster5-6)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 77th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs3-0}}, position in {student}; student in {stu9-11}, type in {application}; {readScore }; )
+Overassignments: [(stu3-0,readScore,stu9-11application9-11)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 78th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs8-1}}, position in {student}; crs in {crs9-7}, type in {roster}; {readMyScores }; )
+Overassignments: [(stu8-19,readMyScores,roster9-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 79th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs5-5 crs5-0}}; student in {stu7-15}, type in {transcript}; {assignGrade }; )
+Overassignments: [(stu5-11,assignGrade,transcript7-15)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 80th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions1 fac3-4}; student in {stu7-14}, type in {application}; {setStatus }; )
+Overassignments: [(fac3-4,setStatus,stu7-14application7-14)] size:1
+r's UP size: 2
+r's rule quality 0.2
+r is the 81th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs9-3}}, position in {student}; student in {stu2-18}, type in {application}; {write }; )
+Overassignments: [(stu9-10,write,stu2-18application2-18)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 82th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs8-1 crs8-0}}; student in {stu9-19}, type in {application}; {changeScore }; )
+Overassignments: [(fac8-0,changeScore,stu9-19application9-19)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 83th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-7}}, crsTaught supseteqln {{crs6-3}}; student in {app9-3}, type in {application}; {addScore }; )
+Overassignments: [(stu6-13,addScore,application9-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 84th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs8-5 crs8-4}}; crs in {crs4-4}, type in {roster}; {checkStatus }; )
+Overassignments: [(fac8-2,checkStatus,roster4-4)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 85th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs5-5 crs5-3}}; crs in {crs0-7}, type in {gradebook}; {checkStatus }; )
+Overassignments: [(stu5-5,checkStatus,gradebook0-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 86th rule
+==============================================
+The rule contains overassignment: rule(department in {dept9}, isChair in {true}; student in {stu7-1}, type in {transcript}; {readScore }; )
+Overassignments: [(chair9,readScore,transcript7-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 87th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-7 crs0-9}}; student in {stu2-5}, type in {application}; {changeScore }; )
+Overassignments: [(stu0-13,changeScore,stu2-5application2-5)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 88th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs2-3 crs2-4}}; student in {stu4-11}, type in {application}; {write }; )
+Overassignments: [(stu2-4,write,stu4-11application4-11)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 89th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs2-1}}, crsTaught supseteqln {{crs2-3}}; student in {stu7-2}, type in {transcript}; {setStatus }; )
+Overassignments: [(stu2-13,setStatus,transcript7-2)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 90th rule
+==============================================
+The rule contains overassignment: rule(uid in {registrar1}; student in {stu6-8}, type in {transcript}; {addScore read }; )
+Overassignments: [(registrar1,addScore,transcript6-8)] size:1
+r's UP size: 2
+r's rule quality 0.2
+r is the 91th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs9-1 crs9-5}}; student in {stu3-5}, type in {application}; {checkStatus }; )
+Overassignments: [(stu9-19,checkStatus,stu3-5application3-5)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 92th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs6-1 crs6-0}}; student in {stu4-17}, type in {application}; {readScore }; )
+Overassignments: [(fac6-0,readScore,stu4-17application4-17)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 93th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs6-2 crs6-3}}; crs in {crs3-7}, type in {roster}; {addScore }; )
+Overassignments: [(fac6-1,addScore,roster3-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 94th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-4}}, crsTaught supseteqln {{crs0-0}}; crs in {crs0-7}, type in {gradebook}; {changeScore }; )
+Overassignments: [(stu0-11,changeScore,gradebook0-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 95th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs3-6 crs3-7}}; student in {stu7-9}, type in {application}; {readMyScores }; )
+Overassignments: [(fac3-3,readMyScores,stu7-9application7-9)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 96th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs6-9 crs6-8}}; crs in {crs8-7}, type in {roster}; {checkStatus }; )
+Overassignments: [(fac6-4,checkStatus,roster8-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 97th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-1 crs6-6}}; crs in {crs0-6}, type in {roster}; {readMyScores }; )
+Overassignments: [(stu6-2,readMyScores,roster0-6)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 98th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs4-8 crs4-7}}; student in {stu8-10}, type in {application}; {readMyScores }; )
+Overassignments: [(stu4-9,readMyScores,stu8-10application8-10)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 99th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-8}}, crsTaught supseteqln {{crs0-2}}; student in {stu9-8}, type in {transcript}; {readScore }; )
+Overassignments: [(stu0-1,readScore,transcript9-8)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 100th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs5-0 crs5-1}}; student in {app0-1}, type in {application}; {addScore }; )
+Overassignments: [(stu5-1,addScore,application0-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 101th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs3-8}}, crsTaught supseteqln {{crs3-3}}; student in {stu5-10}, type in {transcript}; {assignGrade }; )
+Overassignments: [(stu3-15,assignGrade,transcript5-10)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 102th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs5-6 crs5-7}}; crs in {crs9-6}, type in {gradebook}; {assignGrade }; )
+Overassignments: [(fac5-3,assignGrade,gradebook9-6)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 103th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu9-11 chair9}; student in {stu9-4}, type in {transcript}; {read }; )
+Overassignments: [(stu9-11,read,transcript9-4)] size:1
+r's UP size: 2
+r's rule quality 0.2
+r is the 104th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs7-3 crs7-2}}; student in {stu3-7}, type in {application}; {checkStatus }; )
+Overassignments: [(stu7-0,checkStatus,stu3-7application3-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 105th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs1-9 crs1-8}}; student in {stu7-0}, type in {application}; {checkStatus }; )
+Overassignments: [(fac1-4,checkStatus,stu7-0application7-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 106th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-0}}, crsTaught supseteqln {{crs6-3}}; student in {stu4-1}, type in {transcript}; {readScore }; )
+Overassignments: [(stu6-8,readScore,transcript4-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 107th rule
+==============================================
+The rule contains overassignment: rule(department in {dept5}, isChair in {true}; crs in {crs2-6}, type in {roster}; {changeScore }; )
+Overassignments: [(chair5,changeScore,roster2-6)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 108th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs4-4 crs4-8}}; student in {stu4-5}, type in {transcript}; {addScore }; )
+Overassignments: [(stu4-0,addScore,transcript4-5)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 109th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions1 app5-3}; student in {stu6-13}, type in {application}; {read }; )
+Overassignments: [(app5-3,read,stu6-13application6-13)] size:1
+r's UP size: 2
+r's rule quality 0.2
+r is the 110th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs9-0 crs9-1}}; student in {stu0-5}, type in {application}; {checkStatus }; )
+Overassignments: [(stu9-16,checkStatus,stu0-5application0-5)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 111th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs2-7}}, position in {student}; student in {stu5-15}, type in {application}; {readScore }; )
+Overassignments: [(stu2-16,readScore,stu5-15application5-15)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 112th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs8-3 crs8-0}}; student in {stu3-3}, type in {transcript}; {readMyScores }; )
+Overassignments: [(stu8-13,readMyScores,transcript3-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 113th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-1 crs6-5}}; student in {stu2-12}, type in {transcript}; {assignGrade }; )
+Overassignments: [(stu6-11,assignGrade,transcript2-12)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 114th rule
+==============================================
+The rule contains overassignment: rule(department in {dept3}, isChair in {true}; student in {stu3-15}, type in {application}; {readMyScores }; )
+Overassignments: [(chair3,readMyScores,stu3-15application3-15)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 115th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs8-7 crs8-6}}; student in {stu7-3}, type in {application}; {addScore }; )
+Overassignments: [(fac8-3,addScore,stu7-3application7-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 116th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs5-9 crs5-3}}; crs in {crs2-7}, type in {gradebook}; {read }; )
+Overassignments: [(stu5-9,read,gradebook2-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 117th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-7}}, crsTaught supseteqln {{crs6-5}}; student in {app5-0}, type in {application}; {changeScore }; )
+Overassignments: [(stu6-0,changeScore,application5-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 118th rule
+==============================================
+The rule contains overassignment: rule(crsTaught supseteqln {{crs2-2}}, position in {student}; crs in {crs9-6}, type in {gradebook}; {readScore }; )
+Overassignments: [(stu2-11,readScore,gradebook9-6)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 119th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-5 crs0-0}}; student in {stu9-11}, type in {application}; {readMyScores }; )
+Overassignments: [(stu0-6,readMyScores,stu9-11application9-11)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 120th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions1 stu4-5}; student in {stu9-13}, type in {application}; {read }; )
+Overassignments: [(stu4-5,read,stu9-13application9-13)] size:1
+r's UP size: 2
+r's rule quality 0.2
+r is the 121th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs2-3 crs2-4}}; student in {stu3-13}, type in {application}; {readMyScores }; )
+Overassignments: [(stu2-4,readMyScores,stu3-13application3-13)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 122th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs4-2 crs4-3 crs4-8}}; crs in {crs5-7}, type in {roster}; {setStatus }; )
+Overassignments: [(stu4-1,setStatus,roster5-7)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 123th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs6-8 crs6-6 crs6-5}}; student in {stu5-16}, type in {transcript}; {write }; )
+Overassignments: [(stu6-15,write,transcript5-16)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 124th rule
+==============================================
+The rule contains overassignment: rule(uid in {fac7-2 admissions0 admissions1}; student in {stu6-17}, type in {application}; {setStatus }; )
+Overassignments: [(fac7-2,setStatus,stu6-17application6-17)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 125th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu7-19 registrar0 registrar1}; student in {stu4-7}, type in {transcript}; {read }; )
+Overassignments: [(stu7-19,read,transcript4-7)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 126th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 stu7-2 admissions1}; student in {stu6-15}, type in {application}; {setStatus }; )
+Overassignments: [(stu7-2,setStatus,stu6-15application6-15)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 127th rule
+==============================================
+The rule contains overassignment: rule(uid in {registrar0 fac1-1 registrar1}; student in {stu6-2}, type in {transcript}; {read }; )
+Overassignments: [(fac1-1,read,transcript6-2)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 128th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs7-3 crs7-7 crs7-0}}; crs in {crs1-7}, type in {gradebook}; {setStatus }; )
+Overassignments: [(stu7-15,setStatus,gradebook1-7)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 129th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 admissions1 stu7-15}; student in {stu3-7}, type in {application}; {setStatus }; )
+Overassignments: [(stu7-15,setStatus,stu3-7application3-7)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 130th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu9-13 registrar0 registrar1}; student in {stu3-14}, type in {transcript}; {read }; )
+Overassignments: [(stu9-13,read,transcript3-14)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 131th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 admissions1 stu1-7}; student in {stu3-3}, type in {application}; {read }; )
+Overassignments: [(stu1-7,read,stu3-3application3-3)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 132th rule
+==============================================
+The rule contains overassignment: rule(uid in {app9-1 registrar0 registrar1}; crs in {crs0-6}, type in {roster}; {read }; )
+Overassignments: [(app9-1,read,roster0-6)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 133th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-5 crs0-7 crs0-4}}; student in {stu9-11}, type in {transcript}; {write }; )
+Overassignments: [(stu0-4,write,transcript9-11)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 134th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 admissions1 app6-2}; student in {stu6-11}, type in {application}; {setStatus }; )
+Overassignments: [(app6-2,setStatus,stu6-11application6-11)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 135th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs7-2 crs7-9 crs7-8}}; student in {stu7-1}, type in {transcript}; {readScore }; )
+Overassignments: [(stu7-6,readScore,transcript7-1)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 136th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs7-2 crs7-9 crs7-8}}; crs in {crs2-5}, type in {gradebook}; {checkStatus }; )
+Overassignments: [(stu7-6,checkStatus,gradebook2-5)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 137th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs2-8 crs2-9 crs2-0}}; crs in {crs1-8}, type in {gradebook}; {readMyScores }; )
+Overassignments: [(stu2-14,readMyScores,gradebook1-8)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 138th rule
+==============================================
+The rule contains overassignment: rule(uid in {fac0-2 registrar0 registrar1}; student in {stu1-3}, type in {transcript}; {read }; )
+Overassignments: [(fac0-2,read,transcript1-3)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 139th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 admissions1 stu5-14}; student in {app1-4}, type in {application}; {setStatus }; )
+Overassignments: [(stu5-14,setStatus,application1-4)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 140th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-1 crs0-4 crs0-0}}; student in {stu3-15}, type in {application}; {assignGrade }; )
+Overassignments: [(stu0-8,assignGrade,stu3-15application3-15)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 141th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-5 crs0-2}}, crsTaught supseteqln {{crs0-9}}; student in {stu9-10}, type in {transcript}; {checkStatus }; )
+Overassignments: [(stu0-3,checkStatus,transcript9-10)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 142th rule
+==============================================
+The rule contains overassignment: rule(uid in {admissions0 admissions1 stu8-11}; student in {stu6-19}, type in {application}; {read }; )
+Overassignments: [(stu8-11,read,stu6-19application6-19)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 143th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs3-0 crs3-6}}, crsTaught supseteqln {{crs3-3}}; student in {stu0-4}, type in {transcript}; {changeScore }; )
+Overassignments: [(stu3-8,changeScore,transcript0-4)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 144th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs3-5 crs3-0 crs3-8}}; crs in {crs5-5}, type in {gradebook}; {setStatus }; )
+Overassignments: [(stu3-3,setStatus,gradebook5-5)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 145th rule
+==============================================
+The rule contains overassignment: rule(uid in {stu3-16 registrar0 registrar1}; student in {stu5-14}, type in {transcript}; {read }; )
+Overassignments: [(stu3-16,read,transcript5-14)] size:1
+r's UP size: 3
+r's rule quality 0.16666666666666666
+r is the 146th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs7-5 crs7-4 crs7-9}}; student in {app7-1}, type in {application}; {addScore }; )
+Overassignments: [(stu7-17,addScore,application7-1)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 147th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs9-9 crs9-6 crs9-4}}; crs in {crs9-1}, type in {roster}; {read }; )
+Overassignments: [(stu9-2,read,roster9-1)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 148th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs0-7 crs0-8 crs0-1}}; crs in {crs0-4}, type in {roster}; {readScore }; )
+Overassignments: [(stu0-19,readScore,roster0-4)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 149th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs2-8 crs2-9 crs2-6}}; student in {stu0-17}, type in {transcript}; {setStatus }; )
+Overassignments: [(stu2-1,setStatus,transcript0-17)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 150th rule
+==============================================
+The rule contains overassignment: rule(crsTaken supseteqln {{crs4-0 crs4-7 crs4-9}}; student in {stu4-11}, type in {application}; {checkStatus write }; )
+Overassignments: [(stu4-11,write,stu4-11application4-11)] size:1
+r's UP size: 2
+r's rule quality 0.14285714285714285
+r is the 151th rule
+==============================================
+OUTPUT RULES
+
+1.
+rule(department in {admissions}; type in {application}; {read setStatus }; )
+WSC=4.0
+2.
+rule(; type in {gradebook}; {readMyScores }; crsTaken ] crs)
+WSC=3.0
+3.
+rule(department in {registrar}; type in {transcript}; {read }; )
+WSC=3.0
+4.
+rule(; type in {gradebook}; {readScore addScore }; crsTaught ] crs)
+WSC=4.0
+5.
+rule(department in {registrar}; type in {roster}; {write read }; )
+WSC=4.0
+6.
+rule(; type in {application}; {checkStatus }; uid=student)
+WSC=3.0
+7.
+rule(; type in {transcript}; {read }; uid=student)
+WSC=3.0
+8.
+rule(isChair in {true}; type in {transcript}; {read }; department=department)
+WSC=4.0
+9.
+rule(position in {faculty}; type in {gradebook}; {assignGrade changeScore }; crsTaught ] crs)
+WSC=5.0
+10.
+rule(position in {faculty}; type in {roster}; {read }; crsTaught ] crs)
+WSC=4.0
+11.
+rule(uid in {fac7-2 stu2-11}; student in {stu4-11}, type in {transcript}; {readScore }; )
+WSC=5.0
+12.
+rule(uid in {app1-1 stu6-15}; student in {stu3-16}, type in {application}; {assignGrade }; )
+WSC=5.0
+13.
+rule(uid in {app1-0 stu4-12}; student in {stu2-3}, type in {application}; {checkStatus }; )
+WSC=5.0
+14.
+rule(uid in {registrar0 fac6-4}; student in {stu7-7}, type in {application}; {checkStatus }; )
+WSC=5.0
+15.
+rule(uid in {stu8-14 stu8-6}; student in {stu2-12}, type in {application}; {write }; )
+WSC=5.0
+16.
+rule(uid in {stu4-8 stu5-9}; crs in {crs0-4}, type in {gradebook}; {addScore }; )
+WSC=5.0
+17.
+rule(uid in {app3-4 stu8-19}; crs in {crs4-8}, type in {gradebook}; {readScore }; )
+WSC=5.0
+18.
+rule(uid in {stu5-16 chair5}; crs in {crs3-7}, type in {gradebook}; {changeScore }; )
+WSC=5.0
+19.
+rule(uid in {stu4-14 app7-3}; student in {stu4-13}, type in {application}; {readMyScores }; )
+WSC=5.0
+20.
+rule(uid in {app0-3 fac4-0}; student in {stu4-8}, type in {application}; {write }; )
+WSC=5.0
+21.
+rule(uid in {stu1-4 app6-4}; student in {stu6-4}, type in {application}; {write }; )
+WSC=5.0
+22.
+rule(crsTaken supseteqln {{crs3-2 crs3-8}}; student in {stu8-8}, type in {application}; {write }; )
+WSC=5.0
+23.
+rule(uid in {stu6-5 app1-1}; crs in {crs5-9}, type in {roster}; {assignGrade }; )
+WSC=5.0
+24.
+rule(uid in {stu9-16 app2-1}; student in {stu2-8}, type in {application}; {changeScore }; )
+WSC=5.0
+25.
+rule(uid in {app3-4 stu8-6}; student in {stu4-14}, type in {application}; {assignGrade }; )
+WSC=5.0
+26.
+rule(uid in {chair3 fac4-3}; student in {stu5-0}, type in {application}; {readMyScores }; )
+WSC=5.0
+27.
+rule(uid in {stu7-5 stu1-14}; crs in {crs8-4}, type in {gradebook}; {checkStatus }; )
+WSC=5.0
+28.
+rule(uid in {chair1 stu1-14}; student in {stu0-0}, type in {application}; {changeScore }; )
+WSC=5.0
+29.
+rule(uid in {app4-2 stu8-2}; crs in {crs0-1}, type in {roster}; {assignGrade }; )
+WSC=5.0
+30.
+rule(uid in {app1-0 stu9-6}; student in {stu2-3}, type in {transcript}; {readMyScores }; )
+WSC=5.0
+31.
+rule(uid in {app0-1}; student in {stu7-2 stu7-18}, type in {transcript}; {changeScore }; )
+WSC=5.0
+32.
+rule(uid in {admissions1 stu9-3 app2-3}; student in {stu2-0}, type in {application}; {setStatus }; )
+WSC=6.0
+33.
+rule(uid in {admissions1 stu3-16 fac5-4}; student in {app2-4}, type in {application}; {setStatus }; )
+WSC=6.0
+34.
+rule(crsTaught supseteqln {{crs8-7 crs8-6} {crs9-7}}; student in {stu3-19}, type in {application}; {changeScore }; )
+WSC=6.0
+35.
+rule(uid in {admissions1 stu4-7}; student in {stu7-2 stu9-19}, type in {application}; {setStatus }; )
+WSC=6.0
+36.
+rule(crsTaken supseteqln {{crs6-0} {crs4-7}}, crsTaught supseteqln {{crs4-3} {crs6-3}}; student in {stu8-11}, type in {transcript}; {readScore }; )
+WSC=7.0
+37.
+rule(uid in {stu1-4 admissions0 admissions1 app8-4}; student in {stu1-10}, type in {application}; {setStatus }; )
+WSC=7.0
+38.
+rule(crsTaken supseteqln {{crs4-1 crs4-9} {crs4-1 crs4-7}}; student in {stu4-15}, type in {transcript}; {checkStatus }; )
+WSC=7.0
+39.
+rule(uid in {stu0-9 registrar0 fac6-1 registrar1}; crs in {crs1-9}, type in {roster}; {read }; )
+WSC=7.0
+40.
+rule(uid in {admissions0 admissions1 stu0-15 stu9-2}; student in {stu9-4}, type in {application}; {setStatus }; )
+WSC=7.0
+41.
+rule(crsTaken supseteqln {{crs5-5 crs5-3} {crs0-0 crs0-9}}; student in {stu9-1}, type in {application}; {assignGrade }; )
+WSC=7.0
+42.
+rule(uid in {stu7-2 admissions0 admissions1 app6-2}; student in {stu4-10}, type in {application}; {setStatus }; )
+WSC=7.0
+43.
+rule(crsTaken supseteqln {{crs5-1 crs5-3} {crs4-8 crs4-7}}; student in {stu7-12}, type in {transcript}; {readScore }; )
+WSC=7.0
+44.
+rule(uid in {admissions0 stu9-13 admissions1 stu4-6}; student in {stu5-14}, type in {application}; {read }; )
+WSC=7.0
+45.
+rule(crsTaken supseteqln {{crs3-1 crs3-8 crs3-9}}; crs in {crs7-3 crs1-8}, type in {gradebook}; {addScore }; )
+WSC=7.0
+46.
+rule(uid in {app6-1}; student in {stu0-13}, type in {application}; {changeScore }; )
+WSC=4.0
+47.
+rule(uid in {app7-3}; crs in {crs1-4}, type in {roster}; {changeScore }; )
+WSC=4.0
+48.
+rule(uid in {app4-2}; crs in {crs2-2}, type in {roster}; {assignGrade }; )
+WSC=4.0
+49.
+rule(crsTaught supseteqln {{crs1-4}}; student in {app3-0}, type in {application}; {addScore }; )
+WSC=4.0
+50.
+rule(crsTaken supseteqln {{crs7-3 crs7-2} {crs5-4 crs5-5 crs5-6}}; student in {stu1-11}, type in {transcript}; {readScore }; )
+WSC=8.0
+51.
+rule(uid in {stu3-9}; crs in {crs6-2}, type in {roster}; {addScore }; )
+WSC=4.0
+52.
+rule(crsTaught supseteqln {{crs4-7}}; student in {stu8-13}, type in {application}; {readMyScores }; )
+WSC=4.0
+53.
+rule(crsTaught supseteqln {{crs2-6}}; student in {stu5-2}, type in {application}; {write }; )
+WSC=4.0
+54.
+rule(uid in {app9-3}; student in {stu8-4}, type in {transcript}; {checkStatus }; )
+WSC=4.0
+55.
+rule(crsTaken supseteqln {{crs6-2 crs6-0 crs6-5} {crs9-9 crs9-3}}; student in {stu0-14}, type in {transcript}; {addScore }; )
+WSC=8.0
+56.
+rule(crsTaken supseteqln {{crs2-0 crs2-3 crs2-6} {crs3-5 crs3-6}}; student in {stu7-4}, type in {transcript}; {assignGrade }; )
+WSC=8.0
+57.
+rule(uid in {stu8-7}; student in {stu9-6}, type in {transcript}; {changeScore }; )
+WSC=4.0
+58.
+rule(crsTaken supseteqln {{crs9-1 crs9-6} {crs6-7 crs6-6 crs6-5}}; student in {stu1-13}, type in {application}; {addScore }; )
+WSC=8.0
+59.
+rule(uid in {app0-3}; crs in {crs6-8}, type in {gradebook}; {write }; )
+WSC=4.0
+60.
+rule(crsTaught supseteqln {{crs0-1}}; student in {app4-1}, type in {application}; {write }; )
+WSC=4.0
+61.
+rule(uid in {app9-4}; student in {stu8-8}, type in {transcript}; {write }; )
+WSC=4.0
+62.
+rule(uid in {stu6-19}; crs in {crs2-6}, type in {roster}; {checkStatus }; )
+WSC=4.0
+63.
+rule(uid in {app6-4}; student in {stu3-16}, type in {transcript}; {write }; )
+WSC=4.0
+64.
+rule(crsTaught supseteqln {{crs7-6}}; crs in {crs4-2}, type in {gradebook}; {assignGrade }; )
+WSC=4.0
+65.
+rule(uid in {stu2-18}; student in {stu6-8}, type in {transcript}; {addScore }; )
+WSC=4.0
+66.
+rule(crsTaken supseteqln {{crs7-4 crs7-8 crs7-6} {crs0-3 crs0-4}}; student in {stu5-9}, type in {application}; {checkStatus }; )
+WSC=8.0
+67.
+rule(uid in {app2-3}; student in {stu1-17}, type in {transcript}; {write }; )
+WSC=4.0
+68.
+rule(crsTaken supseteqln {{crs0-8 crs0-4} {crs0-8 crs0-1}}, crsTaught supseteqln {{crs0-3} {crs0-0}}; student in {stu9-17}, type in {transcript}; {changeScore }; )
+WSC=9.0
+69.
+rule(crsTaken supseteqln {{crs9-8 crs9-1 crs9-7} {crs3-5 crs3-0 crs3-8}}; student in {stu2-7}, type in {transcript}; {changeScore }; )
+WSC=9.0
+70.
+rule(crsTaken supseteqln {{crs6-7 crs6-6 crs6-5} {crs4-1 crs4-3 crs4-8}}; student in {stu0-5}, type in {transcript}; {write }; )
+WSC=9.0
+71.
+rule(crsTaught supseteqln {{crs3-0 crs3-1}}; crs in {crs9-6}, type in {roster}; {readScore }; )
+WSC=5.0
+72.
+rule(crsTaught supseteqln {{crs8-1 crs8-0}}; crs in {crs9-1}, type in {roster}; {changeScore }; )
+WSC=5.0
+73.
+rule(crsTaken supseteqln {{crs3-4 crs3-8}}; student in {stu0-11}, type in {application}; {addScore }; )
+WSC=5.0
+74.
+rule(uid in {admissions1 fac5-2}; student in {stu6-15}, type in {application}; {read }; )
+WSC=5.0
+75.
+rule(crsTaken supseteqln {{crs0-5 crs0-0}}; student in {stu5-7}, type in {transcript}; {readMyScores }; )
+WSC=5.0
+76.
+rule(crsTaken supseteqln {{crs6-1 crs6-6}}; crs in {crs5-3}, type in {gradebook}; {readMyScores }; )
+WSC=5.0
+77.
+rule(crsTaken supseteqln {{crs1-3 crs1-0}}; crs in {crs5-6}, type in {roster}; {changeScore }; )
+WSC=5.0
+78.
+rule(crsTaught supseteqln {{crs3-0}}, position in {student}; student in {stu9-11}, type in {application}; {readScore }; )
+WSC=5.0
+79.
+rule(crsTaught supseteqln {{crs8-1}}, position in {student}; crs in {crs9-7}, type in {roster}; {readMyScores }; )
+WSC=5.0
+80.
+rule(crsTaken supseteqln {{crs5-5 crs5-0}}; student in {stu7-15}, type in {transcript}; {assignGrade }; )
+WSC=5.0
+81.
+rule(uid in {admissions1 fac3-4}; student in {stu7-14}, type in {application}; {setStatus }; )
+WSC=5.0
+82.
+rule(crsTaught supseteqln {{crs9-3}}, position in {student}; student in {stu2-18}, type in {application}; {write }; )
+WSC=5.0
+83.
+rule(crsTaught supseteqln {{crs8-1 crs8-0}}; student in {stu9-19}, type in {application}; {changeScore }; )
+WSC=5.0
+84.
+rule(crsTaken supseteqln {{crs6-7}}, crsTaught supseteqln {{crs6-3}}; student in {app9-3}, type in {application}; {addScore }; )
+WSC=5.0
+85.
+rule(crsTaught supseteqln {{crs8-5 crs8-4}}; crs in {crs4-4}, type in {roster}; {checkStatus }; )
+WSC=5.0
+86.
+rule(crsTaken supseteqln {{crs5-5 crs5-3}}; crs in {crs0-7}, type in {gradebook}; {checkStatus }; )
+WSC=5.0
+87.
+rule(department in {dept9}, isChair in {true}; student in {stu7-1}, type in {transcript}; {readScore }; )
+WSC=5.0
+88.
+rule(crsTaken supseteqln {{crs0-7 crs0-9}}; student in {stu2-5}, type in {application}; {changeScore }; )
+WSC=5.0
+89.
+rule(crsTaken supseteqln {{crs2-3 crs2-4}}; student in {stu4-11}, type in {application}; {write }; )
+WSC=5.0
+90.
+rule(crsTaken supseteqln {{crs2-1}}, crsTaught supseteqln {{crs2-3}}; student in {stu7-2}, type in {transcript}; {setStatus }; )
+WSC=5.0
+91.
+rule(uid in {registrar1}; student in {stu6-8}, type in {transcript}; {addScore read }; )
+WSC=5.0
+92.
+rule(crsTaken supseteqln {{crs9-1 crs9-5}}; student in {stu3-5}, type in {application}; {checkStatus }; )
+WSC=5.0
+93.
+rule(crsTaught supseteqln {{crs6-1 crs6-0}}; student in {stu4-17}, type in {application}; {readScore }; )
+WSC=5.0
+94.
+rule(crsTaught supseteqln {{crs6-2 crs6-3}}; crs in {crs3-7}, type in {roster}; {addScore }; )
+WSC=5.0
+95.
+rule(crsTaken supseteqln {{crs0-4}}, crsTaught supseteqln {{crs0-0}}; crs in {crs0-7}, type in {gradebook}; {changeScore }; )
+WSC=5.0
+96.
+rule(crsTaught supseteqln {{crs3-6 crs3-7}}; student in {stu7-9}, type in {application}; {readMyScores }; )
+WSC=5.0
+97.
+rule(crsTaught supseteqln {{crs6-9 crs6-8}}; crs in {crs8-7}, type in {roster}; {checkStatus }; )
+WSC=5.0
+98.
+rule(crsTaken supseteqln {{crs6-1 crs6-6}}; crs in {crs0-6}, type in {roster}; {readMyScores }; )
+WSC=5.0
+99.
+rule(crsTaken supseteqln {{crs4-8 crs4-7}}; student in {stu8-10}, type in {application}; {readMyScores }; )
+WSC=5.0
+100.
+rule(crsTaken supseteqln {{crs0-8}}, crsTaught supseteqln {{crs0-2}}; student in {stu9-8}, type in {transcript}; {readScore }; )
+WSC=5.0
+101.
+rule(crsTaken supseteqln {{crs5-0 crs5-1}}; student in {app0-1}, type in {application}; {addScore }; )
+WSC=5.0
+102.
+rule(crsTaken supseteqln {{crs3-8}}, crsTaught supseteqln {{crs3-3}}; student in {stu5-10}, type in {transcript}; {assignGrade }; )
+WSC=5.0
+103.
+rule(crsTaught supseteqln {{crs5-6 crs5-7}}; crs in {crs9-6}, type in {gradebook}; {assignGrade }; )
+WSC=5.0
+104.
+rule(uid in {stu9-11 chair9}; student in {stu9-4}, type in {transcript}; {read }; )
+WSC=5.0
+105.
+rule(crsTaken supseteqln {{crs7-3 crs7-2}}; student in {stu3-7}, type in {application}; {checkStatus }; )
+WSC=5.0
+106.
+rule(crsTaught supseteqln {{crs1-9 crs1-8}}; student in {stu7-0}, type in {application}; {checkStatus }; )
+WSC=5.0
+107.
+rule(crsTaken supseteqln {{crs6-0}}, crsTaught supseteqln {{crs6-3}}; student in {stu4-1}, type in {transcript}; {readScore }; )
+WSC=5.0
+108.
+rule(department in {dept5}, isChair in {true}; crs in {crs2-6}, type in {roster}; {changeScore }; )
+WSC=5.0
+109.
+rule(crsTaken supseteqln {{crs4-4 crs4-8}}; student in {stu4-5}, type in {transcript}; {addScore }; )
+WSC=5.0
+110.
+rule(uid in {admissions1 app5-3}; student in {stu6-13}, type in {application}; {read }; )
+WSC=5.0
+111.
+rule(crsTaken supseteqln {{crs9-0 crs9-1}}; student in {stu0-5}, type in {application}; {checkStatus }; )
+WSC=5.0
+112.
+rule(crsTaught supseteqln {{crs2-7}}, position in {student}; student in {stu5-15}, type in {application}; {readScore }; )
+WSC=5.0
+113.
+rule(crsTaken supseteqln {{crs8-3 crs8-0}}; student in {stu3-3}, type in {transcript}; {readMyScores }; )
+WSC=5.0
+114.
+rule(crsTaken supseteqln {{crs6-1 crs6-5}}; student in {stu2-12}, type in {transcript}; {assignGrade }; )
+WSC=5.0
+115.
+rule(department in {dept3}, isChair in {true}; student in {stu3-15}, type in {application}; {readMyScores }; )
+WSC=5.0
+116.
+rule(crsTaught supseteqln {{crs8-7 crs8-6}}; student in {stu7-3}, type in {application}; {addScore }; )
+WSC=5.0
+117.
+rule(crsTaken supseteqln {{crs5-9 crs5-3}}; crs in {crs2-7}, type in {gradebook}; {read }; )
+WSC=5.0
+118.
+rule(crsTaken supseteqln {{crs6-7}}, crsTaught supseteqln {{crs6-5}}; student in {app5-0}, type in {application}; {changeScore }; )
+WSC=5.0
+119.
+rule(crsTaught supseteqln {{crs2-2}}, position in {student}; crs in {crs9-6}, type in {gradebook}; {readScore }; )
+WSC=5.0
+120.
+rule(crsTaken supseteqln {{crs0-5 crs0-0}}; student in {stu9-11}, type in {application}; {readMyScores }; )
+WSC=5.0
+121.
+rule(uid in {admissions1 stu4-5}; student in {stu9-13}, type in {application}; {read }; )
+WSC=5.0
+122.
+rule(crsTaken supseteqln {{crs2-3 crs2-4}}; student in {stu3-13}, type in {application}; {readMyScores }; )
+WSC=5.0
+123.
+rule(crsTaken supseteqln {{crs4-2 crs4-3 crs4-8}}; crs in {crs5-7}, type in {roster}; {setStatus }; )
+WSC=6.0
+124.
+rule(crsTaken supseteqln {{crs6-8 crs6-6 crs6-5}}; student in {stu5-16}, type in {transcript}; {write }; )
+WSC=6.0
+125.
+rule(uid in {fac7-2 admissions0 admissions1}; student in {stu6-17}, type in {application}; {setStatus }; )
+WSC=6.0
+126.
+rule(uid in {stu7-19 registrar0 registrar1}; student in {stu4-7}, type in {transcript}; {read }; )
+WSC=6.0
+127.
+rule(uid in {admissions0 stu7-2 admissions1}; student in {stu6-15}, type in {application}; {setStatus }; )
+WSC=6.0
+128.
+rule(uid in {registrar0 fac1-1 registrar1}; student in {stu6-2}, type in {transcript}; {read }; )
+WSC=6.0
+129.
+rule(crsTaken supseteqln {{crs7-3 crs7-7 crs7-0}}; crs in {crs1-7}, type in {gradebook}; {setStatus }; )
+WSC=6.0
+130.
+rule(uid in {admissions0 admissions1 stu7-15}; student in {stu3-7}, type in {application}; {setStatus }; )
+WSC=6.0
+131.
+rule(uid in {stu9-13 registrar0 registrar1}; student in {stu3-14}, type in {transcript}; {read }; )
+WSC=6.0
+132.
+rule(uid in {admissions0 admissions1 stu1-7}; student in {stu3-3}, type in {application}; {read }; )
+WSC=6.0
+133.
+rule(uid in {app9-1 registrar0 registrar1}; crs in {crs0-6}, type in {roster}; {read }; )
+WSC=6.0
+134.
+rule(crsTaken supseteqln {{crs0-5 crs0-7 crs0-4}}; student in {stu9-11}, type in {transcript}; {write }; )
+WSC=6.0
+135.
+rule(uid in {admissions0 admissions1 app6-2}; student in {stu6-11}, type in {application}; {setStatus }; )
+WSC=6.0
+136.
+rule(crsTaken supseteqln {{crs7-2 crs7-9 crs7-8}}; student in {stu7-1}, type in {transcript}; {readScore }; )
+WSC=6.0
+137.
+rule(crsTaken supseteqln {{crs7-2 crs7-9 crs7-8}}; crs in {crs2-5}, type in {gradebook}; {checkStatus }; )
+WSC=6.0
+138.
+rule(crsTaken supseteqln {{crs2-8 crs2-9 crs2-0}}; crs in {crs1-8}, type in {gradebook}; {readMyScores }; )
+WSC=6.0
+139.
+rule(uid in {fac0-2 registrar0 registrar1}; student in {stu1-3}, type in {transcript}; {read }; )
+WSC=6.0
+140.
+rule(uid in {admissions0 admissions1 stu5-14}; student in {app1-4}, type in {application}; {setStatus }; )
+WSC=6.0
+141.
+rule(crsTaken supseteqln {{crs0-1 crs0-4 crs0-0}}; student in {stu3-15}, type in {application}; {assignGrade }; )
+WSC=6.0
+142.
+rule(crsTaken supseteqln {{crs0-5 crs0-2}}, crsTaught supseteqln {{crs0-9}}; student in {stu9-10}, type in {transcript}; {checkStatus }; )
+WSC=6.0
+143.
+rule(uid in {admissions0 admissions1 stu8-11}; student in {stu6-19}, type in {application}; {read }; )
+WSC=6.0
+144.
+rule(crsTaken supseteqln {{crs3-0 crs3-6}}, crsTaught supseteqln {{crs3-3}}; student in {stu0-4}, type in {transcript}; {changeScore }; )
+WSC=6.0
+145.
+rule(crsTaken supseteqln {{crs3-5 crs3-0 crs3-8}}; crs in {crs5-5}, type in {gradebook}; {setStatus }; )
+WSC=6.0
+146.
+rule(uid in {stu3-16 registrar0 registrar1}; student in {stu5-14}, type in {transcript}; {read }; )
+WSC=6.0
+147.
+rule(crsTaken supseteqln {{crs7-5 crs7-4 crs7-9}}; student in {app7-1}, type in {application}; {addScore }; )
+WSC=6.0
+148.
+rule(crsTaken supseteqln {{crs9-9 crs9-6 crs9-4}}; crs in {crs9-1}, type in {roster}; {read }; )
+WSC=6.0
+149.
+rule(crsTaken supseteqln {{crs0-7 crs0-8 crs0-1}}; crs in {crs0-4}, type in {roster}; {readScore }; )
+WSC=6.0
+150.
+rule(crsTaken supseteqln {{crs2-8 crs2-9 crs2-6}}; student in {stu0-17}, type in {transcript}; {setStatus }; )
+WSC=6.0
+151.
+rule(crsTaken supseteqln {{crs4-0 crs4-7 crs4-9}}; student in {stu4-11}, type in {application}; {checkStatus write }; )
+WSC=7.0
+
+total WSC=806
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(; type in {gradebook}; {readMyScores }; crsTaken ] crs)
+SIMILAR OUTPUT RULES:
+rule(; type in {gradebook}; {readMyScores }; crsTaken ] crs), similarity: 1.00
+rule(crsTaken supseteqln {{crs6-1 crs6-6}}; crs in {crs5-3}, type in {gradebook}; {readMyScores }; ), similarity: 0.38
+rule(crsTaken supseteqln {{crs2-8 crs2-9 crs2-0}}; crs in {crs1-8}, type in {gradebook}; {readMyScores }; ), similarity: 0.38
+
+2. rule(; type in {gradebook}; {readScore addScore }; crsTaught ] crs)
+SIMILAR OUTPUT RULES:
+rule(; type in {gradebook}; {readScore addScore }; crsTaught ] crs), similarity: 1.00
+rule(crsTaught supseteqln {{crs2-2}}, position in {student}; crs in {crs9-6}, type in {gradebook}; {readScore }; ), similarity: 0.28
+
+3. rule(position in {faculty}; type in {gradebook}; {assignGrade changeScore }; crsTaught ] crs)
+SIMILAR OUTPUT RULES:
+rule(position in {faculty}; type in {gradebook}; {assignGrade changeScore }; crsTaught ] crs), similarity: 1.00
+rule(uid in {stu5-16 chair5}; crs in {crs3-7}, type in {gradebook}; {changeScore }; ), similarity: 0.28
+rule(crsTaught supseteqln {{crs7-6}}; crs in {crs4-2}, type in {gradebook}; {assignGrade }; ), similarity: 0.28
+rule(crsTaken supseteqln {{crs0-4}}, crsTaught supseteqln {{crs0-0}}; crs in {crs0-7}, type in {gradebook}; {changeScore }; ), similarity: 0.27
+rule(crsTaught supseteqln {{crs5-6 crs5-7}}; crs in {crs9-6}, type in {gradebook}; {assignGrade }; ), similarity: 0.28
+
+4. rule(department in {registrar}; type in {roster}; {write read }; )
+SIMILAR OUTPUT RULES:
+rule(department in {registrar}; type in {roster}; {write read }; ), similarity: 1.00
+rule(uid in {stu8-14 stu8-6}; student in {stu2-12}, type in {application}; {write }; ), similarity: 0.39
+rule(uid in {stu4-8 stu5-9}; crs in {crs0-4}, type in {gradebook}; {addScore }; ), similarity: 0.26
+rule(uid in {app3-4 stu8-19}; crs in {crs4-8}, type in {gradebook}; {readScore }; ), similarity: 0.26
+rule(uid in {app0-3 fac4-0}; student in {stu4-8}, type in {application}; {write }; ), similarity: 0.39
+rule(uid in {stu1-4 app6-4}; student in {stu6-4}, type in {application}; {write }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs3-2 crs3-8}}; student in {stu8-8}, type in {application}; {write }; ), similarity: 0.39
+rule(uid in {stu6-5 app1-1}; crs in {crs5-9}, type in {roster}; {assignGrade }; ), similarity: 0.39
+rule(uid in {stu7-5 stu1-14}; crs in {crs8-4}, type in {gradebook}; {checkStatus }; ), similarity: 0.26
+rule(uid in {app4-2 stu8-2}; crs in {crs0-1}, type in {roster}; {assignGrade }; ), similarity: 0.39
+rule(uid in {stu0-9 registrar0 fac6-1 registrar1}; crs in {crs1-9}, type in {roster}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs3-1 crs3-8 crs3-9}}; crs in {crs7-3 crs1-8}, type in {gradebook}; {addScore }; ), similarity: 0.26
+rule(uid in {app7-3}; crs in {crs1-4}, type in {roster}; {changeScore }; ), similarity: 0.39
+rule(uid in {app4-2}; crs in {crs2-2}, type in {roster}; {assignGrade }; ), similarity: 0.39
+rule(uid in {stu3-9}; crs in {crs6-2}, type in {roster}; {addScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs2-6}}; student in {stu5-2}, type in {application}; {write }; ), similarity: 0.39
+rule(uid in {app0-3}; crs in {crs6-8}, type in {gradebook}; {write }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs0-1}}; student in {app4-1}, type in {application}; {write }; ), similarity: 0.39
+rule(uid in {app9-4}; student in {stu8-8}, type in {transcript}; {write }; ), similarity: 0.39
+rule(uid in {stu6-19}; crs in {crs2-6}, type in {roster}; {checkStatus }; ), similarity: 0.39
+rule(uid in {app6-4}; student in {stu3-16}, type in {transcript}; {write }; ), similarity: 0.39
+rule(uid in {app2-3}; student in {stu1-17}, type in {transcript}; {write }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs6-7 crs6-6 crs6-5} {crs4-1 crs4-3 crs4-8}}; student in {stu0-5}, type in {transcript}; {write }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs3-0 crs3-1}}; crs in {crs9-6}, type in {roster}; {readScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs8-1 crs8-0}}; crs in {crs9-1}, type in {roster}; {changeScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs1-3 crs1-0}}; crs in {crs5-6}, type in {roster}; {changeScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs8-1}}, position in {student}; crs in {crs9-7}, type in {roster}; {readMyScores }; ), similarity: 0.40
+rule(crsTaught supseteqln {{crs9-3}}, position in {student}; student in {stu2-18}, type in {application}; {write }; ), similarity: 0.40
+rule(crsTaught supseteqln {{crs8-5 crs8-4}}; crs in {crs4-4}, type in {roster}; {checkStatus }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs5-5 crs5-3}}; crs in {crs0-7}, type in {gradebook}; {checkStatus }; ), similarity: 0.26
+rule(crsTaken supseteqln {{crs2-3 crs2-4}}; student in {stu4-11}, type in {application}; {write }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs6-2 crs6-3}}; crs in {crs3-7}, type in {roster}; {addScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs6-9 crs6-8}}; crs in {crs8-7}, type in {roster}; {checkStatus }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs6-1 crs6-6}}; crs in {crs0-6}, type in {roster}; {readMyScores }; ), similarity: 0.39
+rule(department in {dept5}, isChair in {true}; crs in {crs2-6}, type in {roster}; {changeScore }; ), similarity: 0.50
+rule(crsTaken supseteqln {{crs6-8 crs6-6 crs6-5}}; student in {stu5-16}, type in {transcript}; {write }; ), similarity: 0.39
+rule(uid in {app9-1 registrar0 registrar1}; crs in {crs0-6}, type in {roster}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs0-5 crs0-7 crs0-4}}; student in {stu9-11}, type in {transcript}; {write }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs7-2 crs7-9 crs7-8}}; crs in {crs2-5}, type in {gradebook}; {checkStatus }; ), similarity: 0.26
+rule(crsTaken supseteqln {{crs0-7 crs0-8 crs0-1}}; crs in {crs0-4}, type in {roster}; {readScore }; ), similarity: 0.39
+
+5. rule(position in {faculty}; type in {roster}; {read }; crsTaught ] crs)
+SIMILAR OUTPUT RULES:
+rule(position in {faculty}; type in {roster}; {read }; crsTaught ] crs), similarity: 1.00
+
+6. rule(; type in {transcript}; {read }; uid=student)
+SIMILAR OUTPUT RULES:
+rule(; type in {transcript}; {read }; uid=student), similarity: 1.00
+
+7. rule(isChair in {true}; type in {transcript}; {read }; department=department)
+SIMILAR OUTPUT RULES:
+rule(isChair in {true}; type in {transcript}; {read }; department=department), similarity: 1.00
+
+8. rule(department in {registrar}; type in {transcript}; {read }; )
+SIMILAR OUTPUT RULES:
+rule(department in {registrar}; type in {transcript}; {read }; ), similarity: 1.00
+rule(uid in {fac7-2 stu2-11}; student in {stu4-11}, type in {transcript}; {readScore }; ), similarity: 0.39
+rule(uid in {app1-0 stu9-6}; student in {stu2-3}, type in {transcript}; {readMyScores }; ), similarity: 0.39
+rule(uid in {app0-1}; student in {stu7-2 stu7-18}, type in {transcript}; {changeScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs6-0} {crs4-7}}, crsTaught supseteqln {{crs4-3} {crs6-3}}; student in {stu8-11}, type in {transcript}; {readScore }; ), similarity: 0.38
+rule(crsTaken supseteqln {{crs4-1 crs4-9} {crs4-1 crs4-7}}; student in {stu4-15}, type in {transcript}; {checkStatus }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs5-1 crs5-3} {crs4-8 crs4-7}}; student in {stu7-12}, type in {transcript}; {readScore }; ), similarity: 0.39
+rule(uid in {admissions0 stu9-13 admissions1 stu4-6}; student in {stu5-14}, type in {application}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs7-3 crs7-2} {crs5-4 crs5-5 crs5-6}}; student in {stu1-11}, type in {transcript}; {readScore }; ), similarity: 0.39
+rule(uid in {app9-3}; student in {stu8-4}, type in {transcript}; {checkStatus }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs6-2 crs6-0 crs6-5} {crs9-9 crs9-3}}; student in {stu0-14}, type in {transcript}; {addScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs2-0 crs2-3 crs2-6} {crs3-5 crs3-6}}; student in {stu7-4}, type in {transcript}; {assignGrade }; ), similarity: 0.39
+rule(uid in {stu8-7}; student in {stu9-6}, type in {transcript}; {changeScore }; ), similarity: 0.39
+rule(uid in {stu2-18}; student in {stu6-8}, type in {transcript}; {addScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs0-8 crs0-4} {crs0-8 crs0-1}}, crsTaught supseteqln {{crs0-3} {crs0-0}}; student in {stu9-17}, type in {transcript}; {changeScore }; ), similarity: 0.38
+rule(crsTaken supseteqln {{crs9-8 crs9-1 crs9-7} {crs3-5 crs3-0 crs3-8}}; student in {stu2-7}, type in {transcript}; {changeScore }; ), similarity: 0.39
+rule(uid in {admissions1 fac5-2}; student in {stu6-15}, type in {application}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs0-5 crs0-0}}; student in {stu5-7}, type in {transcript}; {readMyScores }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs5-5 crs5-0}}; student in {stu7-15}, type in {transcript}; {assignGrade }; ), similarity: 0.39
+rule(department in {dept9}, isChair in {true}; student in {stu7-1}, type in {transcript}; {readScore }; ), similarity: 0.50
+rule(crsTaken supseteqln {{crs2-1}}, crsTaught supseteqln {{crs2-3}}; student in {stu7-2}, type in {transcript}; {setStatus }; ), similarity: 0.38
+rule(uid in {registrar1}; student in {stu6-8}, type in {transcript}; {addScore read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs0-8}}, crsTaught supseteqln {{crs0-2}}; student in {stu9-8}, type in {transcript}; {readScore }; ), similarity: 0.38
+rule(crsTaken supseteqln {{crs3-8}}, crsTaught supseteqln {{crs3-3}}; student in {stu5-10}, type in {transcript}; {assignGrade }; ), similarity: 0.38
+rule(uid in {stu9-11 chair9}; student in {stu9-4}, type in {transcript}; {read }; ), similarity: 0.64
+rule(crsTaken supseteqln {{crs6-0}}, crsTaught supseteqln {{crs6-3}}; student in {stu4-1}, type in {transcript}; {readScore }; ), similarity: 0.38
+rule(crsTaken supseteqln {{crs4-4 crs4-8}}; student in {stu4-5}, type in {transcript}; {addScore }; ), similarity: 0.39
+rule(uid in {admissions1 app5-3}; student in {stu6-13}, type in {application}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs8-3 crs8-0}}; student in {stu3-3}, type in {transcript}; {readMyScores }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs6-1 crs6-5}}; student in {stu2-12}, type in {transcript}; {assignGrade }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs5-9 crs5-3}}; crs in {crs2-7}, type in {gradebook}; {read }; ), similarity: 0.51
+rule(uid in {admissions1 stu4-5}; student in {stu9-13}, type in {application}; {read }; ), similarity: 0.51
+rule(uid in {stu7-19 registrar0 registrar1}; student in {stu4-7}, type in {transcript}; {read }; ), similarity: 0.64
+rule(uid in {registrar0 fac1-1 registrar1}; student in {stu6-2}, type in {transcript}; {read }; ), similarity: 0.64
+rule(uid in {stu9-13 registrar0 registrar1}; student in {stu3-14}, type in {transcript}; {read }; ), similarity: 0.64
+rule(uid in {admissions0 admissions1 stu1-7}; student in {stu3-3}, type in {application}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs7-2 crs7-9 crs7-8}}; student in {stu7-1}, type in {transcript}; {readScore }; ), similarity: 0.39
+rule(uid in {fac0-2 registrar0 registrar1}; student in {stu1-3}, type in {transcript}; {read }; ), similarity: 0.64
+rule(crsTaken supseteqln {{crs0-5 crs0-2}}, crsTaught supseteqln {{crs0-9}}; student in {stu9-10}, type in {transcript}; {checkStatus }; ), similarity: 0.38
+rule(uid in {admissions0 admissions1 stu8-11}; student in {stu6-19}, type in {application}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs3-0 crs3-6}}, crsTaught supseteqln {{crs3-3}}; student in {stu0-4}, type in {transcript}; {changeScore }; ), similarity: 0.38
+rule(uid in {stu3-16 registrar0 registrar1}; student in {stu5-14}, type in {transcript}; {read }; ), similarity: 0.64
+rule(crsTaken supseteqln {{crs9-9 crs9-6 crs9-4}}; crs in {crs9-1}, type in {roster}; {read }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs2-8 crs2-9 crs2-6}}; student in {stu0-17}, type in {transcript}; {setStatus }; ), similarity: 0.39
+
+9. rule(; type in {application}; {checkStatus }; uid=student)
+SIMILAR OUTPUT RULES:
+rule(; type in {application}; {checkStatus }; uid=student), similarity: 1.00
+
+10. rule(department in {admissions}; type in {application}; {read setStatus }; )
+SIMILAR OUTPUT RULES:
+rule(department in {admissions}; type in {application}; {read setStatus }; ), similarity: 1.00
+rule(uid in {app1-1 stu6-15}; student in {stu3-16}, type in {application}; {assignGrade }; ), similarity: 0.39
+rule(uid in {app1-0 stu4-12}; student in {stu2-3}, type in {application}; {checkStatus }; ), similarity: 0.39
+rule(uid in {registrar0 fac6-4}; student in {stu7-7}, type in {application}; {checkStatus }; ), similarity: 0.39
+rule(uid in {stu4-14 app7-3}; student in {stu4-13}, type in {application}; {readMyScores }; ), similarity: 0.39
+rule(uid in {stu9-16 app2-1}; student in {stu2-8}, type in {application}; {changeScore }; ), similarity: 0.39
+rule(uid in {app3-4 stu8-6}; student in {stu4-14}, type in {application}; {assignGrade }; ), similarity: 0.39
+rule(uid in {chair3 fac4-3}; student in {stu5-0}, type in {application}; {readMyScores }; ), similarity: 0.39
+rule(uid in {chair1 stu1-14}; student in {stu0-0}, type in {application}; {changeScore }; ), similarity: 0.39
+rule(uid in {admissions1 stu9-3 app2-3}; student in {stu2-0}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(uid in {admissions1 stu3-16 fac5-4}; student in {app2-4}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(crsTaught supseteqln {{crs8-7 crs8-6} {crs9-7}}; student in {stu3-19}, type in {application}; {changeScore }; ), similarity: 0.39
+rule(uid in {admissions1 stu4-7}; student in {stu7-2 stu9-19}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(uid in {stu1-4 admissions0 admissions1 app8-4}; student in {stu1-10}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(uid in {admissions0 admissions1 stu0-15 stu9-2}; student in {stu9-4}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs5-5 crs5-3} {crs0-0 crs0-9}}; student in {stu9-1}, type in {application}; {assignGrade }; ), similarity: 0.39
+rule(uid in {stu7-2 admissions0 admissions1 app6-2}; student in {stu4-10}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(uid in {app6-1}; student in {stu0-13}, type in {application}; {changeScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs1-4}}; student in {app3-0}, type in {application}; {addScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs4-7}}; student in {stu8-13}, type in {application}; {readMyScores }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs9-1 crs9-6} {crs6-7 crs6-6 crs6-5}}; student in {stu1-13}, type in {application}; {addScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs7-4 crs7-8 crs7-6} {crs0-3 crs0-4}}; student in {stu5-9}, type in {application}; {checkStatus }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs3-4 crs3-8}}; student in {stu0-11}, type in {application}; {addScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs3-0}}, position in {student}; student in {stu9-11}, type in {application}; {readScore }; ), similarity: 0.40
+rule(uid in {admissions1 fac3-4}; student in {stu7-14}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(crsTaught supseteqln {{crs8-1 crs8-0}}; student in {stu9-19}, type in {application}; {changeScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs6-7}}, crsTaught supseteqln {{crs6-3}}; student in {app9-3}, type in {application}; {addScore }; ), similarity: 0.38
+rule(crsTaken supseteqln {{crs0-7 crs0-9}}; student in {stu2-5}, type in {application}; {changeScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs9-1 crs9-5}}; student in {stu3-5}, type in {application}; {checkStatus }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs6-1 crs6-0}}; student in {stu4-17}, type in {application}; {readScore }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs3-6 crs3-7}}; student in {stu7-9}, type in {application}; {readMyScores }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs4-8 crs4-7}}; student in {stu8-10}, type in {application}; {readMyScores }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs5-0 crs5-1}}; student in {app0-1}, type in {application}; {addScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs7-3 crs7-2}}; student in {stu3-7}, type in {application}; {checkStatus }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs1-9 crs1-8}}; student in {stu7-0}, type in {application}; {checkStatus }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs9-0 crs9-1}}; student in {stu0-5}, type in {application}; {checkStatus }; ), similarity: 0.39
+rule(crsTaught supseteqln {{crs2-7}}, position in {student}; student in {stu5-15}, type in {application}; {readScore }; ), similarity: 0.40
+rule(department in {dept3}, isChair in {true}; student in {stu3-15}, type in {application}; {readMyScores }; ), similarity: 0.50
+rule(crsTaught supseteqln {{crs8-7 crs8-6}}; student in {stu7-3}, type in {application}; {addScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs6-7}}, crsTaught supseteqln {{crs6-5}}; student in {app5-0}, type in {application}; {changeScore }; ), similarity: 0.38
+rule(crsTaken supseteqln {{crs0-5 crs0-0}}; student in {stu9-11}, type in {application}; {readMyScores }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs2-3 crs2-4}}; student in {stu3-13}, type in {application}; {readMyScores }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs4-2 crs4-3 crs4-8}}; crs in {crs5-7}, type in {roster}; {setStatus }; ), similarity: 0.39
+rule(uid in {fac7-2 admissions0 admissions1}; student in {stu6-17}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(uid in {admissions0 stu7-2 admissions1}; student in {stu6-15}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs7-3 crs7-7 crs7-0}}; crs in {crs1-7}, type in {gradebook}; {setStatus }; ), similarity: 0.39
+rule(uid in {admissions0 admissions1 stu7-15}; student in {stu3-7}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(uid in {admissions0 admissions1 app6-2}; student in {stu6-11}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(uid in {admissions0 admissions1 stu5-14}; student in {app1-4}, type in {application}; {setStatus }; ), similarity: 0.51
+rule(crsTaken supseteqln {{crs0-1 crs0-4 crs0-0}}; student in {stu3-15}, type in {application}; {assignGrade }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs3-5 crs3-0 crs3-8}}; crs in {crs5-5}, type in {gradebook}; {setStatus }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs7-5 crs7-4 crs7-9}}; student in {app7-1}, type in {application}; {addScore }; ), similarity: 0.39
+rule(crsTaken supseteqln {{crs4-0 crs4-7 crs4-9}}; student in {stu4-11}, type in {application}; {checkStatus write }; ), similarity: 0.39
+
+==============================================
+Consistency Check Result:
+true
+==============================================
+Statistics:
+Number of calls to mergeRules: 1
+Number of generalizations: 450
+Number of merges: 756
+Number of eliminated conjuncts: 377
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 331
+Number of eliminated constraints: 0
+Number of subsumption checks: 1010
+Number of unsuccessful merges: 153402
+Number of removed pairs: 0
+Number of extra compares: 410802
+==============================================
+Remaining time: 325 millisec
+10 151 37.0 7953.0 3881 806.0 30425

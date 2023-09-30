@@ -1,0 +1,56 @@
+#---------------------------------------------------
+#      Department : 1
+#---------------------------------------------------
+# Dept Size: 0.6657548699870368
+# No Of Projects: 2
+# No Of Project Leaders: 2
+# No Of Non Employees: 2
+# No Of Employees: 2
+
+userAttrib(manager1, adminRoles={manager }, department=dept1)
+userAttrib(acc1, adminRoles={accountant }, projects={proj11 proj12 })
+userAttrib(aud1, adminRoles={auditor }, projects={proj11 proj12 })
+userAttrib(planner1, adminRoles={planner }, projects={proj11 proj12 })
+userAttrib(ldr11, projects={proj11 proj12 }, projectsLed={proj11 }, department=dept1)
+userAttrib(ldr12, projects={proj11 proj12 }, projectsLed={proj12 }, department=dept1)
+userAttrib(nonemployee1_1_area1, expertise={area1 }, projects={proj11 }, isEmployee=False, tasks={proj11task1a proj11task1propa })
+userAttrib(nonemployee1_2_area1, expertise={area1 }, projects={proj12 }, isEmployee=False, tasks={proj12task1a proj12task1propa })
+userAttrib(employee1_1_area1, expertise={area1 }, projects={proj11 }, isEmployee=True, tasks={proj11task1a proj11task1propa })
+userAttrib(employee1_2_area1, expertise={area1 }, projects={proj12 }, isEmployee=True, tasks={proj12task1a proj12task1propa })
+userAttrib(nonemployee1_1_area2, expertise={area2 }, projects={proj11 }, isEmployee=False, tasks={proj11task2a proj11task2propa })
+userAttrib(nonemployee1_2_area2, expertise={area2 }, projects={proj11 }, isEmployee=False, tasks={proj11task2a proj11task2propa })
+userAttrib(employee1_1_area2, expertise={area2 }, projects={proj11 }, isEmployee=True, tasks={proj11task2a proj11task2propa })
+userAttrib(employee1_2_area2, expertise={area2 }, projects={proj11 }, isEmployee=True, tasks={proj11task2a proj11task2propa })
+resourceAttrib(proj11budget1, type=budget, project=proj11, department=dept1)
+resourceAttrib(proj11sched1, type=schedule, project=proj11, department=dept1)
+resourceAttrib(proj11task1, type=task, project=proj11, department=dept1, expertise={area1 }, proprietary=false)
+resourceAttrib(proj11task1a, type=task, project=proj11, department=dept1, expertise={area1 }, proprietary=false)
+resourceAttrib(proj11task2, type=task, project=proj11, department=dept1, expertise={area2 }, proprietary=false)
+resourceAttrib(proj11task2a, type=task, project=proj11, department=dept1, expertise={area2 }, proprietary=false)
+resourceAttrib(proj11task1prop, type=task, project=proj11, department=dept1, expertise={area1 }, proprietary=true)
+resourceAttrib(proj11task1propa, type=task, project=proj11, department=dept1, expertise={area1 }, proprietary=true)
+resourceAttrib(proj11task2prop, type=task, project=proj11, department=dept1, expertise={area2 }, proprietary=true)
+resourceAttrib(proj11task2propa, type=task, project=proj11, department=dept1, expertise={area2 }, proprietary=true)
+resourceAttrib(proj12budget1, type=budget, project=proj12, department=dept1)
+resourceAttrib(proj12sched1, type=schedule, project=proj12, department=dept1)
+resourceAttrib(proj12task1, type=task, project=proj12, department=dept1, expertise={area1 }, proprietary=false)
+resourceAttrib(proj12task1a, type=task, project=proj12, department=dept1, expertise={area1 }, proprietary=false)
+resourceAttrib(proj12task2, type=task, project=proj12, department=dept1, expertise={area2 }, proprietary=false)
+resourceAttrib(proj12task2a, type=task, project=proj12, department=dept1, expertise={area2 }, proprietary=false)
+resourceAttrib(proj12task1prop, type=task, project=proj12, department=dept1, expertise={area1 }, proprietary=true)
+resourceAttrib(proj12task1propa, type=task, project=proj12, department=dept1, expertise={area1 }, proprietary=true)
+resourceAttrib(proj12task2prop, type=task, project=proj12, department=dept1, expertise={area2 }, proprietary=true)
+resourceAttrib(proj12task2propa, type=task, project=proj12, department=dept1, expertise={area2 }, proprietary=true)
+
+rule(adminRoles supseteqln {{manager}} ; type in {budget}; {read approve}; department = department)
+rule( ; type in {schedule budget}; {read write}; projectsLed ] project)
+rule( ; type in {schedule}; {read}; projects ] project)
+rule( ; type in {task}; {setStatus}; tasks ] rid)
+rule( ; type in {task}, proprietary in {false}; {request read}; projects ] project, expertise > expertise)
+rule(isEmployee in {True} ; type in {task}; {request read}; projects ] project, expertise > expertise)
+rule(adminRoles supseteqln {{auditor}} ; type in {budget}; {read}; projects ] project)
+rule(adminRoles supseteqln {{accountant}} ; type in {budget}; {read write}; projects ] project)
+rule(adminRoles supseteqln {{accountant}} ; type in {task}; {setCost}; projects ] project)
+rule(adminRoles supseteqln {{planner}} ; type in {schedule}; {write}; projects ] project)
+rule(adminRoles supseteqln {{planner}} ; type in {task}; {setSchedule}; projects ] project)
+unremovableResourceAttribs(type)

@@ -1,0 +1,107 @@
+==============================================
+OUTPUT RULES
+
+1.
+rule(; type in {schedule}; {read }; projects ] project)
+WSC=3.0
+2.
+rule(adminRoles supseteqln {{accountant}}; type in {task}; {setCost }; projects ] project)
+WSC=4.0
+3.
+rule(adminRoles supseteqln {{planner}}; type in {task}; {setSchedule }; projects ] project)
+WSC=4.0
+4.
+rule(; type in {task}; {setStatus }; tasks ] rid)
+WSC=3.0
+5.
+rule(; proprietary in {false}, type in {task}; {request read }; expertise > expertise, projects ] project)
+WSC=6.0
+6.
+rule(isEmployee in {True}; type in {task}; {request read }; expertise > expertise, projects ] project)
+WSC=6.0
+7.
+rule(; type in {budget schedule}; {write read }; projectsLed ] project)
+WSC=5.0
+8.
+rule(adminRoles supseteqln {{accountant}}; type in {budget}; {write read }; projects ] project)
+WSC=5.0
+9.
+rule(adminRoles supseteqln {{manager}}; type in {budget}; {approve read }; department=department)
+WSC=5.0
+10.
+rule(adminRoles supseteqln {{auditor}}; type in {budget}; {read }; projects ] project)
+WSC=4.0
+11.
+rule(adminRoles supseteqln {{planner}}; type in {schedule}; {write }; projects ] project)
+WSC=4.0
+
+total WSC=49
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(adminRoles supseteqln {{manager}}; type in {budget}; {approve read }; department=department)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{manager}}; type in {budget}; {approve read }; department=department), similarity: 1.00
+
+2. rule(; type in {budget schedule}; {write read }; projectsLed ] project)
+SIMILAR OUTPUT RULES:
+rule(; type in {budget schedule}; {write read }; projectsLed ] project), similarity: 1.00
+
+3. rule(; type in {schedule}; {read }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(; type in {schedule}; {read }; projects ] project), similarity: 1.00
+
+4. rule(; type in {task}; {setStatus }; tasks ] rid)
+SIMILAR OUTPUT RULES:
+rule(; type in {task}; {setStatus }; tasks ] rid), similarity: 1.00
+
+5. rule(; type in {task}, proprietary in {false}; {request read }; projects ] project, expertise > expertise)
+SIMILAR OUTPUT RULES:
+rule(; proprietary in {false}, type in {task}; {request read }; expertise > expertise, projects ] project), similarity: 1.00
+
+6. rule(isEmployee in {True}; type in {task}; {request read }; projects ] project, expertise > expertise)
+SIMILAR OUTPUT RULES:
+rule(isEmployee in {True}; type in {task}; {request read }; expertise > expertise, projects ] project), similarity: 1.00
+
+7. rule(adminRoles supseteqln {{auditor}}; type in {budget}; {read }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{auditor}}; type in {budget}; {read }; projects ] project), similarity: 1.00
+
+8. rule(adminRoles supseteqln {{accountant}}; type in {budget}; {write read }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{accountant}}; type in {budget}; {write read }; projects ] project), similarity: 1.00
+
+9. rule(adminRoles supseteqln {{accountant}}; type in {task}; {setCost }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{accountant}}; type in {task}; {setCost }; projects ] project), similarity: 1.00
+
+10. rule(adminRoles supseteqln {{planner}}; type in {schedule}; {write }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{planner}}; type in {schedule}; {write }; projects ] project), similarity: 1.00
+
+11. rule(adminRoles supseteqln {{planner}}; type in {task}; {setSchedule }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{planner}}; type in {task}; {setSchedule }; projects ] project), similarity: 1.00
+
+==============================================
+Consistency Check Result:
+false
+==============================================
+Statistics:
+Number of calls to mergeRules: 1
+Number of generalizations: 958
+Number of merges: 485
+Number of eliminated conjuncts: 40
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 16
+Number of eliminated constraints: 0
+Number of subsumption checks: 35
+Number of unsuccessful merges: 25276
+Number of removed pairs: 0
+Number of extra compares: 31828
+==============================================
+Remaining time: 91 millisec
+==============================================
+Under Assignment Noise: [(manager7,approve,proj71budget1), (aud8,read,proj82budget1), (planner3,read,proj31sched1), (employee7_area2,request,proj71task2), (planner6,setSchedule,proj62task1propa), (planner6,setSchedule,proj62task1prop), (planner3,setSchedule,proj32task1), (planner1,setSchedule,proj12task2), (employee10_area1,request,proj101task1prop), (ldr102,read,proj101sched1), (planner5,setSchedule,proj51task1a), (planner6,setSchedule,proj62task2a), (employee2_area1,request,proj21task1a), (acc7,setCost,proj72task2), (planner5,setSchedule,proj52task1prop), (planner4,write,proj41sched1)]
+Under Assignments in Output Policy: [(aud8,read,proj82budget1), (planner1,setSchedule,proj12task2), (ldr102,read,proj101sched1), (employee7_area2,request,proj71task2), (planner5,setSchedule,proj51task1a), (employee2_area1,request,proj21task1a), (planner6,setSchedule,proj62task1propa), (planner6,setSchedule,proj62task1prop), (planner5,setSchedule,proj52task1prop), (planner3,setSchedule,proj32task1), (manager7,approve,proj71budget1), (employee10_area1,request,proj101task1prop), (planner6,setSchedule,proj62task2a), (planner4,write,proj41sched1), (acc7,setCost,proj72task2), (planner3,read,proj31sched1)]
+Jaccard Similary of Under Assignment Noises and Under Assignments in Output Policy is: 1.0
+11 11 49.0 2554.0 944 49.0 35542

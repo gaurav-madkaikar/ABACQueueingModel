@@ -1,0 +1,62 @@
+
+0
+Num of underassignment 6
+Injected Underassignments:
+[(22,op2,17), (79,op8,27), (127,op7,2), (40,op3,22), (81,op7,10), (5,op3,40)]
+Reported Underassignments:
+[(127,op7,2), (5,op3,40), (22,op2,17), (142,op2,10), (157,op5,3), (81,op7,10), (79,op8,27)]
+1
+Num of underassignment 4
+Injected Underassignment:
+[(245,op4,70), (188,op3,65), (192,op8,42), (248,op3,53)]
+Reported Underassignments:
+[(373,op4,73), (192,op8,42), (248,op3,53), (245,op4,70)]
+2
+Num of underassignment 5
+Injected Underassignment:
+[(528,op7,108), (473,op3,109), (471,op7,91), (419,op8,108), (403,op7,93)]
+Reported Underassignments:
+[(528,op7,108), (419,op8,108), (471,op7,91), (473,op3,109), (403,op7,93)]
+3
+Num of underassignment 4
+Injected Underassignment:
+[(572,op1,138), (649,op2,134), (676,op3,135), (580,op3,151)]
+Reported Underassignments:
+[(676,op3,135), (572,op1,138), (580,op3,151), (649,op2,134)]
+4
+Num of underassignment 7
+Injected Underassignment:
+[(695,op6,174), (737,op7,181), (730,op3,186), (721,op3,185), (760,op4,205), (692,op7,181), (694,op5,184)]
+Reported Underassignments:
+[(730,op3,186), (737,op7,181), (721,op3,185), (797,op6,218), (760,op4,205), (695,op6,174), (694,op5,184), (692,op7,181), (829,op3,218), (821,op7,217), (818,op5,182)]
+5
+Num of underassignment 8
+Injected Underassignment:
+[(936,op2,261), (880,op2,224), (891,op6,264), (864,op2,261), (847,op8,264), (900,op1,224), (887,op2,240), (947,op3,237)]
+Reported Underassignments:
+[(847,op8,264), (864,op2,261), (900,op1,224), (880,op2,224), (887,op2,240), (936,op2,261), (947,op3,237), (891,op6,264)]
+6
+Num of underassignment 7
+Injected Underassignment:
+[(975,op7,269), (1026,op2,292), (1077,op3,300), (1097,op1,294), (1007,op1,296), (1073,op3,299), (1085,op7,300)]
+Reported Underassignments:
+[(1090,op7,316), (1090,op7,304), (1090,op7,301), (1090,op7,302), (1090,op7,300), (1007,op1,296), (975,op7,269), (1077,op3,300), (1026,op2,292), (1090,op7,269), (1090,op7,296), (1090,op7,299), (1090,op7,281), (1090,op7,280), (1090,op7,283), (1090,op7,282), (1085,op7,300), (1073,op3,299)]
+7
+Num of underassignment 6
+Injected Underassignment:
+[(1169,op6,320), (1178,op1,323), (1182,op8,349), (1182,op4,330), (1195,op3,331), (1190,op3,331)]
+Reported Underassignments:
+[(1195,op3,331), (1190,op3,331), (1182,op8,349), (1182,op4,330), (1178,op1,323), (1284,op1,328), (1286,op3,333), (1277,op1,328)]
+8
+Num of underassignment 12
+Injected Underassignment:
+[(1293,op2,380), (1439,op1,374), (1343,op7,370), (1360,op2,406), (1294,op2,374), (1310,op8,393), (1389,op8,399), (1333,op8,398), (1424,op1,395), (1401,op8,390), (1437,op3,401), (1433,op7,400)]
+Reported Underassignments:
+[(1360,op2,406), (1401,op8,390), (1343,op7,370), (1333,op8,398), (1310,op8,393), (1293,op2,380), (1294,op2,374), (1424,op1,395), (1423,op2,393), (1389,op8,399), (1427,op5,367), (1427,op5,405), (1439,op1,374), (1437,op3,401), (1433,op7,400)]
+9
+Num of underassignment 4
+Injected Underassignment:
+[(1474,op5,424), (1616,op5,428), (1575,op8,440), (1478,op3,442)]
+Reported Underassignments:
+[(1616,op5,428), (1474,op5,424)]
+0.0016666666666666668 0.008333333333333333   2.80    1.32    0.02    0.02    1.00    0.00    0.88    0.04    1.00    0.00    0.01    0.01    0.70    0.24    0.89    0.03 

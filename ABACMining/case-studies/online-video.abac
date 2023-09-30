@@ -1,0 +1,89 @@
+# Zhongyuan Xu and Scott Stoller
+# ABAC policy for an online video service, based on the policy in: 
+# Eric Yuan and Jin Tong, Attribute Based Access Control (ABAC) for Web
+# Services.  In Proceedings of the 2005 IEEE International Conference on
+# Web Services (ICWS), pages 561-569.  IEEE Computer Society Press, 2005.
+# We modified the policy to use age groups (e.g., child, teen, adult)
+# instead of numeric ages.
+
+# User attributes
+
+# ageGroup: child, teen, or adult
+
+# memberType: regular or premium
+
+# Resource Attributes
+
+# rating: G, PG, or R
+
+# movieType: old or new
+
+#------------------------------------------------------------
+# user attribute data
+#------------------------------------------------------------
+
+# users with regular membership
+userAttrib(child1r, ageGroup=child, memberType=regular)
+userAttrib(child2r, ageGroup=child, memberType=regular)
+userAttrib(teen1r, ageGroup=teen, memberType=regular)
+userAttrib(teen2r, ageGroup=teen, memberType=regular)
+userAttrib(adult1r, ageGroup=adult, memberType=regular)
+userAttrib(adult2r, ageGroup=adult, memberType=regular)
+
+# users with premium membership
+userAttrib(child1p, ageGroup=child, memberType=premium)
+userAttrib(child2p, ageGroup=child, memberType=premium)
+userAttrib(teen1p, ageGroup=teen, memberType=premium)
+userAttrib(teen2p, ageGroup=teen, memberType=premium)
+userAttrib(adult1p, ageGroup=adult, memberType=premium)
+userAttrib(adult2p, ageGroup=adult, memberType=premium)
+
+#------------------------------------------------------------
+# resource attribute data
+#------------------------------------------------------------
+
+# old movies
+resourceAttrib(the_lion_king, rating=G, videoType=old)
+resourceAttrib(toy_story, rating=G, videoType=old)
+resourceAttrib(star_wars, rating=PG, videoType=old)
+resourceAttrib(jaws, rating=PG, videoType=old)
+resourceAttrib(brave_heart, rating=R, videoType=old)
+resourceAttrib(my_cousin_vinny, rating=R, videoType=old)
+
+# new movies
+resourceAttrib(happy_feet, rating=G, videoType=new)
+resourceAttrib(happy_feet_2, rating=G, videoType=new)
+resourceAttrib(cars, rating=G, videoType=new)
+resourceAttrib(brave, rating=PG, videoType=new)
+resourceAttrib(life_of_pi, rating=PG, videoType=new)
+resourceAttrib(flight, rating=R, videoType=new)
+resourceAttrib(cloud_atlas, rating=R, videoType=new)
+
+#------------------------------------------------------------
+# rules that apply to premium members
+#------------------------------------------------------------
+
+# premium members of all ages can view movies rated G.
+rule(memberType in {premium}; rating in {G}; {view}; )
+
+# premium teens can view movies rated PG.
+rule(memberType in {premium}, ageGroup in {teen}; rating in {PG}; {view}; )
+
+# premium adults can view movies with all ratings.
+rule(memberType in {premium}, ageGroup in {adult}; ; {view}; )
+
+#------------------------------------------------------------
+# rules that apply to all member types.  these rules correspond 1-to-1
+# with the above rules, transformed by dropping the restriction to premium
+# members and adding the restriction to old videos.
+# ------------------------------------------------------------
+
+# members of all ages can view old movies rated G.
+rule(; videoType in {old}, rating in {G}; {view}; )
+
+# teens can view old movies rated PG.
+rule(ageGroup in {teen}; videoType in {old}, rating in {PG}; {view}; )
+
+# adults can view old movies with all ratings.
+rule(ageGroup in {adult}; videoType in {old}; {view}; )
+

@@ -1,0 +1,5 @@
+project-management1.abac is project-management.abac with the substitutions
+True -> True_
+False -> False_
+
+project-management1.abac is used with Progol.

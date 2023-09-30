@@ -1,0 +1,22 @@
+Doubts:
+
+Project Management 
+
+_J added
+projPopDist not used anywhere ( Changed according to my understanding ) To be checked
+
+Health Care Management
+
+Agents_For solution to be discussed
+and two entries for each agent
+
+Also Patients to Agent an issue to be discussed. Solution to be discussed
+
+
+-------------------------------------------------------------------------------------------------------------
+
+Eg Commands to generate Dataset:
+
+./run -t projectmanagement "../sample-policies-non-uniform-synthetic-attribute-data/projectmanagement/Set1" 20
+./run -t healthcare "../sample-policies-non-uniform-synthetic-attribute-data/healthcare/Set1" 20
+./run -t university "../sample-policies-non-uniform-synthetic-attribute-data/university/Set1" 20

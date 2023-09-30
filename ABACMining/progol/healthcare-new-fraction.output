@@ -1,0 +1,164 @@
+CProgol Version 4.4
+
+[:- set(nodes,537)? - Time taken 0.00s]
+[:- set(h,100)? - Time taken 0.00s]
+[:- modeh(1,up(+user,+resource,#operation))? - Time taken 0.00s]
+[:- modeb(1,positionU(+user,#positionUType))? - Time taken 0.00s]
+[:- modeb(1,uidU(+user,#uidUType))? - Time taken 0.00s]
+[:- modeb(100,teamsU(+user,#teamsUType))? - Time taken 0.00s]
+[:- modeb(100,specialtiesU(+user,#specialtiesUType))? - Time taken 0.00s]
+[:- modeb(1,wardU(+user,#wardUType))? - Time taken 0.00s]
+[:- modeb(100,agentForU(+user,#agentForUType))? - Time taken 0.00s]
+[:- modeb(1,treatingTeamR(+resource,#treatingTeamRType))? - Time taken 0.00s]
+[:- modeb(1,authorR(+resource,#authorRType))? - Time taken 0.00s]
+[:- modeb(1,topicsR(+resource,#topicsRType))? - Time taken 0.00s]
+[:- modeb(1,patientR(+resource,#patientRType))? - Time taken 0.00s]
+[:- modeb(1,wardR(+resource,#wardRType))? - Time taken 0.00s]
+[:- modeb(1,ridR(+resource,#ridRType))? - Time taken 0.00s]
+[:- modeb(1,typeR(+resource,#typeRType))? - Time taken 0.00s]
+[:- modeb(1,teamsU_superset_topicsR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,specialtiesU_superset_topicsR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,agentForU_superset_topicsR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,teamsU_contains_treatingTeamR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,teamsU_contains_authorR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,teamsU_contains_patientR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,teamsU_contains_wardR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,teamsU_contains_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,teamsU_contains_typeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,specialtiesU_contains_treatingTeamR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,specialtiesU_contains_authorR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,specialtiesU_contains_patientR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,specialtiesU_contains_wardR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,specialtiesU_contains_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,specialtiesU_contains_typeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,agentForU_contains_treatingTeamR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,agentForU_contains_authorR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,agentForU_contains_patientR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,agentForU_contains_wardR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,agentForU_contains_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,agentForU_contains_typeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,positionU_equals_treatingTeamR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,positionU_equals_authorR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,positionU_equals_patientR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,positionU_equals_wardR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,positionU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,positionU_equals_typeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_treatingTeamR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_authorR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_patientR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_wardR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,uidU_equals_typeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,wardU_equals_treatingTeamR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,wardU_equals_authorR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,wardU_equals_patientR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,wardU_equals_wardR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,wardU_equals_ridR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,wardU_equals_typeR(+user,+resource))? - Time taken 0.00s]
+[:- modeb(1,superset(+attribValSet,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(+attribValAtomic,#attribValSet))? - Time taken 0.00s]
+[:- modeb(1,element(#attribValAtomic,+attribValSet))? - Time taken 0.00s]
+[Testing for contradictions]
+[No contradictions found]
+[Generalising up(oncagent1,oncpat2noteitem,read).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,read) :- uidU(A,oncagent1), agentForU(A,oncpat2), treatingTeamR(B,
+	oncteam2), authorR(B,oncagent1), topicsR(B,note), patientR(B,
+	oncpat2), wardR(B,oncward), ridR(B,oncpat2noteitem), 
+	typeR(B,hritem), agentForU_contains_patientR(A,B), uidU_equals_authorR(A,
+	B).
+
+[C:-321,8,328,0 up(A,B,read).]
+[C:-120,2,30,0 up(A,B,read) :- agentForU(A,oncpat2).]
+[C:-213,3,81,0 up(A,B,read) :- treatingTeamR(B,oncteam2).]
+[C:-48,3,18,0 up(A,B,read) :- treatingTeamR(B,oncteam2), authorR(B,oncagent1).]
+[C:-48,3,18,0 up(A,B,read) :- treatingTeamR(B,oncteam2), topicsR(B,note).]
+[C:-216,3,81,0 up(A,B,read) :- treatingTeamR(B,oncteam2), patientR(B,oncpat2).]
+[C:-216,3,81,0 up(A,B,read) :- treatingTeamR(B,oncteam2), wardR(B,oncward).]
+[C:-48,3,18,0 up(A,B,read) :- treatingTeamR(B,oncteam2), ridR(B,oncpat2noteitem).]
+[C:-160,3,60,0 up(A,B,read) :- treatingTeamR(B,oncteam2), typeR(B,hritem).]
+[C:-45,3,18,0 up(A,B,read) :- authorR(B,oncagent1).]
+[C:-48,3,18,0 up(A,B,read) :- authorR(B,oncagent1), topicsR(B,note).]
+[C:-48,3,18,0 up(A,B,read) :- authorR(B,oncagent1), patientR(B,oncpat2).]
+[C:-48,3,18,0 up(A,B,read) :- authorR(B,oncagent1), wardR(B,oncward).]
+[C:-48,3,18,0 up(A,B,read) :- authorR(B,oncagent1), ridR(B,oncpat2noteitem).]
+[C:-48,3,18,0 up(A,B,read) :- authorR(B,oncagent1), typeR(B,hritem).]
+[C:-70,8,76,0 up(A,B,read) :- topicsR(B,note).]
+[C:-48,3,18,0 up(A,B,read) :- topicsR(B,note), patientR(B,oncpat2).]
+[C:-74,4,38,0 up(A,B,read) :- topicsR(B,note), wardR(B,oncward).]
+[C:-48,3,18,0 up(A,B,read) :- topicsR(B,note), ridR(B,oncpat2noteitem).]
+[C:-71,8,76,0 up(A,B,read) :- topicsR(B,note), typeR(B,hritem).]
+[C:2,4,0,0 up(A,B,read) :- topicsR(B,note), agentForU_contains_patientR(A,B).]
+[C:2,4,0,0 up(A,B,read) :- topicsR(B,note), uidU_equals_authorR(A,B).]
+[C:0,4,0,0 up(A,B,read) :- topicsR(B,note), typeR(B,hritem), agentForU_contains_patientR(A,B).]
+[C:0,4,0,0 up(A,B,read) :- topicsR(B,note), typeR(B,hritem), uidU_equals_authorR(A,B).]
+[C:-76,4,38,0 up(A,B,read) :- topicsR(B,note), wardR(B,oncward), typeR(B,hritem).]
+[C:-213,3,81,0 up(A,B,read) :- patientR(B,oncpat2).]
+[C:-216,3,81,0 up(A,B,read) :- patientR(B,oncpat2), wardR(B,oncward).]
+[C:-48,3,18,0 up(A,B,read) :- patientR(B,oncpat2), ridR(B,oncpat2noteitem).]
+[C:-160,3,60,0 up(A,B,read) :- patientR(B,oncpat2), typeR(B,hritem).]
+[C:-324,4,164,0 up(A,B,read) :- wardR(B,oncward).]
+[C:-45,3,18,0 up(A,B,read) :- ridR(B,oncpat2noteitem).]
+[C:-48,3,18,0 up(A,B,read) :- ridR(B,oncpat2noteitem), typeR(B,hritem).]
+[C:-238,8,244,0 up(A,B,read) :- typeR(B,hritem).]
+[C:-14,4,8,0 up(A,B,read) :- typeR(B,hritem), agentForU_contains_patientR(A,B).]
+[C:-14,4,8,0 up(A,B,read) :- typeR(B,hritem), uidU_equals_authorR(A,B).]
+[C:-20,4,12,0 up(A,B,read) :- agentForU_contains_patientR(A,B).]
+[C:-12,4,8,0 up(A,B,read) :- uidU_equals_authorR(A,B).]
+[C:-48,3,18,0 up(A,B,read) :- wardR(B,oncward), ridR(B,oncpat2noteitem).]
+[C:-242,4,122,0 up(A,B,read) :- wardR(B,oncward), typeR(B,hritem).]
+[39 explored search nodes]
+f=2,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,read) :- topicsR(B,note), agentForU_contains_patientR(A,
+	B).
+
+[4 redundant clauses retracted]
+[Generalising up(oncpat1,oncpat1noteitem,read).]
+[Warning: non-ground term derived]
+[Warning: non-ground term derived]
+[Most specific clause is]
+
+up(A,B,read) :- uidU(A,oncpat1), wardU(A,oncward), treatingTeamR(B,
+	oncteam1), authorR(B,oncpat1), topicsR(B,note), patientR(B,
+	oncpat1), wardR(B,oncward), ridR(B,oncpat1noteitem), 
+	typeR(B,hritem), uidU_equals_authorR(A,B), uidU_equals_patientR(A,
+	B), wardU_equals_wardR(A,B).
+
+[C:-368,7,328,0 up(A,B,read).]
+[C:-248,2,62,0 up(A,B,read) :- wardU(A,oncward).]
+[C:-81,7,76,0 up(A,B,read) :- topicsR(B,note).]
+[C:-150,4,76,0 up(A,B,read) :- topicsR(B,note), typeR(B,hritem).]
+[C:2,4,0,0 up(A,B,read) :- topicsR(B,note), uidU_equals_patientR(A,B).]
+[C:-22,4,12,0 up(A,B,read) :- topicsR(B,note), wardU_equals_wardR(A,B).]
+[C:-656,2,164,0 up(A,B,read) :- wardR(B,oncward).]
+[C:-484,4,244,0 up(A,B,read) :- typeR(B,hritem).]
+[C:-32,2,8,0 up(A,B,read) :- uidU_equals_authorR(A,B).]
+[C:-20,4,12,0 up(A,B,read) :- uidU_equals_patientR(A,B).]
+[C:-22,4,12,0 up(A,B,read) :- uidU_equals_patientR(A,B), wardU_equals_wardR(A,B).]
+[C:-116,4,60,0 up(A,B,read) :- wardU_equals_wardR(A,B).]
+[C:-14,4,8,0 up(A,B,read) :- typeR(B,hritem), uidU_equals_patientR(A,B).]
+[C:-16,4,8,0 up(A,B,read) :- typeR(B,hritem), uidU_equals_patientR(A,B), wardU_equals_wardR(A,B).]
+[C:-86,4,44,0 up(A,B,read) :- typeR(B,hritem), wardU_equals_wardR(A,B).]
+[15 explored search nodes]
+f=2,p=4,n=0,h=0
+[Result of search is]
+
+up(A,B,read) :- topicsR(B,note), uidU_equals_patientR(A,B).
+
+[4 redundant clauses retracted]
+
+up(A,B,read) :- topicsR(B,note), agentForU_contains_patientR(A,
+	B).
+up(A,B,read) :- topicsR(B,note), uidU_equals_patientR(A,B).
+
+[Total number of clauses = 2]
+
+[Time taken 0.09s]
+
+Mem out = 288

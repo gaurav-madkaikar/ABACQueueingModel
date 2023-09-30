@@ -1,0 +1,715 @@
+==============================================
+The rule does not contain overassignment: rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+r's UP size: 400
+r's rule quality 100.0
+r is the 1th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+r's UP size: 285
+r's rule quality 95.0
+r is the 2th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {HRitem}; {read }; uid=author)
+r's UP size: 220
+r's rule quality 73.33333333333333
+r is the 3th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {HR}; {addNote }; uid=patient)
+r's UP size: 100
+r's rule quality 33.333333333333336
+r is the 4th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+r's UP size: 105
+r's rule quality 26.25
+r is the 5th rule
+==============================================
+The rule does not contain overassignment: rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+r's UP size: 80
+r's rule quality 15.0
+r is the 6th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {HR}; {addNote }; agentFor ] patient)
+r's UP size: 40
+r's rule quality 13.333333333333334
+r is the 7th rule
+==============================================
+The rule does not contain overassignment: rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+r's UP size: 120
+r's rule quality 5.0
+r is the 8th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse7-2 patient3-2 nurse7-1 nurse1-3 nurse1-2 nurse7-0 nurse8-3 nurse8-2 nurse1-1 nurse9-3 nurse9-1 nurse9-2 nurse1-0 nurse2-3 nurse2-2 nurse2-1 nurse2-0 nurse4-3 nurse4-2 nurse4-1 patient0-8 nurse4-0 nurse3-2 nurse3-1 nurse3-3 nurse5-0 nurse5-1 nurse5-2 nurse5-3 nurse6-0 nurse6-1 nurse6-2 nurse9-0 nurse6-3 nurse7-3 nurse8-0 nurse8-1}; author in {nurse7-2 nurse7-1 nurse8-3 nurse7-0 nurse1-2 nurse1-1 nurse8-2 nurse9-1 nurse9-2 nurse2-3 nurse1-0 nurse2-2 nurse2-1 nurse2-0 nurse4-3 nurse4-2 doc0-0 nurse4-1 nurse4-0 nurse3-0 nurse5-0 nurse5-1 nurse5-2 nurse5-3 nurse6-0 nurse6-1 nurse9-0 nurse6-3 nurse7-3 nurse8-0 nurse8-1}, patient in {patient3-5 patient9-9 patient9-7 patient8-5 patient8-4 patient9-8 patient9-5 patient8-3 patient8-2 patient9-6 patient9-3 patient8-9 patient8-8 patient9-4 patient9-1 patient8-7 patient8-6 patient9-2 patient9-0 patient8-1 patient8-0 patient0-5 patient6-1 patient6-0 patient6-3 patient6-2 patient6-5 patient6-4 patient1-0 patient6-7 patient6-6 patient6-9 patient6-8 patient2-8 patient4-6 patient7-1 patient1-5 patient2-9 patient1-6 patient7-2 patient4-7 patient5-9 patient4-8 patient1-7 patient1-8 patient7-0 patient4-9 patient5-6 patient1-1 patient1-2 patient5-5 patient5-8 patient1-3 patient1-4 patient5-7 patient2-0 patient5-2 patient7-9 patient5-1 patient2-1 patient7-7 patient4-0 patient2-2 patient5-4 patient5-3 patient4-1 patient7-8 patient2-3 patient7-5 patient4-2 patient1-9 patient2-4 patient7-6 patient4-3 patient2-5 patient2-6 patient5-0 patient4-4 patient7-3 patient4-5 patient7-4 patient2-7}, type in {HRitem}; {read }; ward=ward)
+Overassignments: [(patient3-2,read,nursingItem3-5), (patient0-8,read,HRitem0-5-0)] size:2
+r's UP size: 325
+r's rule quality 1.6013071895424837
+r is the 9th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse0-2 nurse0-3 nurse0-0 nurse3-0 nurse0-1 nurse3-2 nurse3-1 nurse3-3 patient2-6}; author in {nurse0-2 nurse0-3 nurse3-0 nurse0-0 nurse0-1 nurse3-2 nurse3-3 doc2-1}, patient in {patient0-3 patient3-2 patient3-1 patient0-2 patient0-5 patient3-0 patient0-4 patient0-7 patient3-6 patient0-6 patient0-9 patient3-4 patient3-3 patient0-8 patient3-9 patient3-8 patient3-7 patient2-5 patient0-0 patient0-1}, topics supseteqln {{area8} {nursing}}, type in {HRitem}; {read }; ward=ward)
+Overassignments: [(patient2-6,read,HRitem2-5-2)] size:1
+r's UP size: 77
+r's rule quality 1.380952380952381
+r is the 10th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent8-1 nurse0-3}; patient in {patient2-0}, type in {HR}; {addItem }; )
+Overassignments: [(agent8-1,addItem,HR2-0), (nurse0-3,addItem,HR2-0)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 11th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent5-0 nurse8-1}; patient in {patient0-0}, topics supseteqln {{area1}}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse8-1,addNote,HRitem0-0-0), (agent5-0,addNote,HRitem0-0-0)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 12th rule
+==============================================
+The rule contains overassignment: rule(uid in {doctor8-0 nurse2-1}; patient in {patient9-1}, topics supseteqln {{area9}}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse2-1,addNote,HRitem9-1-1), (doctor8-0,addNote,HRitem9-1-1)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 13th rule
+==============================================
+The rule contains overassignment: rule(uid in {doctor5-1 agent1-01}; patient in {patient1-4}, topics supseteqln {{area0}}, type in {HRitem}; {read }; )
+Overassignments: [(agent1-01,read,HRitem1-4-1), (doctor5-1,read,HRitem1-4-1)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 14th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent6-11 patient7-4}; patient in {patient0-3}, topics supseteqln {{area6}}, type in {HRitem}; {addItem }; )
+Overassignments: [(agent6-11,addItem,HRitem0-3-3), (patient7-4,addItem,HRitem0-3-3)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 15th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient6-0 patient7-5}; patient in {patient8-2}, topics supseteqln {{nursing}}, type in {HRitem}; {read }; )
+Overassignments: [(patient7-5,read,nursingItem8-2), (patient6-0,read,nursingItem8-2)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 16th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse9-1 patient6-6}; patient in {patient3-5}, topics supseteqln {{area7}}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse9-1,addNote,HRitem3-5-3), (patient6-6,addNote,HRitem3-5-3)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 17th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse8-2 patient2-2}; patient in {patient0-7}, topics supseteqln {{area3}}, type in {HRitem}; {read }; )
+Overassignments: [(nurse8-2,read,HRitem0-7-0), (patient2-2,read,HRitem0-7-0)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 18th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient0-8 agent7-11}; patient in {patient2-3}, topics supseteqln {{area5}}, type in {HRitem}; {read }; )
+Overassignments: [(agent7-11,read,HRitem2-3-1), (patient0-8,read,HRitem2-3-1)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 19th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient1-9 nurse2-2}; patient in {patient6-7}, topics supseteqln {{area0}}, type in {HRitem}; {addItem }; )
+Overassignments: [(nurse2-2,addItem,HRitem6-7-1), (patient1-9,addItem,HRitem6-7-1)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 20th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse4-2 patient9-3}; patient in {patient3-1}, topics supseteqln {{area6}}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse4-2,addNote,HRitem3-1-1), (patient9-3,addNote,HRitem3-1-1)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 21th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse4-3 patient4-7}; patient in {patient0-2}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+Overassignments: [(patient4-7,addNote,nursingItem0-2), (nurse4-3,addNote,nursingItem0-2)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 22th rule
+==============================================
+The rule contains overassignment: rule(uid in {doctor5-1 patient1-9}; patient in {patient6-3}, topics supseteqln {{area6}}, type in {HRitem}; {read }; )
+Overassignments: [(patient1-9,read,HRitem6-3-2), (doctor5-1,read,HRitem6-3-2)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 23th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient5-9 nurse8-1}; patient in {patient7-7}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; )
+Overassignments: [(patient5-9,addNote,HRitem7-7-0), (nurse8-1,addNote,HRitem7-7-0)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 24th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse5-1}; author in {patient3-2}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse5-1,addNote,noteItem3-2)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 25th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent2-1}; patient in {patient8-9}, type in {HR}; {addItem }; )
+Overassignments: [(agent2-1,addItem,HR8-9)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 26th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent2-01}; author in {patient4-0}, type in {HRitem}; {read }; )
+Overassignments: [(agent2-01,read,noteItem4-0)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 27th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent2-11}; patient in {patient7-9}, type in {HR}; {addItem }; )
+Overassignments: [(agent2-11,addItem,HR7-9)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 28th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent5-0}; author in {patient1-2}, type in {HRitem}; {addNote }; )
+Overassignments: [(agent5-0,addNote,noteItem1-2)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 29th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient5-4}; patient in {patient0-2}, type in {HR}; {addItem }; )
+Overassignments: [(patient5-4,addItem,HR0-2)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 30th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent1-01}; author in {patient5-5}, type in {HRitem}; {read }; )
+Overassignments: [(agent1-01,read,noteItem5-5)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 31th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent8-0}; author in {patient6-5}, type in {HRitem}; {read }; )
+Overassignments: [(agent8-0,read,noteItem6-5)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 32th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient9-9}; patient in {patient4-8}, type in {HR}; {addItem }; )
+Overassignments: [(patient9-9,addItem,HR4-8)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 33th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent4-0}; author in {patient2-3}, type in {HRitem}; {addItem }; )
+Overassignments: [(agent4-0,addItem,noteItem2-3)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 34th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse7-3}; author in {doc8-0 doc4-1}, patient in {patient8-3 patient4-3}, topics supseteqln {{area2} {area9}}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse7-3,addNote,HRitem4-3-0), (nurse7-3,addNote,HRitem8-3-2)] size:2
+r's UP size: 2
+r's rule quality 0.2222222222222222
+r is the 35th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient3-8}; patient in {patient1-5}, topics supseteqln {{area3}}, type in {HRitem}; {addItem }; )
+Overassignments: [(patient3-8,addItem,HRitem1-5-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 36th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse9-3}; patient in {patient4-3}, topics supseteqln {{area2}}, type in {HRitem}; {read }; )
+Overassignments: [(nurse9-3,read,HRitem4-3-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 37th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse8-1}; patient in {patient2-3}, topics supseteqln {{area7}}, type in {HRitem}; {read }; )
+Overassignments: [(nurse8-1,read,HRitem2-3-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 38th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse0-0}; patient in {patient1-1}, topics supseteqln {{area3}}, type in {HRitem}; {read }; )
+Overassignments: [(nurse0-0,read,HRitem1-1-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 39th rule
+==============================================
+The rule contains overassignment: rule(specialties supseteqln {{area3}}; patient in {patient7-8}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+Overassignments: [(doctor2-0,addItem,HRitem7-8-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 40th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent9-0}; patient in {patient5-0}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+Overassignments: [(agent9-0,addNote,nursingItem5-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 41th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse9-1}; patient in {patient4-9}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse9-1,addNote,HRitem4-9-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 42th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent5-1}; patient in {patient7-6}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+Overassignments: [(agent5-1,addItem,HRitem7-6-2)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 43th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient7-4}; patient in {patient6-2}, topics supseteqln {{area0}}, type in {HRitem}; {read }; )
+Overassignments: [(patient7-4,read,HRitem6-2-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 44th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse5-1}; patient in {patient0-5}, topics supseteqln {{area5}}, type in {HRitem}; {read }; )
+Overassignments: [(nurse5-1,read,HRitem0-5-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 45th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient7-5}; patient in {patient5-3}, topics supseteqln {{area8}}, type in {HRitem}; {addNote }; )
+Overassignments: [(patient7-5,addNote,HRitem5-3-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 46th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse4-2}; patient in {patient7-4}, topics supseteqln {{area2}}, type in {HRitem}; {addItem }; )
+Overassignments: [(nurse4-2,addItem,HRitem7-4-2)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 47th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient2-2}; patient in {patient5-7}, topics supseteqln {{area8}}, type in {HRitem}; {addNote }; )
+Overassignments: [(patient2-2,addNote,HRitem5-7-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 48th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse0-3}; patient in {patient5-1}, topics supseteqln {{area9}}, type in {HRitem}; {addItem }; )
+Overassignments: [(nurse0-3,addItem,HRitem5-1-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 49th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent6-01}; patient in {patient1-9}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; )
+Overassignments: [(agent6-01,addNote,HRitem1-9-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 50th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient4-8}; patient in {patient8-4}, topics supseteqln {{area2}}, type in {HRitem}; {addItem }; )
+Overassignments: [(patient4-8,addItem,HRitem8-4-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 51th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient9-6}; patient in {patient1-3}, topics supseteqln {{area2}}, type in {HRitem}; {read }; )
+Overassignments: [(patient9-6,read,HRitem1-3-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 52th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse9-0}; patient in {patient4-7}, topics supseteqln {{area2}}, type in {HRitem}; {read }; )
+Overassignments: [(nurse9-0,read,HRitem4-7-1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 53th rule
+==============================================
+The rule contains overassignment: rule(teams supseteqln {{team2-0 team5-0}}; author in {patient9-7}, type in {HRitem}; {read }; )
+Overassignments: [(doctor2-1,read,noteItem9-7)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 54th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient6-7}; patient in {patient9-9}, topics supseteqln {{area6}}, type in {HRitem}; {read }; )
+Overassignments: [(patient6-7,read,HRitem9-9-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 55th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient0-9}; patient in {patient6-0}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+Overassignments: [(patient0-9,addItem,HRitem6-0-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 56th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse2-1}; patient in {patient8-8}, topics supseteqln {{area0}}, type in {HRitem}; {read }; )
+Overassignments: [(nurse2-1,read,HRitem8-8-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 57th rule
+==============================================
+The rule contains overassignment: rule(uid in {nurse6-1}; patient in {patient1-4}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+Overassignments: [(nurse6-1,addNote,nursingItem1-4)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 58th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient5-3}; patient in {patient8-9}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+Overassignments: [(patient5-3,addItem,HRitem8-9-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 59th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent3-1}; patient in {patient4-5}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+Overassignments: [(agent3-1,addNote,nursingItem4-5)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 60th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient7-6}; patient in {patient0-0}, topics supseteqln {{area4}}, type in {HRitem}; {addItem }; )
+Overassignments: [(patient7-6,addItem,HRitem0-0-3)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 61th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient4-7}; patient in {patient7-8}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+Overassignments: [(patient4-7,addNote,nursingItem7-8)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 62th rule
+==============================================
+The rule contains overassignment: rule(uid in {agent9-11}; patient in {patient1-8}, topics supseteqln {{area9}}, type in {HRitem}; {addNote }; )
+Overassignments: [(agent9-11,addNote,HRitem1-8-0)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 63th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient3-8 patient5-0}; author in {patient3-2 doc5-1}, patient in {patient3-2 patient5-0}, topics supseteqln {{area0} {note}}, type in {HRitem}; {addNote }; ward=ward)
+Overassignments: [(patient3-8,addNote,noteItem3-2), (patient5-0,addNote,HRitem5-0-3)] size:2
+r's UP size: 2
+r's rule quality 0.18181818181818182
+r is the 64th rule
+==============================================
+The rule contains overassignment: rule(teams supseteqln {{team2-0 team6-0}}; patient in {patient9-2}, type in {HRitem}; {addItem }; specialties > topics)
+Overassignments: [(doctor5-0,addItem,HRitem9-2-2)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 65th rule
+==============================================
+The rule contains overassignment: rule(teams supseteqln {{team2-0 team6-0}}; patient in {patient9-0}, topics supseteqln {{area2}}, type in {HRitem}; {addNote }; )
+Overassignments: [(doctor5-0,addNote,HRitem9-0-3)] size:1
+r's UP size: 1
+r's rule quality 0.16666666666666666
+r is the 66th rule
+==============================================
+The rule contains overassignment: rule(uid in {patient6-0 nurse6-0 nurse6-1 nurse6-2 nurse6-3}; patient in {patient6-4}, type in {HR}; {addItem }; )
+Overassignments: [(patient6-0,addItem,HR6-4)] size:1
+r's UP size: 5
+r's rule quality 0.125
+r is the 67th rule
+==============================================
+OUTPUT RULES
+
+1.
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+WSC=4.0
+2.
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+WSC=3.0
+3.
+rule(; type in {HRitem}; {read }; uid=author)
+WSC=3.0
+4.
+rule(; type in {HR}; {addNote }; uid=patient)
+WSC=3.0
+5.
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+WSC=4.0
+6.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+WSC=4.0
+7.
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+WSC=3.0
+8.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+WSC=4.0
+9.
+rule(uid in {nurse7-2 patient3-2 nurse7-1 nurse1-3 nurse1-2 nurse7-0 nurse8-3 nurse8-2 nurse1-1 nurse9-3 nurse9-1 nurse9-2 nurse1-0 nurse2-3 nurse2-2 nurse2-1 nurse2-0 nurse4-3 nurse4-2 nurse4-1 patient0-8 nurse4-0 nurse3-2 nurse3-1 nurse3-3 nurse5-0 nurse5-1 nurse5-2 nurse5-3 nurse6-0 nurse6-1 nurse6-2 nurse9-0 nurse6-3 nurse7-3 nurse8-0 nurse8-1}; author in {nurse7-2 nurse7-1 nurse8-3 nurse7-0 nurse1-2 nurse1-1 nurse8-2 nurse9-1 nurse9-2 nurse2-3 nurse1-0 nurse2-2 nurse2-1 nurse2-0 nurse4-3 nurse4-2 doc0-0 nurse4-1 nurse4-0 nurse3-0 nurse5-0 nurse5-1 nurse5-2 nurse5-3 nurse6-0 nurse6-1 nurse9-0 nurse6-3 nurse7-3 nurse8-0 nurse8-1}, patient in {patient3-5 patient9-9 patient9-7 patient8-5 patient8-4 patient9-8 patient9-5 patient8-3 patient8-2 patient9-6 patient9-3 patient8-9 patient8-8 patient9-4 patient9-1 patient8-7 patient8-6 patient9-2 patient9-0 patient8-1 patient8-0 patient0-5 patient6-1 patient6-0 patient6-3 patient6-2 patient6-5 patient6-4 patient1-0 patient6-7 patient6-6 patient6-9 patient6-8 patient2-8 patient4-6 patient7-1 patient1-5 patient2-9 patient1-6 patient7-2 patient4-7 patient5-9 patient4-8 patient1-7 patient1-8 patient7-0 patient4-9 patient5-6 patient1-1 patient1-2 patient5-5 patient5-8 patient1-3 patient1-4 patient5-7 patient2-0 patient5-2 patient7-9 patient5-1 patient2-1 patient7-7 patient4-0 patient2-2 patient5-4 patient5-3 patient4-1 patient7-8 patient2-3 patient7-5 patient4-2 patient1-9 patient2-4 patient7-6 patient4-3 patient2-5 patient2-6 patient5-0 patient4-4 patient7-3 patient4-5 patient7-4 patient2-7}, type in {HRitem}; {read }; ward=ward)
+WSC=153.0
+10.
+rule(uid in {nurse0-2 nurse0-3 nurse0-0 nurse3-0 nurse0-1 nurse3-2 nurse3-1 nurse3-3 patient2-6}; author in {nurse0-2 nurse0-3 nurse3-0 nurse0-0 nurse0-1 nurse3-2 nurse3-3 doc2-1}, patient in {patient0-3 patient3-2 patient3-1 patient0-2 patient0-5 patient3-0 patient0-4 patient0-7 patient3-6 patient0-6 patient0-9 patient3-4 patient3-3 patient0-8 patient3-9 patient3-8 patient3-7 patient2-5 patient0-0 patient0-1}, topics supseteqln {{area8} {nursing}}, type in {HRitem}; {read }; ward=ward)
+WSC=42.0
+11.
+rule(uid in {agent8-1 nurse0-3}; patient in {patient2-0}, type in {HR}; {addItem }; )
+WSC=5.0
+12.
+rule(uid in {agent5-0 nurse8-1}; patient in {patient0-0}, topics supseteqln {{area1}}, type in {HRitem}; {addNote }; )
+WSC=6.0
+13.
+rule(uid in {doctor8-0 nurse2-1}; patient in {patient9-1}, topics supseteqln {{area9}}, type in {HRitem}; {addNote }; )
+WSC=6.0
+14.
+rule(uid in {doctor5-1 agent1-01}; patient in {patient1-4}, topics supseteqln {{area0}}, type in {HRitem}; {read }; )
+WSC=6.0
+15.
+rule(uid in {agent6-11 patient7-4}; patient in {patient0-3}, topics supseteqln {{area6}}, type in {HRitem}; {addItem }; )
+WSC=6.0
+16.
+rule(uid in {patient6-0 patient7-5}; patient in {patient8-2}, topics supseteqln {{nursing}}, type in {HRitem}; {read }; )
+WSC=6.0
+17.
+rule(uid in {nurse9-1 patient6-6}; patient in {patient3-5}, topics supseteqln {{area7}}, type in {HRitem}; {addNote }; )
+WSC=6.0
+18.
+rule(uid in {nurse8-2 patient2-2}; patient in {patient0-7}, topics supseteqln {{area3}}, type in {HRitem}; {read }; )
+WSC=6.0
+19.
+rule(uid in {patient0-8 agent7-11}; patient in {patient2-3}, topics supseteqln {{area5}}, type in {HRitem}; {read }; )
+WSC=6.0
+20.
+rule(uid in {patient1-9 nurse2-2}; patient in {patient6-7}, topics supseteqln {{area0}}, type in {HRitem}; {addItem }; )
+WSC=6.0
+21.
+rule(uid in {nurse4-2 patient9-3}; patient in {patient3-1}, topics supseteqln {{area6}}, type in {HRitem}; {addNote }; )
+WSC=6.0
+22.
+rule(uid in {nurse4-3 patient4-7}; patient in {patient0-2}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+WSC=6.0
+23.
+rule(uid in {doctor5-1 patient1-9}; patient in {patient6-3}, topics supseteqln {{area6}}, type in {HRitem}; {read }; )
+WSC=6.0
+24.
+rule(uid in {patient5-9 nurse8-1}; patient in {patient7-7}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; )
+WSC=6.0
+25.
+rule(uid in {nurse5-1}; author in {patient3-2}, type in {HRitem}; {addNote }; )
+WSC=4.0
+26.
+rule(uid in {agent2-1}; patient in {patient8-9}, type in {HR}; {addItem }; )
+WSC=4.0
+27.
+rule(uid in {agent2-01}; author in {patient4-0}, type in {HRitem}; {read }; )
+WSC=4.0
+28.
+rule(uid in {agent2-11}; patient in {patient7-9}, type in {HR}; {addItem }; )
+WSC=4.0
+29.
+rule(uid in {agent5-0}; author in {patient1-2}, type in {HRitem}; {addNote }; )
+WSC=4.0
+30.
+rule(uid in {patient5-4}; patient in {patient0-2}, type in {HR}; {addItem }; )
+WSC=4.0
+31.
+rule(uid in {agent1-01}; author in {patient5-5}, type in {HRitem}; {read }; )
+WSC=4.0
+32.
+rule(uid in {agent8-0}; author in {patient6-5}, type in {HRitem}; {read }; )
+WSC=4.0
+33.
+rule(uid in {patient9-9}; patient in {patient4-8}, type in {HR}; {addItem }; )
+WSC=4.0
+34.
+rule(uid in {agent4-0}; author in {patient2-3}, type in {HRitem}; {addItem }; )
+WSC=4.0
+35.
+rule(uid in {nurse7-3}; author in {doc8-0 doc4-1}, patient in {patient8-3 patient4-3}, topics supseteqln {{area2} {area9}}, type in {HRitem}; {addNote }; )
+WSC=9.0
+36.
+rule(uid in {patient3-8}; patient in {patient1-5}, topics supseteqln {{area3}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+37.
+rule(uid in {nurse9-3}; patient in {patient4-3}, topics supseteqln {{area2}}, type in {HRitem}; {read }; )
+WSC=5.0
+38.
+rule(uid in {nurse8-1}; patient in {patient2-3}, topics supseteqln {{area7}}, type in {HRitem}; {read }; )
+WSC=5.0
+39.
+rule(uid in {nurse0-0}; patient in {patient1-1}, topics supseteqln {{area3}}, type in {HRitem}; {read }; )
+WSC=5.0
+40.
+rule(specialties supseteqln {{area3}}; patient in {patient7-8}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+41.
+rule(uid in {agent9-0}; patient in {patient5-0}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+42.
+rule(uid in {nurse9-1}; patient in {patient4-9}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+43.
+rule(uid in {agent5-1}; patient in {patient7-6}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+44.
+rule(uid in {patient7-4}; patient in {patient6-2}, topics supseteqln {{area0}}, type in {HRitem}; {read }; )
+WSC=5.0
+45.
+rule(uid in {nurse5-1}; patient in {patient0-5}, topics supseteqln {{area5}}, type in {HRitem}; {read }; )
+WSC=5.0
+46.
+rule(uid in {patient7-5}; patient in {patient5-3}, topics supseteqln {{area8}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+47.
+rule(uid in {nurse4-2}; patient in {patient7-4}, topics supseteqln {{area2}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+48.
+rule(uid in {patient2-2}; patient in {patient5-7}, topics supseteqln {{area8}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+49.
+rule(uid in {nurse0-3}; patient in {patient5-1}, topics supseteqln {{area9}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+50.
+rule(uid in {agent6-01}; patient in {patient1-9}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+51.
+rule(uid in {patient4-8}; patient in {patient8-4}, topics supseteqln {{area2}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+52.
+rule(uid in {patient9-6}; patient in {patient1-3}, topics supseteqln {{area2}}, type in {HRitem}; {read }; )
+WSC=5.0
+53.
+rule(uid in {nurse9-0}; patient in {patient4-7}, topics supseteqln {{area2}}, type in {HRitem}; {read }; )
+WSC=5.0
+54.
+rule(teams supseteqln {{team2-0 team5-0}}; author in {patient9-7}, type in {HRitem}; {read }; )
+WSC=5.0
+55.
+rule(uid in {patient6-7}; patient in {patient9-9}, topics supseteqln {{area6}}, type in {HRitem}; {read }; )
+WSC=5.0
+56.
+rule(uid in {patient0-9}; patient in {patient6-0}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+57.
+rule(uid in {nurse2-1}; patient in {patient8-8}, topics supseteqln {{area0}}, type in {HRitem}; {read }; )
+WSC=5.0
+58.
+rule(uid in {nurse6-1}; patient in {patient1-4}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+59.
+rule(uid in {patient5-3}; patient in {patient8-9}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+60.
+rule(uid in {agent3-1}; patient in {patient4-5}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+61.
+rule(uid in {patient7-6}; patient in {patient0-0}, topics supseteqln {{area4}}, type in {HRitem}; {addItem }; )
+WSC=5.0
+62.
+rule(uid in {patient4-7}; patient in {patient7-8}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+63.
+rule(uid in {agent9-11}; patient in {patient1-8}, topics supseteqln {{area9}}, type in {HRitem}; {addNote }; )
+WSC=5.0
+64.
+rule(uid in {patient3-8 patient5-0}; author in {patient3-2 doc5-1}, patient in {patient3-2 patient5-0}, topics supseteqln {{area0} {note}}, type in {HRitem}; {addNote }; ward=ward)
+WSC=11.0
+65.
+rule(teams supseteqln {{team2-0 team6-0}}; patient in {patient9-2}, type in {HRitem}; {addItem }; specialties > topics)
+WSC=6.0
+66.
+rule(teams supseteqln {{team2-0 team6-0}}; patient in {patient9-0}, topics supseteqln {{area2}}, type in {HRitem}; {addNote }; )
+WSC=6.0
+67.
+rule(uid in {patient6-0 nurse6-0 nurse6-1 nurse6-2 nurse6-3}; patient in {patient6-4}, type in {HR}; {addItem }; )
+WSC=8.0
+
+total WSC=526
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+SIMILAR OUTPUT RULES:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward), similarity: 1.00
+rule(uid in {agent8-1 nurse0-3}; patient in {patient2-0}, type in {HR}; {addItem }; ), similarity: 0.44
+rule(uid in {agent6-11 patient7-4}; patient in {patient0-3}, topics supseteqln {{area6}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {patient1-9 nurse2-2}; patient in {patient6-7}, topics supseteqln {{area0}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {agent2-1}; patient in {patient8-9}, type in {HR}; {addItem }; ), similarity: 0.44
+rule(uid in {agent2-11}; patient in {patient7-9}, type in {HR}; {addItem }; ), similarity: 0.44
+rule(uid in {patient5-4}; patient in {patient0-2}, type in {HR}; {addItem }; ), similarity: 0.44
+rule(uid in {patient9-9}; patient in {patient4-8}, type in {HR}; {addItem }; ), similarity: 0.44
+rule(uid in {agent4-0}; author in {patient2-3}, type in {HRitem}; {addItem }; ), similarity: 0.31
+rule(uid in {patient3-8}; patient in {patient1-5}, topics supseteqln {{area3}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(specialties supseteqln {{area3}}; patient in {patient7-8}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; ), similarity: 0.33
+rule(uid in {agent5-1}; patient in {patient7-6}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {nurse4-2}; patient in {patient7-4}, topics supseteqln {{area2}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {nurse0-3}; patient in {patient5-1}, topics supseteqln {{area9}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {patient4-8}; patient in {patient8-4}, topics supseteqln {{area2}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {patient0-9}; patient in {patient6-0}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {patient5-3}; patient in {patient8-9}, topics supseteqln {{area8}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(uid in {patient7-6}; patient in {patient0-0}, topics supseteqln {{area4}}, type in {HRitem}; {addItem }; ), similarity: 0.32
+rule(teams supseteqln {{team2-0 team6-0}}; patient in {patient9-2}, type in {HRitem}; {addItem }; specialties > topics), similarity: 0.32
+rule(uid in {patient6-0 nurse6-0 nurse6-1 nurse6-2 nurse6-3}; patient in {patient6-4}, type in {HR}; {addItem }; ), similarity: 0.44
+
+2. rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam), similarity: 1.00
+
+3. rule(; type in {HR}; {addNote }; uid=patient)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addNote }; uid=patient), similarity: 1.00
+rule(uid in {agent5-0 nurse8-1}; patient in {patient0-0}, topics supseteqln {{area1}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {doctor8-0 nurse2-1}; patient in {patient9-1}, topics supseteqln {{area9}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {nurse9-1 patient6-6}; patient in {patient3-5}, topics supseteqln {{area7}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {nurse4-2 patient9-3}; patient in {patient3-1}, topics supseteqln {{area6}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {nurse4-3 patient4-7}; patient in {patient0-2}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {patient5-9 nurse8-1}; patient in {patient7-7}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {nurse5-1}; author in {patient3-2}, type in {HRitem}; {addNote }; ), similarity: 0.25
+rule(uid in {agent5-0}; author in {patient1-2}, type in {HRitem}; {addNote }; ), similarity: 0.25
+rule(uid in {nurse7-3}; author in {doc8-0 doc4-1}, patient in {patient8-3 patient4-3}, topics supseteqln {{area2} {area9}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {agent9-0}; patient in {patient5-0}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {nurse9-1}; patient in {patient4-9}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {patient7-5}; patient in {patient5-3}, topics supseteqln {{area8}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {patient2-2}; patient in {patient5-7}, topics supseteqln {{area8}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {agent6-01}; patient in {patient1-9}, topics supseteqln {{area4}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {nurse6-1}; patient in {patient1-4}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {agent3-1}; patient in {patient4-5}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {patient4-7}; patient in {patient7-8}, topics supseteqln {{nursing}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(uid in {agent9-11}; patient in {patient1-8}, topics supseteqln {{area9}}, type in {HRitem}; {addNote }; ), similarity: 0.26
+rule(teams supseteqln {{team2-0 team6-0}}; patient in {patient9-0}, topics supseteqln {{area2}}, type in {HRitem}; {addNote }; ), similarity: 0.27
+
+4. rule(; type in {HR}; {addNote }; agentFor ] patient)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addNote }; agentFor ] patient), similarity: 1.00
+
+5. rule(; type in {HRitem}; {read }; uid=author)
+SIMILAR OUTPUT RULES:
+rule(; type in {HRitem}; {read }; uid=author), similarity: 1.00
+
+6. rule(position in {nurse}; type in {HRitem}, topics supseteqln {{nursing}}; {read }; ward=ward)
+SIMILAR OUTPUT RULES:
+rule(uid in {nurse7-2 patient3-2 nurse7-1 nurse1-3 nurse1-2 nurse7-0 nurse8-3 nurse8-2 nurse1-1 nurse9-3 nurse9-1 nurse9-2 nurse1-0 nurse2-3 nurse2-2 nurse2-1 nurse2-0 nurse4-3 nurse4-2 nurse4-1 patient0-8 nurse4-0 nurse3-2 nurse3-1 nurse3-3 nurse5-0 nurse5-1 nurse5-2 nurse5-3 nurse6-0 nurse6-1 nurse6-2 nurse9-0 nurse6-3 nurse7-3 nurse8-0 nurse8-1}; author in {nurse7-2 nurse7-1 nurse8-3 nurse7-0 nurse1-2 nurse1-1 nurse8-2 nurse9-1 nurse9-2 nurse2-3 nurse1-0 nurse2-2 nurse2-1 nurse2-0 nurse4-3 nurse4-2 doc0-0 nurse4-1 nurse4-0 nurse3-0 nurse5-0 nurse5-1 nurse5-2 nurse5-3 nurse6-0 nurse6-1 nurse9-0 nurse6-3 nurse7-3 nurse8-0 nurse8-1}, patient in {patient3-5 patient9-9 patient9-7 patient8-5 patient8-4 patient9-8 patient9-5 patient8-3 patient8-2 patient9-6 patient9-3 patient8-9 patient8-8 patient9-4 patient9-1 patient8-7 patient8-6 patient9-2 patient9-0 patient8-1 patient8-0 patient0-5 patient6-1 patient6-0 patient6-3 patient6-2 patient6-5 patient6-4 patient1-0 patient6-7 patient6-6 patient6-9 patient6-8 patient2-8 patient4-6 patient7-1 patient1-5 patient2-9 patient1-6 patient7-2 patient4-7 patient5-9 patient4-8 patient1-7 patient1-8 patient7-0 patient4-9 patient5-6 patient1-1 patient1-2 patient5-5 patient5-8 patient1-3 patient1-4 patient5-7 patient2-0 patient5-2 patient7-9 patient5-1 patient2-1 patient7-7 patient4-0 patient2-2 patient5-4 patient5-3 patient4-1 patient7-8 patient2-3 patient7-5 patient4-2 patient1-9 patient2-4 patient7-6 patient4-3 patient2-5 patient2-6 patient5-0 patient4-4 patient7-3 patient4-5 patient7-4 patient2-7}, type in {HRitem}; {read }; ward=ward), similarity: 0.72
+rule(uid in {nurse0-2 nurse0-3 nurse0-0 nurse3-0 nurse0-1 nurse3-2 nurse3-1 nurse3-3 patient2-6}; author in {nurse0-2 nurse0-3 nurse3-0 nurse0-0 nurse0-1 nurse3-2 nurse3-3 doc2-1}, patient in {patient0-3 patient3-2 patient3-1 patient0-2 patient0-5 patient3-0 patient0-4 patient0-7 patient3-6 patient0-6 patient0-9 patient3-4 patient3-3 patient0-8 patient3-9 patient3-8 patient3-7 patient2-5 patient0-0 patient0-1}, topics supseteqln {{area8} {nursing}}, type in {HRitem}; {read }; ward=ward), similarity: 0.68
+rule(uid in {doctor5-1 agent1-01}; patient in {patient1-4}, topics supseteqln {{area0}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {patient6-0 patient7-5}; patient in {patient8-2}, topics supseteqln {{nursing}}, type in {HRitem}; {read }; ), similarity: 0.48
+rule(uid in {nurse8-2 patient2-2}; patient in {patient0-7}, topics supseteqln {{area3}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {patient0-8 agent7-11}; patient in {patient2-3}, topics supseteqln {{area5}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {doctor5-1 patient1-9}; patient in {patient6-3}, topics supseteqln {{area6}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {agent2-01}; author in {patient4-0}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {agent1-01}; author in {patient5-5}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {agent8-0}; author in {patient6-5}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {nurse9-3}; patient in {patient4-3}, topics supseteqln {{area2}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {nurse8-1}; patient in {patient2-3}, topics supseteqln {{area7}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {nurse0-0}; patient in {patient1-1}, topics supseteqln {{area3}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {patient7-4}; patient in {patient6-2}, topics supseteqln {{area0}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {nurse5-1}; patient in {patient0-5}, topics supseteqln {{area5}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {patient9-6}; patient in {patient1-3}, topics supseteqln {{area2}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {nurse9-0}; patient in {patient4-7}, topics supseteqln {{area2}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(teams supseteqln {{team2-0 team5-0}}; author in {patient9-7}, type in {HRitem}; {read }; ), similarity: 0.41
+rule(uid in {patient6-7}; patient in {patient9-9}, topics supseteqln {{area6}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {nurse2-1}; patient in {patient8-8}, topics supseteqln {{area0}}, type in {HRitem}; {read }; ), similarity: 0.40
+rule(uid in {patient3-8 patient5-0}; author in {patient3-2 doc5-1}, patient in {patient3-2 patient5-0}, topics supseteqln {{area0} {note}}, type in {HRitem}; {addNote }; ward=ward), similarity: 0.38
+
+7. rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+SIMILAR OUTPUT RULES:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam), similarity: 1.00
+
+8. rule(; type in {HRitem}, topics supseteqln {{note}}; {read }; uid=patient)
+SIMILAR OUTPUT RULES:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient), similarity: 1.00
+
+9. rule(; type in {HRitem}, topics supseteqln {{note}}; {read }; agentFor ] patient)
+SIMILAR OUTPUT RULES:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient), similarity: 1.00
+
+==============================================
+Consistency Check Result:
+true
+==============================================
+Statistics:
+Number of calls to mergeRules: 1
+Number of generalizations: 1041
+Number of merges: 493
+Number of eliminated conjuncts: 270
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 5
+Number of eliminated constraints: 0
+Number of subsumption checks: 108
+Number of unsuccessful merges: 8426
+Number of removed pairs: 0
+Number of extra compares: 73927
+==============================================
+Remaining time: 286 millisec
+9 67 33.0 6964.0 1606 526.0 10703

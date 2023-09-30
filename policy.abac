@@ -1,0 +1,19 @@
+# User Attribute Data
+userAttrib(sub_1, UJU=izxka, AFP=dik)
+userAttrib(sub_2, UJU=izxka, AFP=dik)
+userAttrib(sub_3, UJU=izxka, AFP=dzdt)
+userAttrib(sub_4, UJU=gdsha, AFP=dzdt)
+
+# Resource Attribute Data
+resourceAttrib(obj_1, MSBSPV=orpt, GVOSMAU=ulgng)
+resourceAttrib(obj_2, MSBSPV=rqa, GVOSMAU=ulgng)
+resourceAttrib(obj_3, MSBSPV=orpt, GVOSMAU=cjql)
+resourceAttrib(obj_4, MSBSPV=orpt, GVOSMAU=cjql)
+resourceAttrib(obj_5, MSBSPV=rqa, GVOSMAU=ulgng)
+
+# Low-level ABAC Rules
+rule(AFP in {dik}; MSBSPV in {orpt}, GVOSMAU in {ulgng}; {read}; )
+rule(AFP in {dik}; MSBSPV in {rqa}, GVOSMAU in {ulgng}; {read}; )
+rule(AFP in {dik}; MSBSPV in {orpt}, GVOSMAU in {cjql}; {read}; )
+rule(AFP in {dik}; MSBSPV in {orpt}, GVOSMAU in {cjql}; {read}; )
+rule(AFP in {dik}; MSBSPV in {rqa}, GVOSMAU in {ulgng}; {read}; )

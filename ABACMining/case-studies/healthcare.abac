@@ -1,0 +1,150 @@
+# Zhongyuan Xu and Scott D. Stoller
+# ABAC policy for a healthcare institution, e.g., a hospital.
+
+# User Attributes
+# recall that some attributes might be irrelevant for some users;
+# those attributes are given the value $\bot$ for those users.
+
+# position: the user's position (doctor or nurse).
+# position equals $\bot$ for other users.
+
+# specialties: the user's areas of medical expertise (for doctors)
+
+# teams: medical teams of which the user is a member (for doctors)
+
+# ward: ward in which the user works (for nurses) or is being treated (for
+# patients)
+
+# agentFor: set of users for which this user is an agent
+
+# Resource Attributes
+
+# type: HR or HRitem.  note that each HR as a whole is a resource, and each
+# HR item is a resource.
+
+# patient: the patient that this HR or HR item is about
+
+# treatingTeam: the team treating the aforementioned patient
+
+# ward: the ward in which the aforementioned patient is being treated
+
+# author: author of the item (for type=HRitem)
+
+# topics: medical areas to which the HR item is relevant (for type=HRitem)
+
+#------------------------------------------------------------
+# user attribute data
+#------------------------------------------------------------
+
+# nurses
+
+userAttrib(oncNurse1, position=nurse, ward=oncWard)
+userAttrib(oncNurse2, position=nurse, ward=oncWard)
+
+userAttrib(carNurse1, position=nurse, ward=carWard)
+userAttrib(carNurse2, position=nurse, ward=carWard)
+
+# doctors
+
+userAttrib(oncDoc1, position=doctor, specialties={oncology}, teams={oncTeam1 oncTeam2})
+userAttrib(oncDoc2, position=doctor, specialties={oncology}, teams={oncTeam1})
+userAttrib(oncDoc3, position=doctor, specialties={oncology}, teams={oncTeam2})
+userAttrib(oncDoc4, position=doctor, specialties={oncology}, teams={oncTeam2})
+
+userAttrib(carDoc1, position=doctor, specialties={cardiology}, teams={carTeam1})
+userAttrib(carDoc2, position=doctor, specialties={cardiology}, teams={carTeam2})
+
+userAttrib(anesDoc1, position=doctor, specialties={anesthesiology}, teams={oncTeam1 carTeam1})
+
+# the following doctors are not currently on any teams, but they have
+# access to HR items they authored when they were on a team.
+userAttrib(doc1, position=doctor, specialties={oncology pediatrics})
+userAttrib(doc2, position=doctor, specialties={cardiology neurology})
+
+# patients and agents
+
+userAttrib(oncPat1, ward=oncWard)
+userAttrib(oncPat2, ward=oncWard)
+
+userAttrib(carPat1, ward=carWard)
+userAttrib(carPat2, ward=carWard)
+
+userAttrib(oncAgent1, agentFor={oncPat2})
+userAttrib(oncAgent2, agentFor={oncPat2})
+userAttrib(carAgent1, agentFor={carPat2})
+userAttrib(carAgent2, agentFor={carPat2})
+
+#------------------------------------------------------------
+# resource attribute data
+#------------------------------------------------------------
+
+# resources for oncPat1
+resourceAttrib(oncPat1oncItem, type=HRitem, author=oncDoc1, patient=oncPat1, topics={oncology}, treatingTeam=oncTeam1, ward=oncWard)
+resourceAttrib(oncPat1nursingItem, type=HRitem, author=oncNurse2, patient=oncPat1, topics={nursing}, treatingTeam=oncTeam1, ward=oncWard)
+resourceAttrib(oncPat1noteItem, type=HRitem, author=oncPat1, patient=oncPat1, topics={note}, treatingTeam=oncTeam1, ward=oncWard)
+resourceAttrib(oncPat1HR, type=HR, patient=oncPat1, treatingTeam=oncTeam1, ward=oncWard)
+
+# resources for oncPat2
+resourceAttrib(oncPat2oncItem, type=HRitem, author=doc1, patient=oncPat2, topics={oncology}, treatingTeam=oncTeam2, ward=oncWard)
+resourceAttrib(oncPat2nursingItem, type=HRitem, author=oncNurse1, patient=oncPat2, topics={nursing}, treatingTeam=oncTeam2, ward=oncWard)
+resourceAttrib(oncPat2noteItem, type=HRitem, author=oncAgent1, patient=oncPat2, topics={note}, treatingTeam=oncTeam2, ward=oncWard)
+resourceAttrib(oncPat2HR, type=HR, patient=oncPat2, treatingTeam=oncTeam2, ward=oncWard)
+
+# resources for carPat1
+resourceAttrib(carPat1carItem, type=HRitem, author=carDoc2, patient=carPat1, topics={cardiology}, treatingTeam=carTeam1, ward=carWard)
+resourceAttrib(carPat1nursingItem, type=HRitem, author=carNurse1, patient=carPat1, topics={nursing}, treatingTeam=carTeam1, ward=carWard)
+resourceAttrib(carPat1noteItem, type=HRitem, author=carPat1, patient=carPat1, topics={note}, treatingTeam=carTeam1, ward=carWard)
+resourceAttrib(carPat1HR, type=HR, patient=carPat1, treatingTeam=carTeam1, ward=carWard)
+
+# resources for carPat2
+resourceAttrib(carPat2carItem, type=HRitem, author=doc2, patient=carPat2, topics={cardiology}, treatingTeam=carTeam2, ward=carWard)
+resourceAttrib(carPat2nursingItem, type=HRitem, author=carNurse2, patient=carPat2, topics={nursing}, treatingTeam=carTeam2, ward=carWard)
+resourceAttrib(carPat2noteItem, type=HRitem, author=carAgent1, patient=carPat2, topics={note}, treatingTeam=carTeam2, ward=carWard)
+resourceAttrib(carPat2HR, type=HR, patient=carPat2, treatingTeam=carTeam2, ward=carWard)
+
+#------------------------------------------------------------
+# rules for health records
+#------------------------------------------------------------
+
+# a nurse can add an item in a HR for a patient in the ward in which he/she
+# works
+rule(position in {nurse}; type in {HR}; {addItem}; ward=ward)
+
+# a user can add an item in a HR for a patient treated by one of the teams
+# of which he/she is a member.
+rule(; type in {HR}; {addItem}; teams ] treatingTeam)
+
+# a user can add an item with topic "note" in his/her own HR
+rule(; type in {HR}; {addNote}; uid=patient)
+
+# a user can add an item with topic "note" in the HR of a patient for
+# which he/she is an agent
+rule(; type in {HR}; {addNote}; agentFor ] patient)
+
+#------------------------------------------------------------
+# rules for health record items
+#------------------------------------------------------------
+
+# the author of an item can read it
+rule(; type in {HRitem}; {read}; uid=author)
+
+# a nurse can read an item with topic "nursing" in a HR for a patient in
+# the ward in which he/she works
+rule(position in {nurse}; type in {HRitem}, topics supseteqln {{nursing}}; {read}; ward=ward)
+
+# a user can read an item in a HR for a patient treated by one of the teams
+# of which he/she is a member, if the topics of the item are among his/her
+# specialties.
+rule(; type in {HRitem}; {read}; specialties > topics, teams ] treatingTeam)
+
+# a user can read an item with topic "note" in his/her own HR
+rule(; type in {HRitem}, topics supseteqln {{note}}; {read}; uid=patient)
+
+# an agent can read an item with topic "note" in the HR of a patient for
+# which he/she is an agent
+rule(; type in {HRitem}, topics supseteqln {{note}}; {read}; agentFor ] patient)
+
+#------------------------------------------------------------
+# unremovable attributes
+#------------------------------------------------------------
+unremovableResourceAttribs(type)

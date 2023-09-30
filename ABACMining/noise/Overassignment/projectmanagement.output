@@ -1,0 +1,548 @@
+==============================================
+The rule does not contain overassignment: rule(; type in {schedule}; {read }; projects ] project)
+r's UP size: 140
+r's rule quality 46.666666666666664
+r is the 1th rule
+==============================================
+The rule does not contain overassignment: rule(adminRoles supseteqln {{planner}}; type in {task}; {setSchedule }; projects ] project)
+r's UP size: 160
+r's rule quality 40.0
+r is the 2th rule
+==============================================
+The rule does not contain overassignment: rule(adminRoles supseteqln {{accountant}}; type in {task}; {setCost }; projects ] project)
+r's UP size: 160
+r's rule quality 40.0
+r is the 3th rule
+==============================================
+The rule does not contain overassignment: rule(isEmployee in {True}; type in {task}; {request read }; expertise > expertise, projects ] project)
+r's UP size: 160
+r's rule quality 26.666666666666668
+r is the 4th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {task}; {setStatus }; tasks ] rid)
+r's UP size: 80
+r's rule quality 26.666666666666668
+r is the 5th rule
+==============================================
+The rule does not contain overassignment: rule(; proprietary in {false}, type in {task}; {request read }; expertise > expertise, projects ] project)
+r's UP size: 160
+r's rule quality 13.333333333333334
+r is the 6th rule
+==============================================
+The rule does not contain overassignment: rule(; type in {budget schedule}; {write read }; projectsLed ] project)
+r's UP size: 80
+r's rule quality 12.0
+r is the 7th rule
+==============================================
+The rule does not contain overassignment: rule(adminRoles supseteqln {{accountant}}; type in {budget}; {write read }; projects ] project)
+r's UP size: 40
+r's rule quality 8.0
+r is the 8th rule
+==============================================
+The rule does not contain overassignment: rule(adminRoles supseteqln {{manager}}; type in {budget}; {approve read }; department=department)
+r's UP size: 40
+r's rule quality 8.0
+r is the 9th rule
+==============================================
+The rule does not contain overassignment: rule(adminRoles supseteqln {{auditor}}; type in {budget}; {read }; projects ] project)
+r's UP size: 20
+r's rule quality 5.0
+r is the 10th rule
+==============================================
+The rule does not contain overassignment: rule(adminRoles supseteqln {{planner}}; type in {schedule}; {write }; projects ] project)
+r's UP size: 20
+r's rule quality 5.0
+r is the 11th rule
+==============================================
+The rule contains overassignment: rule(projectsLed supseteqln {{proj92} {proj41}}; rid in {proj52task2a}, type in {task}; {setStatus }; )
+Overassignments: [(ldr41,setStatus,proj52task2a), (ldr92,setStatus,proj52task2a)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 12th rule
+==============================================
+The rule contains overassignment: rule(uid in {ldr41 aud7}; rid in {proj92task2propa}, type in {task}; {setStatus }; )
+Overassignments: [(ldr41,setStatus,proj92task2propa), (aud7,setStatus,proj92task2propa)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 13th rule
+==============================================
+The rule contains overassignment: rule(uid in {nonemployee2_area2 ldr52}; rid in {proj72task1prop}, type in {task}; {read }; )
+Overassignments: [(ldr52,read,proj72task1prop), (nonemployee2_area2,read,proj72task1prop)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 14th rule
+==============================================
+The rule contains overassignment: rule(uid in {ldr42 aud4}; project in {proj71}, type in {schedule}; {approve }; )
+Overassignments: [(aud4,approve,proj71sched1), (ldr42,approve,proj71sched1)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 15th rule
+==============================================
+The rule contains overassignment: rule(uid in {aud10 employee4_area1}; rid in {proj42task2propa}, type in {task}; {setStatus }; )
+Overassignments: [(employee4_area1,setStatus,proj42task2propa), (aud10,setStatus,proj42task2propa)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 16th rule
+==============================================
+The rule contains overassignment: rule(uid in {manager8 aud7}; rid in {proj41task2propa}, type in {task}; {approve }; )
+Overassignments: [(manager8,approve,proj41task2propa), (aud7,approve,proj41task2propa)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 17th rule
+==============================================
+The rule contains overassignment: rule(uid in {ldr52 employee4_area2}; rid in {proj32task1prop}, type in {task}; {setStatus }; )
+Overassignments: [(ldr52,setStatus,proj32task1prop), (employee4_area2,setStatus,proj32task1prop)] size:2
+r's UP size: 2
+r's rule quality 0.4
+r is the 18th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{auditor}}; rid in {proj101task2}, type in {task}; {approve setStatus }; projects ] project)
+Overassignments: [(aud10,setStatus,proj101task2), (aud10,approve,proj101task2)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 19th rule
+==============================================
+The rule contains overassignment: rule(expertise supseteqln {{area1}}, projects supseteqln {{proj81} {proj22}}; project in {proj42}, type in {schedule}; {request }; )
+Overassignments: [(employee8_area1,request,proj42sched1), (nonemployee2_area1,request,proj42sched1)] size:2
+r's UP size: 2
+r's rule quality 0.3333333333333333
+r is the 20th rule
+==============================================
+The rule contains overassignment: rule(projectsLed supseteqln {{proj21}}; rid in {proj51task2prop}, type in {task}; {setSchedule }; )
+Overassignments: [(ldr21,setSchedule,proj51task2prop)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 21th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj12task2a}}; rid in {proj41task1prop}, type in {task}; {read }; )
+Overassignments: [(nonemployee1_area2,read,proj41task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 22th rule
+==============================================
+The rule contains overassignment: rule(projectsLed supseteqln {{proj92}}; rid in {proj61task2prop}, type in {task}; {setSchedule }; )
+Overassignments: [(ldr92,setSchedule,proj61task2prop)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 23th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj62task2a}}; rid in {proj61task1a}, type in {task}; {read }; )
+Overassignments: [(nonemployee6_area2,read,proj61task1a)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 24th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj61task2propa}}; project in {proj22}, type in {schedule}; {setCost }; )
+Overassignments: [(employee6_area2,setCost,proj22sched1)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 25th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj41task2a}}; project in {proj21}, type in {schedule}; {setSchedule }; )
+Overassignments: [(employee4_area2,setSchedule,proj21sched1)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 26th rule
+==============================================
+The rule contains overassignment: rule(projectsLed supseteqln {{proj51}}; rid in {proj62task1prop}, type in {task}; {write }; )
+Overassignments: [(ldr51,write,proj62task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 27th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj92task1propa}}; rid in {proj12task2a}, type in {task}; {setSchedule }; )
+Overassignments: [(nonemployee9_area1,setSchedule,proj12task2a)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 28th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj102task1propa}}; rid in {proj82task2prop}, type in {task}; {request }; )
+Overassignments: [(nonemployee10_area1,request,proj82task2prop)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 29th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj32task2propa}}; rid in {proj72task1a}, type in {task}; {write }; )
+Overassignments: [(nonemployee3_area2,write,proj72task1a)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 30th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj92task1propa}}; rid in {proj61task2propa}, type in {task}; {setCost }; )
+Overassignments: [(nonemployee9_area1,setCost,proj61task2propa)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 31th rule
+==============================================
+The rule contains overassignment: rule(tasks supseteqln {{proj31task2propa}}; rid in {proj102task1prop}, type in {task}; {read }; )
+Overassignments: [(employee3_area2,read,proj102task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 32th rule
+==============================================
+The rule contains overassignment: rule(projectsLed supseteqln {{proj42}}; rid in {proj101task1prop}, type in {task}; {setSchedule }; )
+Overassignments: [(ldr42,setSchedule,proj101task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.25
+r is the 33th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj52}}; rid in {proj11task1}, type in {task}; {approve }; )
+Overassignments: [(aud5,approve,proj11task1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 34th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{planner}}; rid in {proj12task2}, type in {task}; {setCost }; projects ] project)
+Overassignments: [(planner1,setCost,proj12task2)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 35th rule
+==============================================
+The rule contains overassignment: rule(projects supseteqln {{proj22}}; rid in {proj71task1prop}, type in {task}; {request }; expertise > expertise)
+Overassignments: [(nonemployee2_area1,request,proj71task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 36th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{manager}}, department in {dept6}; rid in {proj21task1prop}, type in {task}; {setCost }; )
+Overassignments: [(manager6,setCost,proj21task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 37th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj42}}; rid in {proj21task1prop}, type in {task}; {approve }; )
+Overassignments: [(aud4,approve,proj21task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 38th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{accountant}}, projects supseteqln {{proj81}}; rid in {proj72task1propa}, type in {task}; {write }; )
+Overassignments: [(acc8,write,proj72task1propa)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 39th rule
+==============================================
+The rule contains overassignment: rule(projects supseteqln {{proj82}}; rid in {proj22task2propa}, type in {task}; {setCost }; expertise > expertise)
+Overassignments: [(nonemployee8_area2,setCost,proj22task2propa)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 40th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{manager}}, department in {dept7}; rid in {proj22task1}, type in {task}; {approve }; )
+Overassignments: [(manager7,approve,proj22task1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 41th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{accountant}}; rid in {proj22task1propa}, type in {task}; {write }; projects ] project)
+Overassignments: [(acc2,write,proj22task1propa)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 42th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{planner}}, projects supseteqln {{proj52}}; rid in {proj71task2}, type in {task}; {request }; )
+Overassignments: [(planner5,request,proj71task2)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 43th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{manager}}; rid in {proj92task1prop}, type in {task}; {read }; department=department)
+Overassignments: [(manager9,read,proj92task1prop)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 44th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{accountant}}, projects supseteqln {{proj21}}; rid in {proj61task1}, type in {task}; {write }; )
+Overassignments: [(acc2,write,proj61task1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 45th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{manager}}, department in {dept9}; project in {proj31}, type in {schedule}; {read }; )
+Overassignments: [(manager9,read,proj31sched1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 46th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj81}}; project in {proj72}, type in {budget}; {write }; )
+Overassignments: [(aud8,write,proj72budget1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 47th rule
+==============================================
+The rule contains overassignment: rule(projects supseteqln {{proj82}}; rid in {proj61task1}, type in {task}; {write }; expertise > expertise)
+Overassignments: [(nonemployee8_area1,write,proj61task1)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 48th rule
+==============================================
+The rule contains overassignment: rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj91}}; rid in {proj81task2propa}, type in {task}; {request }; )
+Overassignments: [(aud9,request,proj81task2propa)] size:1
+r's UP size: 1
+r's rule quality 0.2
+r is the 49th rule
+==============================================
+The rule contains overassignment: rule(; rid in {proj12task2}, type in {task}; {setCost request read }; expertise > expertise, projects ] project)
+Overassignments: [(nonemployee1_area2,setCost,proj12task2)] size:1
+r's UP size: 3
+r's rule quality 0.14285714285714285
+r is the 50th rule
+==============================================
+OUTPUT RULES
+
+1.
+rule(; type in {schedule}; {read }; projects ] project)
+WSC=3.0
+2.
+rule(adminRoles supseteqln {{planner}}; type in {task}; {setSchedule }; projects ] project)
+WSC=4.0
+3.
+rule(adminRoles supseteqln {{accountant}}; type in {task}; {setCost }; projects ] project)
+WSC=4.0
+4.
+rule(isEmployee in {True}; type in {task}; {request read }; expertise > expertise, projects ] project)
+WSC=6.0
+5.
+rule(; type in {task}; {setStatus }; tasks ] rid)
+WSC=3.0
+6.
+rule(; proprietary in {false}, type in {task}; {request read }; expertise > expertise, projects ] project)
+WSC=6.0
+7.
+rule(; type in {budget schedule}; {write read }; projectsLed ] project)
+WSC=5.0
+8.
+rule(adminRoles supseteqln {{accountant}}; type in {budget}; {write read }; projects ] project)
+WSC=5.0
+9.
+rule(adminRoles supseteqln {{manager}}; type in {budget}; {approve read }; department=department)
+WSC=5.0
+10.
+rule(adminRoles supseteqln {{auditor}}; type in {budget}; {read }; projects ] project)
+WSC=4.0
+11.
+rule(adminRoles supseteqln {{planner}}; type in {schedule}; {write }; projects ] project)
+WSC=4.0
+12.
+rule(projectsLed supseteqln {{proj92} {proj41}}; rid in {proj52task2a}, type in {task}; {setStatus }; )
+WSC=5.0
+13.
+rule(uid in {ldr41 aud7}; rid in {proj92task2propa}, type in {task}; {setStatus }; )
+WSC=5.0
+14.
+rule(uid in {nonemployee2_area2 ldr52}; rid in {proj72task1prop}, type in {task}; {read }; )
+WSC=5.0
+15.
+rule(uid in {ldr42 aud4}; project in {proj71}, type in {schedule}; {approve }; )
+WSC=5.0
+16.
+rule(uid in {aud10 employee4_area1}; rid in {proj42task2propa}, type in {task}; {setStatus }; )
+WSC=5.0
+17.
+rule(uid in {manager8 aud7}; rid in {proj41task2propa}, type in {task}; {approve }; )
+WSC=5.0
+18.
+rule(uid in {ldr52 employee4_area2}; rid in {proj32task1prop}, type in {task}; {setStatus }; )
+WSC=5.0
+19.
+rule(adminRoles supseteqln {{auditor}}; rid in {proj101task2}, type in {task}; {approve setStatus }; projects ] project)
+WSC=6.0
+20.
+rule(expertise supseteqln {{area1}}, projects supseteqln {{proj81} {proj22}}; project in {proj42}, type in {schedule}; {request }; )
+WSC=6.0
+21.
+rule(projectsLed supseteqln {{proj21}}; rid in {proj51task2prop}, type in {task}; {setSchedule }; )
+WSC=4.0
+22.
+rule(tasks supseteqln {{proj12task2a}}; rid in {proj41task1prop}, type in {task}; {read }; )
+WSC=4.0
+23.
+rule(projectsLed supseteqln {{proj92}}; rid in {proj61task2prop}, type in {task}; {setSchedule }; )
+WSC=4.0
+24.
+rule(tasks supseteqln {{proj62task2a}}; rid in {proj61task1a}, type in {task}; {read }; )
+WSC=4.0
+25.
+rule(tasks supseteqln {{proj61task2propa}}; project in {proj22}, type in {schedule}; {setCost }; )
+WSC=4.0
+26.
+rule(tasks supseteqln {{proj41task2a}}; project in {proj21}, type in {schedule}; {setSchedule }; )
+WSC=4.0
+27.
+rule(projectsLed supseteqln {{proj51}}; rid in {proj62task1prop}, type in {task}; {write }; )
+WSC=4.0
+28.
+rule(tasks supseteqln {{proj92task1propa}}; rid in {proj12task2a}, type in {task}; {setSchedule }; )
+WSC=4.0
+29.
+rule(tasks supseteqln {{proj102task1propa}}; rid in {proj82task2prop}, type in {task}; {request }; )
+WSC=4.0
+30.
+rule(tasks supseteqln {{proj32task2propa}}; rid in {proj72task1a}, type in {task}; {write }; )
+WSC=4.0
+31.
+rule(tasks supseteqln {{proj92task1propa}}; rid in {proj61task2propa}, type in {task}; {setCost }; )
+WSC=4.0
+32.
+rule(tasks supseteqln {{proj31task2propa}}; rid in {proj102task1prop}, type in {task}; {read }; )
+WSC=4.0
+33.
+rule(projectsLed supseteqln {{proj42}}; rid in {proj101task1prop}, type in {task}; {setSchedule }; )
+WSC=4.0
+34.
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj52}}; rid in {proj11task1}, type in {task}; {approve }; )
+WSC=5.0
+35.
+rule(adminRoles supseteqln {{planner}}; rid in {proj12task2}, type in {task}; {setCost }; projects ] project)
+WSC=5.0
+36.
+rule(projects supseteqln {{proj22}}; rid in {proj71task1prop}, type in {task}; {request }; expertise > expertise)
+WSC=5.0
+37.
+rule(adminRoles supseteqln {{manager}}, department in {dept6}; rid in {proj21task1prop}, type in {task}; {setCost }; )
+WSC=5.0
+38.
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj42}}; rid in {proj21task1prop}, type in {task}; {approve }; )
+WSC=5.0
+39.
+rule(adminRoles supseteqln {{accountant}}, projects supseteqln {{proj81}}; rid in {proj72task1propa}, type in {task}; {write }; )
+WSC=5.0
+40.
+rule(projects supseteqln {{proj82}}; rid in {proj22task2propa}, type in {task}; {setCost }; expertise > expertise)
+WSC=5.0
+41.
+rule(adminRoles supseteqln {{manager}}, department in {dept7}; rid in {proj22task1}, type in {task}; {approve }; )
+WSC=5.0
+42.
+rule(adminRoles supseteqln {{accountant}}; rid in {proj22task1propa}, type in {task}; {write }; projects ] project)
+WSC=5.0
+43.
+rule(adminRoles supseteqln {{planner}}, projects supseteqln {{proj52}}; rid in {proj71task2}, type in {task}; {request }; )
+WSC=5.0
+44.
+rule(adminRoles supseteqln {{manager}}; rid in {proj92task1prop}, type in {task}; {read }; department=department)
+WSC=5.0
+45.
+rule(adminRoles supseteqln {{accountant}}, projects supseteqln {{proj21}}; rid in {proj61task1}, type in {task}; {write }; )
+WSC=5.0
+46.
+rule(adminRoles supseteqln {{manager}}, department in {dept9}; project in {proj31}, type in {schedule}; {read }; )
+WSC=5.0
+47.
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj81}}; project in {proj72}, type in {budget}; {write }; )
+WSC=5.0
+48.
+rule(projects supseteqln {{proj82}}; rid in {proj61task1}, type in {task}; {write }; expertise > expertise)
+WSC=5.0
+49.
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj91}}; rid in {proj81task2propa}, type in {task}; {request }; )
+WSC=5.0
+50.
+rule(; rid in {proj12task2}, type in {task}; {setCost request read }; expertise > expertise, projects ] project)
+WSC=7.0
+
+total WSC=235
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(adminRoles supseteqln {{manager}}; type in {budget}; {approve read }; department=department)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{manager}}; type in {budget}; {approve read }; department=department), similarity: 1.00
+rule(uid in {ldr42 aud4}; project in {proj71}, type in {schedule}; {approve }; ), similarity: 0.17
+rule(adminRoles supseteqln {{manager}}, department in {dept7}; rid in {proj22task1}, type in {task}; {approve }; ), similarity: 0.26
+rule(adminRoles supseteqln {{manager}}; rid in {proj92task1prop}, type in {task}; {read }; department=department), similarity: 0.63
+
+2. rule(; type in {budget schedule}; {write read }; projectsLed ] project)
+SIMILAR OUTPUT RULES:
+rule(; type in {budget schedule}; {write read }; projectsLed ] project), similarity: 1.00
+
+3. rule(; type in {schedule}; {read }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(; type in {schedule}; {read }; projects ] project), similarity: 1.00
+rule(adminRoles supseteqln {{manager}}, department in {dept9}; project in {proj31}, type in {schedule}; {read }; ), similarity: 0.43
+
+4. rule(; type in {task}; {setStatus }; tasks ] rid)
+SIMILAR OUTPUT RULES:
+rule(; type in {task}; {setStatus }; tasks ] rid), similarity: 1.00
+rule(projectsLed supseteqln {{proj92} {proj41}}; rid in {proj52task2a}, type in {task}; {setStatus }; ), similarity: 0.40
+rule(uid in {ldr41 aud7}; rid in {proj92task2propa}, type in {task}; {setStatus }; ), similarity: 0.38
+rule(uid in {aud10 employee4_area1}; rid in {proj42task2propa}, type in {task}; {setStatus }; ), similarity: 0.38
+rule(uid in {ldr52 employee4_area2}; rid in {proj32task1prop}, type in {task}; {setStatus }; ), similarity: 0.38
+
+5. rule(; type in {task}, proprietary in {false}; {request read }; projects ] project, expertise > expertise)
+SIMILAR OUTPUT RULES:
+rule(; proprietary in {false}, type in {task}; {request read }; expertise > expertise, projects ] project), similarity: 1.00
+rule(expertise supseteqln {{area1}}, projects supseteqln {{proj81} {proj22}}; project in {proj42}, type in {schedule}; {request }; ), similarity: 0.24
+rule(; rid in {proj12task2}, type in {task}; {setCost request read }; expertise > expertise, projects ] project), similarity: 0.79
+
+6. rule(isEmployee in {True}; type in {task}; {request read }; projects ] project, expertise > expertise)
+SIMILAR OUTPUT RULES:
+rule(isEmployee in {True}; type in {task}; {request read }; expertise > expertise, projects ] project), similarity: 1.00
+rule(uid in {nonemployee2_area2 ldr52}; rid in {proj72task1prop}, type in {task}; {read }; ), similarity: 0.32
+rule(uid in {manager8 aud7}; rid in {proj41task2propa}, type in {task}; {approve }; ), similarity: 0.19
+rule(tasks supseteqln {{proj12task2a}}; rid in {proj41task1prop}, type in {task}; {read }; ), similarity: 0.32
+rule(tasks supseteqln {{proj62task2a}}; rid in {proj61task1a}, type in {task}; {read }; ), similarity: 0.32
+rule(tasks supseteqln {{proj102task1propa}}; rid in {proj82task2prop}, type in {task}; {request }; ), similarity: 0.32
+rule(tasks supseteqln {{proj31task2propa}}; rid in {proj102task1prop}, type in {task}; {read }; ), similarity: 0.32
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj52}}; rid in {proj11task1}, type in {task}; {approve }; ), similarity: 0.19
+rule(projects supseteqln {{proj22}}; rid in {proj71task1prop}, type in {task}; {request }; expertise > expertise), similarity: 0.44
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj42}}; rid in {proj21task1prop}, type in {task}; {approve }; ), similarity: 0.19
+rule(adminRoles supseteqln {{planner}}, projects supseteqln {{proj52}}; rid in {proj71task2}, type in {task}; {request }; ), similarity: 0.32
+rule(projects supseteqln {{proj82}}; rid in {proj61task1}, type in {task}; {write }; expertise > expertise), similarity: 0.32
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj91}}; rid in {proj81task2propa}, type in {task}; {request }; ), similarity: 0.32
+
+7. rule(adminRoles supseteqln {{auditor}}; type in {budget}; {read }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{auditor}}; type in {budget}; {read }; projects ] project), similarity: 1.00
+rule(adminRoles supseteqln {{auditor}}; rid in {proj101task2}, type in {task}; {approve setStatus }; projects ] project), similarity: 0.50
+rule(adminRoles supseteqln {{auditor}}, projects supseteqln {{proj81}}; project in {proj72}, type in {budget}; {write }; ), similarity: 0.26
+
+8. rule(adminRoles supseteqln {{accountant}}; type in {budget}; {write read }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{accountant}}; type in {budget}; {write read }; projects ] project), similarity: 1.00
+rule(adminRoles supseteqln {{accountant}}, projects supseteqln {{proj81}}; rid in {proj72task1propa}, type in {task}; {write }; ), similarity: 0.25
+rule(adminRoles supseteqln {{accountant}}; rid in {proj22task1propa}, type in {task}; {write }; projects ] project), similarity: 0.63
+rule(adminRoles supseteqln {{accountant}}, projects supseteqln {{proj21}}; rid in {proj61task1}, type in {task}; {write }; ), similarity: 0.25
+
+9. rule(adminRoles supseteqln {{accountant}}; type in {task}; {setCost }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{accountant}}; type in {task}; {setCost }; projects ] project), similarity: 1.00
+rule(tasks supseteqln {{proj61task2propa}}; project in {proj22}, type in {schedule}; {setCost }; ), similarity: 0.29
+rule(tasks supseteqln {{proj92task1propa}}; rid in {proj61task2propa}, type in {task}; {setCost }; ), similarity: 0.41
+rule(adminRoles supseteqln {{planner}}; rid in {proj12task2}, type in {task}; {setCost }; projects ] project), similarity: 0.63
+rule(adminRoles supseteqln {{manager}}, department in {dept6}; rid in {proj21task1prop}, type in {task}; {setCost }; ), similarity: 0.39
+rule(projects supseteqln {{proj82}}; rid in {proj22task2propa}, type in {task}; {setCost }; expertise > expertise), similarity: 0.41
+
+10. rule(adminRoles supseteqln {{planner}}; type in {schedule}; {write }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{planner}}; type in {schedule}; {write }; projects ] project), similarity: 1.00
+rule(projectsLed supseteqln {{proj51}}; rid in {proj62task1prop}, type in {task}; {write }; ), similarity: 0.29
+rule(tasks supseteqln {{proj32task2propa}}; rid in {proj72task1a}, type in {task}; {write }; ), similarity: 0.29
+
+11. rule(adminRoles supseteqln {{planner}}; type in {task}; {setSchedule }; projects ] project)
+SIMILAR OUTPUT RULES:
+rule(adminRoles supseteqln {{planner}}; type in {task}; {setSchedule }; projects ] project), similarity: 1.00
+rule(projectsLed supseteqln {{proj21}}; rid in {proj51task2prop}, type in {task}; {setSchedule }; ), similarity: 0.41
+rule(projectsLed supseteqln {{proj92}}; rid in {proj61task2prop}, type in {task}; {setSchedule }; ), similarity: 0.41
+rule(tasks supseteqln {{proj41task2a}}; project in {proj21}, type in {schedule}; {setSchedule }; ), similarity: 0.29
+rule(tasks supseteqln {{proj92task1propa}}; rid in {proj12task2a}, type in {task}; {setSchedule }; ), similarity: 0.41
+rule(projectsLed supseteqln {{proj42}}; rid in {proj101task1prop}, type in {task}; {setSchedule }; ), similarity: 0.41
+
+==============================================
+Consistency Check Result:
+true
+==============================================
+Statistics:
+Number of calls to mergeRules: 1
+Number of generalizations: 981
+Number of merges: 493
+Number of eliminated conjuncts: 212
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 25
+Number of eliminated constraints: 0
+Number of subsumption checks: 42
+Number of unsuccessful merges: 30174
+Number of removed pairs: 0
+Number of extra compares: 35602
+==============================================
+Remaining time: 110 millisec
+11 50 49.0 2618.0 1008 235.0 5496

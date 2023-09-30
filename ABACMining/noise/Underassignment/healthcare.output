@@ -1,0 +1,93 @@
+==============================================
+OUTPUT RULES
+
+1.
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+WSC=4.0
+2.
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+WSC=3.0
+3.
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+WSC=5.0
+4.
+rule(; type in {HRitem}; {read }; uid=author)
+WSC=3.0
+5.
+rule(; type in {HR}; {addNote }; uid=patient)
+WSC=3.0
+6.
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+WSC=4.0
+7.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+WSC=4.0
+8.
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+WSC=3.0
+9.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+WSC=4.0
+
+total WSC=33
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+SIMILAR OUTPUT RULES:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward), similarity: 1.00
+
+2. rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam), similarity: 1.00
+
+3. rule(; type in {HR}; {addNote }; uid=patient)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addNote }; uid=patient), similarity: 1.00
+
+4. rule(; type in {HR}; {addNote }; agentFor ] patient)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addNote }; agentFor ] patient), similarity: 1.00
+
+5. rule(; type in {HRitem}; {read }; uid=author)
+SIMILAR OUTPUT RULES:
+rule(; type in {HRitem}; {read }; uid=author), similarity: 1.00
+
+6. rule(position in {nurse}; type in {HRitem}, topics supseteqln {{nursing}}; {read }; ward=ward)
+SIMILAR OUTPUT RULES:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward), similarity: 1.00
+
+7. rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+SIMILAR OUTPUT RULES:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam), similarity: 1.00
+
+8. rule(; type in {HRitem}, topics supseteqln {{note}}; {read }; uid=patient)
+SIMILAR OUTPUT RULES:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient), similarity: 1.00
+
+9. rule(; type in {HRitem}, topics supseteqln {{note}}; {read }; agentFor ] patient)
+SIMILAR OUTPUT RULES:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient), similarity: 1.00
+
+==============================================
+Consistency Check Result:
+false
+==============================================
+Statistics:
+Number of calls to mergeRules: 1
+Number of generalizations: 1021
+Number of merges: 493
+Number of eliminated conjuncts: 49
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 3
+Number of eliminated constraints: 0
+Number of subsumption checks: 102
+Number of unsuccessful merges: 3721
+Number of removed pairs: 0
+Number of extra compares: 64098
+==============================================
+Remaining time: 160 millisec
+==============================================
+Under Assignment Noise: [(nurse9-0,read,nursingItem9-9), (doctor7-0,read,HRitem1-7-1), (doctor2-1,addItem,HR2-7), (patient9-9,addNote,HR9-9), (nurse0-1,read,nursingItem0-0), (nurse9-3,addItem,HR9-0), (nurse5-1,read,nursingItem5-4), (nurse6-3,read,nursingItem6-6), (patient3-5,read,noteItem3-5), (doctor6-0,addItem,HR3-1), (nurse5-1,read,nursingItem5-2), (nurse4-2,read,nursingItem4-7), (doctor6-1,addItem,HR6-1), (doctor0-1,addItem,HR0-9), (doctor9-1,addItem,HR3-2), (nurse3-3,read,nursingItem3-7), (nurse8-0,read,nursingItem8-3), (nurse2-3,read,nursingItem2-2), (nurse8-0,read,nursingItem8-1), (doctor1-0,addItem,HR3-3), (nurse9-0,addItem,HR9-9), (nurse5-0,read,nursingItem5-6), (nurse9-2,addItem,HR9-4), (nurse4-1,read,nursingItem4-5), (nurse5-2,read,nursingItem5-0), (nurse1-2,addItem,HR1-0)]
+Under Assignments in Output Policy: [(nurse5-1,read,nursingItem5-4), (nurse5-1,read,nursingItem5-2), (nurse5-2,read,nursingItem5-0), (nurse5-0,read,nursingItem5-6), (nurse8-0,read,nursingItem8-3), (nurse8-0,read,nursingItem8-1), (doctor6-0,addItem,HR3-1), (doctor9-1,addItem,HR3-2), (doctor7-0,read,HRitem1-7-1), (nurse1-2,addItem,HR1-0), (nurse9-0,read,nursingItem9-9), (patient9-9,addNote,HR9-9), (nurse3-3,read,nursingItem3-7), (nurse4-2,read,nursingItem4-7), (nurse4-1,read,nursingItem4-5), (nurse2-3,read,nursingItem2-2), (patient3-5,read,noteItem3-5), (doctor6-1,addItem,HR6-1), (doctor1-0,addItem,HR3-3), (doctor0-1,addItem,HR0-9), (nurse0-1,read,nursingItem0-0), (nurse9-0,addItem,HR9-9), (nurse9-3,addItem,HR9-0), (nurse9-2,addItem,HR9-4), (doctor2-1,addItem,HR2-7), (nurse6-3,read,nursingItem6-6)]
+Jaccard Similary of Under Assignment Noises and Under Assignments in Output Policy is: 1.0
+9 9 33.0 6862.0 1504 33.0 40470

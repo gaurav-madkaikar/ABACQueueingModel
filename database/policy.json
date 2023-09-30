@@ -1,0 +1,27 @@
+{
+  "rule_1": {
+    "sub": { "UJU": "*", "AFP": "dik" },
+    "obj": { "MSBSPV": "orpt", "GVOSMAU": "ulgng" },
+    "op": "read"
+  },
+  "rule_2": {
+    "sub": { "UJU": "*", "AFP": "dik" },
+    "obj": { "MSBSPV": "rqa", "GVOSMAU": "ulgng" },
+    "op": "read"
+  },
+  "rule_3": {
+    "sub": { "UJU": "*", "AFP": "dik" },
+    "obj": { "MSBSPV": "orpt", "GVOSMAU": "cjql" },
+    "op": "read"
+  },
+  "rule_4": {
+    "sub": { "UJU": "*", "AFP": "dik" },
+    "obj": { "MSBSPV": "orpt", "GVOSMAU": "cjql" },
+    "op": "read"
+  },
+  "rule_5": {
+    "sub": { "UJU": "*", "AFP": "dik" },
+    "obj": { "MSBSPV": "rqa", "GVOSMAU": "ulgng" },
+    "op": "read"
+  }
+}

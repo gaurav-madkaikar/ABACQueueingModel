@@ -1,0 +1,2433 @@
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carNurse1,(addItem,carPat1HR)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (addItem,carPat1HR) is uncovered and that have the same candidate constraint as carNurse1
+[carNurse1, carNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {carTeam1}, patient in {carPat1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remove UP Set: [(carNurse1,addItem,carPat1HR), (carNurse2,addItem,carPat1HR)]
+==============================================
+Remaining Uncovered UP Size: 49
+==============================================
+The set of perms which carNurse1 is uncovered and that have the same candidate constraint as (addItem,carPat1HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {carNurse1}; treatingTeam in {carTeam1}, patient in {carPat1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 49
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carPat1,(addNote,carPat1HR)>
+==============================================
+Candidate constraint:
+[uid=patient, ward=ward]
+==============================================
+The set of users which (addNote,carPat1HR) is uncovered and that have the same candidate constraint as carPat1
+[carPat1]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(carPat1,addNote,carPat1HR)]
+==============================================
+Remaining Uncovered UP Size: 48
+==============================================
+The set of perms which carPat1 is uncovered and that have the same candidate constraint as (addNote,carPat1HR)
+[addNote]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 48
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<doc2,(read,carPat2carItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, uid=author]
+==============================================
+The set of users which (read,carPat2carItem) is uncovered and that have the same candidate constraint as doc2
+[doc2]
+==============================================
+Result of computeUAE:
+[position in {doctor}, specialties supseteqln {{cardiology neurology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {doc2}, topics supseteqln {{cardiology}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{cardiology neurology}}; treatingTeam in {carTeam2}, topics supseteqln {{cardiology}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}; {read }; uid=author)
+==============================================
+Remove UP Set: [(doc2,read,carPat2carItem)]
+==============================================
+Remaining Uncovered UP Size: 47
+==============================================
+The set of perms which doc2 is uncovered and that have the same candidate constraint as (read,carPat2carItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, specialties supseteqln {{cardiology neurology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {doc2}, topics supseteqln {{cardiology}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{cardiology neurology}}; treatingTeam in {carTeam2}, topics supseteqln {{cardiology}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}; {read }; uid=author)
+==============================================
+Remaining Uncovered UP Size: 47
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carNurse1,(addItem,carPat2HR)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (addItem,carPat2HR) is uncovered and that have the same candidate constraint as carNurse1
+[carNurse1, carNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {carTeam2}, patient in {carPat2}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remove UP Set: [(carNurse1,addItem,carPat2HR), (carNurse2,addItem,carPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 45
+==============================================
+The set of perms which carNurse1 is uncovered and that have the same candidate constraint as (addItem,carPat2HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {carNurse1}; treatingTeam in {carTeam2}, patient in {carPat2}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 45
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncNurse2,(read,oncPat2nursingItem)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (read,oncPat2nursingItem) is uncovered and that have the same candidate constraint as oncNurse2
+[oncNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncNurse1}, topics supseteqln {{nursing}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {oncNurse2}; treatingTeam in {oncTeam2}, author in {oncNurse1}, topics supseteqln {{nursing}}, patient in {oncPat2}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remove UP Set: [(oncNurse2,read,oncPat2nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 44
+==============================================
+The set of perms which oncNurse2 is uncovered and that have the same candidate constraint as (read,oncPat2nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncNurse1}, topics supseteqln {{nursing}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {oncNurse2}; treatingTeam in {oncTeam2}, author in {oncNurse1}, topics supseteqln {{nursing}}, patient in {oncPat2}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 44
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncDoc1,(read,oncPat1oncItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, teams ] treatingTeam, uid=author]
+==============================================
+The set of users which (read,oncPat1oncItem) is uncovered and that have the same candidate constraint as oncDoc1
+[oncDoc1]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2 oncTeam1}}, specialties supseteqln {{oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncDoc1}, topics supseteqln {{oncology}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; author in {oncDoc1}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remove UP Set: [(oncDoc1,read,oncPat1oncItem), (oncDoc2,read,oncPat1oncItem)]
+==============================================
+Remaining Uncovered UP Size: 42
+==============================================
+The set of perms which oncDoc1 is uncovered and that have the same candidate constraint as (read,oncPat1oncItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2 oncTeam1}}, specialties supseteqln {{oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncDoc1}, topics supseteqln {{oncology}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; patient in {oncPat1}, ward in {oncWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam, uid=author)
+==============================================
+Remaining Uncovered UP Size: 42
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carPat2,(addNote,carPat2HR)>
+==============================================
+Candidate constraint:
+[uid=patient, ward=ward]
+==============================================
+The set of users which (addNote,carPat2HR) is uncovered and that have the same candidate constraint as carPat2
+[carPat2]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(carPat2,addNote,carPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 41
+==============================================
+The set of perms which carPat2 is uncovered and that have the same candidate constraint as (addNote,carPat2HR)
+[addNote]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 41
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carAgent2,(addNote,carPat2HR)>
+==============================================
+Candidate constraint:
+[agentFor ] patient]
+==============================================
+The set of users which (addNote,carPat2HR) is uncovered and that have the same candidate constraint as carAgent2
+[carAgent2]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}, uid in {carAgent2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(uid in {carAgent2}; treatingTeam in {carTeam2}, ward in {carWard}, type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Remove UP Set: [(carAgent2,addNote,carPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 40
+==============================================
+The set of perms which carAgent2 is uncovered and that have the same candidate constraint as (addNote,carPat2HR)
+[addNote]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}, uid in {carAgent2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(uid in {carAgent2}; treatingTeam in {carTeam2}, ward in {carWard}, type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Remaining Uncovered UP Size: 40
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncDoc3,(read,oncPat2oncItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, teams ] treatingTeam]
+==============================================
+The set of users which (read,oncPat2oncItem) is uncovered and that have the same candidate constraint as oncDoc3
+[oncDoc3, oncDoc4]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2}}, specialties supseteqln {{oncology}}, uid in {oncDoc3 oncDoc4}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {doc1}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, uid in {oncDoc3 oncDoc4}; author in {doc1}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remove UP Set: [(oncDoc4,read,oncPat2oncItem), (oncDoc3,read,oncPat2oncItem)]
+==============================================
+Remaining Uncovered UP Size: 38
+==============================================
+The set of perms which oncDoc3 is uncovered and that have the same candidate constraint as (read,oncPat2oncItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2}}, specialties supseteqln {{oncology}}, uid in {oncDoc3}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {doc1}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, uid in {oncDoc3}; author in {doc1}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 38
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncDoc1,(read,oncPat2oncItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, teams ] treatingTeam]
+==============================================
+The set of users which (read,oncPat2oncItem) is uncovered and that have the same candidate constraint as oncDoc1
+[oncDoc1, oncDoc3, oncDoc4]
+==============================================
+Removed Sets for UAE teams supseteqln {{oncTeam2} {oncTeam2 oncTeam1}}
+[[oncTeam2, oncTeam1]]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2}}, specialties supseteqln {{oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {doc1}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remove UP Set: [(oncDoc4,read,oncPat2oncItem), (oncDoc3,read,oncPat2oncItem), (oncDoc1,read,oncPat2oncItem)]
+==============================================
+Remaining Uncovered UP Size: 37
+==============================================
+The set of perms which oncDoc1 is uncovered and that have the same candidate constraint as (read,oncPat2oncItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2 oncTeam1}}, specialties supseteqln {{oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {doc1}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 37
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncDoc4,(addItem,oncPat2HR)>
+==============================================
+Candidate constraint:
+[teams ] treatingTeam]
+==============================================
+The set of users which (addItem,oncPat2HR) is uncovered and that have the same candidate constraint as oncDoc4
+[oncDoc3, oncDoc4]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2}}, specialties supseteqln {{oncology}}, uid in {oncDoc3 oncDoc4}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{oncology}}, uid in {oncDoc3 oncDoc4}; patient in {oncPat2}, ward in {oncWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remove UP Set: [(oncDoc3,addItem,oncPat2HR), (oncDoc4,addItem,oncPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 35
+==============================================
+The set of perms which oncDoc4 is uncovered and that have the same candidate constraint as (addItem,oncPat2HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2}}, specialties supseteqln {{oncology}}, uid in {oncDoc4}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{oncology}}, uid in {oncDoc4}; patient in {oncPat2}, ward in {oncWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 35
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncAgent2,(read,oncPat2noteItem)>
+==============================================
+Candidate constraint:
+[agentFor ] patient]
+==============================================
+The set of users which (read,oncPat2noteItem) is uncovered and that have the same candidate constraint as oncAgent2
+[oncAgent2]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{oncPat2}}, uid in {oncAgent2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(uid in {oncAgent2}; treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, ward in {oncWard}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Remove UP Set: [(oncAgent2,read,oncPat2noteItem)]
+==============================================
+Remaining Uncovered UP Size: 34
+==============================================
+The set of perms which oncAgent2 is uncovered and that have the same candidate constraint as (read,oncPat2noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{oncPat2}}, uid in {oncAgent2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(uid in {oncAgent2}; treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, ward in {oncWard}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Remaining Uncovered UP Size: 34
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncPat2,(read,oncPat2noteItem)>
+==============================================
+Candidate constraint:
+[uid=patient, ward=ward]
+==============================================
+The set of users which (read,oncPat2noteItem) is uncovered and that have the same candidate constraint as oncPat2
+[oncPat2]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(oncPat2,read,oncPat2noteItem)]
+==============================================
+Remaining Uncovered UP Size: 33
+==============================================
+The set of perms which oncPat2 is uncovered and that have the same candidate constraint as (read,oncPat2noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 33
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carAgent1,(addNote,carPat2HR)>
+==============================================
+Candidate constraint:
+[agentFor ] patient]
+==============================================
+The set of users which (addNote,carPat2HR) is uncovered and that have the same candidate constraint as carAgent1
+[carAgent1, carAgent2]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam2}, ward in {carWard}, type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Remove UP Set: [(carAgent1,addNote,carPat2HR), (carAgent2,addNote,carPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 32
+==============================================
+The set of perms which carAgent1 is uncovered and that have the same candidate constraint as (addNote,carPat2HR)
+[addNote]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}, uid in {carAgent1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(uid in {carAgent1}; treatingTeam in {carTeam2}, ward in {carWard}, type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Remaining Uncovered UP Size: 32
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carAgent1,(read,carPat2noteItem)>
+==============================================
+Candidate constraint:
+[agentFor ] patient, uid=author]
+==============================================
+The set of users which (read,carPat2noteItem) is uncovered and that have the same candidate constraint as carAgent1
+[carAgent1]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}, uid in {carAgent1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam2}, topics supseteqln {{note}}, ward in {carWard}, type in {HRitem}; {read }; agentFor ] patient, uid=author)
+==============================================
+Remove UP Set: [(carAgent1,read,carPat2noteItem)]
+==============================================
+Remaining Uncovered UP Size: 31
+==============================================
+The set of perms which carAgent1 is uncovered and that have the same candidate constraint as (read,carPat2noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}, uid in {carAgent1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam2}, topics supseteqln {{note}}, ward in {carWard}, type in {HRitem}; {read }; agentFor ] patient, uid=author)
+==============================================
+Remaining Uncovered UP Size: 31
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carDoc2,(read,carPat2carItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, teams ] treatingTeam]
+==============================================
+The set of users which (read,carPat2carItem) is uncovered and that have the same candidate constraint as carDoc2
+[carDoc2]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam2}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {doc2}, topics supseteqln {{cardiology}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; author in {doc2}, patient in {carPat2}, ward in {carWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remove UP Set: [(carDoc2,read,carPat2carItem)]
+==============================================
+Remaining Uncovered UP Size: 30
+==============================================
+The set of perms which carDoc2 is uncovered and that have the same candidate constraint as (read,carPat2carItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam2}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {doc2}, topics supseteqln {{cardiology}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; author in {doc2}, patient in {carPat2}, ward in {carWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 30
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carNurse2,(read,carPat1nursingItem)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (read,carPat1nursingItem) is uncovered and that have the same candidate constraint as carNurse2
+[carNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carNurse1}, topics supseteqln {{nursing}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {carNurse2}; treatingTeam in {carTeam1}, author in {carNurse1}, topics supseteqln {{nursing}}, patient in {carPat1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remove UP Set: [(carNurse2,read,carPat1nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 29
+==============================================
+The set of perms which carNurse2 is uncovered and that have the same candidate constraint as (read,carPat1nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carNurse1}, topics supseteqln {{nursing}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {carNurse2}; treatingTeam in {carTeam1}, author in {carNurse1}, topics supseteqln {{nursing}}, patient in {carPat1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 29
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncDoc1,(addItem,oncPat2HR)>
+==============================================
+Candidate constraint:
+[teams ] treatingTeam]
+==============================================
+The set of users which (addItem,oncPat2HR) is uncovered and that have the same candidate constraint as oncDoc1
+[oncDoc1, oncDoc3, oncDoc4]
+==============================================
+Removed Sets for UAE teams supseteqln {{oncTeam2} {oncTeam2 oncTeam1}}
+[[oncTeam2, oncTeam1]]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2}}, specialties supseteqln {{oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, ward in {oncWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remove UP Set: [(oncDoc1,addItem,oncPat2HR), (oncDoc3,addItem,oncPat2HR), (oncDoc4,addItem,oncPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 28
+==============================================
+The set of perms which oncDoc1 is uncovered and that have the same candidate constraint as (addItem,oncPat2HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2 oncTeam1}}, specialties supseteqln {{oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, ward in {oncWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 28
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncDoc1,(addItem,oncPat1HR)>
+==============================================
+Candidate constraint:
+[teams ] treatingTeam]
+==============================================
+The set of users which (addItem,oncPat1HR) is uncovered and that have the same candidate constraint as oncDoc1
+[oncDoc1, oncDoc2, anesDoc1]
+==============================================
+Removed Sets for UAE teams supseteqln {{oncTeam1 carTeam1} {oncTeam1} {oncTeam2 oncTeam1}}
+[[oncTeam1, carTeam1], [oncTeam2, oncTeam1]]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam1}}, specialties supseteqln {{oncology} {anesthesiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, patient in {oncPat1}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{oncology} {anesthesiology}}; patient in {oncPat1}, ward in {oncWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remove UP Set: [(oncDoc1,addItem,oncPat1HR), (oncDoc2,addItem,oncPat1HR), (anesDoc1,addItem,oncPat1HR)]
+==============================================
+Remaining Uncovered UP Size: 25
+==============================================
+The set of perms which oncDoc1 is uncovered and that have the same candidate constraint as (addItem,oncPat1HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam2 oncTeam1}}, specialties supseteqln {{oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, patient in {oncPat1}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat1}, ward in {oncWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 25
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncPat1,(addNote,oncPat1HR)>
+==============================================
+Candidate constraint:
+[uid=patient, ward=ward]
+==============================================
+The set of users which (addNote,oncPat1HR) is uncovered and that have the same candidate constraint as oncPat1
+[oncPat1]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, patient in {oncPat1}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(oncPat1,addNote,oncPat1HR)]
+==============================================
+Remaining Uncovered UP Size: 24
+==============================================
+The set of perms which oncPat1 is uncovered and that have the same candidate constraint as (addNote,oncPat1HR)
+[addNote]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, patient in {oncPat1}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 24
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncNurse2,(addItem,oncPat2HR)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (addItem,oncPat2HR) is uncovered and that have the same candidate constraint as oncNurse2
+[oncNurse1, oncNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {oncTeam2}, patient in {oncPat2}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remove UP Set: [(oncNurse2,addItem,oncPat2HR), (oncNurse1,addItem,oncPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 22
+==============================================
+The set of perms which oncNurse2 is uncovered and that have the same candidate constraint as (addItem,oncPat2HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {oncNurse2}; treatingTeam in {oncTeam2}, patient in {oncPat2}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 22
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncAgent1,(read,oncPat2noteItem)>
+==============================================
+Candidate constraint:
+[agentFor ] patient, uid=author]
+==============================================
+The set of users which (read,oncPat2noteItem) is uncovered and that have the same candidate constraint as oncAgent1
+[oncAgent1]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{oncPat2}}, uid in {oncAgent1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam2}, topics supseteqln {{note}}, ward in {oncWard}, type in {HRitem}; {read }; agentFor ] patient, uid=author)
+==============================================
+Remove UP Set: [(oncAgent1,read,oncPat2noteItem)]
+==============================================
+Remaining Uncovered UP Size: 21
+==============================================
+The set of perms which oncAgent1 is uncovered and that have the same candidate constraint as (read,oncPat2noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{oncPat2}}, uid in {oncAgent1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncAgent1}, topics supseteqln {{note}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam2}, topics supseteqln {{note}}, ward in {oncWard}, type in {HRitem}; {read }; agentFor ] patient, uid=author)
+==============================================
+Remaining Uncovered UP Size: 21
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carDoc2,(read,carPat1carItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, uid=author]
+==============================================
+The set of users which (read,carPat1carItem) is uncovered and that have the same candidate constraint as carDoc2
+[carDoc2]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam2}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carDoc2}, topics supseteqln {{cardiology}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, teams supseteqln {{carTeam2}}; treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HRitem}; {read }; specialties > topics, uid=author)
+==============================================
+Remove UP Set: [(carDoc2,read,carPat1carItem)]
+==============================================
+Remaining Uncovered UP Size: 20
+==============================================
+The set of perms which carDoc2 is uncovered and that have the same candidate constraint as (read,carPat1carItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam2}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carDoc2}, topics supseteqln {{cardiology}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, teams supseteqln {{carTeam2}}; treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HRitem}; {read }; specialties > topics, uid=author)
+==============================================
+Remaining Uncovered UP Size: 20
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carNurse1,(read,carPat2nursingItem)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (read,carPat2nursingItem) is uncovered and that have the same candidate constraint as carNurse1
+[carNurse1]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carNurse2}, topics supseteqln {{nursing}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {carNurse1}; treatingTeam in {carTeam2}, author in {carNurse2}, topics supseteqln {{nursing}}, patient in {carPat2}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remove UP Set: [(carNurse1,read,carPat2nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 19
+==============================================
+The set of perms which carNurse1 is uncovered and that have the same candidate constraint as (read,carPat2nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carNurse2}, topics supseteqln {{nursing}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {carNurse1}; treatingTeam in {carTeam2}, author in {carNurse2}, topics supseteqln {{nursing}}, patient in {carPat2}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 19
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<anesDoc1,(addItem,carPat1HR)>
+==============================================
+Candidate constraint:
+[teams ] treatingTeam]
+==============================================
+The set of users which (addItem,carPat1HR) is uncovered and that have the same candidate constraint as anesDoc1
+[anesDoc1]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam1 carTeam1}}, specialties supseteqln {{anesthesiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{anesthesiology}}; patient in {carPat1}, ward in {carWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remove UP Set: [(anesDoc1,addItem,carPat1HR)]
+==============================================
+Remaining Uncovered UP Size: 18
+==============================================
+The set of perms which anesDoc1 is uncovered and that have the same candidate constraint as (addItem,carPat1HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{oncTeam1 carTeam1}}, specialties supseteqln {{anesthesiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{anesthesiology}}; patient in {carPat1}, ward in {carWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 18
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carAgent2,(read,carPat2noteItem)>
+==============================================
+Candidate constraint:
+[agentFor ] patient]
+==============================================
+The set of users which (read,carPat2noteItem) is uncovered and that have the same candidate constraint as carAgent2
+[carAgent2]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}, uid in {carAgent2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(uid in {carAgent2}; treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, ward in {carWard}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Remove UP Set: [(carAgent2,read,carPat2noteItem)]
+==============================================
+Remaining Uncovered UP Size: 17
+==============================================
+The set of perms which carAgent2 is uncovered and that have the same candidate constraint as (read,carPat2noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{carPat2}}, uid in {carAgent2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(uid in {carAgent2}; treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, ward in {carWard}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Remaining Uncovered UP Size: 17
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncAgent2,(addNote,oncPat2HR)>
+==============================================
+Candidate constraint:
+[agentFor ] patient]
+==============================================
+The set of users which (addNote,oncPat2HR) is uncovered and that have the same candidate constraint as oncAgent2
+[oncAgent1, oncAgent2]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{oncPat2}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam2}, ward in {oncWard}, type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Remove UP Set: [(oncAgent1,addNote,oncPat2HR), (oncAgent2,addNote,oncPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 15
+==============================================
+The set of perms which oncAgent2 is uncovered and that have the same candidate constraint as (addNote,oncPat2HR)
+[addNote]
+==============================================
+Result of computeUAE:
+[agentFor supseteqln {{oncPat2}}, uid in {oncAgent2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(uid in {oncAgent2}; treatingTeam in {oncTeam2}, ward in {oncWard}, type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Remaining Uncovered UP Size: 15
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncPat1,(read,oncPat1noteItem)>
+==============================================
+Candidate constraint:
+[uid=author, uid=patient, ward=ward]
+==============================================
+The set of users which (read,oncPat1noteItem) is uncovered and that have the same candidate constraint as oncPat1
+[oncPat1]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncPat1}, topics supseteqln {{note}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(oncPat1,read,oncPat1noteItem)]
+==============================================
+Remaining Uncovered UP Size: 14
+==============================================
+The set of perms which oncPat1 is uncovered and that have the same candidate constraint as (read,oncPat1noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncPat1}, topics supseteqln {{note}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 14
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carDoc2,(addItem,carPat2HR)>
+==============================================
+Candidate constraint:
+[teams ] treatingTeam]
+==============================================
+The set of users which (addItem,carPat2HR) is uncovered and that have the same candidate constraint as carDoc2
+[carDoc2]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam2}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat2}, ward in {carWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remove UP Set: [(carDoc2,addItem,carPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 13
+==============================================
+The set of perms which carDoc2 is uncovered and that have the same candidate constraint as (addItem,carPat2HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam2}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, patient in {carPat2}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat2}, ward in {carWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 13
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncPat2,(addNote,oncPat2HR)>
+==============================================
+Candidate constraint:
+[uid=patient, ward=ward]
+==============================================
+The set of users which (addNote,oncPat2HR) is uncovered and that have the same candidate constraint as oncPat2
+[oncPat2]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(oncPat2,addNote,oncPat2HR)]
+==============================================
+Remaining Uncovered UP Size: 12
+==============================================
+The set of perms which oncPat2 is uncovered and that have the same candidate constraint as (addNote,oncPat2HR)
+[addNote]
+==============================================
+Result of computeUAE:
+[ward in {oncWard}, uid in {oncPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, patient in {oncPat2}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {oncTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 12
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncNurse2,(addItem,oncPat1HR)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (addItem,oncPat1HR) is uncovered and that have the same candidate constraint as oncNurse2
+[oncNurse1, oncNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, patient in {oncPat1}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {oncTeam1}, patient in {oncPat1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remove UP Set: [(oncNurse2,addItem,oncPat1HR), (oncNurse1,addItem,oncPat1HR)]
+==============================================
+Remaining Uncovered UP Size: 10
+==============================================
+The set of perms which oncNurse2 is uncovered and that have the same candidate constraint as (addItem,oncPat1HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, patient in {oncPat1}, ward in {oncWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {oncNurse2}; treatingTeam in {oncTeam1}, patient in {oncPat1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 10
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncNurse2,(read,oncPat1nursingItem)>
+==============================================
+Candidate constraint:
+[uid=author, ward=ward]
+==============================================
+The set of users which (read,oncPat1nursingItem) is uncovered and that have the same candidate constraint as oncNurse2
+[oncNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncNurse2}, topics supseteqln {{nursing}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {oncTeam1}, topics supseteqln {{nursing}}, patient in {oncPat1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remove UP Set: [(oncNurse2,read,oncPat1nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 9
+==============================================
+The set of perms which oncNurse2 is uncovered and that have the same candidate constraint as (read,oncPat1nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncNurse2}, topics supseteqln {{nursing}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {oncTeam1}, topics supseteqln {{nursing}}, patient in {oncPat1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 9
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carDoc1,(addItem,carPat1HR)>
+==============================================
+Candidate constraint:
+[teams ] treatingTeam]
+==============================================
+The set of users which (addItem,carPat1HR) is uncovered and that have the same candidate constraint as carDoc1
+[carDoc1, anesDoc1]
+==============================================
+Removed Sets for UAE teams supseteqln {{oncTeam1 carTeam1} {carTeam1}}
+[[oncTeam1, carTeam1]]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam1}}, specialties supseteqln {{cardiology} {anesthesiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{cardiology} {anesthesiology}}; patient in {carPat1}, ward in {carWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remove UP Set: [(carDoc1,addItem,carPat1HR), (anesDoc1,addItem,carPat1HR)]
+==============================================
+Remaining Uncovered UP Size: 8
+==============================================
+The set of perms which carDoc1 is uncovered and that have the same candidate constraint as (addItem,carPat1HR)
+[addItem]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam1}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, patient in {carPat1}, ward in {carWard}, type in {HR}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat1}, ward in {carWard}, type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 8
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carPat2,(read,carPat2noteItem)>
+==============================================
+Candidate constraint:
+[uid=patient, ward=ward]
+==============================================
+The set of users which (read,carPat2noteItem) is uncovered and that have the same candidate constraint as carPat2
+[carPat2]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(carPat2,read,carPat2noteItem)]
+==============================================
+Remaining Uncovered UP Size: 7
+==============================================
+The set of perms which carPat2 is uncovered and that have the same candidate constraint as (read,carPat2noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam2}, author in {carAgent1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 7
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carDoc1,(read,carPat1carItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, teams ] treatingTeam]
+==============================================
+The set of users which (read,carPat1carItem) is uncovered and that have the same candidate constraint as carDoc1
+[carDoc1]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam1}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carDoc2}, topics supseteqln {{cardiology}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; author in {carDoc2}, patient in {carPat1}, ward in {carWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remove UP Set: [(carDoc1,read,carPat1carItem)]
+==============================================
+Remaining Uncovered UP Size: 6
+==============================================
+The set of perms which carDoc1 is uncovered and that have the same candidate constraint as (read,carPat1carItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, teams supseteqln {{carTeam1}}, specialties supseteqln {{cardiology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carDoc2}, topics supseteqln {{cardiology}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}; author in {carDoc2}, patient in {carPat1}, ward in {carWard}, type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Remaining Uncovered UP Size: 6
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncNurse1,(read,oncPat2nursingItem)>
+==============================================
+Candidate constraint:
+[uid=author, ward=ward]
+==============================================
+The set of users which (read,oncPat2nursingItem) is uncovered and that have the same candidate constraint as oncNurse1
+[oncNurse1]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncNurse1}, topics supseteqln {{nursing}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {oncTeam2}, topics supseteqln {{nursing}}, patient in {oncPat2}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remove UP Set: [(oncNurse1,read,oncPat2nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 5
+==============================================
+The set of perms which oncNurse1 is uncovered and that have the same candidate constraint as (read,oncPat2nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {oncNurse1}, topics supseteqln {{nursing}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {oncTeam2}, topics supseteqln {{nursing}}, patient in {oncPat2}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 5
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carNurse2,(read,carPat2nursingItem)>
+==============================================
+Candidate constraint:
+[uid=author, ward=ward]
+==============================================
+The set of users which (read,carPat2nursingItem) is uncovered and that have the same candidate constraint as carNurse2
+[carNurse2]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carNurse2}, topics supseteqln {{nursing}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {carTeam2}, topics supseteqln {{nursing}}, patient in {carPat2}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remove UP Set: [(carNurse2,read,carPat2nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 4
+==============================================
+The set of perms which carNurse2 is uncovered and that have the same candidate constraint as (read,carPat2nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse2}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam2}, author in {carNurse2}, topics supseteqln {{nursing}}, patient in {carPat2}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {carTeam2}, topics supseteqln {{nursing}}, patient in {carPat2}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 4
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<doc1,(read,oncPat2oncItem)>
+==============================================
+Candidate constraint:
+[specialties > topics, uid=author]
+==============================================
+The set of users which (read,oncPat2oncItem) is uncovered and that have the same candidate constraint as doc1
+[doc1]
+==============================================
+Result of computeUAE:
+[position in {doctor}, specialties supseteqln {{pediatrics oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {doc1}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{pediatrics oncology}}; treatingTeam in {oncTeam2}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}; {read }; uid=author)
+==============================================
+Remove UP Set: [(doc1,read,oncPat2oncItem)]
+==============================================
+Remaining Uncovered UP Size: 3
+==============================================
+The set of perms which doc1 is uncovered and that have the same candidate constraint as (read,oncPat2oncItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {doctor}, specialties supseteqln {{pediatrics oncology}}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam2}, author in {doc1}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {doctor}, specialties supseteqln {{pediatrics oncology}}; treatingTeam in {oncTeam2}, topics supseteqln {{oncology}}, patient in {oncPat2}, ward in {oncWard}, type in {HRitem}; {read }; uid=author)
+==============================================
+Remaining Uncovered UP Size: 3
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carPat1,(read,carPat1noteItem)>
+==============================================
+Candidate constraint:
+[uid=author, uid=patient, ward=ward]
+==============================================
+The set of users which (read,carPat1noteItem) is uncovered and that have the same candidate constraint as carPat1
+[carPat1]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carPat1}, topics supseteqln {{note}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Remove UP Set: [(carPat1,read,carPat1noteItem)]
+==============================================
+Remaining Uncovered UP Size: 2
+==============================================
+The set of perms which carPat1 is uncovered and that have the same candidate constraint as (read,carPat1noteItem)
+[read]
+==============================================
+Result of computeUAE:
+[ward in {carWard}, uid in {carPat1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carPat1}, topics supseteqln {{note}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(; treatingTeam in {carTeam1}, topics supseteqln {{note}}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 2
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<oncNurse1,(read,oncPat1nursingItem)>
+==============================================
+Candidate constraint:
+[ward=ward]
+==============================================
+The set of users which (read,oncPat1nursingItem) is uncovered and that have the same candidate constraint as oncNurse1
+[oncNurse1]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncNurse2}, topics supseteqln {{nursing}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {oncNurse1}; treatingTeam in {oncTeam1}, author in {oncNurse2}, topics supseteqln {{nursing}}, patient in {oncPat1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remove UP Set: [(oncNurse1,read,oncPat1nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 1
+==============================================
+The set of perms which oncNurse1 is uncovered and that have the same candidate constraint as (read,oncPat1nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {oncWard}, uid in {oncNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {oncTeam1}, author in {oncNurse2}, topics supseteqln {{nursing}}, patient in {oncPat1}, ward in {oncWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}, uid in {oncNurse1}; treatingTeam in {oncTeam1}, author in {oncNurse2}, topics supseteqln {{nursing}}, patient in {oncPat1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Remaining Uncovered UP Size: 1
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<carNurse1,(read,carPat1nursingItem)>
+==============================================
+Candidate constraint:
+[uid=author, ward=ward]
+==============================================
+The set of users which (read,carPat1nursingItem) is uncovered and that have the same candidate constraint as carNurse1
+[carNurse1]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carNurse1}, topics supseteqln {{nursing}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {carTeam1}, topics supseteqln {{nursing}}, patient in {carPat1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remove UP Set: [(carNurse1,read,carPat1nursingItem)]
+==============================================
+Remaining Uncovered UP Size: 0
+==============================================
+The set of perms which carNurse1 is uncovered and that have the same candidate constraint as (read,carPat1nursingItem)
+[read]
+==============================================
+Result of computeUAE:
+[position in {nurse}, ward in {carWard}, uid in {carNurse1}]
+==============================================
+Result of computePAE:
+[treatingTeam in {carTeam1}, author in {carNurse1}, topics supseteqln {{nursing}}, patient in {carPat1}, ward in {carWard}, type in {HRitem}]
+==============================================
+Generalized Rule: 
+rule(position in {nurse}; treatingTeam in {carTeam1}, topics supseteqln {{nursing}}, patient in {carPat1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Remaining Uncovered UP Size: 0
+==============================================
+Time for the main while loop : 247 millisec
+==============================================
+BEFORE MERGING RULES
+
+1.
+rule(position in {nurse}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HR}; {addItem }; ward=ward)
+2.
+rule(position in {nurse}, uid in {carNurse1}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HR}; {addItem }; ward=ward)
+3.
+rule(; treatingTeam in {carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+4.
+rule(; treatingTeam in {carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+5.
+rule(position in {doctor}, specialties supseteqln {{cardiology neurology}}; patient in {carPat2}, topics supseteqln {{cardiology}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; uid=author)
+6.
+rule(position in {doctor}, specialties supseteqln {{cardiology neurology}}; patient in {carPat2}, topics supseteqln {{cardiology}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; uid=author)
+7.
+rule(position in {nurse}; patient in {carPat2}, treatingTeam in {carTeam2}, type in {HR}; {addItem }; ward=ward)
+8.
+rule(position in {nurse}, uid in {carNurse1}; patient in {carPat2}, treatingTeam in {carTeam2}, type in {HR}; {addItem }; ward=ward)
+9.
+rule(position in {nurse}, uid in {oncNurse2}; author in {oncNurse1}, patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; ward=ward)
+10.
+rule(position in {nurse}, uid in {oncNurse2}; author in {oncNurse1}, patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; ward=ward)
+11.
+rule(position in {doctor}; author in {oncDoc1}, patient in {oncPat1}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+12.
+rule(position in {doctor}; patient in {oncPat1}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam, uid=author)
+13.
+rule(; treatingTeam in {carTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+14.
+rule(; treatingTeam in {carTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+15.
+rule(uid in {carAgent2}; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+16.
+rule(uid in {carAgent2}; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+17.
+rule(position in {doctor}, uid in {oncDoc3 oncDoc4}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+18.
+rule(position in {doctor}, uid in {oncDoc3}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+19.
+rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+20.
+rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+21.
+rule(position in {doctor}, specialties supseteqln {{oncology}}, uid in {oncDoc3 oncDoc4}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+22.
+rule(position in {doctor}, specialties supseteqln {{oncology}}, uid in {oncDoc4}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+23.
+rule(uid in {oncAgent2}; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient)
+24.
+rule(uid in {oncAgent2}; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient)
+25.
+rule(; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+26.
+rule(; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+27.
+rule(; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+28.
+rule(uid in {carAgent1}; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+29.
+rule(; topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient, uid=author)
+30.
+rule(; topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient, uid=author)
+31.
+rule(position in {doctor}; author in {doc2}, patient in {carPat2}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+32.
+rule(position in {doctor}; author in {doc2}, patient in {carPat2}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+33.
+rule(position in {nurse}, uid in {carNurse2}; author in {carNurse1}, patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; ward=ward)
+34.
+rule(position in {nurse}, uid in {carNurse2}; author in {carNurse1}, patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; ward=ward)
+35.
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+36.
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+37.
+rule(position in {doctor}, specialties supseteqln {{oncology} {anesthesiology}}; patient in {oncPat1}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+38.
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat1}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+39.
+rule(; treatingTeam in {oncTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+40.
+rule(; treatingTeam in {oncTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+41.
+rule(position in {nurse}; patient in {oncPat2}, treatingTeam in {oncTeam2}, type in {HR}; {addItem }; ward=ward)
+42.
+rule(position in {nurse}, uid in {oncNurse2}; patient in {oncPat2}, treatingTeam in {oncTeam2}, type in {HR}; {addItem }; ward=ward)
+43.
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient, uid=author)
+44.
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient, uid=author)
+45.
+rule(position in {doctor}, teams supseteqln {{carTeam2}}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, uid=author)
+46.
+rule(position in {doctor}, teams supseteqln {{carTeam2}}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, uid=author)
+47.
+rule(position in {nurse}, uid in {carNurse1}; author in {carNurse2}, patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; ward=ward)
+48.
+rule(position in {nurse}, uid in {carNurse1}; author in {carNurse2}, patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; ward=ward)
+49.
+rule(position in {doctor}, specialties supseteqln {{anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+50.
+rule(position in {doctor}, specialties supseteqln {{anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+51.
+rule(uid in {carAgent2}; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient)
+52.
+rule(uid in {carAgent2}; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient)
+53.
+rule(; treatingTeam in {oncTeam2}, type in {HR}, ward in {oncWard}; {addNote }; agentFor ] patient)
+54.
+rule(uid in {oncAgent2}; treatingTeam in {oncTeam2}, type in {HR}, ward in {oncWard}; {addNote }; agentFor ] patient)
+55.
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+56.
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+57.
+rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat2}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+58.
+rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat2}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+59.
+rule(; treatingTeam in {oncTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+60.
+rule(; treatingTeam in {oncTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+61.
+rule(position in {nurse}; patient in {oncPat1}, treatingTeam in {oncTeam1}, type in {HR}; {addItem }; ward=ward)
+62.
+rule(position in {nurse}, uid in {oncNurse2}; patient in {oncPat1}, treatingTeam in {oncTeam1}, type in {HR}; {addItem }; ward=ward)
+63.
+rule(position in {nurse}; patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+64.
+rule(position in {nurse}; patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+65.
+rule(position in {doctor}, specialties supseteqln {{cardiology} {anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+66.
+rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+67.
+rule(; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+68.
+rule(; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+69.
+rule(position in {doctor}; author in {carDoc2}, patient in {carPat1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+70.
+rule(position in {doctor}; author in {carDoc2}, patient in {carPat1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+71.
+rule(position in {nurse}; patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+72.
+rule(position in {nurse}; patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+73.
+rule(position in {nurse}; patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+74.
+rule(position in {nurse}; patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+75.
+rule(position in {doctor}, specialties supseteqln {{pediatrics oncology}}; patient in {oncPat2}, topics supseteqln {{oncology}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; uid=author)
+76.
+rule(position in {doctor}, specialties supseteqln {{pediatrics oncology}}; patient in {oncPat2}, topics supseteqln {{oncology}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; uid=author)
+77.
+rule(; topics supseteqln {{note}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+78.
+rule(; topics supseteqln {{note}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+79.
+rule(position in {nurse}, uid in {oncNurse1}; author in {oncNurse2}, patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; ward=ward)
+80.
+rule(position in {nurse}, uid in {oncNurse1}; author in {oncNurse2}, patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; ward=ward)
+81.
+rule(position in {nurse}; patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+82.
+rule(position in {nurse}; patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {carNurse1}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HR}; {addItem }; ward=ward)
+because of 
+rule(position in {nurse}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Removing Rule rule(; treatingTeam in {carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+because of 
+rule(; treatingTeam in {carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{cardiology neurology}}; patient in {carPat2}, topics supseteqln {{cardiology}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; uid=author)
+because of 
+rule(position in {doctor}, specialties supseteqln {{cardiology neurology}}; patient in {carPat2}, topics supseteqln {{cardiology}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; uid=author)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {carNurse1}; patient in {carPat2}, treatingTeam in {carTeam2}, type in {HR}; {addItem }; ward=ward)
+because of 
+rule(position in {nurse}; patient in {carPat2}, treatingTeam in {carTeam2}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {oncNurse2}; author in {oncNurse1}, patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; ward=ward)
+because of 
+rule(position in {nurse}, uid in {oncNurse2}; author in {oncNurse1}, patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}; patient in {oncPat1}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam, uid=author)
+because of 
+rule(position in {doctor}; author in {oncDoc1}, patient in {oncPat1}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Removing Rule rule(; treatingTeam in {carTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+because of 
+rule(; treatingTeam in {carTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Removing Rule rule(uid in {carAgent2}; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+because of 
+rule(uid in {carAgent2}; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+==============================================
+Removing Rule rule(uid in {carAgent2}; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+because of 
+rule(; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+==============================================
+Removing Rule rule(position in {doctor}, uid in {oncDoc3}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+because of 
+rule(position in {doctor}, uid in {oncDoc3 oncDoc4}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {doctor}, uid in {oncDoc3 oncDoc4}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+because of 
+rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+because of 
+rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{oncology}}, uid in {oncDoc4}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{oncology}}, uid in {oncDoc3 oncDoc4}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{oncology}}, uid in {oncDoc3 oncDoc4}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(uid in {oncAgent2}; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient)
+because of 
+rule(uid in {oncAgent2}; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient)
+==============================================
+Removing Rule rule(; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+because of 
+rule(; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Removing Rule rule(uid in {carAgent1}; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+because of 
+rule(; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+==============================================
+Removing Rule rule(; topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient, uid=author)
+because of 
+rule(; topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient, uid=author)
+==============================================
+Removing Rule rule(position in {doctor}; author in {doc2}, patient in {carPat2}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+because of 
+rule(position in {doctor}; author in {doc2}, patient in {carPat2}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {carNurse2}; author in {carNurse1}, patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; ward=ward)
+because of 
+rule(position in {nurse}, uid in {carNurse2}; author in {carNurse1}, patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat1}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{oncology} {anesthesiology}}; patient in {oncPat1}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(; treatingTeam in {oncTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+because of 
+rule(; treatingTeam in {oncTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {oncNurse2}; patient in {oncPat2}, treatingTeam in {oncTeam2}, type in {HR}; {addItem }; ward=ward)
+because of 
+rule(position in {nurse}; patient in {oncPat2}, treatingTeam in {oncTeam2}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Removing Rule rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient, uid=author)
+because of 
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient, uid=author)
+==============================================
+Removing Rule rule(position in {doctor}, teams supseteqln {{carTeam2}}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, uid=author)
+because of 
+rule(position in {doctor}, teams supseteqln {{carTeam2}}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, uid=author)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {carNurse1}; author in {carNurse2}, patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; ward=ward)
+because of 
+rule(position in {nurse}, uid in {carNurse1}; author in {carNurse2}, patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{cardiology} {anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(uid in {carAgent2}; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient)
+because of 
+rule(uid in {carAgent2}; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient)
+==============================================
+Removing Rule rule(uid in {oncAgent2}; treatingTeam in {oncTeam2}, type in {HR}, ward in {oncWard}; {addNote }; agentFor ] patient)
+because of 
+rule(; treatingTeam in {oncTeam2}, type in {HR}, ward in {oncWard}; {addNote }; agentFor ] patient)
+==============================================
+Removing Rule rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+because of 
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat2}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat2}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(; treatingTeam in {oncTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+because of 
+rule(; treatingTeam in {oncTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {oncNurse2}; patient in {oncPat1}, treatingTeam in {oncTeam1}, type in {HR}; {addItem }; ward=ward)
+because of 
+rule(position in {nurse}; patient in {oncPat1}, treatingTeam in {oncTeam1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}; patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+because of 
+rule(position in {nurse}; patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+because of 
+rule(position in {doctor}, specialties supseteqln {{cardiology} {anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Removing Rule rule(; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+because of 
+rule(; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}; author in {carDoc2}, patient in {carPat1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+because of 
+rule(position in {doctor}; author in {carDoc2}, patient in {carPat1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Removing Rule rule(position in {nurse}; patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+because of 
+rule(position in {nurse}; patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}; patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+because of 
+rule(position in {nurse}; patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Removing Rule rule(position in {doctor}, specialties supseteqln {{pediatrics oncology}}; patient in {oncPat2}, topics supseteqln {{oncology}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; uid=author)
+because of 
+rule(position in {doctor}, specialties supseteqln {{pediatrics oncology}}; patient in {oncPat2}, topics supseteqln {{oncology}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; uid=author)
+==============================================
+Removing Rule rule(; topics supseteqln {{note}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+because of 
+rule(; topics supseteqln {{note}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}, uid in {oncNurse1}; author in {oncNurse2}, patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; ward=ward)
+because of 
+rule(position in {nurse}, uid in {oncNurse1}; author in {oncNurse2}, patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Removing Rule rule(position in {nurse}; patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+because of 
+rule(position in {nurse}; patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+Merging two rules:
+1.rule(position in {doctor}, specialties supseteqln {{oncology}}; patient in {oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+2.rule(position in {doctor}, specialties supseteqln {{oncology} {anesthesiology}}; patient in {oncPat1}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Result Rule rule(position in {doctor}, specialties supseteqln {{oncology} {anesthesiology}}; patient in {oncPat1 oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+Merging two rules:
+1.rule(position in {doctor}, specialties supseteqln {{oncology} {anesthesiology}}; patient in {oncPat1 oncPat2}, type in {HR}, ward in {oncWard}; {addItem }; teams ] treatingTeam)
+2.rule(position in {doctor}, specialties supseteqln {{cardiology} {anesthesiology}}; patient in {carPat1}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Result Rule rule(position in {doctor}, specialties supseteqln {{cardiology} {oncology} {anesthesiology}}; patient in {oncPat1 oncPat2 carPat1}, type in {HR}, ward in {carWard oncWard}; {addItem }; teams ] treatingTeam)
+Merging two rules:
+1.rule(position in {doctor}, specialties supseteqln {{cardiology} {oncology} {anesthesiology}}; patient in {oncPat1 oncPat2 carPat1}, type in {HR}, ward in {carWard oncWard}; {addItem }; teams ] treatingTeam)
+2.rule(position in {doctor}, specialties supseteqln {{cardiology}}; patient in {carPat2}, type in {HR}, ward in {carWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Result Rule rule(position in {doctor}, specialties supseteqln {{cardiology} {oncology} {anesthesiology}}; patient in {oncPat1 oncPat2 carPat1 carPat2}, type in {HR}, ward in {carWard oncWard}; {addItem }; teams ] treatingTeam)
+Merging two rules:
+1.rule(; treatingTeam in {carTeam2}, type in {HR}, ward in {carWard}; {addNote }; agentFor ] patient)
+2.rule(; treatingTeam in {oncTeam2}, type in {HR}, ward in {oncWard}; {addNote }; agentFor ] patient)
+==============================================
+Result Rule rule(; treatingTeam in {oncTeam2 carTeam2}, type in {HR}, ward in {carWard oncWard}; {addNote }; agentFor ] patient)
+Merging two rules:
+1.rule(position in {doctor}; author in {doc1}, patient in {oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+2.rule(position in {doctor}; author in {oncDoc1}, patient in {oncPat1}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Result Rule rule(position in {doctor}; author in {oncDoc1 doc1}, patient in {oncPat1 oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+Merging two rules:
+1.rule(position in {doctor}; author in {oncDoc1 doc1}, patient in {oncPat1 oncPat2}, type in {HRitem}, ward in {oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+2.rule(position in {doctor}; author in {doc2}, patient in {carPat2}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Result Rule rule(position in {doctor}; author in {oncDoc1 doc2 doc1}, patient in {oncPat1 oncPat2 carPat2}, type in {HRitem}, ward in {carWard oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+Merging two rules:
+1.rule(position in {doctor}; author in {oncDoc1 doc2 doc1}, patient in {oncPat1 oncPat2 carPat2}, type in {HRitem}, ward in {carWard oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+2.rule(position in {doctor}; author in {carDoc2}, patient in {carPat1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Result Rule rule(position in {doctor}; author in {oncDoc1 carDoc2 doc2 doc1}, patient in {oncPat1 oncPat2 carPat1 carPat2}, type in {HRitem}, ward in {carWard oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+Merging two rules:
+1.rule(position in {nurse}; patient in {carPat2}, treatingTeam in {carTeam2}, type in {HR}; {addItem }; ward=ward)
+2.rule(position in {nurse}; patient in {oncPat2}, treatingTeam in {oncTeam2}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Result Rule rule(position in {nurse}; patient in {oncPat2 carPat2}, treatingTeam in {oncTeam2 carTeam2}, type in {HR}; {addItem }; ward=ward)
+Merging two rules:
+1.rule(position in {nurse}; patient in {oncPat2 carPat2}, treatingTeam in {oncTeam2 carTeam2}, type in {HR}; {addItem }; ward=ward)
+2.rule(position in {nurse}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Result Rule rule(position in {nurse}; patient in {oncPat2 carPat1 carPat2}, treatingTeam in {oncTeam2 carTeam2 carTeam1}, type in {HR}; {addItem }; ward=ward)
+Merging two rules:
+1.rule(position in {nurse}; patient in {oncPat2 carPat1 carPat2}, treatingTeam in {oncTeam2 carTeam2 carTeam1}, type in {HR}; {addItem }; ward=ward)
+2.rule(position in {nurse}; patient in {oncPat1}, treatingTeam in {oncTeam1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Result Rule rule(position in {nurse}; patient in {oncPat1 oncPat2 carPat1 carPat2}, treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HR}; {addItem }; ward=ward)
+Merging two rules:
+1.rule(; treatingTeam in {carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+2.rule(; treatingTeam in {carTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Result Rule rule(; treatingTeam in {carTeam2 carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+Merging two rules:
+1.rule(; treatingTeam in {carTeam2 carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+2.rule(; treatingTeam in {oncTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Result Rule rule(; treatingTeam in {oncTeam1 carTeam2 carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+Merging two rules:
+1.rule(; treatingTeam in {oncTeam1 carTeam2 carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+2.rule(; treatingTeam in {oncTeam2}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Result Rule rule(; treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+Merging two rules:
+1.rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+2.rule(; topics supseteqln {{note}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Result Rule rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1 carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+Merging two rules:
+1.rule(; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+2.rule(; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Result Rule rule(; author in {carAgent1 oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+Merging two rules:
+1.rule(; topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient, uid=author)
+2.rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient, uid=author)
+==============================================
+Result Rule rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; agentFor ] patient, uid=author)
+Merging two rules:
+1.rule(position in {nurse}; patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+2.rule(position in {nurse}; patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Result Rule rule(position in {nurse}; patient in {oncPat2 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+Merging two rules:
+1.rule(position in {nurse}; patient in {oncPat2 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+2.rule(position in {nurse}; patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Result Rule rule(position in {nurse}; patient in {oncPat1 oncPat2 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+Merging two rules:
+1.rule(position in {nurse}; patient in {oncPat1 oncPat2 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2}, type in {HRitem}; {read }; uid=author, ward=ward)
+2.rule(position in {nurse}; patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+==============================================
+Result Rule rule(position in {nurse}; patient in {oncPat1 oncPat2 carPat1 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HRitem}; {read }; uid=author, ward=ward)
+Merging two rules:
+1.rule(uid in {oncAgent2}; author in {oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; agentFor ] patient)
+2.rule(uid in {carAgent2}; author in {carAgent1}, topics supseteqln {{note}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; agentFor ] patient)
+==============================================
+Result Rule rule(uid in {carAgent2 oncAgent2}; author in {carAgent1 oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; agentFor ] patient)
+Merging two rules:
+1.rule(position in {nurse}, uid in {carNurse1}; author in {carNurse2}, patient in {carPat2}, topics supseteqln {{nursing}}, treatingTeam in {carTeam2}, type in {HRitem}; {read }; ward=ward)
+2.rule(position in {nurse}, uid in {oncNurse1}; author in {oncNurse2}, patient in {oncPat1}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Result Rule rule(position in {nurse}, uid in {oncNurse1 carNurse1}; author in {oncNurse2 carNurse2}, patient in {oncPat1 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1 carTeam2}, type in {HRitem}; {read }; ward=ward)
+Merging two rules:
+1.rule(position in {nurse}, uid in {oncNurse1 carNurse1}; author in {oncNurse2 carNurse2}, patient in {oncPat1 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam1 carTeam2}, type in {HRitem}; {read }; ward=ward)
+2.rule(position in {nurse}, uid in {oncNurse2}; author in {oncNurse1}, patient in {oncPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Result Rule rule(position in {nurse}, uid in {oncNurse1 oncNurse2 carNurse1}; author in {oncNurse1 oncNurse2 carNurse2}, patient in {oncPat1 oncPat2 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2}, type in {HRitem}; {read }; ward=ward)
+Merging two rules:
+1.rule(position in {nurse}, uid in {oncNurse1 oncNurse2 carNurse1}; author in {oncNurse1 oncNurse2 carNurse2}, patient in {oncPat1 oncPat2 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2}, type in {HRitem}; {read }; ward=ward)
+2.rule(position in {nurse}, uid in {carNurse2}; author in {carNurse1}, patient in {carPat1}, topics supseteqln {{nursing}}, treatingTeam in {carTeam1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Result Rule rule(position in {nurse}, uid in {oncNurse1 oncNurse2 carNurse1 carNurse2}; author in {oncNurse1 oncNurse2 carNurse1 carNurse2}, patient in {oncPat1 oncPat2 carPat1 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HRitem}; {read }; ward=ward)
+Merging two rules:
+1.rule(position in {doctor}, specialties supseteqln {{cardiology neurology}}; patient in {carPat2}, topics supseteqln {{cardiology}}, treatingTeam in {carTeam2}, type in {HRitem}, ward in {carWard}; {read }; uid=author)
+2.rule(position in {doctor}, specialties supseteqln {{pediatrics oncology}}; patient in {oncPat2}, topics supseteqln {{oncology}}, treatingTeam in {oncTeam2}, type in {HRitem}, ward in {oncWard}; {read }; uid=author)
+==============================================
+Result Rule rule(position in {doctor}, specialties supseteqln {{pediatrics oncology} {cardiology neurology}}; patient in {oncPat2 carPat2}, topics supseteqln {{cardiology} {oncology}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; uid=author)
+==============================================
+Round 1
+1.
+rule(position in {doctor}, teams supseteqln {{carTeam2}}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, uid=author)
+2.
+rule(position in {doctor}, specialties supseteqln {{cardiology} {oncology} {anesthesiology}}; patient in {oncPat1 oncPat2 carPat1 carPat2}, type in {HR}, ward in {carWard oncWard}; {addItem }; teams ] treatingTeam)
+3.
+rule(; treatingTeam in {oncTeam2 carTeam2}, type in {HR}, ward in {carWard oncWard}; {addNote }; agentFor ] patient)
+4.
+rule(position in {doctor}; author in {oncDoc1 carDoc2 doc2 doc1}, patient in {oncPat1 oncPat2 carPat1 carPat2}, type in {HRitem}, ward in {carWard oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+5.
+rule(position in {nurse}; patient in {oncPat1 oncPat2 carPat1 carPat2}, treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HR}; {addItem }; ward=ward)
+6.
+rule(; treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+7.
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1 carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+8.
+rule(; author in {carAgent1 oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+9.
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; agentFor ] patient, uid=author)
+10.
+rule(uid in {carAgent2 oncAgent2}; author in {carAgent1 oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; agentFor ] patient)
+11.
+rule(position in {nurse}, uid in {oncNurse1 oncNurse2 carNurse1 carNurse2}; author in {oncNurse1 oncNurse2 carNurse1 carNurse2}, patient in {oncPat1 oncPat2 carPat1 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HRitem}; {read }; ward=ward)
+12.
+rule(position in {doctor}, specialties supseteqln {{pediatrics oncology} {cardiology neurology}}; patient in {oncPat2 carPat2}, topics supseteqln {{cardiology} {oncology}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; uid=author)
+==============================================
+Time for the mergeRules: 93 millisec
+==============================================
+Eliminating Conjuncts for:
+rule(position in {doctor}, teams supseteqln {{carTeam2}}; patient in {carPat1}, treatingTeam in {carTeam1}, type in {HRitem}, ward in {carWard}; {read }; specialties > topics, uid=author)
+==============================================
+Eliminating Conjuncts for:
+rule(position in {doctor}, specialties supseteqln {{cardiology} {oncology} {anesthesiology}}; patient in {oncPat1 oncPat2 carPat1 carPat2}, type in {HR}, ward in {carWard oncWard}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Conjuncts for:
+rule(; treatingTeam in {oncTeam2 carTeam2}, type in {HR}, ward in {carWard oncWard}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Conjuncts for:
+rule(position in {doctor}; author in {oncDoc1 carDoc2 doc2 doc1}, patient in {oncPat1 oncPat2 carPat1 carPat2}, type in {HRitem}, ward in {carWard oncWard}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Conjuncts for:
+rule(position in {nurse}; patient in {oncPat1 oncPat2 carPat1 carPat2}, treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Conjuncts for:
+rule(; treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Eliminating Conjuncts for:
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam1 carTeam1}, type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Eliminating Conjuncts for:
+rule(; author in {carAgent1 oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Eliminating Conjuncts for:
+rule(; topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; agentFor ] patient, uid=author)
+==============================================
+Eliminating Conjuncts for:
+rule(uid in {carAgent2 oncAgent2}; author in {carAgent1 oncAgent1}, topics supseteqln {{note}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; agentFor ] patient)
+==============================================
+Eliminating Conjuncts for:
+rule(position in {nurse}, uid in {oncNurse1 oncNurse2 carNurse1 carNurse2}; author in {oncNurse1 oncNurse2 carNurse1 carNurse2}, patient in {oncPat1 oncPat2 carPat1 carPat2}, topics supseteqln {{nursing}}, treatingTeam in {oncTeam2 oncTeam1 carTeam2 carTeam1}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Conjuncts for:
+rule(position in {doctor}, specialties supseteqln {{pediatrics oncology} {cardiology neurology}}; patient in {oncPat2 carPat2}, topics supseteqln {{cardiology} {oncology}}, treatingTeam in {oncTeam2 carTeam2}, type in {HRitem}, ward in {carWard oncWard}; {read }; uid=author)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HRitem}; {read }; specialties > topics, uid=author)
+==============================================
+Removing HRitem from PAE of 
+rule(; type in {HRitem}; {read }; specialties > topics, uid=author)because of 
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Removing Rule rule(; type in {}; {read }; specialties > topics, uid=author)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Overlap Elements for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Removing HRitem from PAE of 
+rule(; type in {HRitem}; {read }; uid=author, uid=patient, ward=ward)because of 
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Removing Rule rule(; type in {}; {read }; uid=author, uid=patient, ward=ward)
+==============================================
+Eliminating Overlap Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HRitem}; {read }; agentFor ] patient, uid=author)
+==============================================
+Removing HRitem from PAE of 
+rule(; type in {HRitem}; {read }; agentFor ] patient, uid=author)because of 
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Removing Rule rule(; type in {}; {read }; agentFor ] patient, uid=author)
+==============================================
+Eliminating Overlap Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Overlap Elements for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Eliminating Elements for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Elements for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Elements for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Elements for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Elements for:
+rule(; type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Eliminating Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Eliminating Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Elements for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Elements for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Overlap Ops for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Eliminating Overlap Ops for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Eliminating Overlap Ops for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Overlap Ops for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Constraints for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HR}; {addNote }; uid=patient, ward=ward)
+==============================================
+Eliminating Constraints for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient, ward=ward)
+==============================================
+Eliminating Constraints for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Constraints for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Time for simplifyRules Round: 1 112 millisec
+==============================================
+Round 2
+1.
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+2.
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+3.
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+4.
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+5.
+rule(; type in {HR}; {addNote }; uid=patient)
+6.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+7.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+8.
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+9.
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Time for mergeRules Round: 2 3 millisec
+==============================================
+Eliminating Conjuncts for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Conjuncts for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Conjuncts for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Conjuncts for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Conjuncts for:
+rule(; type in {HR}; {addNote }; uid=patient)
+==============================================
+Eliminating Conjuncts for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+==============================================
+Eliminating Conjuncts for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Conjuncts for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Conjuncts for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Overlap Elements for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HR}; {addNote }; uid=patient)
+==============================================
+Eliminating Overlap Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+==============================================
+Eliminating Overlap Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Overlap Elements for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Overlap Elements for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Eliminating Elements for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Elements for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Elements for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Elements for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Elements for:
+rule(; type in {HR}; {addNote }; uid=patient)
+==============================================
+Eliminating Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+==============================================
+Eliminating Elements for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Elements for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Elements for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Overlap Ops for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HR}; {addNote }; uid=patient)
+==============================================
+Eliminating Overlap Ops for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+==============================================
+Eliminating Overlap Ops for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Overlap Ops for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Overlap Ops for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Eliminating Constraints for:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HR}; {addNote }; uid=patient)
+==============================================
+Eliminating Constraints for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+==============================================
+Eliminating Constraints for:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Eliminating Constraints for:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Eliminating Constraints for:
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Adding Rule: 
+rule(; type in {HRitem}; {read }; uid=author)
+==============================================
+Adding Rule: 
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+==============================================
+Adding Rule: 
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+==============================================
+Adding Rule: 
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+==============================================
+Adding Rule: 
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+==============================================
+Adding Rule: 
+rule(; type in {HR}; {addNote }; uid=patient)
+==============================================
+Adding Rule: 
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+==============================================
+Adding Rule: 
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+==============================================
+Adding Rule: 
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+==============================================
+Time for selection step:  36 millisec
+==============================================
+OUTPUT RULES
+
+1.
+rule(; type in {HRitem}; {read }; uid=author)
+WSC=3.0
+2.
+rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+WSC=3.0
+3.
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+WSC=4.0
+4.
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+WSC=4.0
+5.
+rule(; type in {HR}; {addNote }; agentFor ] patient)
+WSC=3.0
+6.
+rule(; type in {HR}; {addNote }; uid=patient)
+WSC=3.0
+7.
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward)
+WSC=5.0
+8.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient)
+WSC=4.0
+9.
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient)
+WSC=4.0
+
+total WSC=33
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(position in {nurse}; type in {HR}; {addItem }; ward=ward)
+SIMILAR OUTPUT RULES:
+rule(position in {nurse}; type in {HR}; {addItem }; ward=ward), similarity: 1.00
+
+2. rule(; type in {HR}; {addItem }; teams ] treatingTeam)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addItem }; teams ] treatingTeam), similarity: 1.00
+
+3. rule(; type in {HR}; {addNote }; uid=patient)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addNote }; uid=patient), similarity: 1.00
+
+4. rule(; type in {HR}; {addNote }; agentFor ] patient)
+SIMILAR OUTPUT RULES:
+rule(; type in {HR}; {addNote }; agentFor ] patient), similarity: 1.00
+
+5. rule(; type in {HRitem}; {read }; uid=author)
+SIMILAR OUTPUT RULES:
+rule(; type in {HRitem}; {read }; uid=author), similarity: 1.00
+
+6. rule(position in {nurse}; type in {HRitem}, topics supseteqln {{nursing}}; {read }; ward=ward)
+SIMILAR OUTPUT RULES:
+rule(position in {nurse}; topics supseteqln {{nursing}}, type in {HRitem}; {read }; ward=ward), similarity: 1.00
+
+7. rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam)
+SIMILAR OUTPUT RULES:
+rule(; type in {HRitem}; {read }; specialties > topics, teams ] treatingTeam), similarity: 1.00
+
+8. rule(; type in {HRitem}, topics supseteqln {{note}}; {read }; uid=patient)
+SIMILAR OUTPUT RULES:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; uid=patient), similarity: 1.00
+
+9. rule(; type in {HRitem}, topics supseteqln {{note}}; {read }; agentFor ] patient)
+SIMILAR OUTPUT RULES:
+rule(; topics supseteqln {{note}}, type in {HRitem}; {read }; agentFor ] patient), similarity: 1.00
+
+==============================================
+Consistency Check Result:
+true
+==============================================
+Statistics:
+Number of calls to mergeRules: 2
+Number of generalizations: 127
+Number of merges: 24
+Number of eliminated conjuncts: 39
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 3
+Number of eliminated constraints: 0
+Number of subsumption checks: 1
+Number of unsuccessful merges: 16
+Number of removed pairs: 0
+Number of extra compares: 214
+==============================================
+Remaining time: 59 millisec
+9 9 33.0 221.0 51 33.0 551

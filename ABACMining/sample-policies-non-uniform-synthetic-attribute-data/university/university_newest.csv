@@ -1,0 +1,2 @@
+N,|U|mean,|U|stdv,|R|mean,|R|stdv,|O|mean,|O|stdv,|UP|mean,|UP|stdv,Compres.mean,Compres.stdv,Compres.95%,Syn.Sim.mean,Syn.Sim.stdv,Syn.Sim.95%,timemean,timestdv,time95%,|GenRules|mean,|GenRules|stdv,UPperRulemean,UPperRulestdv,densitymean,densitystdv
+15,  708.0,   88.5, 1479.3,  194.3,    9.0,    0.0,14474.6, 1915.1,1.00,0.00,0.00,1.00,0.00,0.00,1011.75,436.46,0.00,10.00,0.00,1447.46,191.51,0.00554,0.00069,

@@ -1,0 +1,496 @@
+Total uncovUP size: 10
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_1,(read,obj_1)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_1) is uncovered and that have the same candidate constraint as sub_1
+[sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {orpt}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_1)]
+==============================================
+Remaining Uncovered UP Size: 9
+==============================================
+The set of perms which sub_1 is uncovered and that have the same candidate constraint as (read,obj_1)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {orpt}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_1,(read,obj_2)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_2) is uncovered and that have the same candidate constraint as sub_1
+[sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_2)]
+==============================================
+Remaining Uncovered UP Size: 8
+==============================================
+The set of perms which sub_1 is uncovered and that have the same candidate constraint as (read,obj_2)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_1,(read,obj_3)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_3) is uncovered and that have the same candidate constraint as sub_1
+[sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_3)]
+==============================================
+Remaining Uncovered UP Size: 7
+==============================================
+The set of perms which sub_1 is uncovered and that have the same candidate constraint as (read,obj_3)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_1,(read,obj_4)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_4) is uncovered and that have the same candidate constraint as sub_1
+[sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_4)]
+==============================================
+Remaining Uncovered UP Size: 6
+==============================================
+The set of perms which sub_1 is uncovered and that have the same candidate constraint as (read,obj_4)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_1,(read,obj_5)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_5) is uncovered and that have the same candidate constraint as sub_1
+[sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_5)]
+==============================================
+Remaining Uncovered UP Size: 5
+==============================================
+The set of perms which sub_1 is uncovered and that have the same candidate constraint as (read,obj_5)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_1}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_2,(read,obj_1)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_1) is uncovered and that have the same candidate constraint as sub_2
+[sub_2, sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {orpt}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_1), (sub_2,read,obj_1)]
+==============================================
+Remaining Uncovered UP Size: 4
+==============================================
+The set of perms which sub_2 is uncovered and that have the same candidate constraint as (read,obj_1)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_2}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {orpt}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_2}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_2,(read,obj_2)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_2) is uncovered and that have the same candidate constraint as sub_2
+[sub_2, sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+==============================================
+Remove UP Set: [(sub_2,read,obj_2), (sub_1,read,obj_2)]
+==============================================
+Remaining Uncovered UP Size: 3
+==============================================
+The set of perms which sub_2 is uncovered and that have the same candidate constraint as (read,obj_2)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_2}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_2}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_2,(read,obj_3)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_3) is uncovered and that have the same candidate constraint as sub_2
+[sub_2, sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_3), (sub_2,read,obj_3)]
+==============================================
+Remaining Uncovered UP Size: 2
+==============================================
+The set of perms which sub_2 is uncovered and that have the same candidate constraint as (read,obj_3)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_2}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_2}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_2,(read,obj_4)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_4) is uncovered and that have the same candidate constraint as sub_2
+[sub_2, sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_4), (sub_2,read,obj_4)]
+==============================================
+Remaining Uncovered UP Size: 1
+==============================================
+The set of perms which sub_2 is uncovered and that have the same candidate constraint as (read,obj_4)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_2}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_2}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+==============================================
+Select an uncovered user-permission tuple:
+<u,p>=<sub_2,(read,obj_5)>
+==============================================
+Candidate constraint:
+[]
+==============================================
+The set of users which (read,obj_5) is uncovered and that have the same candidate constraint as sub_2
+[sub_2, sub_1]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+==============================================
+Remove UP Set: [(sub_1,read,obj_5), (sub_2,read,obj_5)]
+==============================================
+Remaining Uncovered UP Size: 0
+==============================================
+The set of perms which sub_2 is uncovered and that have the same candidate constraint as (read,obj_5)
+[read]
+==============================================
+Result of computeUAE:
+[UJU in {izxka}, AFP in {dik}, uid in {sub_2}]
+==============================================
+Result of computePAE:
+[GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}]
+==============================================
+Generalized Rule: 
+rule(UJU in {izxka}, AFP in {dik}, uid in {sub_2}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+==============================================
+Time for the main while loop : 34 millisec
+==============================================
+BEFORE MERGING RULES
+
+1.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+2.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+3.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+4.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+5.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+6.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+7.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+8.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+9.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+10.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_1}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+11.
+rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+12.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_2}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+13.
+rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+14.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_2}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+15.
+rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+16.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_2}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+17.
+rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+18.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_2}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_4}; {read }; )
+19.
+rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+20.
+rule(AFP in {dik}, UJU in {izxka}, uid in {sub_2}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_5}; {read }; )
+Merging two rules:
+1.rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng}, MSBSPV in {orpt}; {read }; )
+2.rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng}, MSBSPV in {rqa}, rid in {obj_2}; {read }; )
+==============================================
+Result Rule rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng}, MSBSPV in {orpt rqa}; {read }; )
+Merging two rules:
+1.rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng}, MSBSPV in {orpt rqa}; {read }; )
+2.rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {cjql}, MSBSPV in {orpt}, rid in {obj_3}; {read }; )
+==============================================
+Result Rule rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng cjql}, MSBSPV in {orpt rqa}; {read }; )
+==============================================
+Round 1
+1.
+rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng cjql}, MSBSPV in {orpt rqa}; {read }; )
+==============================================
+Time for the mergeRules: 10 millisec
+==============================================
+Eliminating Conjuncts for:
+rule(AFP in {dik}, UJU in {izxka}; GVOSMAU in {ulgng cjql}, MSBSPV in {orpt rqa}; {read }; )
+==============================================
+Eliminating Overlap Elements for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Eliminating Elements for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Eliminating Overlap Ops for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Eliminating Constraints for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Time for simplifyRules Round: 1 1 millisec
+==============================================
+Round 2
+1.
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Time for mergeRules Round: 2 3 millisec
+==============================================
+Eliminating Conjuncts for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Eliminating Overlap Elements for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Eliminating Elements for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Eliminating Overlap Ops for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Eliminating Constraints for:
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Adding Rule: 
+rule(AFP in {dik}; ; {read }; )
+==============================================
+Time for selection step:  2 millisec
+==============================================
+OUTPUT RULES
+
+1.
+rule(AFP in {dik}; ; {read }; )
+WSC=2.0
+
+total WSC=2
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(AFP in {dik}; MSBSPV in {orpt}, GVOSMAU in {ulgng}; {read }; )
+SIMILAR OUTPUT RULES:
+rule(AFP in {dik}; ; {read }; ), similarity: 0.88
+
+2. rule(AFP in {dik}; MSBSPV in {rqa}, GVOSMAU in {ulgng}; {read }; )
+SIMILAR OUTPUT RULES:
+
+3. rule(AFP in {dik}; MSBSPV in {orpt}, GVOSMAU in {cjql}; {read }; )
+SIMILAR OUTPUT RULES:
+
+4. rule(AFP in {dik}; MSBSPV in {orpt}, GVOSMAU in {cjql}; {read }; )
+SIMILAR OUTPUT RULES:
+
+5. rule(AFP in {dik}; MSBSPV in {rqa}, GVOSMAU in {ulgng}; {read }; )
+SIMILAR OUTPUT RULES:
+
+==============================================
+Consistency Check Result:
+true
+==============================================
+Statistics:
+Number of calls to mergeRules: 2
+Number of generalizations: 0
+Number of merges: 2
+Number of eliminated conjuncts: 3
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 0
+Number of eliminated constraints: 0
+Number of subsumption checks: 17
+Number of unsuccessful merges: 0
+Number of removed pairs: 0
+Number of extra compares: 8
+==============================================
+Remaining time: 17 millisec
+Number of input rules: 5
+Number of output rules: 1
+Total ACL size: 10.0
+Total input WSC: 20.0
+Total output WSC: 2.0
+Total Running Time: 67 ms
+Average number of covered UP triples:10.0

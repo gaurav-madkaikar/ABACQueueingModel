@@ -1,0 +1,100 @@
+==============================================
+OUTPUT RULES
+
+1.
+rule(department in {admissions}; type in {application}; {read setStatus }; )
+WSC=4.0
+2.
+rule(; type in {gradebook}; {readMyScores }; crsTaken ] crs)
+WSC=3.0
+3.
+rule(department in {registrar}; type in {transcript}; {read }; )
+WSC=3.0
+4.
+rule(; type in {gradebook}; {readScore addScore }; crsTaught ] crs)
+WSC=4.0
+5.
+rule(department in {registrar}; type in {roster}; {write read }; )
+WSC=4.0
+6.
+rule(; type in {application}; {checkStatus }; uid=student)
+WSC=3.0
+7.
+rule(; type in {transcript}; {read }; uid=student)
+WSC=3.0
+8.
+rule(isChair in {true}; type in {transcript}; {read }; department=department)
+WSC=4.0
+9.
+rule(position in {faculty}; type in {gradebook}; {assignGrade changeScore }; crsTaught ] crs)
+WSC=5.0
+10.
+rule(position in {faculty}; type in {roster}; {read }; crsTaught ] crs)
+WSC=4.0
+
+total WSC=37
+==============================================
+INPUT-OUTPUT CORRESPONDENCE
+1. rule(; type in {gradebook}; {readMyScores }; crsTaken ] crs)
+SIMILAR OUTPUT RULES:
+rule(; type in {gradebook}; {readMyScores }; crsTaken ] crs), similarity: 1.00
+
+2. rule(; type in {gradebook}; {readScore addScore }; crsTaught ] crs)
+SIMILAR OUTPUT RULES:
+rule(; type in {gradebook}; {readScore addScore }; crsTaught ] crs), similarity: 1.00
+
+3. rule(position in {faculty}; type in {gradebook}; {assignGrade changeScore }; crsTaught ] crs)
+SIMILAR OUTPUT RULES:
+rule(position in {faculty}; type in {gradebook}; {assignGrade changeScore }; crsTaught ] crs), similarity: 1.00
+
+4. rule(department in {registrar}; type in {roster}; {write read }; )
+SIMILAR OUTPUT RULES:
+rule(department in {registrar}; type in {roster}; {write read }; ), similarity: 1.00
+
+5. rule(position in {faculty}; type in {roster}; {read }; crsTaught ] crs)
+SIMILAR OUTPUT RULES:
+rule(position in {faculty}; type in {roster}; {read }; crsTaught ] crs), similarity: 1.00
+
+6. rule(; type in {transcript}; {read }; uid=student)
+SIMILAR OUTPUT RULES:
+rule(; type in {transcript}; {read }; uid=student), similarity: 1.00
+
+7. rule(isChair in {true}; type in {transcript}; {read }; department=department)
+SIMILAR OUTPUT RULES:
+rule(isChair in {true}; type in {transcript}; {read }; department=department), similarity: 1.00
+
+8. rule(department in {registrar}; type in {transcript}; {read }; )
+SIMILAR OUTPUT RULES:
+rule(department in {registrar}; type in {transcript}; {read }; ), similarity: 1.00
+
+9. rule(; type in {application}; {checkStatus }; uid=student)
+SIMILAR OUTPUT RULES:
+rule(; type in {application}; {checkStatus }; uid=student), similarity: 1.00
+
+10. rule(department in {admissions}; type in {application}; {read setStatus }; )
+SIMILAR OUTPUT RULES:
+rule(department in {admissions}; type in {application}; {read setStatus }; ), similarity: 1.00
+
+==============================================
+Consistency Check Result:
+false
+==============================================
+Statistics:
+Number of calls to mergeRules: 1
+Number of generalizations: 451
+Number of merges: 750
+Number of eliminated conjuncts: 35
+Number of eliminated values: 0
+Number of eliminated elements for multi-value: 233
+Number of eliminated constraints: 0
+Number of subsumption checks: 1015
+Number of unsuccessful merges: 71826
+Number of removed pairs: 0
+Number of extra compares: 393885
+==============================================
+Remaining time: 135 millisec
+==============================================
+Under Assignment Noise: [(admissions1,setStatus,stu2-13application2-13), (fac8-1,read,roster8-3), (stu4-15,read,transcript4-15), (stu6-15,addScore,gradebook6-9), (stu6-0,readMyScores,gradebook6-7), (admissions0,setStatus,stu7-14application7-14), (stu6-10,readMyScores,gradebook6-2), (stu5-6,readMyScores,gradebook5-3), (stu3-1,readMyScores,gradebook3-1), (registrar0,read,transcript8-1), (stu4-16,checkStatus,stu4-16application4-16), (stu7-12,addScore,gradebook7-5), (registrar1,read,transcript0-2), (stu5-18,checkStatus,stu5-18application5-18), (stu7-0,readMyScores,gradebook7-2), (fac4-1,assignGrade,gradebook4-2), (chair5,read,transcript5-10), (admissions1,read,stu0-11application0-11), (registrar1,write,roster4-7), (chair5,read,transcript5-6), (stu3-12,readScore,gradebook3-3), (stu2-16,addScore,gradebook2-7), (chair0,read,transcript0-3), (stu6-17,readScore,gradebook6-1), (admissions1,setStatus,stu7-19application7-19), (registrar1,read,transcript3-9), (stu0-1,checkStatus,stu0-1application0-1), (stu9-2,readMyScores,gradebook9-4), (registrar1,read,roster7-6), (fac5-1,readScore,gradebook5-3), (admissions0,setStatus,stu5-17application5-17), (stu9-18,read,transcript9-18), (fac3-1,assignGrade,gradebook3-2), (stu8-18,readMyScores,gradebook8-8), (stu9-18,readScore,gradebook9-8), (admissions0,read,stu9-2application9-2), (registrar0,read,roster8-9), (admissions1,read,stu8-9application8-9), (stu5-1,checkStatus,stu5-1application5-1), (stu2-18,read,transcript2-18), (registrar0,read,roster7-2), (registrar1,read,transcript6-0), (admissions0,read,stu4-13application4-13), (admissions0,read,stu1-5application1-5), (registrar1,read,transcript5-4), (admissions1,read,stu3-11application3-11), (admissions1,read,stu9-0application9-0), (chair2,read,transcript2-8), (stu5-0,readMyScores,gradebook5-5), (stu6-2,readMyScores,gradebook6-6), (stu9-7,readMyScores,gradebook9-4), (fac9-3,readScore,gradebook9-7), (stu8-2,addScore,gradebook8-6), (admissions1,setStatus,stu5-7application5-7), (fac6-1,changeScore,gradebook6-2), (fac7-2,read,roster7-4), (stu4-2,checkStatus,stu4-2application4-2), (stu8-12,read,transcript8-12), (stu7-16,readMyScores,gradebook7-1), (registrar1,read,transcript1-14), (stu2-8,readMyScores,gradebook2-9), (stu6-7,readScore,gradebook6-9)]
+Under Assignments in Output Policy: [(registrar1,read,transcript3-9), (stu6-2,readMyScores,gradebook6-6), (fac9-3,readScore,gradebook9-7), (fac4-1,assignGrade,gradebook4-2), (registrar1,write,roster4-7), (stu3-12,readScore,gradebook3-3), (fac3-1,assignGrade,gradebook3-2), (fac8-1,read,roster8-3), (stu6-0,readMyScores,gradebook6-7), (stu8-18,readMyScores,gradebook8-8), (admissions1,read,stu8-9application8-9), (stu2-8,readMyScores,gradebook2-9), (chair5,read,transcript5-6), (fac5-1,readScore,gradebook5-3), (stu2-18,read,transcript2-18), (stu9-18,readScore,gradebook9-8), (stu8-12,read,transcript8-12), (stu6-7,readScore,gradebook6-9), (admissions0,read,stu1-5application1-5), (registrar1,read,transcript5-4), (stu7-12,addScore,gradebook7-5), (admissions1,setStatus,stu5-7application5-7), (stu4-2,checkStatus,stu4-2application4-2), (stu2-16,addScore,gradebook2-7), (stu9-18,read,transcript9-18), (admissions0,read,stu4-13application4-13), (registrar1,read,transcript1-14), (registrar1,read,transcript6-0), (admissions1,read,stu3-11application3-11), (stu6-17,readScore,gradebook6-1), (stu8-2,addScore,gradebook8-6), (admissions0,setStatus,stu5-17application5-17), (stu6-15,addScore,gradebook6-9), (fac7-2,read,roster7-4), (fac6-1,changeScore,gradebook6-2), (stu5-1,checkStatus,stu5-1application5-1), (stu0-1,checkStatus,stu0-1application0-1), (stu4-15,read,transcript4-15), (stu6-10,readMyScores,gradebook6-2), (admissions1,read,stu9-0application9-0), (stu9-7,readMyScores,gradebook9-4), (admissions1,read,stu0-11application0-11), (stu3-1,readMyScores,gradebook3-1), (chair0,read,transcript0-3), (registrar1,read,roster7-6), (registrar0,read,roster7-2), (registrar1,read,transcript0-2), (stu4-16,checkStatus,stu4-16application4-16), (stu5-18,checkStatus,stu5-18application5-18), (stu5-6,readMyScores,gradebook5-3), (registrar0,read,roster8-9), (stu5-0,readMyScores,gradebook5-5), (stu7-16,readMyScores,gradebook7-1), (chair5,read,transcript5-10), (admissions1,setStatus,stu2-13application2-13), (registrar0,read,transcript8-1), (stu9-2,readMyScores,gradebook9-4), (chair2,read,transcript2-8), (admissions0,setStatus,stu7-14application7-14), (admissions0,read,stu9-2application9-2), (stu7-0,readMyScores,gradebook7-2), (admissions1,setStatus,stu7-19application7-19)]
+Jaccard Similary of Under Assignment Noises and Under Assignments in Output Policy is: 1.0
+10 10 37.0 7707.0 3635 37.0 184992
