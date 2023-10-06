@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "------------ Process Started! ---------------"
+echo "\n------------ Running ABACMining! ---------------\n"
 
 cd ABACMining/
  
-./run -m ../ori_policy.abac -verbose
+# ./run -m ../case-studies/online-video.abac -verbose > ../refined_policy.abac
+./run -m ../ori_policy.abac -verbose > ../refined_policy.abac
 
-echo "------------ Process Over! ---------------"
+echo "\n------------ Process Over! ---------------"

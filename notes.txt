@@ -28,3 +28,41 @@ No. of possible rules
 No. of possible subjects
 No. of possible objects
 Time associated with generating individual/group data in code (Initially, we follow a brute-force approach after which we optimize)
+
+--- INTERNSHIP REPORT ---
+
+I need to write a paragraph titled 'Introduction' for my internship report. I will summarize some points below and you have to extend them in 250-300 words ensuring professional english in the text.
+The points are stated as follows:
+1) I got an opportunity to intern at Cisco Systems via the CDC internship drive held in August 2022
+2) While I had known about Cisco thanks to their collaborating platform Webex and network routers, I was eager to know about other products as well as the work culture involved
+3) My internship was for a duration of 8 weeks and commenced on 15th May offline at Cisco's Bengaluru campus
+4) My initial weeks on campus were quite eventful- meeting and interacting with new people, exploring the campus and getting to know about the company.
+5) I was assigned to a team of developers including 2 of my co-interns working on the Cisco Spaces product under a senior manager.
+6) I interacted with my team about the product and learnt about the vast number of areas I could contribute to improve the product.
+7) After good rounds of discussion with my manager, I was free to explore the relevant frameworks for the product APIs. Starting up, I familiarized myself pretty quickly with Kotlin due to its similarity with Java and vert.x, a toolkit to develop server-side applications.
+8) After completing some basic tasks, our manager assigned me and one of my co-interns, a problem of developing a utility to monitor and visualize metrics corresponding to streaming applications
+9) We got to know about distributed queuing systems like Kafka from which high volumes of data was to be fetched along with grafana- the tool to visualize our metrics corresponding to specific key tags
+10) The daily scrum meetings with my team members provided critical insights on collaboration and maintainence of a scalable tech product
+11) While work was at full pace, the concept of breakout rooms were the perfect place to chill during breaks not to forget the endless TT, pool sessions
+12) As the work on our main problem statement progressed rather quickly, our manager proposed to us the problem of automating the swagger documentation of various APIs
+13) We developed a syntax for describing API routes using comments and parsed it appropriately to generate the swagger documentation following which we launched an interactive UI for manual testing
+14) Following extensive coding and debugging sessions, we completed our assigned tasks before two weeks and geared up for our final presentations
+15) We consulted our mentor for suggestions and appropriate modifications in our PPTS and presented before managers of various  teams and the technical director. The presentation was well received and we were excited to know that the utilities developed were to be deployed to production
+16) All in all, I had a good time learning and epxeriencing the corporate culture for the very first time and based on my performance was awarded a Pre-Placement Offer
+
+I need to write a paragraph on identifying the need of solving a problem. The questions that this problem addresses are stated below. Write in about 100 words in simple to understand language.
+The questions addressed by the solution to this problem are as follows:
+How can I see my API usage?
+How is my API performing?
+What is load pattern in my application
+In what pattern and rate data flows through my streams?
+Is there any abnormal behaviour in my application
+Is there a way to track out bound HTTP requests from my application
+How do I get to know down time
+
+Developed a JVM package to automate the collection and visualization of critical metrics associated with streaming applications in Vert.x
+Captured various metrics, including response sizes, request latency and throughput, using the DropWizard Metrics library in Java
+Integrated this package into a live API to monitor and visualize data flows filtered using custom-defined key tags over grafana dashboards
+Developed a python-based parser to automate the generation of API documentation and swagger UI from simple descriptive comments
+
+JVM based applications is the `javax annotations` but often has m,any downsides listed as follows:

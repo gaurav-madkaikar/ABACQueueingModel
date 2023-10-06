@@ -1,1 +1,458 @@
-{ "rule_1": { "sub": { "AFP": "dik" }, "obj": {}, "op": "read" } }
+{
+  "rule_1": {
+    "sub": {
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"],
+      "uid": ["*"]
+    },
+    "obj": {
+      "rid": ["obj_3", "obj_13"],
+      "QXJY": ["*"],
+      "IUM": ["*"],
+      "SDIE": ["*"],
+      "EFDIG": ["*"],
+      "AXVQVGF": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_2": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_9",
+        "sub_8",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_6",
+        "sub_12",
+        "sub_5",
+        "sub_14",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "EFDIG": ["fllvh", "uqd"],
+      "IUM": ["yjr", "gon"],
+      "QXJY": ["updd", "uqk"],
+      "SDIE": ["rbegf", "qlpwq"],
+      "AXVQVGF": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_3": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_11",
+        "sub_9",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_12",
+        "sub_6",
+        "sub_5",
+        "sub_14",
+        "sub_3"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "rid": ["obj_5", "obj_11"],
+      "QXJY": ["*"],
+      "IUM": ["*"],
+      "SDIE": ["*"],
+      "EFDIG": ["*"],
+      "AXVQVGF": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_4": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_9",
+        "sub_8",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_12",
+        "sub_6",
+        "sub_5",
+        "sub_14",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "QXJY": ["uqk"],
+      "SDIE": ["qlpwq"],
+      "IUM": ["*"],
+      "EFDIG": ["*"],
+      "AXVQVGF": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_5": {
+    "sub": {
+      "uid": [
+        "sub_10",
+        "sub_11",
+        "sub_9",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_17",
+        "sub_18",
+        "sub_19",
+        "sub_6",
+        "sub_12",
+        "sub_13",
+        "sub_4",
+        "sub_14",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "QXJY": ["cwf", "updd"],
+      "SDIE": ["kjzff"],
+      "IUM": ["*"],
+      "EFDIG": ["*"],
+      "AXVQVGF": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_6": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_11",
+        "sub_9",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_19",
+        "sub_6",
+        "sub_12",
+        "sub_5",
+        "sub_13",
+        "sub_4",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "EFDIG": ["oyqc"],
+      "QXJY": ["cwf", "updd"],
+      "SDIE": ["qlpwq"],
+      "IUM": ["*"],
+      "AXVQVGF": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_7": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_11",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_12",
+        "sub_5",
+        "sub_14",
+        "sub_3"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "AXVQVGF": ["pmkoi"],
+      "EFDIG": ["oyqc", "uqd"],
+      "SDIE": ["rbegf"],
+      "QXJY": ["*"],
+      "IUM": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_8": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_11",
+        "sub_9",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_19",
+        "sub_12",
+        "sub_6",
+        "sub_5",
+        "sub_13",
+        "sub_4",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "AXVQVGF": ["tsow"],
+      "EFDIG": ["oyqc"],
+      "QXJY": ["*"],
+      "IUM": ["*"],
+      "SDIE": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_9": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_11",
+        "sub_9",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_19",
+        "sub_12",
+        "sub_6",
+        "sub_5",
+        "sub_13",
+        "sub_4",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "QXJY": ["uqk"],
+      "SDIE": ["kjzff"],
+      "IUM": ["*"],
+      "EFDIG": ["*"],
+      "AXVQVGF": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_10": {
+    "sub": {
+      "uid": [
+        "sub_10",
+        "sub_11",
+        "sub_9",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_17",
+        "sub_18",
+        "sub_19",
+        "sub_12",
+        "sub_6",
+        "sub_13",
+        "sub_4",
+        "sub_14",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "AXVQVGF": ["tsow"],
+      "EFDIG": ["fllvh"],
+      "QXJY": ["*"],
+      "IUM": ["*"],
+      "SDIE": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_11": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_9",
+        "sub_8",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_12",
+        "sub_6",
+        "sub_5",
+        "sub_14",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "AXVQVGF": ["tbfjg"],
+      "EFDIG": ["uqd"],
+      "IUM": ["gon"],
+      "QXJY": ["*"],
+      "SDIE": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_12": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_11",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_12",
+        "sub_5",
+        "sub_14",
+        "sub_3"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "EFDIG": ["uqd"],
+      "IUM": ["xqbhr"],
+      "QXJY": ["cwf"],
+      "SDIE": ["*"],
+      "AXVQVGF": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_13": {
+    "sub": {
+      "uid": [
+        "sub_20",
+        "sub_10",
+        "sub_9",
+        "sub_8",
+        "sub_7",
+        "sub_2",
+        "sub_16",
+        "sub_1",
+        "sub_17",
+        "sub_18",
+        "sub_19",
+        "sub_12",
+        "sub_6",
+        "sub_5",
+        "sub_13",
+        "sub_4",
+        "sub_14",
+        "sub_3",
+        "sub_15"
+      ],
+      "DHM": ["*"],
+      "GMKYA": ["*"],
+      "RQFVZ": ["*"],
+      "LODX": ["*"],
+      "OOBEA": ["*"]
+    },
+    "obj": {
+      "AXVQVGF": ["tsow"],
+      "SDIE": ["qlpwq"],
+      "QXJY": ["*"],
+      "IUM": ["*"],
+      "EFDIG": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  }
+}
