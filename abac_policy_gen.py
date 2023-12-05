@@ -9,6 +9,8 @@ import scriptRunner as srun
 import queue
 import auxiliary_list as aux_list
 import threading
+import shutil
+# from collections import Queue
 
 # 5 attributes - each can take 3 values + additional 2 values (* and -)
 # * implies it can match any value except -
@@ -34,7 +36,7 @@ import threading
 #         pass
 
 abac_policy = {}
-NO_OF_ATTRIBUTES = 5
+NO_OF_ATTRIBUTES = 2
 NO_OF_VALUES = 3
 MAX_DUPLICATES = 2
 
@@ -251,7 +253,7 @@ def preprocess():
     print("\n\n")
 
     print("+++" * 15 + "   Generating set of subjects   " + "+++" * 15)
-    NO_OF_SUBJECTS = 20
+    NO_OF_SUBJECTS = 5
     user_info = {}
     # used_users = []
     '''
@@ -274,7 +276,7 @@ def preprocess():
     print("\n\n")
 
     print("+++" * 15 + "   Generating set of objects    " + "+++" * 15)
-    NO_OF_OBJECTS = 20
+    NO_OF_OBJECTS = 5
     # user_info = {}
     # used_users = []
     '''
@@ -327,14 +329,18 @@ def preprocess():
     # Include unique rules
     used_rules = []
 
+    # myActualACM = []
+
     for each_object in obj_info:
         # Initialize the random seed
         random.seed(time.time())
+        # ls = []
 
         for each_usr in unique_user_attr_dict:
             rule_taken = random.randint(0, 1)
+            # ls.append(rule_taken)
             if rule_taken == 0:
-                sub_obj_pairs_not_taken.append([each_usr, each_object])
+                # sub_obj_pairs_not_taken.append([each_usr, each_object])
                 continue
             rule_count += 1
             # print(f"\n----- RULE {rule_count} -----")
@@ -396,12 +402,21 @@ def preprocess():
 
             # Assign operation
             abac_policy[rule_key]["op"] = access_attr[0]
+        # myActualACM.append(ls)
+
+    # myActualACM = np.transpose(myActualACM)
+    # print(\n'.join(['   '.join([str(cell) for cell in row] for row in ACM_prime]))
+    # print('\n'.join(['   '.join([str(cell)
+    #                                       for cell in row]) for row in myActualACM]))
+
     # print("\n------------- ABAC POLICY -------------\n")
     # print(abac_policy)
 
     print(f"\nTotal number of rules: {rule_count}")
     print(f"Unique number of rules: {len(used_rules)}")
 
+    for etup in sub_obj_pairs_not_taken:
+        print(etup)
     # Write the ABAC Policy set into the specififed JSON file
     with open("database/policy.json", "w") as db:
         json.dump(abac_policy, db)
@@ -685,7 +700,7 @@ def resolveAccessRequest(sub_key, obj_key, user_attr_val_dict, obj_attr_val_dict
 
 
 def generateACM():
-    global ACM
+    global ACM, sub_obj_pairs_not_taken
 
     original_policy = dict()
     with open("database/policy.json") as db:
@@ -705,15 +720,19 @@ def generateACM():
             obj_attr_val_dict = objectbase.get(key_obj)
             result = resolveAccessRequest(key_sub, key_obj,
                                           usr_attr_val_dict, obj_attr_val_dict, original_policy)
+            if result == 0:
+                sub_obj_pairs_not_taken.append([key_sub, key_obj])
+                # auxList.add(key_sub, key_obj, "read")
             access_result_list.append(result)
         ACM.append(access_result_list)
 
     print("ACM generated successfully!")
-    print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in ACM]))
+    file_ptr = open('database/ACM_ori/ACM_ori.txt', 'w')
+    file_ptr.write('\n'.join(['   '.join([str(cell) for cell in row])
+                     for row in ACM]))
+    file_ptr.close()
 
 # Generate ACM corresponding to the refined ABAC policy (P')
-
-
 def generateACM_modified():
     global ACM_prime
 
@@ -739,7 +758,9 @@ def generateACM_modified():
         ACM_prime.append(access_result_list)
 
     print("ACM' generated successfully!")
-    print('\n'.join(['   '.join([str(cell) for cell in row]) for row in ACM_prime]))
+    file_ptr = open('database/ACM_prime/ACM_prime.txt', 'w')
+    file_ptr.write('\n'.join(['   '.join([str(cell) for cell in row]) for row in ACM_prime]))
+    file_ptr.close()
 
 
 def checkNoOfMismatches():
@@ -762,30 +783,164 @@ def generateAuxiliaryList():
     # random.seed(time.time())
     random.shuffle(sub_obj_pairs_not_taken)
     for sub_obj_pair in sub_obj_pairs_not_taken:
-        # print(sub_obj_pair)
-        # time.sleep(0.5)
         auxList.add(sub_obj_pair[0], sub_obj_pair[1], "read")
 
     print(f"Length of auxiliary list = {auxList.size()}")
-    # for i in range(auxList.size()):
-    #     print(f"Update {i}: {auxList.getKeyValue(i)}")
 
+    file_ptr = open('database/auxiliary_list.txt', 'w')
+    for i in range(auxList.size()):
+        write_str = ""
+        tmp_access_update = list(auxList.getKeyValue(i))
+        write_str += "{"
+        for j in range(len(tmp_access_update)):
+            write_str += tmp_access_update[j] + ", "
+        write_str = write_str[:-2]
+        write_str += "}"
+        file_ptr.write(write_str)
+        if i != auxList.size() - 1:
+            file_ptr.write("\n")
+
+    file_ptr.close()
+
+
+def generateCombinedPolicy():
+    # Combine policy P and auxiliary list to generate a new policy P' which is then passed to the ABAC mining algorithm
+    combined_policy = {}
+    userbase = {}
+    objectbase = {}
+    with open("database/curr_policy.json") as db:
+        combined_policy = json.load(db)
+    with open("database/userbase.json") as db:
+        userbase = json.load(db)
+    with open("database/objectbase.json") as db:
+        objectbase = json.load(db)
+
+    ori_no_of_rules = len(combined_policy)
+    file_ptr = open('database/auxiliary_list.txt', 'r')
+    temp_update_list = []
+    for line in file_ptr:
+        line = line.strip(' \n')
+        line = line[1:-1]
+        # print(line)
+        temp_update_list.append(line.split(', '))
+
+    rule_ID = ori_no_of_rules + 1
+    X = np.random.binomial(1, 0.3, len(temp_update_list))
+    for i in range(len(temp_update_list)):
+        temp_access = temp_update_list[i]
+        usr = temp_access[0].strip(' \n')
+        obj = temp_access[1].strip(' \n')
+        op = temp_access[2].strip(' \n')
+
+        if X[i] == 0:
+            continue
+        rule_key = "rule_" + str(rule_ID)
+        rule_ID += 1
+        combined_policy[rule_key] = {}
+        combined_policy[rule_key]["sub"] = {}  
+        combined_policy[rule_key]["obj"] = {}
+        combined_policy[rule_key]["op"] = op
+
+        # Add subject attributes
+        for attr in userbase[usr]:
+            if attr == "uid":
+                combined_policy[rule_key]["sub"][attr] = ["*"]
+                continue
+            combined_policy[rule_key]["sub"][attr] = [userbase[usr][attr]]
+        
+        # Add object attributes
+        for attr in objectbase[obj]:
+            if attr == "rid":
+                combined_policy[rule_key]["obj"][attr] = ["*"]
+                continue
+            combined_policy[rule_key]["obj"][attr] = [objectbase[obj][attr]]
+    print(f"Combined number of rules = {len(combined_policy)}")
+
+    with open("database/combined_policy.json", "w") as db:
+        json.dump(combined_policy, db)
+
+    file_ptr.close()
+    print("Process Over!")
+
+AR_dict = {}
+cnt_AR = 0
+
+# For now consider only users which are present in the system
+def genAccessRequest(access_req_container):
+    global user_attr_val, object_attr_val, user_attr, object_attr, NO_OF_ATTRIBUTES, NO_OF_VALUES, AR_dict, cnt_AR
+
+    X = np.random.binomial(1, 0.5, NO_OF_ATTRIBUTES)
+    access_request = []
+
+    sub_attributes = []
+    obj_attributes = []
+
+    # Assign user attributes
+    for i in range(NO_OF_ATTRIBUTES):
+        attr = user_attr[i]
+        attr_val = user_attr_val[attr]
+        for j in range(NO_OF_VALUES):
+            if X[j] == 0:
+                continue
+            # print(f"User attribute: {attr} | Value: {attr_val[j]}")
+            access_request.append((attr, attr_val[j], "read"))
+
+
+    X = np.random.binomial(1, 0.5, NO_OF_ATTRIBUTES)
+    # Assign object attributes
+    for i in range(NO_OF_ATTRIBUTES):
+        attr = object_attr[i]
+        attr_val = object_attr_val[attr]
+        for j in range(NO_OF_VALUES):
+            if X[j] == 0:
+                continue
+            # print(f"Object attribute: {attr} | Value: {attr_val[j]}")
+            access_request.append((attr, attr_val[j], "read"))
+
+    if cnt_AR == 0:
+        cnt_AR += 1
+        AR_dict["ar_"+str(cnt_AR)] = {}
+        AR_dict["ar_"+str(cnt_AR)]["sub"] = {}
+        AR_dict["ar_"+str(cnt_AR)]["obj"] = {}
+        AR_dict["ar_"+str(cnt_AR)]["op"] = "read"
+    
+    AR_dict["ar_"+str(cnt_AR)]["sub"].update()
+        
+    print(f"Generated sample access request: {access_request}")
+    print(access_request)
+
+def resolveAccessRequestinQ():
+    pass
+
+# Objectbase and Userbase must be pre-loaded into program memory since they will not change once generated
 
 if __name__ == "__main__":
-    print("+" * 45, end='')
-    print(" Welcome to the ABAC Policy Generator ", end='')
-    print("+" * 45)
-
-    genAttributeValues()
-
-    preprocess()
+    # print("+" * 45, end='')
+    # print(" Welcome to the ABAC Policy Generator ", end='')
+    # print("+" * 45)
+    
+    # genAttributeValues()
+    # preprocess()
     generateACM()
 
+    # Generate the auxiliary list
+    generateAuxiliaryList()
+
+    # # Make a copy of the original policy
+    original_file_name = "database/policy.json"
+    copy_file_name = "database/curr_policy.json"
+
+    shutil.copyfile(original_file_name, copy_file_name)
+
+    # Combine policy P' and the auxiliary list
+    generateCombinedPolicy()
+
+    # Pass this combined policy P' to the ABAC Mining algorithm to generate P'' 
     # Run the Bash script using Git Bash
     srun.subprocess.run(["bash", srun.bash_command])
 
-    # To be coded !!
-    # convertACLtoPolicy()
+    # # # To be coded !!
+    # # convertACLtoPolicy()
 
     extractRefinedPolicy()
     generateACM_modified()
@@ -793,7 +948,12 @@ if __name__ == "__main__":
 
     print(f"\nNo. of mismatches = {no_of_mismatches}")
 
-    generateAuxiliaryList()
+    # Randomly generate Access Requests in a separate thread
+    # access_req_container = Queue()
+    access_req_container = []
 
-    
+    # # Repeat for a number of times
+    # for i in range(1):
+    #     print(f"\nSample access request {i+1}:")
+    #     genAccessRequest(access_req_container)
 
