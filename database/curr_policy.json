@@ -1,1 +1,70 @@
-{"rule_1": {"sub": {"OMH": ["pskun", "ronhh"], "TUGAH": ["*"], "UMQ": ["*"], "QAJ": ["*"], "uid": ["*"]}, "obj": {"IBMADSE": ["*"], "CJOPSDH": ["*"], "LJPAX": ["*"], "WBCVGZ": ["*"], "rid": ["*"]}, "op": "read"}, "rule_2": {"sub": {"TUGAH": ["qjfx"], "UMQ": ["ztak"], "OMH": ["kds"], "QAJ": ["rrqje"], "uid": ["*"]}, "obj": {"IBMADSE": ["bhbn"], "CJOPSDH": ["dpz"], "LJPAX": ["scvgc"], "WBCVGZ": ["essy"], "rid": ["*"]}, "op": "read"}, "rule_3": {"sub": {"TUGAH": ["qjfx"], "UMQ": ["ztak"], "OMH": ["kds"], "QAJ": ["rrqje"], "uid": ["*"]}, "obj": {"IBMADSE": ["bhbn"], "CJOPSDH": ["dpz"], "LJPAX": ["ppbn"], "WBCVGZ": ["essy"], "rid": ["*"]}, "op": "read"}, "rule_4": {"sub": {"TUGAH": ["qjfx"], "UMQ": ["ztak"], "OMH": ["kds"], "QAJ": ["rrqje"], "uid": ["*"]}, "obj": {"IBMADSE": ["mpl"], "CJOPSDH": ["dpz"], "LJPAX": ["ppbn"], "WBCVGZ": ["xqwf"], "rid": ["*"]}, "op": "read"}}
+{
+  "rule_1": {
+    "sub": {
+      "OMH": ["pskun", "ronhh"],
+      "TUGAH": ["*"],
+      "UMQ": ["*"],
+      "QAJ": ["*"],
+      "uid": ["*"]
+    },
+    "obj": {
+      "IBMADSE": ["*"],
+      "CJOPSDH": ["*"],
+      "LJPAX": ["*"],
+      "WBCVGZ": ["*"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_2": {
+    "sub": {
+      "TUGAH": ["qjfx"],
+      "UMQ": ["ztak"],
+      "OMH": ["kds"],
+      "QAJ": ["rrqje"],
+      "uid": ["*"]
+    },
+    "obj": {
+      "IBMADSE": ["bhbn"],
+      "CJOPSDH": ["dpz"],
+      "LJPAX": ["scvgc"],
+      "WBCVGZ": ["essy"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_3": {
+    "sub": {
+      "TUGAH": ["qjfx"],
+      "UMQ": ["ztak"],
+      "OMH": ["kds"],
+      "QAJ": ["rrqje"],
+      "uid": ["*"]
+    },
+    "obj": {
+      "IBMADSE": ["bhbn"],
+      "CJOPSDH": ["dpz"],
+      "LJPAX": ["ppbn"],
+      "WBCVGZ": ["essy"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  },
+  "rule_4": {
+    "sub": {
+      "TUGAH": ["qjfx"],
+      "UMQ": ["ztak"],
+      "OMH": ["kds"],
+      "QAJ": ["rrqje"],
+      "uid": ["*"]
+    },
+    "obj": {
+      "IBMADSE": ["mpl"],
+      "CJOPSDH": ["dpz"],
+      "LJPAX": ["ppbn"],
+      "WBCVGZ": ["xqwf"],
+      "rid": ["*"]
+    },
+    "op": "read"
+  }
+}

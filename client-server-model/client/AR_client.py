@@ -10,63 +10,7 @@ import random
 HEADERSIZE = 16
 FORMAT = 'utf-8'
 
-
-# def sendData(conn, message):
-#     msg_send = message
-#     msg_send = f"{len(msg_send):<{HEADERSIZE}}" + msg_send
-#     conn.sendall(bytes(msg_send, FORMAT))
-
-
-# def sendObj(conn, obj):
-#     msg_send = pickle.dumps(obj)
-#     msg_send = bytes(f'{len(msg_send):<{HEADERSIZE}}', FORMAT) + msg_send
-#     conn.send(msg_send)
-
-
-# def receiveObj(conn):
-#     obj = {}
-#     full_msg = b''
-#     new_msg = True
-#     while True:
-#         msg = conn.recv(16)
-#         if len(msg) == 0:
-#             print('Client connection closed')
-#             break
-
-#         if new_msg:
-#             msglen = int(msg[:HEADERSIZE])
-#             new_msg = False
-
-#         full_msg += msg
-#         # print(full_msg)
-
-#         if len(full_msg)-HEADERSIZE == msglen:
-#             obj = pickle.loads(full_msg[HEADERSIZE:])
-#             print(obj)
-#             new_msg = True
-#             full_msg = b''
-#             break
-#     return obj
-
-
-# def receiveData(conn):
-#     full_msg = ''
-#     header_recv_flag = True
-#     while True:
-#         msg = conn.recv(16).decode('utf-8')
-#         if len(msg) == 0:
-#             print('Client connection closed')
-#             return
-#         if header_recv_flag:
-#             msglen = int(msg[:HEADERSIZE])
-#             header_recv_flag = False
-
-#         full_msg += msg
-
-#         if len(full_msg)-HEADERSIZE == msglen:
-#             full_msg = full_msg[HEADERSIZE:]
-#             break
-#     return full_msg
+# rate_of_AR_sent = 5 * 1e-3
 
 
 def sendMessage(conn, message):
@@ -167,7 +111,7 @@ def resolveAR(access_request, policy, id):
     return result
 
 
-if __name__=="__main__":
+if __name__== "__main__":
     print("---------------------------------- Client Side ----------------------------------")
 
     # Client Initialization
@@ -214,8 +158,9 @@ if __name__=="__main__":
 
 
     print('Objects received successfully !')
-    tmp_ind = 'rule_' + str(random.randint(1, tot_len_of_policy))
-    sample_ar = policy['rule_1280']
+    
+    # tmp_ind = 'rule_' + str(random.randint(1, tot_len_of_policy))
+    # sample_ar = policy[tmp_ind]
     ar_count = 0
     file_ptr = open("localbase/access_request.txt", "w")
 
@@ -223,10 +168,9 @@ if __name__=="__main__":
     count_1 = obj_choice.count(1)
     print(f'Count of 1s: {count_1}\n')
     # print('rule_' + str(random.randint(1, tot_len_of_policy)))
-    print(f'Rule {1280}: {sample_ar}')
-    print(f'Result: {resolveAR(sample_ar, policy, 1)}')
-    print('\n')
-    
+    # print(f'Rule {1280}: {sample_ar}')
+    # print(f'Result: {resolveAR(sample_ar, policy, 1)}')
+    # print('\n')
     while True:
         ar_count += 1
         # Generate a random access request
@@ -263,8 +207,8 @@ if __name__=="__main__":
         # Send access request to the server
         sendMessage(client_socket, AR_send)
         #sendObj(client_socket, access_request)
-        mean_tw = 8
-        ar_tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-2
+        mean_tw = 5
+        ar_tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
         time.sleep(ar_tw)
         if ar_count == 10000:
             break

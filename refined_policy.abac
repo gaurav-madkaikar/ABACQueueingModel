@@ -6800,7 +6800,7 @@ Result of computePAE:
 Generalized Rule: 
 rule(BHFO in {tgn}, GPXUAT in {idgd}, ANQ in {owglv}, PTO in {ddefi}, BCZVZTN in {wdcv}; CWPV in {jgsf}, TREEFPF in {whbl}, EKRZHVT in {hwe}, DZAIE in {hdn}, KBE in {aylbt}; {read }; )
 ==============================================
-Time for the main while loop : 4687 millisec
+Time for the main while loop : 3667 millisec
 ==============================================
 BEFORE MERGING RULES
 
@@ -8161,7 +8161,7 @@ rule(ANQ in {ihbd ggvm owglv plw}, BCZVZTN in {jhfx wdcv bjoi uaemw}, BHFO in {i
 67.
 rule(ANQ in {ihbd ggvm owglv plw}, BCZVZTN in {jhfx wdcv bjoi uaemw}, BHFO in {isk teii tgn iwi}, GPXUAT in {tugt ioaiq chtjw idgd}, PTO in {pyozd qnd epr ddefi}, uid in {sub_41 sub_85 sub_42 sub_86 sub_87 sub_43 sub_44 sub_81 sub_82 sub_83 sub_40 sub_84 sub_80 sub_38 sub_39 sub_78 sub_34 sub_35 sub_37 sub_96 sub_52 sub_97 sub_53 sub_10 sub_98 sub_54 sub_55 sub_11 sub_99 sub_92 sub_93 sub_50 sub_94 sub_95 sub_51 sub_90 sub_91 sub_49 sub_89 sub_45 sub_46 sub_47 sub_48 sub_63 sub_64 sub_65 sub_21 sub_22 sub_66 sub_61 sub_62 sub_100 sub_16 sub_17 sub_18 sub_19 sub_56 sub_12 sub_13 sub_57 sub_14 sub_58 sub_15 sub_59 sub_30 sub_74 sub_75 sub_31 sub_32 sub_76 sub_33 sub_77 sub_71 sub_72 sub_73 sub_8 sub_2 sub_27 sub_1 sub_28 sub_29 sub_6 sub_67 sub_23 sub_5 sub_24 sub_25 sub_4 sub_26 sub_3}; CWPV in {iwcty}, DZAIE in {hdn}, EKRZHVT in {aaorw}, KBE in {yvjc}, TREEFPF in {gfzpm}; {read }; )
 ==============================================
-Time for the mergeRules: 3018 millisec
+Time for the mergeRules: 2429 millisec
 ==============================================
 Eliminating Conjuncts for:
 rule(ANQ in {ihbd ggvm owglv plw}, BCZVZTN in {jhfx wdcv bjoi uaemw}, BHFO in {isk teii tgn iwi}, GPXUAT in {tugt ioaiq chtjw idgd}, PTO in {pyozd qnd epr ddefi}; CWPV in {iwcty hff cwo}, DZAIE in {hdn smu}, EKRZHVT in {aaorw dwhj}, KBE in {muhbg xiz aylbt yvjc}, TREEFPF in {whbl wmmp}; {read }; )
@@ -9168,7 +9168,7 @@ rule(uid in {sub_41 sub_85 sub_42 sub_87 sub_43 sub_44 sub_88 sub_81 sub_82 sub_
 Eliminating Constraints for:
 rule(uid in {sub_41 sub_85 sub_42 sub_86 sub_87 sub_43 sub_44 sub_81 sub_82 sub_83 sub_40 sub_84 sub_80 sub_38 sub_39 sub_78 sub_34 sub_35 sub_37 sub_96 sub_52 sub_97 sub_53 sub_10 sub_98 sub_54 sub_55 sub_11 sub_99 sub_92 sub_93 sub_50 sub_94 sub_95 sub_51 sub_90 sub_91 sub_49 sub_89 sub_45 sub_46 sub_47 sub_48 sub_63 sub_64 sub_65 sub_21 sub_22 sub_66 sub_61 sub_62 sub_100 sub_16 sub_17 sub_18 sub_19 sub_56 sub_12 sub_13 sub_57 sub_14 sub_58 sub_15 sub_59 sub_30 sub_74 sub_75 sub_31 sub_32 sub_76 sub_33 sub_77 sub_71 sub_72 sub_73 sub_8 sub_2 sub_27 sub_1 sub_28 sub_29 sub_6 sub_67 sub_23 sub_5 sub_24 sub_25 sub_4 sub_26 sub_3}; DZAIE in {hdn}, TREEFPF in {gfzpm}; {read }; )
 ==============================================
-Time for simplifyRules Round: 1 1421 millisec
+Time for simplifyRules Round: 1 1096 millisec
 ==============================================
 Round 2
 1.
@@ -9306,7 +9306,7 @@ rule(uid in {sub_41 sub_85 sub_42 sub_87 sub_43 sub_44 sub_88 sub_81 sub_82 sub_
 67.
 rule(uid in {sub_41 sub_85 sub_42 sub_86 sub_87 sub_43 sub_44 sub_81 sub_82 sub_83 sub_40 sub_84 sub_80 sub_38 sub_39 sub_78 sub_34 sub_35 sub_37 sub_96 sub_52 sub_97 sub_53 sub_10 sub_98 sub_54 sub_55 sub_11 sub_99 sub_92 sub_93 sub_50 sub_94 sub_95 sub_51 sub_90 sub_91 sub_49 sub_89 sub_45 sub_46 sub_47 sub_48 sub_63 sub_64 sub_65 sub_21 sub_22 sub_66 sub_61 sub_62 sub_100 sub_16 sub_17 sub_18 sub_19 sub_56 sub_12 sub_13 sub_57 sub_14 sub_58 sub_15 sub_59 sub_30 sub_74 sub_75 sub_31 sub_32 sub_76 sub_33 sub_77 sub_71 sub_72 sub_73 sub_8 sub_2 sub_27 sub_1 sub_28 sub_29 sub_6 sub_67 sub_23 sub_5 sub_24 sub_25 sub_4 sub_26 sub_3}; DZAIE in {hdn}, TREEFPF in {gfzpm}; {read }; )
 ==============================================
-Time for mergeRules Round: 2 372 millisec
+Time for mergeRules Round: 2 267 millisec
 ==============================================
 Eliminating Conjuncts for:
 rule(; CWPV in {iwcty hff cwo}, DZAIE in {hdn smu}, EKRZHVT in {aaorw dwhj}, TREEFPF in {whbl wmmp}; {read }; )
@@ -10514,7 +10514,7 @@ rule(uid in {sub_41 sub_42 sub_43 sub_44 sub_40 sub_38 sub_39 sub_34 sub_35 sub_
 Adding Rule: 
 rule(uid in {sub_41 sub_42 sub_43 sub_44 sub_40 sub_38 sub_39 sub_34 sub_35 sub_36 sub_37 sub_52 sub_53 sub_54 sub_55 sub_50 sub_51 sub_49 sub_45 sub_46 sub_47 sub_48 sub_20 sub_21 sub_22 sub_16 sub_17 sub_18 sub_19 sub_12 sub_13 sub_14 sub_15 sub_30 sub_31 sub_32 sub_33 sub_9 sub_8 sub_7 sub_27 sub_2 sub_1 sub_28 sub_29 sub_6 sub_23 sub_5 sub_4 sub_25 sub_3 sub_26 sub_85 sub_86 sub_87 sub_88 sub_81 sub_82 sub_83 sub_84 sub_80 sub_78 sub_79 sub_96 sub_97 sub_10 sub_98 sub_99 sub_11 sub_92 sub_93 sub_94 sub_95 sub_90 sub_91 sub_89 sub_63 sub_64 sub_65 sub_66 sub_60 sub_61 sub_62 sub_100 sub_56 sub_57 sub_58 sub_59 sub_74 sub_75 sub_76 sub_77 sub_70 sub_71 sub_72 sub_73 sub_67 sub_68 sub_69}; DZAIE in {smu}, EKRZHVT in {dwhj}, KBE in {aylbt}; {read }; )
 ==============================================
-Time for selection step:  781 millisec
+Time for selection step:  684 millisec
 ==============================================
 OUTPUT RULES
 
@@ -25561,11 +25561,11 @@ Number of unsuccessful merges: 16076
 Number of removed pairs: 0
 Number of extra compares: 15224
 ==============================================
-Remaining time: 5549 millisec
+Remaining time: 4480 millisec
 Number of input rules: 4918
 Number of output rules: 67
 Total ACL size: 9846.0
 Total input WSC: 44745.0
 Total output WSC: 5858.0
-Total Running Time: 15832 ms
+Total Running Time: 12626 ms
 Average number of covered UP triples:298.32835820895525

@@ -1,4 +1,4 @@
-# Generate test data required for conducting the experiments
+# Code to generate test data required for conducting the experiments
 
 import json 
 import numpy as np
@@ -6,12 +6,14 @@ import string
 import random
 import time
 
-NO_OF_ATTRIBUTES = 5
-NO_OF_VALUES = 4
+NO_OF_ATTRIBUTES = 10
+NO_OF_VALUES = 6
 MAX_DUPLICATES_ALLOWED = 2
 
-NO_OF_SUBJECTS = 100
-NO_OF_OBJECTS = 100
+NO_OF_SUBJECTS = 45
+NO_OF_OBJECTS = 45
+
+stats_report = open('data_gen_stats.txt', 'w')
 
 
 # Global variables
@@ -21,13 +23,12 @@ object_attr = []
 user_attr_val = {}
 object_attr_val = {}
 
-# User, Object sets
+# User and Object Sets
 userbase = {}
 objectbase = {}
 
-# Stroller low-levePolicy 
+# Stroller's low-level policy (P_0)
 policy = {}
-
 ACM = []
 sub_obj_pairs_not_taken = []
 
@@ -36,7 +37,7 @@ sub_obj_pairs_not_taken = []
 def generateACM():
     global ACM, userbase, objectbase, policy, sub_obj_pairs_not_taken
 
-
+    t_start = time.perf_counter()
     # Policy has been loaded into original_policy
     for i in range(len(userbase)):
         key_sub = "sub_" + str(i + 1)
@@ -51,6 +52,10 @@ def generateACM():
                 # auxList.add(key_sub, key_obj, "read")
             access_result_list.append(result)
         ACM.append(access_result_list)
+    t_end = time.perf_counter()
+    print(f"6: Time required to generate ACM = {t_end - t_start} seconds")
+    write_str = f"6: Generate ACM = {t_end - t_start} seconds\n\n"
+    stats_report.write(write_str)
 
     print("ACM generated successfully!")
     file_ptr = open('database/ACM/ACM_ori.txt', 'w')
@@ -70,12 +75,12 @@ def generateACM():
             write_str = write_str[:-1]
     file_ptr.write(write_str)
     file_ptr.close()
-        
+    # ifendef
 
 
 # Generate a set of subjects or objects
 def genComponentSet(NO_OF_COMPONENTS, comp_attr, comp_attr_val, init_str="sub_"):
-    global abac_policy, NO_OF_ATTRIBUTES, NO_OF_VALUES, MAX_DUPLICATES_ALLOWED
+    global abac_policy, NO_OF_ATTRIBUTES, NO_OF_VALUES, MAX_DUPLICATES_ALLOWED, stats_report
 
     # Set a different random seed
     random.seed(time.time())
@@ -129,7 +134,7 @@ def genAttributeValues():
     # Start timer
     t_start = time.perf_counter()
 
-    global NO_OF_ATTRIBUTES, NO_OF_VALUES, user_attr, object_attr, user_attr_val, object_attr_val
+    global NO_OF_ATTRIBUTES, NO_OF_VALUES, user_attr, object_attr, user_attr_val, object_attr_val, stats_report
 
     # Generate attributes
     for i in range(NO_OF_ATTRIBUTES):
@@ -159,6 +164,8 @@ def genAttributeValues():
 
     t_end = time.perf_counter()
     print(f"1: Time required to generate attribute-value pairs = {t_end - t_start} seconds")
+    write_str = f"1: Generate attribute-value pairs = {t_end - t_start} seconds\n\n"
+    stats_report.write(write_str)
 
     print("User Attributes:")
     print(user_attr)
@@ -193,7 +200,7 @@ def genAttributeValues():
     
 
 def genSubjectObjectSets():
-    global NO_OF_OBJECTS, NO_OF_SUBJECTS, user_attr, object_attr, user_attr_val, object_attr_val, userbase, objectbase
+    global NO_OF_OBJECTS, NO_OF_SUBJECTS, user_attr, object_attr, user_attr_val, object_attr_val, userbase, objectbase, stats_report
 
     # Schema 1:
     # user_info = {
@@ -208,7 +215,11 @@ def genSubjectObjectSets():
     print("+++" * 15 + "   Generating set of subjects   " + "+++" * 15)
     user_info = genComponentSet(NO_OF_SUBJECTS, user_attr, user_attr_val, "sub_")
     t_end = time.perf_counter()
+
+    write_str = f"2: Generate set of subjects = {t_end - t_start} seconds\n\n"
     print(f"2: Time required to generate set of subjects = {t_end - t_start} seconds")
+    stats_report.write(write_str)
+
     userbase = user_info
 
     print("\n\n")
@@ -227,6 +238,8 @@ def genSubjectObjectSets():
     obj_info = genComponentSet(NO_OF_OBJECTS, object_attr, object_attr_val, "obj_")
 
     t_end = time.perf_counter()
+
+    write_str = f"3: Time required to generate set of objects = {t_end - t_start} seconds"
     print(f"3: Time required to generate set of objects = {t_end - t_start} seconds")
     objectbase = obj_info
     
@@ -330,7 +343,7 @@ def resolveAccessRequest(user_attr_val_dict, obj_attr_val_dict, policy):
 
 # Generate a representation of the Access Control Policy in the form of low-level rules
 def generateStrollerInput():
-    global userbase, objectbase, policy, user_attr, object_attr, user_attr_val, object_attr_val
+    global userbase, objectbase, policy, user_attr, object_attr, user_attr_val, object_attr_val, stats_report
     access_attr = ["read"]
     rule_count = 0
     abac_policy = {}
@@ -448,6 +461,8 @@ def generateStrollerInput():
     # print(abac_policy)
     t_end = time.perf_counter()
     print(f"4: Time required to generate ABAC Policy = {t_end - t_start} seconds")
+    write_str = f"4: Generate ABAC Policy = {t_end - t_start} seconds\n\n"
+    stats_report.write(write_str)
 
     print(f"\nTotal number of low-level rules: {rule_count}")
     # assert(rule_count == len(abac_policy))
@@ -543,11 +558,17 @@ def generateStrollerInput():
 
     t_end = time.perf_counter()
     print(f"5: Time required to generate Stoller's input file = {t_end - t_start} seconds")
+    write_str = f"5: Generate Stoller's input file = {t_end - t_start} seconds\n\n"
+    stats_report.write(write_str)
 
 
 
 # Main function to generate the test data
 if __name__ == "__main__":
+    stats_report.write('++++++++++ TEST DATA DETAILS ++++++++++\n')
+    write_str = f'No. of attributes = {NO_OF_ATTRIBUTES}\nNo. of values = {NO_OF_VALUES}\nNo. of users = {NO_OF_SUBJECTS}\nNo. of objects = {NO_OF_OBJECTS}\n\n' 
+    stats_report.write(write_str)
+
     # Generate attributes and the corresponding values
     # This is immutable
     genAttributeValues()
@@ -564,3 +585,5 @@ if __name__ == "__main__":
 
     # generateACM()
     print("\n\n -------- Test data successfully generated ! -------- \n\n")
+
+    stats_report.close()

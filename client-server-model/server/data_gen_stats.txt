@@ -1,0 +1,14 @@
+++++++++++ TEST DATA DETAILS ++++++++++
+No. of attributes = 10
+No. of values = 6
+No. of users = 45
+No. of objects = 45
+
+1: Generate attribute-value pairs = 0.00044560000000004596 seconds
+
+2: Generate set of subjects = 0.0014047000000000365 seconds
+
+4: Generate ABAC Policy = 0.0619227 seconds
+
+5: Generate Stoller's input file = 0.016170600000000035 seconds
+
