@@ -10,8 +10,6 @@ import random
 HEADERSIZE = 16
 FORMAT = 'utf-8'
 
-# rate_of_AR_sent = 5 * 1e-3
-
 
 def sendMessage(conn, message):
     msg_send = b''
@@ -23,12 +21,32 @@ def sendMessage(conn, message):
     msg_send = bytes(f'{len(msg_send):16}', 'utf-8') + msg_send
     conn.sendall(msg_send)
 
+# def receiveMessage(conn, _type='str'):
+#     decoded_message = ''
+#     decoded_obj = {}
+
+#     recv_msg_len = int(conn.recv(4096).decode('utf-8'))
+#     recv_msg = conn.recv(recv_msg_len)
+#     if _type == 'dict':
+#         decoded_obj = pickle.loads(recv_msg)
+#         return decoded_obj
+#     else:
+#         decoded_message = recv_msg.decode('utf-8')
+#         return decoded_message
 def receiveMessage(conn, _type='str'):
     decoded_message = ''
     decoded_obj = {}
 
     recv_msg_len = int(conn.recv(16).decode('utf-8'))
-    recv_msg = conn.recv(recv_msg_len)
+    recv_msg = b''
+    
+    while len(recv_msg) < recv_msg_len:
+        chunk = conn.recv(recv_msg_len - len(recv_msg))
+        if not chunk:
+            # Handle case where connection is closed
+            break
+        recv_msg += chunk
+
     if _type == 'dict':
         decoded_obj = pickle.loads(recv_msg)
         return decoded_obj
@@ -144,10 +162,10 @@ if __name__== "__main__":
     print(f'object attribute-values: {obj_attr_val}')
     print('\n')
 
-    with open("localbase/user_attr_val.json", "w") as db:
-        json.dump(user_attr_val, db)
-    with open("localbase/obj_attr_val.json", "w") as db:
-        json.dump(obj_attr_val, db)
+    # with open("localbase/user_attr_val.json", "w") as db:
+    #     json.dump(user_attr_val, db)
+    # with open("localbase/obj_attr_val.json", "w") as db:
+    #     json.dump(obj_attr_val, db)
 
     policy = receiveMessage(client_socket, _type='dict')
     print(f"Received policy succesfully!")
@@ -164,7 +182,7 @@ if __name__== "__main__":
     ar_count = 0
     file_ptr = open("localbase/access_request.txt", "w")
 
-    obj_choice = random.choices([0, 1], weights=[0.4, 0.6], k=10005)
+    obj_choice = random.choices([0, 1], weights=[0.4, 0.6], k=50005)
     count_1 = obj_choice.count(1)
     print(f'Count of 1s: {count_1}\n')
     # print('rule_' + str(random.randint(1, tot_len_of_policy)))
@@ -196,7 +214,6 @@ if __name__== "__main__":
         # if ar_count % 10 == 0:
         #     access_request = sample_ar   
         file_ptr.write(str(AR_send) + '\n')
-        # if ar_count >= 10:
         result = resolveAR(AR_send, policy, ar_count)
         print(f"-- ACCESS REQUEST {ar_count} on client side: ", end = '')
         if result == 1:
@@ -207,10 +224,10 @@ if __name__== "__main__":
         # Send access request to the server
         sendMessage(client_socket, AR_send)
         #sendObj(client_socket, access_request)
-        mean_tw = 5
+        mean_tw = 10
         ar_tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
         time.sleep(ar_tw)
-        if ar_count == 10000:
+        if ar_count == 1000000:
             break
     
     file_ptr.close()

@@ -1,14 +1,19 @@
 ++++++++++ TEST DATA DETAILS ++++++++++
-No. of attributes = 10
+No. of attributes = 6
 No. of values = 6
 No. of users = 45
 No. of objects = 45
 
-1: Generate attribute-value pairs = 0.00044560000000004596 seconds
+1: Generate attribute-value pairs = 0.00020850000000000035 seconds
 
-2: Generate set of subjects = 0.0014047000000000365 seconds
+2: Generate set of subjects = 0.0010100000000000109 seconds
 
-4: Generate ABAC Policy = 0.0619227 seconds
+3: Time required to generate set of objects = 0.0027430999999999983 seconds
 
-5: Generate Stoller's input file = 0.016170600000000035 seconds
+4: Generate ABAC Policy = 0.04232240000000004 seconds
+Initial Policy Size: 980 rules
+
+5: Generate Stoller's input file = 0.009505199999999991 seconds
+
+6: Generate ACM = 1.0419776 seconds
 

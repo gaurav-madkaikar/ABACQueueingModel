@@ -69,11 +69,31 @@ def sendMessage(conn, message):
     msg_send = bytes(f'{len(msg_send):16}', 'utf-8') + msg_send
     conn.sendall(msg_send)
 
+# def receiveMessage(conn, _type='str'):
+#     decoded_message = ''
+#     decoded_obj = {}
+#     recv_msg_len = int(conn.recv(4096).decode('utf-8'))
+#     recv_msg = conn.recv(recv_msg_len)
+#     if _type == 'dict':
+#         decoded_obj = pickle.loads(recv_msg)
+#         return decoded_obj
+#     else:
+#         decoded_message = recv_msg.decode('utf-8')
+#         return decoded_message
 def receiveMessage(conn, _type='str'):
     decoded_message = ''
     decoded_obj = {}
+
     recv_msg_len = int(conn.recv(16).decode('utf-8'))
-    recv_msg = conn.recv(recv_msg_len)
+    recv_msg = b''
+    
+    while len(recv_msg) < recv_msg_len:
+        chunk = conn.recv(recv_msg_len - len(recv_msg))
+        if not chunk:
+            # Handle case where connection is closed
+            break
+        recv_msg += chunk
+
     if _type == 'dict':
         decoded_obj = pickle.loads(recv_msg)
         return decoded_obj
@@ -81,17 +101,17 @@ def receiveMessage(conn, _type='str'):
         decoded_message = recv_msg.decode('utf-8')
         return decoded_message
     
-def statsReporter():
-    start_time = time.perf_counter()
+# def statsReporter():
+#     start_time = time.perf_counter()
 
-    # reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
+#     # reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
 
-    end_time = time.perf_counter()
+#     end_time = time.perf_counter()
 
 
 
-    time.sleep(0.02)
-    pass
+#     time.sleep(0.02)
+#     pass
     
 # Generate a representation of the Access Control Policy in the form of low-level rules
 def generateStollerInput():
@@ -169,6 +189,7 @@ def generateStollerInput():
         file_ptr.write(write_str)
 
     file_ptr.close()
+    # print('Stollers input done!')
 
 
 
@@ -241,7 +262,7 @@ def handle_client(conn, address):
             # Add the access request to a queue
             access_request_queue.append([ar_cnt, access_request, time.perf_counter()])
 
-            if NO_OF_VACATIONS == 11:
+            if NO_OF_VACATIONS == 5:
                 # print('Client must be closed immediately!\nVACATIONS ARE DONE!!!!\n')
                 break
         # if ar_cnt == 100:
@@ -293,8 +314,9 @@ def updateAuxList():
                 aux_list.append(['sub_'+str(random.randint(1, number_of_users)), 'obj_'+str(random.randint(1, number_of_objects)), 'read'])
             
         # Exponential delay (for now consider constant delay)
-        mean_tw = 1.5
-        time.sleep(mean_tw)
+        mean_tw = 66.67
+        tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
+        time.sleep(tw)
 
 def generateCombinedPolicy():
     # Combine policy P and auxiliary list to generate a new policy P' which is then passed to the ABAC mining algorithm
@@ -544,8 +566,8 @@ def resolveAccessRequest():
             print('Mining process starting... stay tuned!')
             if NO_OF_VACATIONS >= 2:
                 ar_stats.write('Normal period {NO_OF_VACATIONS} ended!\n')
-            ar_stats.write('\n----- VACATION PERIOD Started ----\n')
-            ar_stats.write(f'Vacation {NO_OF_VACATIONS} start time: {time.perf_counter() - global_start_timer}\n')
+            ar_stats.write('\n----- VACATION Started -----\n')
+            ar_stats.write(f'Start time: {time.perf_counter() - global_start_timer}\n')
             # Follow the Policy Mining Procedure
             t_start = time.perf_counter()
 
@@ -555,24 +577,27 @@ def resolveAccessRequest():
             # Generate the input file
             generateStollerInput()
 
+            # print('Mining policy!!!')
             # Run the ABAC Mining Algorithm
             minePolicy()
-
+            # print('Mining over!!')
             # Extract the refined policy
             extractRefinedPolicy()
 
             t_end = time.perf_counter()
             vac_dur = t_end - t_start
-            ar_stats.write(f'Vacation duration: {vac_dur}\n')
+            ar_stats.write(f'Duration: {vac_dur}\n')
             if NO_OF_VACATIONS == 1:
                 first_vac_dur = time.perf_counter()
             NO_OF_VACATIONS += 1
-            ar_stats.write('--- VACATION PERIOD ENDED ---\n\n')
-            if NO_OF_VACATIONS == 4:
+            with access_request_lock:
+                no_of_jobs = len(access_request_queue)
+            ar_stats.write(f'Jobs in the system: {no_of_jobs}\n')
+            ar_stats.write('------ VACATION ENDED ------\n\n')
+            if NO_OF_VACATIONS == 5:
                 print('Handling clients must be stopped!')
                 ar_stats.close()
                 break
-            # ar_stats.write(f'Number of jobs in the system: {no_of_jobs}\n')
             ar_stats.write(f'--- Normal Period {NO_OF_VACATIONS} starts... ---\n')
         else:
             # ar_stats.write('\n----- NORMAL PERIOD -----\n')
@@ -589,7 +614,7 @@ def resolveAccessRequest():
                 else:
                     access_request = access_request_queue.popleft()
                     no_of_jobs = len(access_request_queue)
-            # ar_stats.write(f'Number of jobs in the system: {no_of_jobs}\n')
+            
             t_start = time.perf_counter()
             with policy_lock:
                 policy_ = policy
@@ -624,6 +649,7 @@ def resolveAccessRequest():
 # Perform the ABAC Mining Procedure
 def minePolicy():
     # Set the PATH environment variable to include the location of Java
+    # print('here!')
     os.environ['PATH'] = 'C:/Program Files/Java/jdk-15.0.1/bin' + os.environ['PATH']
     bash_command = "./bash_script.sh"
     # Run the bash script
@@ -652,7 +678,7 @@ def extractRefinedPolicy():
                     break
                 blockOfRefinedCode.append(line)
     # print(blockOfRefinedCode)
-
+    # print('extractrefinedpolicy!!!!!')
     modified_rules = {}
     no_of_rules = 0
     

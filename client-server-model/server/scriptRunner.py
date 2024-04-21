@@ -1,6 +1,6 @@
 import os, subprocess
 
-os.environ['PATH'] = 'C:/Program Files/Java/jdk-15.0.1/bin' + os.environ['PATH']
+os.environ['PATH'] = 'C:\Program Files\Java\jdk-21\bin' + os.environ['PATH']
 
 bash_command = "./bash_script.sh"
 

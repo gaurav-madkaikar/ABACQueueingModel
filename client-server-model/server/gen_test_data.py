@@ -6,7 +6,7 @@ import string
 import random
 import time
 
-NO_OF_ATTRIBUTES = 10
+NO_OF_ATTRIBUTES = 6
 NO_OF_VALUES = 6
 MAX_DUPLICATES_ALLOWED = 2
 
@@ -14,7 +14,6 @@ NO_OF_SUBJECTS = 45
 NO_OF_OBJECTS = 45
 
 stats_report = open('data_gen_stats.txt', 'w')
-
 
 # Global variables
 # User/Object attributes and values
@@ -75,7 +74,6 @@ def generateACM():
             write_str = write_str[:-1]
     file_ptr.write(write_str)
     file_ptr.close()
-    # ifendef
 
 
 # Generate a set of subjects or objects
@@ -239,8 +237,9 @@ def genSubjectObjectSets():
 
     t_end = time.perf_counter()
 
-    write_str = f"3: Time required to generate set of objects = {t_end - t_start} seconds"
+    write_str = f"3: Time required to generate set of objects = {t_end - t_start} seconds\n\n"
     print(f"3: Time required to generate set of objects = {t_end - t_start} seconds")
+    stats_report.write(write_str)
     objectbase = obj_info
     
     # Write the subject and object set into the specififed JSON file
@@ -460,11 +459,12 @@ def generateStrollerInput():
     # print("\n------------- ABAC POLICY -------------\n")
     # print(abac_policy)
     t_end = time.perf_counter()
-    print(f"4: Time required to generate ABAC Policy = {t_end - t_start} seconds")
-    write_str = f"4: Generate ABAC Policy = {t_end - t_start} seconds\n\n"
-    stats_report.write(write_str)
-
     print(f"\nTotal number of low-level rules: {rule_count}")
+    print(f"4: Time required to generate ABAC Policy = {t_end - t_start} seconds")
+    write_str = f"4: Generate ABAC Policy = {t_end - t_start} seconds\n"
+    stats_report.write(write_str)
+    stats_report.write(f"Initial Policy Size: {rule_count} rules\n\n")
+
     # assert(rule_count == len(abac_policy))
     # print(f"Unique number of low-level rules: {len(used_rules)}")
 
@@ -514,7 +514,7 @@ def generateStrollerInput():
 
     file_ptr.write("\n")
 
-    file_ptr.write("# Low-level ABAC Rules\n")
+    file_ptr.write("# Low-level ACL Rules\n")
     
     for rule_id in policy:
         write_str = "rule("
@@ -583,7 +583,6 @@ if __name__ == "__main__":
     # Generate ACM corresoponding to Stroller's input
     generateACM()
 
-    # generateACM()
     print("\n\n -------- Test data successfully generated ! -------- \n\n")
 
     stats_report.close()

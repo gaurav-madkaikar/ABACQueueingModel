@@ -3,5 +3,3 @@
 cd bin/
 
 java -cp "../lib/commons-math-2.2.jar:../lib/commons-math3-3.3.jar:." edu.dar.algo.Experiment "$@" 
-
-cd ..
