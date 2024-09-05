@@ -6,9 +6,13 @@ import numpy as np
 import pickle
 import time
 import random
+from argparse import ArgumentParser
+from threading import Thread
 
 HEADERSIZE = 16
 FORMAT = 'utf-8'
+
+AR_ARRIVAL_RATE = 80
 
 
 def sendMessage(conn, message):
@@ -129,7 +133,7 @@ def resolveAR(access_request, policy, id):
     return result
 
 
-if __name__== "__main__":
+def main():
     print("---------------------------------- Client Side ----------------------------------")
 
     # Client Initialization
@@ -183,55 +187,75 @@ if __name__== "__main__":
     file_ptr = open("localbase/access_request.txt", "w")
 
     obj_choice = random.choices([0, 1], weights=[0.4, 0.6], k=50005)
-    count_1 = obj_choice.count(1)
-    print(f'Count of 1s: {count_1}\n')
+    # count_1 = obj_choice.count(1)
+    # print(f'Count of 1s: {count_1}\n')
     # print('rule_' + str(random.randint(1, tot_len_of_policy)))
     # print(f'Rule {1280}: {sample_ar}')
     # print(f'Result: {resolveAR(sample_ar, policy, 1)}')
     # print('\n')
-    while True:
-        ar_count += 1
-        # Generate a random access request
-        access_request = {}
-        access_request['sub'] = {}
-        access_request['obj'] = {}
-        access_request['op'] = 'read'
+    try:
+        print(f"Starting the sending of access requests with arrival rate: {AR_ARRIVAL_RATE}")
+        while True:
+            ar_count += 1
+            # Generate a random access request
+            access_request = {}
+            access_request['sub'] = {}
+            access_request['obj'] = {}
+            access_request['op'] = 'read'
 
-        access_request['sub']['uid'] = ['*']
-        access_request['obj']['rid'] = ['*']
+            access_request['sub']['uid'] = ['*']
+            access_request['obj']['rid'] = ['*']
 
-        for sub_attr in user_attr_val:
-            access_request['sub'][sub_attr] = random.sample(user_attr_val[sub_attr] + ['*'], 1)[0]
-            # access_request['sub'][sub_attr] = [np.random.choice([user_attr_val[sub_attr], '*'])]
-        for obj_attr in obj_attr_val:
-            access_request['obj'][obj_attr] = random.sample(obj_attr_val[obj_attr] + ['*'], 1)[0]
-            # access_request['obj'][obj_attr] = [np.random.choice([obj_attr_val[obj_attr], '*'])]
-        AR_send = {}
-        if obj_choice[ar_count - 1] == 1:
-            AR_send = policy['rule_' + str(random.randint(1, tot_len_of_policy))]
-        else:
-            AR_send = access_request
-        # if ar_count % 10 == 0:
-        #     access_request = sample_ar   
-        file_ptr.write(str(AR_send) + '\n')
-        result = resolveAR(AR_send, policy, ar_count)
-        print(f"-- ACCESS REQUEST {ar_count} on client side: ", end = '')
-        if result == 1:
-            print("Access granted !")
-        else:
-            print("Access denied !")
+            for sub_attr in user_attr_val:
+                access_request['sub'][sub_attr] = random.sample(user_attr_val[sub_attr] + ['*'], 1)[0]
+                # access_request['sub'][sub_attr] = [np.random.choice([user_attr_val[sub_attr], '*'])]
+            for obj_attr in obj_attr_val:
+                access_request['obj'][obj_attr] = random.sample(obj_attr_val[obj_attr] + ['*'], 1)[0]
+                # access_request['obj'][obj_attr] = [np.random.choice([obj_attr_val[obj_attr], '*'])]
+            AR_send = {}
+            if obj_choice[ar_count - 1] == 1:
+                AR_send = policy['rule_' + str(random.randint(1, tot_len_of_policy))]
+            else:
+                AR_send = access_request
+            # if ar_count % 10 == 0:
+            #     access_request = sample_ar   
+            file_ptr.write(str(AR_send) + '\n')
+            result = resolveAR(AR_send, policy, ar_count)
+            print(f"-- ACCESS REQUEST {ar_count} on client side: ", end = '')
+            if result == 1:
+                print("Access granted !")
+            else:
+                print("Access denied !")
 
-        # Send access request to the server
-        sendMessage(client_socket, AR_send)
-        #sendObj(client_socket, access_request)
-        mean_tw = 10
-        ar_tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
-        time.sleep(ar_tw)
-        if ar_count == 1000000:
-            break
-    
+            # Send access request to the server
+            sendMessage(client_socket, AR_send)
+            #sendObj(client_socket, access_request)
+            mean_tw = 1000 / AR_ARRIVAL_RATE
+            ar_tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
+            time.sleep(ar_tw)
+            if ar_count == 1000000:
+                break
+    except KeyboardInterrupt:
+        print("Exiting...")
+        pass
+    except Exception as e:
+        print(f"Exception: {e}")
+        pass
+        
     file_ptr.close()
 
     print('Client closing connection...\nSee ya!!!!!!\n')
     client_socket.close()
 
+if __name__== "__main__":
+    arg_parser = ArgumentParser()
+    arg_parser.add_argument('-a', '--arrival_rate', type=int, help='Mean arrival rate of access requests')
+    
+    arg_parser.set_defaults(arrival_rate=10)
+    
+    args = arg_parser.parse_args()
+    
+    if args.arrival_rate:
+        AR_ARRIVAL_RATE = args.arrival_rate
+    
+    main()

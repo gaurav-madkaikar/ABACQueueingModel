@@ -11,6 +11,7 @@ import random
 import aux_list as al
 from collections import deque
 import aux_list as al
+from argparse import ArgumentParser
 
 # Generate test data
 # import gen_test_data as gtd
@@ -55,6 +56,12 @@ curr_server_state_lock = Lock()
 global_start_timer = 0
 NO_OF_VACATIONS = 1
 
+# Change in vacation model
+NO_OF_ACCESS_REQUESTS = 0
+MAX_ACCESS_REQUESTS_PER_VACATION = 500
+
+AL_UPDATE_RATE = 15
+
 # Helper Functions
 # -- SEND AND RECEIVE DATA --
 HEADERSIZE = 16
@@ -69,17 +76,7 @@ def sendMessage(conn, message):
     msg_send = bytes(f'{len(msg_send):16}', 'utf-8') + msg_send
     conn.sendall(msg_send)
 
-# def receiveMessage(conn, _type='str'):
-#     decoded_message = ''
-#     decoded_obj = {}
-#     recv_msg_len = int(conn.recv(4096).decode('utf-8'))
-#     recv_msg = conn.recv(recv_msg_len)
-#     if _type == 'dict':
-#         decoded_obj = pickle.loads(recv_msg)
-#         return decoded_obj
-#     else:
-#         decoded_message = recv_msg.decode('utf-8')
-#         return decoded_message
+
 def receiveMessage(conn, _type='str'):
     decoded_message = ''
     decoded_obj = {}
@@ -101,20 +98,8 @@ def receiveMessage(conn, _type='str'):
         decoded_message = recv_msg.decode('utf-8')
         return decoded_message
     
-# def statsReporter():
-#     start_time = time.perf_counter()
-
-#     # reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
-
-#     end_time = time.perf_counter()
-
-
-
-#     time.sleep(0.02)
-#     pass
-    
-# Generate a representation of the Access Control Policy in the form of low-level rules
 def generateStollerInput():
+    """ Generate a representation of the Access Control Policy in the form of low-level rules"""
     global policy, userbase, objectbase
     with policy_lock:
         policy_ = policy.copy()
@@ -189,20 +174,15 @@ def generateStollerInput():
         file_ptr.write(write_str)
 
     file_ptr.close()
-    # print('Stollers input done!')
 
 
-
-# Resolve access request from policy
 def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
+    """ Resolve access request from policy"""
     # result = 0 implies access not granted, result = 1 implies access granted
-    # global policy
     result = 0
     policy_ = {}
     with policy_lock:
         policy_ = policy.copy()
-    # if type_ == 2:
-    #     print(f"New policy policy_: {policy_}")
 
     # Process the result
     for i in range(len(policy_)):
@@ -242,11 +222,11 @@ def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
             break
     return result
 
-# Access Request 
 def handle_client(conn, address):
-    # Send attribute-value pairs to the client
+    """ Access Request """
     global sub_attr_val, obj_attr_val, policy
 
+    # Send attribute-value pairs to the client
     sendMessage(conn, sub_attr_val)
     sendMessage(conn, obj_attr_val)
     sendMessage(conn, policy)
@@ -290,17 +270,13 @@ def accept_client():
 
 
 def updateAuxList():
+    """ Update the auxiliary list with random accesses
+        Introduce slightly larger delays"""
     global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase
-    # Update the auxiliary list with random accesses
-    # Introduce slightly larger delays
-
-    # users = list(sub_attr_val.keys())
-    # objects = list(obj_attr_val.keys())
 
     number_of_users = len(userbase)
     number_of_objects = len(objectbase)
 
-    # while len(sub_obj_pairs_not_taken) != 0:
     while True:
         add_choice = random.randint(0, 1)
         if add_choice == 0:
@@ -314,35 +290,18 @@ def updateAuxList():
                 aux_list.append(['sub_'+str(random.randint(1, number_of_users)), 'obj_'+str(random.randint(1, number_of_objects)), 'read'])
             
         # Exponential delay (for now consider constant delay)
-        mean_tw = 66.67
+        mean_tw = 1000 / AL_UPDATE_RATE
         tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
         time.sleep(tw)
 
 def generateCombinedPolicy():
-    # Combine policy P and auxiliary list to generate a new policy P' which is then passed to the ABAC mining algorithm
+    """Combine policy P and auxiliary list to generate a new policy P' which is then passed to the ABAC mining algorithm"""
     global aux_list, policy, userbase, objectbase, user_attr, obj_attr
     with policy_lock:
         combined_policy = policy.copy()
-    # userbase = {}
-    # objectbase = {}
-    # with open("database/policy/curr_policy.json") as db:
-    #     combined_policy = json.load(db)
-    # with open("database/userbase/userbase.json") as db:
-    #     userbase = json.load(db)
-    # with open("database/objectbase/objectbase.json") as db:
-    #     objectbase = json.load(db)
-
+    
     ori_no_of_rules = len(combined_policy)
     rule_ID = ori_no_of_rules + 1
-    # file_ptr = open('database/auxiliary_list.txt', 'r')
-    # temp_update_list = []
-    # for line in file_ptr:
-    #     line = line.strip(' \n')
-    #     line = line[1:-1]
-    #     # print(line)
-    #     temp_update_list.append(line.split(', '))
-    # temp_update_list = aux_list
-    # temp_update_list = aux_list
     
     with aux_list_lock:
         while len(aux_list) != 0:
@@ -380,9 +339,8 @@ def generateCombinedPolicy():
     print("Combination Process Over!")
 
 def resolveAccessRequestfromAuxList(access_request):
+    """Resolve access requests from the auxiliary list"""
     global userbase, objectbase
-    # Resolve access requests from the auxiliary list
-    # temp_policy = {}
     with aux_list_lock:
         for i in range(len(aux_list)):
             temp_policy = {}
@@ -398,7 +356,6 @@ def resolveAccessRequestfromAuxList(access_request):
             temp_policy[rule_key]["op"] = op
 
             # Add subject attributes
-            # print(f'1 Userbase: {userbase}\nUser: {usr}')
             for attr in userbase[usr]:
                 if attr == "uid":
                     temp_policy[rule_key]["sub"][attr] = ["*"]
@@ -415,11 +372,13 @@ def resolveAccessRequestfromAuxList(access_request):
             if result == 1:
                 return 1
     return 0
-    # print(f'Access Request resolved from the auxiliary list')
 
 def reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs):
+    """Report stats
+        
+        stats: start time, end time, wait time, time involved in resolving access request, number of jobs in the access_request_queue and the status of the server, number of rules in the policy, number of updates in auxiliary list
+    """
     global ar_stats
-    # Report start time, end time, wait time, time involved in resolving access request, number of jobs in the access_request_queue and the status of the server, number of rules in the policy, number of updates in auxiliary list
     tot_resolution_time = ar_policy_time + ar_ACM_time
     if resolution_type == 1:
         res_type = "Policy"
@@ -429,140 +388,22 @@ def reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, a
         res_type = "None"
     ar_stats.write(f"Job {access_request[0]}: Waiting time = {ar_queue_time} | Resolution time = {tot_resolution_time} | Resolution type = {res_type}\n")
     
-
-# satisfied = 0
-
-'''
-def extractRefinedPolicy():
-    global user_attr, obj_attr, policy
-    blockOfRefinedCode = []
-    flg = 0
-    # Iterate through each line in the file
-    with open('./database/policy/refined_policy.abac', 'r') as file:
-        for line in file:
-            # Process the current line (e.g., print it)
-
-            line = line.strip(' \n')
-            # print(line)
-            if line == '':
-                continue
-            if line == 'OUTPUT RULES':
-                flg = 1
-                # print(line)
-                continue
-            if flg == 1:
-                # print(line)
-                if line.startswith('='):
-                    break
-                blockOfRefinedCode.append(line)
-    # print(blockOfRefinedCode)
-
-    modified_rules = {}
-    no_of_rules = 0
-    # modified_rules['sub'] = {}
-    # modified_rules['obj'] = {}
-
-    # modified_rules['op'] =
-    for line in blockOfRefinedCode:
-        # if re.match(r'^\d', line) is not None:
-        if line.startswith('rule'):
-            no_of_rules += 1
-            rule_ID = 'rule_' + str(no_of_rules)
-            modified_rules[rule_ID] = {}
-            modified_rules[rule_ID]['sub'] = {}
-            modified_rules[rule_ID]['obj'] = {}
-
-            # print(line)
-            line = line.strip(' \n')[:-1].strip(' \n')
-            new_line = line.split('(')[1].strip(' \n')
-            # new_line = line.strip()[:-1].strip().split('(')
-            attributes_list = new_line.split(';')
-            # print(attributes_list)
-            encountered_sub_attr = []
-            encountered_obj_attr = []
-
-            for i in range(len(attributes_list)):
-                ind_attr_val = attributes_list[i].split(',')
-                if i == 0:
-                    # Subject attributes
-                    for x in ind_attr_val:
-                        x = x.strip(' \n')
-                        if x == '':
-                            continue
-                        temp_list = x.split(' in ')
-                        possible_attr = temp_list[0].strip(' \n')
-                        encountered_sub_attr.append(possible_attr)
-
-                        temp_list[1] = temp_list[1].strip(
-                            ' \n')[1:-1].strip(' \n')
-                        possible_attr_values = temp_list[1].split(' ')
-                        modified_rules[rule_ID]['sub'][possible_attr] = [
-                            val for val in possible_attr_values if val != '']
-
-                    for attr in user_attr:
-                        if attr not in encountered_sub_attr:
-                            modified_rules[rule_ID]['sub'][attr] = ['*']
-                    if "uid" not in encountered_sub_attr:
-                        modified_rules[rule_ID]['sub']['uid'] = ['*']
-                elif i == 1:
-                    # Object attributes
-                    for x in ind_attr_val:
-                        x = x.strip(' \n')
-                        if x == '':
-                            continue
-                        # print(x, end=' ')
-                        temp_list = x.split(' in ')
-                        possible_attr = temp_list[0].strip(' \n')
-                        encountered_obj_attr.append(possible_attr)
-
-                        temp_list[1] = temp_list[1].strip(
-                            ' \n')[1:-1].strip(' \n')
-                        possible_attr_values = temp_list[1].split(' ')
-                        modified_rules[rule_ID]['obj'][possible_attr] = [
-                            val for val in possible_attr_values if val != '']
-
-                    for attr in obj_attr:
-                        if attr not in encountered_obj_attr:
-                            modified_rules[rule_ID]['obj'][attr] = ['*']
-                    if "rid" not in encountered_obj_attr:
-                        modified_rules[rule_ID]['obj']["rid"] = ['*']
-                elif i == 2:
-                    # Allowed operation
-                    modified_rules[rule_ID]['op'] = ind_attr_val[0].strip(' \n')[
-                        1:-1].strip(' \n')
-                    # for x in attr_val:
-                    #     x = x.strip(' \n')
-                    #     temp_list = x.split('in')
-                    #     temp_list[0] = temp_list[0].strip()
-                    #     temp_list[1] = temp_list[1].strip()
-                    #     modified_rules[rule_ID]['o'][temp_list[0]] = temp_list[1][1:-1]
-                else:
-                    continue
-                # print()
-
-            # Last endline
-            # print("\n")
-
-    print(f"\n\n------------------------- Modified ABAC Policy -------------------------\n")
-    print(f"Refined number of rules = {no_of_rules}")
-    with open("database/policy/curr_policy.json", "w") as db:
-        json.dump(modified_rules, db)
-    with policy_lock:
-        policy = modified_rules
-'''
 first_vac_dur = 0
 def resolveAccessRequest():
-    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, curr_server_state, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur
+    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, curr_server_state, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur, NO_OF_ACCESS_REQUESTS, MAX_ACCESS_REQUESTS_PER_VACATION
     satisfied = 0
     
     while True:
         with access_request_lock:
-            condn_check = len(access_request_queue)
+            # condn_check = len(access_request_queue)==0 # Initial vacation model
+            condn_check = NO_OF_ACCESS_REQUESTS >= MAX_ACCESS_REQUESTS_PER_VACATION
         # if curr_server_state == 1 or condn_check == 0:
         curr_time = time.perf_counter()
         # print(f'')
-        if condn_check == 0 and curr_server_state == 1 and (curr_time - global_start_timer) > 6:
+        # if condn_check == 1 and curr_server_state == 1 and (curr_time - global_start_timer) > 6: # Initial vacation model
+        if condn_check == 1 and curr_server_state == 1 and (curr_time - global_start_timer) > 6:
             
+            print(f'NO_OF_ACCESS_REQUESTS: {NO_OF_ACCESS_REQUESTS}')
             print('Mining process starting... stay tuned!')
             if NO_OF_VACATIONS >= 2:
                 ar_stats.write('Normal period {NO_OF_VACATIONS} ended!\n')
@@ -599,6 +440,7 @@ def resolveAccessRequest():
                 ar_stats.close()
                 break
             ar_stats.write(f'--- Normal Period {NO_OF_VACATIONS} starts... ---\n')
+            NO_OF_ACCESS_REQUESTS = 0
         else:
             # ar_stats.write('\n----- NORMAL PERIOD -----\n')
             # access_request = {request_ID, Access_request_object, start_time}
@@ -645,6 +487,7 @@ def resolveAccessRequest():
             
             # print("Access denied from auxliary list as well!")
             reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
+            NO_OF_ACCESS_REQUESTS += 1
 
 # Perform the ABAC Mining Procedure
 def minePolicy():
@@ -771,36 +614,6 @@ def extractRefinedPolicy():
     with open("database/policy/curr_policy.json", "w") as db:
         json.dump(modified_rules, db)
 
-    
-
-'''
-# Running mode of the server depending on the curr_server_state bit
-# 0 - Normal mode
-# 1 - Vacation mode
-def flipServerMode():
-    global curr_server_state
-    while True:
-        # lambda_param = random.randint(1, 3)
-        lambda_param = 10
-        rand_time_period = max(1, np.random.exponential(
-            lambda_param, 1)[0])
-        # print("Current server state: ", end = '')
-        with access_request_lock:
-            if len(access_request_queue) == 0:
-                # Take a vacation
-                curr_server_state = 1
-                
-                
-        if curr_server_state == 0:
-            print("Normal Mode")
-            print(f"Jobs in the queue: {len(access_request_queue)}")
-        else:
-            print("Vacation Mode")
-            print(f"Jobs in the queue: {len(access_request_queue)}")
-
-        curr_server_state = 1 - curr_server_state
-        time.sleep(rand_time_period)
-'''
 
 def init():
     global sub_attr, obj_attr, sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken,userbase, objectbase, policy
@@ -835,24 +648,12 @@ def init():
             continue
         usr_obj_pair = line.split(', ')[:2]
         sub_obj_pairs_not_taken.append([usr_obj_pair[0][1:], usr_obj_pair[1]])
-    
-    # print(f"\nSubject object pairs not taken: {sub_obj_pairs_not_taken}\n")
-    # print()
-        
-    # Pass initial ABAC Policy to the ABAC Mining algorithm
-    # Generate the input file
-    # generateStollerInput()
-
-    # # Run the ABAC Mining Algorithm
-    # minePolicy()
-
-    # # Extract the refined policy
-    # extractRefinedPolicy()
-    
 
     print("Init process over !\n")
 
-if __name__ == "__main__":
+SERVER = None
+def main():
+    global sub_attr_val, obj_attr_val, policy, userbase, objectbase, SERVER
     # Initialize variable with test data
     init()
 
@@ -902,3 +703,20 @@ if __name__ == "__main__":
     # Close the server
     SERVER.close()
     print("------------- Server Closed ! -------------")
+
+if __name__ == "__main__":
+    argparser = ArgumentParser()
+    argparser.add_argument('-a', '--al_update_rate', type=int, help='Auxiliary list update rate')
+    args = argparser.parse_args()
+    
+    if args.al_update_rate:
+        AL_UPDATE_RATE = args.al_update_rate
+    
+    try:
+        main()
+    except KeyboardInterrupt:
+        print('Closing the server...')
+        SERVER.close()
+        print('------------- Server Closed ! -------------')
+        sys.exit(0)
+        

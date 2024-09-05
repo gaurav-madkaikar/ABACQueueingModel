@@ -5,6 +5,7 @@ import numpy as np
 import string
 import random
 import time
+from argparse import ArgumentParser
 
 NO_OF_ATTRIBUTES = 6
 NO_OF_VALUES = 6
@@ -62,7 +63,7 @@ def generateACM():
                               for row in ACM]))
     file_ptr.close()
 
-    print(f"\n\nSubject object pairs not taken: {sub_obj_pairs_not_taken}")
+    # print(f"\n\nSubject object pairs not taken: {sub_obj_pairs_not_taken}") # TODO: Commenting for now
     # Store these not-take sub-obj pairs in a text file
     random.shuffle(sub_obj_pairs_not_taken)
     write_str = ''
@@ -565,6 +566,22 @@ def generateStrollerInput():
 
 # Main function to generate the test data
 if __name__ == "__main__":
+    argparser = ArgumentParser()
+    argparser.add_argument("-a", "--attributes", help="Number of attributes", type=int)
+    argparser.add_argument("-v", "--values", help="Number of values", type=int)
+    argparser.add_argument("-s", "--subjects", help="Number of subjects", type=int)
+    argparser.add_argument("-o", "--objects", help="Number of objects", type=int)
+    args = argparser.parse_args()
+    
+    if args.attributes:
+        NO_OF_ATTRIBUTES = args.attributes
+    if args.values:
+        NO_OF_VALUES = args.values
+    if args.subjects:
+        NO_OF_SUBJECTS = args.subjects
+    if args.objects:
+        NO_OF_OBJECTS = args.objects
+    
     stats_report.write('++++++++++ TEST DATA DETAILS ++++++++++\n')
     write_str = f'No. of attributes = {NO_OF_ATTRIBUTES}\nNo. of values = {NO_OF_VALUES}\nNo. of users = {NO_OF_SUBJECTS}\nNo. of objects = {NO_OF_OBJECTS}\n\n' 
     stats_report.write(write_str)
