@@ -1,8 +1,8 @@
 import os, subprocess, shutil
+from pathlib import Path
 import numpy as np
 import socket
-from threading import Thread
-from threading import Lock
+from threading import Lock, Thread, Event
 import sys
 import pickle
 import time
@@ -12,9 +12,20 @@ import aux_list as al
 from collections import deque
 import aux_list as al
 from argparse import ArgumentParser
+import logging
 
 # Generate test data
 # import gen_test_data as gtd
+
+CURRENT_DIR = Path(__file__).resolve().parent
+os.chdir(CURRENT_DIR)
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+SERVER = BASE_DIR / 'client-server-model' / 'server' / 'main_server.py'
+SERVER_LOG = BASE_DIR / 'logs' / 'server.log'
+
+# logging.basicConfig(filename=SERVER_LOG, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
+logging.basicConfig(level=logging.DEBUG)
 
 
 # Global file pointers
@@ -67,6 +78,9 @@ AL_UPDATE_RATE = 15
 HEADERSIZE = 16
 FORMAT = 'utf-8'
 
+THREAD_EVENT: Event = None
+RUNNING = True
+
 def sendMessage(conn, message):
     msg_send = b''
     if type(message) == dict:
@@ -81,7 +95,10 @@ def receiveMessage(conn, _type='str'):
     decoded_message = ''
     decoded_obj = {}
 
-    recv_msg_len = int(conn.recv(16).decode('utf-8'))
+    recv_msg_len = conn.recv(16).decode('utf-8')
+    # if recv_msg_len == '':
+    #     return None
+    recv_msg_len = int(recv_msg_len)
     recv_msg = b''
     
     while len(recv_msg) < recv_msg_len:
@@ -224,7 +241,7 @@ def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
 
 def handle_client(conn, address):
     """ Access Request """
-    global sub_attr_val, obj_attr_val, policy
+    global sub_attr_val, obj_attr_val, policy, THREAD_EVENT, RUNNING
 
     # Send attribute-value pairs to the client
     sendMessage(conn, sub_attr_val)
@@ -247,16 +264,21 @@ def handle_client(conn, address):
                 break
         # if ar_cnt == 100:
         #     break
-    print('Connection closed on server side!\n')
+    
+    # Close the connection
+    conn.close()
+    logging.info('Connection closed on server side!\n')
+    RUNNING = False
+    THREAD_EVENT.set()
 
 def accept_client():
-    global sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken, curr_server_state, global_start_timer
+    global sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken, curr_server_state, global_start_timer, RUNNING
     try:
-        while True:
+        while RUNNING:
             # Accept the connection from the client
             client, client_address = SERVER.accept()
 
-            print("%s:%s has connected." % client_address)
+            logging.info("%s:%s has connected." % client_address)
 
             curr_server_state = 1
             global_start_timer = time.perf_counter()
@@ -265,19 +287,21 @@ def accept_client():
             HANDLE_CLIENT.start()
             HANDLE_CLIENT.join()
     except KeyboardInterrupt:
-        print('Keyboard interrupt caught')
-        print('Exiting thread...')
+        logging.debug('Keyboard interrupt caught')
+        logging.info('Exiting thread...')
+    finally:
+        logging.info('Done accepting clients')
 
 
 def updateAuxList():
     """ Update the auxiliary list with random accesses
         Introduce slightly larger delays"""
-    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase
+    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase, RUNNING
 
     number_of_users = len(userbase)
     number_of_objects = len(objectbase)
 
-    while True:
+    while RUNNING:
         add_choice = random.randint(0, 1)
         if add_choice == 0:
             with aux_list_lock:
@@ -330,13 +354,13 @@ def generateCombinedPolicy():
                     combined_policy[rule_key]["obj"][attr] = ["*"]
                     continue
                 combined_policy[rule_key]["obj"][attr] = [objectbase[obj][attr]]
-    print(f"Original: {ori_no_of_rules} | Combined: = {len(combined_policy)}")
+    logging.debug(f"Original: {ori_no_of_rules} | Combined: = {len(combined_policy)}")
 
     with open("database/policy/curr_policy.json", "w") as db:
         json.dump(combined_policy, db)
     with policy_lock:
         policy = combined_policy.copy()
-    print("Combination Process Over!")
+    logging.debug("Combination Process Over!")
 
 def resolveAccessRequestfromAuxList(access_request):
     """Resolve access requests from the auxiliary list"""
@@ -401,10 +425,10 @@ def resolveAccessRequest():
         curr_time = time.perf_counter()
         # print(f'')
         # if condn_check == 1 and curr_server_state == 1 and (curr_time - global_start_timer) > 6: # Initial vacation model
-        if condn_check == 1 and curr_server_state == 1 and (curr_time - global_start_timer) > 6:
+        if condn_check == 1 and curr_server_state == 1:
             
-            print(f'NO_OF_ACCESS_REQUESTS: {NO_OF_ACCESS_REQUESTS}')
-            print('Mining process starting... stay tuned!')
+            logging.debug(f'NO_OF_ACCESS_REQUESTS: {NO_OF_ACCESS_REQUESTS}')
+            logging.info('Mining process starting... stay tuned!')
             if NO_OF_VACATIONS >= 2:
                 ar_stats.write('Normal period {NO_OF_VACATIONS} ended!\n')
             ar_stats.write('\n----- VACATION Started -----\n')
@@ -436,7 +460,7 @@ def resolveAccessRequest():
             ar_stats.write(f'Jobs in the system: {no_of_jobs}\n')
             ar_stats.write('------ VACATION ENDED ------\n\n')
             if NO_OF_VACATIONS == 5:
-                print('Handling clients must be stopped!')
+                logging.info('Handling clients must be stopped!')
                 ar_stats.close()
                 break
             ar_stats.write(f'--- Normal Period {NO_OF_VACATIONS} starts... ---\n')
@@ -608,7 +632,7 @@ def extractRefinedPolicy():
     # print(f"\n\n------------------------- Modified ABAC Policy -------------------------\n")
     with policy_lock:
         policy = modified_rules.copy()
-    print(f"Refined number of rules = {no_of_rules}")
+    logging.debug(f"Refined number of rules = {no_of_rules}")
     with open("database/policy/refined_policy.json", "w") as db:
         json.dump(modified_rules, db)
     with open("database/policy/curr_policy.json", "w") as db:
@@ -649,60 +673,54 @@ def init():
         usr_obj_pair = line.split(', ')[:2]
         sub_obj_pairs_not_taken.append([usr_obj_pair[0][1:], usr_obj_pair[1]])
 
-    print("Init process over !\n")
+    logging.debug("Init process over !\n")
 
 SERVER = None
 def main():
-    global sub_attr_val, obj_attr_val, policy, userbase, objectbase, SERVER
+    global sub_attr_val, obj_attr_val, policy, userbase, objectbase, SERVER, RUNNING, THREAD_EVENT
     # Initialize variable with test data
     init()
 
-    print('+' * 45 + " Server Side " + '+' * 45)
-    # Server Initialization
-    # Generate test data
-    # gen_test_data = gtd.GenTestData()
-    # gtd.main()
-
+    logging.info('+' * 45 + " Server Side " + '+' * 45)
+    
     # Wait for access requests from the client
     ADDR = ('127.0.0.1', 8080)
     SERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
     # Reuse the port if already in use
     SERVER.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     SERVER.bind(ADDR)
-    print(f"[ -- LISTENING -- ] Server is listening on {ADDR[0]}:{ADDR[1]}...")
+    logging.info(f"[ -- LISTENING -- ] Server is listening on {ADDR[0]}:{ADDR[1]}...")
 
     SERVER.listen(5)
-    print("Waiting for a connection...")
+    logging.info("Waiting for a connection...")
+    
+    THREAD_EVENT = Event()
 
-    # while True:
-    #     client, client_address = SERVER.accept()
-    #     print("%s:%s has connected." % client_address)
     # Accept the connection from the client
     ACCEPT_THREAD = Thread(target=accept_client, daemon=True)
 
     # Start the thread
     ACCEPT_THREAD.start()
 
-    print("Main hello world! This works as well!")
+    logging.debug("Main hello world! This works as well!")
     # Spawn a thread for updating the auxiliary list
     UPDATE_AUX_LIST_THREAD = Thread(target=updateAuxList, daemon=True)
     UPDATE_AUX_LIST_THREAD.start()
 
     ACCESS_REQUEST_RESOLVER = Thread(target=resolveAccessRequest, daemon=True)
     ACCESS_REQUEST_RESOLVER.start()
-
-    # STATS_REPORTER = Thread(target=statsReporter, daemon=True)
-    # STATS_REPORTER.start()
     
     # Wait for the thread to finish
+    ACCESS_REQUEST_RESOLVER.join()
+    THREAD_EVENT.wait()
+    RUNNING = False
     ACCEPT_THREAD.join()
     UPDATE_AUX_LIST_THREAD.join()
-    ACCESS_REQUEST_RESOLVER.join()
-
 
     # Close the server
     SERVER.close()
-    print("------------- Server Closed ! -------------")
+    logging.info("------------- Server Closed ! -------------")
 
 if __name__ == "__main__":
     argparser = ArgumentParser()
@@ -715,8 +733,8 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print('Closing the server...')
+        logging.info('Closing the server...')
         SERVER.close()
-        print('------------- Server Closed ! -------------')
+        logging.info('------------- Server Closed ! -------------')
         sys.exit(0)
         
