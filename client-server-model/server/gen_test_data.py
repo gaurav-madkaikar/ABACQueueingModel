@@ -6,6 +6,8 @@ import string
 import random
 import time
 from argparse import ArgumentParser
+import sys
+from pathlib import Path
 
 NO_OF_ATTRIBUTES = 6
 NO_OF_VALUES = 6
@@ -13,6 +15,8 @@ MAX_DUPLICATES_ALLOWED = 2
 
 NO_OF_SUBJECTS = 45
 NO_OF_OBJECTS = 45
+
+CURRENT_DIR = Path(__file__).resolve().parent
 
 stats_report = open('data_gen_stats.txt', 'w')
 
@@ -581,6 +585,8 @@ if __name__ == "__main__":
         NO_OF_SUBJECTS = args.subjects
     if args.objects:
         NO_OF_OBJECTS = args.objects
+    
+    sys.path.append(str(CURRENT_DIR.parent))
     
     stats_report.write('++++++++++ TEST DATA DETAILS ++++++++++\n')
     write_str = f'No. of attributes = {NO_OF_ATTRIBUTES}\nNo. of values = {NO_OF_VALUES}\nNo. of users = {NO_OF_SUBJECTS}\nNo. of objects = {NO_OF_OBJECTS}\n\n' 
