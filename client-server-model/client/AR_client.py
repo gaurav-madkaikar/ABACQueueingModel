@@ -22,10 +22,12 @@ CURRENT_DIR = Path(__file__).resolve().parent
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 CLIENT_LOG = BASE_DIR / 'logs' / 'client.log'
+CLIENT_LOG.parent.mkdir(parents=True, exist_ok=True)
+CLIENT_LOG.touch()
 
 LOCALBASE = CURRENT_DIR / 'localbase'
 
-logging.basicConfig(level=logging.DEBUG, format='[Client] %(levelname)s: %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='[Client] %(levelname)s: %(message)s', filename=CLIENT_LOG)
 logging.info(f'----------------- Client started at {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())} -----------------')
 
 
@@ -240,6 +242,6 @@ if __name__== "__main__":
         main()
     except KeyboardInterrupt:
         logging.info('Closing the client...')
-        CLIENT.close()
+        if CLIENT: CLIENT.close()
         logging.info('------------- Client Closed ! -------------')
         sys.exit(0)

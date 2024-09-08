@@ -8,9 +8,7 @@ import pickle
 import time
 import json
 import random
-import aux_list as al
 from collections import deque
-import aux_list as al
 from argparse import ArgumentParser
 import logging
 
@@ -22,12 +20,13 @@ CURRENT_DIR = Path(__file__).resolve().parent
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SERVER_LOG = BASE_DIR / 'logs' / 'server.log'
 
-# CURRENT_POLICY_FILE = CURRENT_DIR / "database" / "policy" / "policy.json"
 DATABASE_DIR = CURRENT_DIR / "database"
 ACCESSES_FILE = CURRENT_DIR / "experimental_data" / "access_req_stats.txt"
 
 # logging.basicConfig(filename=SERVER_LOG, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
-logging.basicConfig(level=logging.DEBUG, format='[Server] %(levelname)s: %(message)s')
+SERVER_LOG.parent.mkdir(parents=True, exist_ok=True)
+SERVER_LOG.touch()
+logging.basicConfig(level=logging.DEBUG, format='[Server] %(levelname)s: %(message)s', filename=SERVER_LOG)
 logging.info(f'----------------- Server started at {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())} -----------------')
 
 # Global file pointers
@@ -282,7 +281,7 @@ def accept_client():
 
             logging.info("%s:%s has connected." % client_address)
 
-            curr_server_state = 1
+            # curr_server_state = 1
             global_start_timer = time.perf_counter()
 
             HANDLE_CLIENT = Thread(target=handle_client, args=(client, client_address), daemon=True)
@@ -298,7 +297,7 @@ def accept_client():
 def updateAuxList():
     """ Update the auxiliary list with random accesses
         Introduce slightly larger delays"""
-    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase, RUNNING
+    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase, RUNNING, curr_server_state
 
     number_of_users = len(userbase)
     number_of_objects = len(objectbase)
@@ -314,6 +313,7 @@ def updateAuxList():
         else:
             with aux_list_lock:
                 aux_list.append(['sub_'+str(random.randint(1, number_of_users)), 'obj_'+str(random.randint(1, number_of_objects)), 'read'])
+        curr_server_state = 1
 
         # Exponential delay (for now consider constant delay)
         mean_tw = 1000 / AL_UPDATE_RATE
@@ -416,19 +416,19 @@ def reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, a
     
 first_vac_dur = 0
 def resolveAccessRequest():
-    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, curr_server_state, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur, NO_OF_ACCESS_REQUESTS, MAX_ACCESS_REQUESTS_PER_VACATION
+    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur, NO_OF_ACCESS_REQUESTS, MAX_ACCESS_REQUESTS_PER_VACATION
     satisfied = 0
-    
+    curr_time = None
     while True:
         with access_request_lock:
             # condn_check = len(access_request_queue)==0 # Initial vacation model
             condn_check = len(aux_list) >= MAX_AUX_LIST_LEN_PER_VACATION
         # if curr_server_state == 1 or condn_check == 0:
+        last_time = curr_time if curr_time else global_start_timer
         curr_time = time.perf_counter()
         # print(f'')
         # if condn_check == 1 and curr_server_state == 1 and (curr_time - global_start_timer) > 6: # Initial vacation model
         if condn_check == 1 and curr_server_state == 1:
-            
             logging.debug(f'NO_OF_ACCESS_REQUESTS: {NO_OF_ACCESS_REQUESTS}')
             logging.info('Mining process starting... stay tuned!')
             if NO_OF_VACATIONS >= 2:
@@ -467,6 +467,7 @@ def resolveAccessRequest():
                 break
             ar_stats.write(f'--- Normal Period {NO_OF_VACATIONS} starts... ---\n')
             NO_OF_ACCESS_REQUESTS = 0
+            curr_server_state = 0
         else:
             # ar_stats.write('\n----- NORMAL PERIOD -----\n')
             # access_request = {request_ID, Access_request_object, start_time}
@@ -667,7 +668,7 @@ def init():
 
     shutil.copyfile(original_file_name, copy_file_name)
 
-    file_ptr = open('database/aux_list/sub_obj_pairs_not_taken.txt', 'r')
+    file_ptr = open(DATABASE_DIR / "aux_list" / "sub_obj_pairs_not_taken.txt", 'r')
     for line in file_ptr.readlines():
         line = line.strip(' \n')
         if line == '':

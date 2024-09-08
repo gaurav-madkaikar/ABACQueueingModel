@@ -8,6 +8,7 @@ import time
 from argparse import ArgumentParser
 import sys
 from pathlib import Path
+import os
 
 NO_OF_ATTRIBUTES = 6
 NO_OF_VALUES = 6
@@ -18,7 +19,12 @@ NO_OF_OBJECTS = 45
 
 CURRENT_DIR = Path(__file__).resolve().parent
 
-stats_report = open('data_gen_stats.txt', 'w')
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+DATABASE_DIR = CURRENT_DIR / "database"
+ACCESSES_FILE = CURRENT_DIR / "experimental_data" / "access_req_stats.txt"
+
+stats_report = open(CURRENT_DIR / 'data_gen_stats.txt', 'w')
 
 # Global variables
 # User/Object attributes and values
@@ -62,7 +68,7 @@ def generateACM():
     stats_report.write(write_str)
 
     print("ACM generated successfully!")
-    file_ptr = open('database/ACM/ACM_ori.txt', 'w')
+    file_ptr = open(DATABASE_DIR / 'ACM' / 'ACM_ori.txt', 'w')
     file_ptr.write('\n'.join(['   '.join([str(cell) for cell in row])
                               for row in ACM]))
     file_ptr.close()
@@ -71,7 +77,7 @@ def generateACM():
     # Store these not-take sub-obj pairs in a text file
     random.shuffle(sub_obj_pairs_not_taken)
     write_str = ''
-    file_ptr = open('database/aux_list/sub_obj_pairs_not_taken.txt', 'w')
+    file_ptr = open(DATABASE_DIR / 'aux_list' / 'sub_obj_pairs_not_taken.txt', 'w')
     for ind in range(len(sub_obj_pairs_not_taken)):
         pair = sub_obj_pairs_not_taken[ind]
         write_str += '{' + pair[0] + ', ' + pair[1] + ', read}\n'
@@ -186,19 +192,19 @@ def genAttributeValues():
     # User attribute-value pairs
 
     # No need
-    with open("database/userbase/sub_attr.json", "w") as db:
+    with open(DATABASE_DIR / "userbase" / "sub_attr.json", "w") as db:
         json.dump(user_attr, db)
 
-    with open("database/userbase/sub_attr_val.json", "w") as db:
+    with open(DATABASE_DIR / "userbase" / "sub_attr_val.json", "w") as db:
         json.dump(user_attr_val, db)
 
     # Object attribute-value pairs
 
     # No need
-    with open("database/objectbase/obj_attr.json", "w") as db:
+    with open(DATABASE_DIR / "objectbase" / "obj_attr.json", "w") as db:
         json.dump(object_attr, db)
 
-    with open("database/objectbase/obj_attr_val.json", "w") as db:
+    with open(DATABASE_DIR / "objectbase" / "obj_attr_val.json", "w") as db:
         json.dump(object_attr_val, db)
     
 
@@ -248,10 +254,10 @@ def genSubjectObjectSets():
     objectbase = obj_info
     
     # Write the subject and object set into the specififed JSON file
-    with open("database/userbase/userbase.json", "w") as db:
+    with open(DATABASE_DIR / "userbase" / "userbase.json", "w") as db:
         json.dump(user_info, db)
 
-    with open("database/objectbase/objectbase.json", "w") as db:
+    with open(DATABASE_DIR / "objectbase" / "objectbase.json", "w") as db:
         json.dump(obj_info, db)
 
 # Resolve the access request from policy
@@ -474,7 +480,7 @@ def generateStrollerInput():
     # print(f"Unique number of low-level rules: {len(used_rules)}")
 
     # Write the ABAC Policy set into the specififed JSON file
-    with open("database/policy/policy.json", "w") as db:
+    with open(DATABASE_DIR / "policy" / "policy.json", "w") as db:
         json.dump(abac_policy, db)
 
     # with open("database/userbase/userbase.json") as db:
@@ -491,7 +497,7 @@ def generateStrollerInput():
     t_start = time.perf_counter()
 
     # Write into an output .abac file in the ABACMining/ folder
-    file_ptr = open("../../ABACMining/ori_policy.abac", "w")
+    file_ptr = open(BASE_DIR / "ABACMining" / "ori_policy.abac", "w")
 
     file_ptr.write("# User Attribute Data\n")
     for user_id in userbase:
@@ -586,7 +592,7 @@ if __name__ == "__main__":
     if args.objects:
         NO_OF_OBJECTS = args.objects
     
-    sys.path.append(str(CURRENT_DIR.parent))
+    os.chdir(CURRENT_DIR)
     
     stats_report.write('++++++++++ TEST DATA DETAILS ++++++++++\n')
     write_str = f'No. of attributes = {NO_OF_ATTRIBUTES}\nNo. of values = {NO_OF_VALUES}\nNo. of users = {NO_OF_SUBJECTS}\nNo. of objects = {NO_OF_OBJECTS}\n\n' 
