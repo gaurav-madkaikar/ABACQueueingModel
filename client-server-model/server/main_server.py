@@ -18,18 +18,20 @@ import logging
 # import gen_test_data as gtd
 
 CURRENT_DIR = Path(__file__).resolve().parent
-os.chdir(CURRENT_DIR)
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-SERVER = BASE_DIR / 'client-server-model' / 'server' / 'main_server.py'
 SERVER_LOG = BASE_DIR / 'logs' / 'server.log'
 
-# logging.basicConfig(filename=SERVER_LOG, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
-logging.basicConfig(level=logging.DEBUG)
+# CURRENT_POLICY_FILE = CURRENT_DIR / "database" / "policy" / "policy.json"
+DATABASE_DIR = CURRENT_DIR / "database"
+ACCESSES_FILE = CURRENT_DIR / "experimental_data" / "access_req_stats.txt"
 
+# logging.basicConfig(filename=SERVER_LOG, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
+logging.basicConfig(level=logging.DEBUG, format='[Server] %(levelname)s: %(message)s')
+logging.info(f'----------------- Server started at {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())} -----------------')
 
 # Global file pointers
-ar_stats = open('experimental_data/access_req_stats.txt', 'w')
+ar_stats = open(ACCESSES_FILE, 'w')
 
 # Main server operations:
 #   1. Generate test data (attribute/value pairs, ACM, original policy) (Independent, one-time operation)
@@ -96,8 +98,8 @@ def receiveMessage(conn, _type='str'):
     decoded_obj = {}
 
     recv_msg_len = conn.recv(16).decode('utf-8')
-    # if recv_msg_len == '':
-    #     return None
+    if recv_msg_len == '':
+        return ''
     recv_msg_len = int(recv_msg_len)
     recv_msg = b''
     
@@ -356,7 +358,7 @@ def generateCombinedPolicy():
                 combined_policy[rule_key]["obj"][attr] = [objectbase[obj][attr]]
     logging.debug(f"Original: {ori_no_of_rules} | Combined: = {len(combined_policy)}")
 
-    with open("database/policy/curr_policy.json", "w") as db:
+    with open(DATABASE_DIR / "policy" / "curr_policy.json", "w") as db:
         json.dump(combined_policy, db)
     with policy_lock:
         policy = combined_policy.copy()
@@ -528,7 +530,7 @@ def extractRefinedPolicy():
     blockOfRefinedCode = []
     flg = 0
     # Iterate through each line in the file
-    with open('./database/policy/refined_policy.abac', 'r') as file:
+    with open(DATABASE_DIR / 'policy' / 'refined_policy.abac', 'r') as file:
         for line in file:
             # Process the current line (e.g., print it)
             line = line.strip(' \n')
@@ -633,35 +635,35 @@ def extractRefinedPolicy():
     with policy_lock:
         policy = modified_rules.copy()
     logging.debug(f"Refined number of rules = {no_of_rules}")
-    with open("database/policy/refined_policy.json", "w") as db:
+    with open(DATABASE_DIR / "policy" / "refined_policy.json", "w") as db:
         json.dump(modified_rules, db)
-    with open("database/policy/curr_policy.json", "w") as db:
+    with open(DATABASE_DIR / "policy" / "curr_policy.json", "w") as db:
         json.dump(modified_rules, db)
 
 
 def init():
     global sub_attr, obj_attr, sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken,userbase, objectbase, policy
-    with open('database/userbase/sub_attr.json', 'r') as db:
+    with open(DATABASE_DIR / "userbase" / "sub_attr.json", 'r') as db:
         sub_attr = json.load(db)
-    with open('database/objectbase/obj_attr.json', 'r') as db:
+    with open(DATABASE_DIR / "objectbase" / "obj_attr.json", 'r') as db:
         obj_attr = json.load(db)
-    with open('database/userbase/sub_attr_val.json', 'r') as db:
+    with open(DATABASE_DIR / "userbase" / "sub_attr_val.json", 'r') as db:
         sub_attr_val = json.load(db)
-    with open('database/objectbase/obj_attr_val.json', 'r') as db:
+    with open(DATABASE_DIR / "objectbase" / "obj_attr_val.json", 'r') as db:
         obj_attr_val = json.load(db)
-    with open('database/userbase/userbase.json') as db:
+    with open(DATABASE_DIR / "userbase" / "userbase.json") as db:
         userbase = json.load(db)
-    with open('database/objectbase/objectbase.json') as db:
+    with open(DATABASE_DIR / "objectbase" / "objectbase.json") as db:
         objectbase = json.load(db)
-    with open('database/policy/policy.json', 'r') as db:
+    with open(DATABASE_DIR / "policy" / "policy.json", 'r') as db:
         policy = json.load(db)
 
-    # with open('database/policy/curr_policy.json', 'w') as db:
-    #     json.dump(policy, db)
 
     # Make a copy of the original policy
-    original_file_name = "database/policy/policy.json"
-    copy_file_name = "database/policy/curr_policy.json"
+    # original_file_name = "database/policy/policy.json"
+    original_file_name = DATABASE_DIR / "policy" / "policy.json"
+    # copy_file_name = "database/policy/curr_policy.json"
+    copy_file_name = DATABASE_DIR / "policy" / "curr_policy.json"
 
     shutil.copyfile(original_file_name, copy_file_name)
 
@@ -729,7 +731,8 @@ if __name__ == "__main__":
     
     if args.al_update_rate:
         AL_UPDATE_RATE = args.al_update_rate
-    
+    os.chdir(CURRENT_DIR)
+    logging.info(f'Current directory: {os.getcwd()}')
     try:
         main()
     except KeyboardInterrupt:
