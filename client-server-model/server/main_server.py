@@ -58,6 +58,7 @@ policy = {}
 # Auxiliary list
 aux_list = deque()
 MAX_AUX_LIST = 10000
+AL_UPDATE_RATE = 15
 
 # Global Locks
 access_request_lock = Lock()
@@ -71,9 +72,8 @@ NO_OF_VACATIONS = 1
 
 # Change in vacation model
 NO_OF_ACCESS_REQUESTS = 0
-MAX_ACCESS_REQUESTS_PER_VACATION = 500
+MAX_AUX_LIST_LEN_PER_VACATION = 100
 
-AL_UPDATE_RATE = 15
 
 # Helper Functions
 # -- SEND AND RECEIVE DATA --
@@ -314,7 +314,7 @@ def updateAuxList():
         else:
             with aux_list_lock:
                 aux_list.append(['sub_'+str(random.randint(1, number_of_users)), 'obj_'+str(random.randint(1, number_of_objects)), 'read'])
-            
+
         # Exponential delay (for now consider constant delay)
         mean_tw = 1000 / AL_UPDATE_RATE
         tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
@@ -422,7 +422,7 @@ def resolveAccessRequest():
     while True:
         with access_request_lock:
             # condn_check = len(access_request_queue)==0 # Initial vacation model
-            condn_check = NO_OF_ACCESS_REQUESTS >= MAX_ACCESS_REQUESTS_PER_VACATION
+            condn_check = len(aux_list) >= MAX_AUX_LIST_LEN_PER_VACATION
         # if curr_server_state == 1 or condn_check == 0:
         curr_time = time.perf_counter()
         # print(f'')
