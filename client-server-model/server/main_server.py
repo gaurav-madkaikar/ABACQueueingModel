@@ -70,7 +70,7 @@ global_start_timer = 0
 NO_OF_VACATIONS = 1
 
 # Change in vacation model
-NO_OF_ACCESS_REQUESTS = 0
+NO_OF_ACCESS_REQUESTS_SERVED = 0
 MAX_AUX_LIST_LEN_PER_VACATION = 100
 
 
@@ -416,7 +416,7 @@ def reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, a
     
 first_vac_dur = 0
 def resolveAccessRequest():
-    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur, NO_OF_ACCESS_REQUESTS, MAX_ACCESS_REQUESTS_PER_VACATION
+    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur, NO_OF_ACCESS_REQUESTS_SERVED, MAX_ACCESS_REQUESTS_PER_VACATION
     satisfied = 0
     curr_time = None
     while True:
@@ -429,7 +429,7 @@ def resolveAccessRequest():
         # print(f'')
         # if condn_check == 1 and curr_server_state == 1 and (curr_time - global_start_timer) > 6: # Initial vacation model
         if condn_check == 1 and curr_server_state == 1:
-            logging.debug(f'NO_OF_ACCESS_REQUESTS: {NO_OF_ACCESS_REQUESTS}')
+            logging.debug(f'NO_OF_ACCESS_REQUESTS: {NO_OF_ACCESS_REQUESTS_SERVED}')
             logging.info('Mining process starting... stay tuned!')
             if NO_OF_VACATIONS >= 2:
                 ar_stats.write('Normal period {NO_OF_VACATIONS} ended!\n')
@@ -466,7 +466,7 @@ def resolveAccessRequest():
                 ar_stats.close()
                 break
             ar_stats.write(f'--- Normal Period {NO_OF_VACATIONS} starts... ---\n')
-            NO_OF_ACCESS_REQUESTS = 0
+            NO_OF_ACCESS_REQUESTS_SERVED = 0
             curr_server_state = 0
         else:
             # ar_stats.write('\n----- NORMAL PERIOD -----\n')
@@ -514,7 +514,7 @@ def resolveAccessRequest():
             
             # print("Access denied from auxliary list as well!")
             reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
-            NO_OF_ACCESS_REQUESTS += 1
+            NO_OF_ACCESS_REQUESTS_SERVED += 1
 
 # Perform the ABAC Mining Procedure
 def minePolicy():
