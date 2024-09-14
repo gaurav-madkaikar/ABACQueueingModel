@@ -1,23 +1,37 @@
 import os, subprocess, shutil
+from pathlib import Path
 import numpy as np
 import socket
-from threading import Thread
-from threading import Lock
+from threading import Lock, Thread, Event
 import sys
 import pickle
 import time
 import json
 import random
-import aux_list as al
 from collections import deque
-import aux_list as al
+from argparse import ArgumentParser
+import logging
+from enum import Enum
 
 # Generate test data
 # import gen_test_data as gtd
 
+CURRENT_DIR = Path(__file__).resolve().parent
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+SERVER_LOG = BASE_DIR / 'logs' / 'server.log'
+
+DATABASE_DIR = CURRENT_DIR / "database"
+ACCESSES_FILE = CURRENT_DIR / "experimental_data" / "access_req_stats.txt"
+
+# logging.basicConfig(filename=SERVER_LOG, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
+SERVER_LOG.parent.mkdir(parents=True, exist_ok=True)
+SERVER_LOG.touch()
+logging.basicConfig(level=logging.DEBUG, format='[Server] %(levelname)s: %(message)s', filename=SERVER_LOG)
+logging.info(f'----------------- Server started at {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())} -----------------')
 
 # Global file pointers
-ar_stats = open('experimental_data/access_req_stats.txt', 'w')
+ar_stats = open(ACCESSES_FILE, 'w')
 
 # Main server operations:
 #   1. Generate test data (attribute/value pairs, ACM, original policy) (Independent, one-time operation)
@@ -44,6 +58,7 @@ policy = {}
 # Auxiliary list
 aux_list = deque()
 MAX_AUX_LIST = 10000
+AL_UPDATE_RATE = 15
 
 # Global Locks
 access_request_lock = Lock()
@@ -55,10 +70,27 @@ curr_server_state_lock = Lock()
 global_start_timer = 0
 NO_OF_VACATIONS = 1
 
+# Change in vacation model
+NO_OF_ACCESS_REQUESTS_SERVED = 0
+MAX_AUX_LIST_LEN_PER_VACATION = 100
+MAX_ACCESS_REQUESTS_PER_VACATION = 500
+MAX_NO_OF_VACATIONS = 5
+
+class VacationModel(Enum):
+    ACCESS_QUEUE = 1
+    ACCESS_SERVED = 2
+    AUX_LIST = 3
+
+CURRENT_VACATION_MODEL = VacationModel.ACCESS_QUEUE
+
 # Helper Functions
 # -- SEND AND RECEIVE DATA --
 HEADERSIZE = 16
 FORMAT = 'utf-8'
+
+THREAD_EVENT: Event = None
+CLIENT_THREAD_FIRST_EVENT: Event = None
+RUNNING = True
 
 def sendMessage(conn, message):
     msg_send = b''
@@ -69,22 +101,16 @@ def sendMessage(conn, message):
     msg_send = bytes(f'{len(msg_send):16}', 'utf-8') + msg_send
     conn.sendall(msg_send)
 
-# def receiveMessage(conn, _type='str'):
-#     decoded_message = ''
-#     decoded_obj = {}
-#     recv_msg_len = int(conn.recv(4096).decode('utf-8'))
-#     recv_msg = conn.recv(recv_msg_len)
-#     if _type == 'dict':
-#         decoded_obj = pickle.loads(recv_msg)
-#         return decoded_obj
-#     else:
-#         decoded_message = recv_msg.decode('utf-8')
-#         return decoded_message
+
 def receiveMessage(conn, _type='str'):
     decoded_message = ''
     decoded_obj = {}
 
-    recv_msg_len = int(conn.recv(16).decode('utf-8'))
+    recv_msg_len = conn.recv(16).decode('utf-8')
+    if recv_msg_len == '':
+        # Handle case where connection is closed
+        return ''
+    recv_msg_len = int(recv_msg_len)
     recv_msg = b''
     
     while len(recv_msg) < recv_msg_len:
@@ -101,20 +127,8 @@ def receiveMessage(conn, _type='str'):
         decoded_message = recv_msg.decode('utf-8')
         return decoded_message
     
-# def statsReporter():
-#     start_time = time.perf_counter()
-
-#     # reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
-
-#     end_time = time.perf_counter()
-
-
-
-#     time.sleep(0.02)
-#     pass
-    
-# Generate a representation of the Access Control Policy in the form of low-level rules
 def generateStollerInput():
+    """ Generate a representation of the Access Control Policy in the form of low-level rules"""
     global policy, userbase, objectbase
     with policy_lock:
         policy_ = policy.copy()
@@ -189,20 +203,15 @@ def generateStollerInput():
         file_ptr.write(write_str)
 
     file_ptr.close()
-    # print('Stollers input done!')
 
 
-
-# Resolve access request from policy
 def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
+    """ Resolve access request from policy"""
     # result = 0 implies access not granted, result = 1 implies access granted
-    # global policy
     result = 0
     policy_ = {}
     with policy_lock:
         policy_ = policy.copy()
-    # if type_ == 2:
-    #     print(f"New policy policy_: {policy_}")
 
     # Process the result
     for i in range(len(policy_)):
@@ -242,19 +251,25 @@ def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
             break
     return result
 
-# Access Request 
 def handle_client(conn, address):
-    # Send attribute-value pairs to the client
-    global sub_attr_val, obj_attr_val, policy
+    """ Access Request """
+    global sub_attr_val, obj_attr_val, policy, THREAD_EVENT, RUNNING, CURRENT_VACATION_MODEL, VacationModel, curr_server_state
+    global MAX_NO_OF_VACATIONS, NO_OF_VACATIONS, CLIENT_THREAD_FIRST_EVENT, global_start_timer
 
+    # Send attribute-value pairs to the client
     sendMessage(conn, sub_attr_val)
     sendMessage(conn, obj_attr_val)
     sendMessage(conn, policy)
+    
+    global_start_timer = time.perf_counter()
+    CLIENT_THREAD_FIRST_EVENT.set()
 
     ar_cnt = 0
     while True:
         # Receive access request from the client
         access_request = receiveMessage(conn, 'dict')
+        if access_request == '':
+            break
         ar_cnt += 1
 
         # print(f"Request No. {ar_cnt}: Received access request on server side:")
@@ -262,46 +277,44 @@ def handle_client(conn, address):
             # Add the access request to a queue
             access_request_queue.append([ar_cnt, access_request, time.perf_counter()])
 
-            if NO_OF_VACATIONS == 5:
-                # print('Client must be closed immediately!\nVACATIONS ARE DONE!!!!\n')
+            if NO_OF_VACATIONS == MAX_NO_OF_VACATIONS:
                 break
-        # if ar_cnt == 100:
-        #     break
-    print('Connection closed on server side!\n')
+    
+    # Close the connection
+    conn.close()
+    logging.info('Connection closed on server side!\n')
+    RUNNING = False
+    THREAD_EVENT.set()
 
 def accept_client():
-    global sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken, curr_server_state, global_start_timer
+    global sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken, curr_server_state, global_start_timer, RUNNING
+    global CURRENT_VACATION_MODEL, VacationModel, CLIENT_THREAD_FIRST_EVENT, SERVER
     try:
-        while True:
+        while RUNNING:
             # Accept the connection from the client
             client, client_address = SERVER.accept()
 
-            print("%s:%s has connected." % client_address)
-
-            curr_server_state = 1
-            global_start_timer = time.perf_counter()
+            logging.info("%s:%s has connected." % client_address)
 
             HANDLE_CLIENT = Thread(target=handle_client, args=(client, client_address), daemon=True)
             HANDLE_CLIENT.start()
             HANDLE_CLIENT.join()
     except KeyboardInterrupt:
-        print('Keyboard interrupt caught')
-        print('Exiting thread...')
+        logging.debug('Keyboard interrupt caught')
+        logging.info('Exiting thread...')
+    finally:
+        logging.info('Done accepting clients')
 
 
 def updateAuxList():
-    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase
-    # Update the auxiliary list with random accesses
-    # Introduce slightly larger delays
-
-    # users = list(sub_attr_val.keys())
-    # objects = list(obj_attr_val.keys())
+    """ Update the auxiliary list with random accesses
+        Introduce slightly larger delays"""
+    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase, RUNNING, curr_server_state, AL_UPDATE_RATE, CURRENT_VACATION_MODEL, VacationModel
 
     number_of_users = len(userbase)
     number_of_objects = len(objectbase)
 
-    # while len(sub_obj_pairs_not_taken) != 0:
-    while True:
+    while RUNNING:
         add_choice = random.randint(0, 1)
         if add_choice == 0:
             with aux_list_lock:
@@ -312,37 +325,24 @@ def updateAuxList():
         else:
             with aux_list_lock:
                 aux_list.append(['sub_'+str(random.randint(1, number_of_users)), 'obj_'+str(random.randint(1, number_of_objects)), 'read'])
-            
+        if CURRENT_VACATION_MODEL == VacationModel.AUX_LIST:
+            curr_server_state = 1
+
         # Exponential delay (for now consider constant delay)
-        mean_tw = 66.67
+        mean_tw = 1000 / AL_UPDATE_RATE
         tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
         time.sleep(tw)
+    
+    logging.info('Stopped auxiliary list updates')
 
 def generateCombinedPolicy():
-    # Combine policy P and auxiliary list to generate a new policy P' which is then passed to the ABAC mining algorithm
+    """Combine policy P and auxiliary list to generate a new policy P' which is then passed to the ABAC mining algorithm"""
     global aux_list, policy, userbase, objectbase, user_attr, obj_attr
     with policy_lock:
         combined_policy = policy.copy()
-    # userbase = {}
-    # objectbase = {}
-    # with open("database/policy/curr_policy.json") as db:
-    #     combined_policy = json.load(db)
-    # with open("database/userbase/userbase.json") as db:
-    #     userbase = json.load(db)
-    # with open("database/objectbase/objectbase.json") as db:
-    #     objectbase = json.load(db)
-
+    
     ori_no_of_rules = len(combined_policy)
     rule_ID = ori_no_of_rules + 1
-    # file_ptr = open('database/auxiliary_list.txt', 'r')
-    # temp_update_list = []
-    # for line in file_ptr:
-    #     line = line.strip(' \n')
-    #     line = line[1:-1]
-    #     # print(line)
-    #     temp_update_list.append(line.split(', '))
-    # temp_update_list = aux_list
-    # temp_update_list = aux_list
     
     with aux_list_lock:
         while len(aux_list) != 0:
@@ -357,7 +357,7 @@ def generateCombinedPolicy():
             combined_policy[rule_key]["sub"] = {}  
             combined_policy[rule_key]["obj"] = {}
             combined_policy[rule_key]["op"] = op
-            # print(f'2 Userbase: {userbase}\nUser: {usr}')
+            
             # Add subject attributes
             for attr in userbase[usr]:
                 if attr == "uid":
@@ -371,18 +371,17 @@ def generateCombinedPolicy():
                     combined_policy[rule_key]["obj"][attr] = ["*"]
                     continue
                 combined_policy[rule_key]["obj"][attr] = [objectbase[obj][attr]]
-    print(f"Original: {ori_no_of_rules} | Combined: = {len(combined_policy)}")
+    logging.debug(f"Original: {ori_no_of_rules} | Combined: = {len(combined_policy)}")
 
-    with open("database/policy/curr_policy.json", "w") as db:
+    with open(DATABASE_DIR / "policy" / "curr_policy.json", "w") as db:
         json.dump(combined_policy, db)
     with policy_lock:
         policy = combined_policy.copy()
-    print("Combination Process Over!")
+    logging.debug("Combination Process Over!")
 
 def resolveAccessRequestfromAuxList(access_request):
+    """Resolve access requests from the auxiliary list"""
     global userbase, objectbase
-    # Resolve access requests from the auxiliary list
-    # temp_policy = {}
     with aux_list_lock:
         for i in range(len(aux_list)):
             temp_policy = {}
@@ -398,7 +397,6 @@ def resolveAccessRequestfromAuxList(access_request):
             temp_policy[rule_key]["op"] = op
 
             # Add subject attributes
-            # print(f'1 Userbase: {userbase}\nUser: {usr}')
             for attr in userbase[usr]:
                 if attr == "uid":
                     temp_policy[rule_key]["sub"][attr] = ["*"]
@@ -415,11 +413,13 @@ def resolveAccessRequestfromAuxList(access_request):
             if result == 1:
                 return 1
     return 0
-    # print(f'Access Request resolved from the auxiliary list')
 
 def reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs):
+    """Report stats
+        
+        stats: start time, end time, wait time, time involved in resolving access request, number of jobs in the access_request_queue and the status of the server, number of rules in the policy, number of updates in auxiliary list
+    """
     global ar_stats
-    # Report start time, end time, wait time, time involved in resolving access request, number of jobs in the access_request_queue and the status of the server, number of rules in the policy, number of updates in auxiliary list
     tot_resolution_time = ar_policy_time + ar_ACM_time
     if resolution_type == 1:
         res_type = "Policy"
@@ -429,143 +429,33 @@ def reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, a
         res_type = "None"
     ar_stats.write(f"Job {access_request[0]}: Waiting time = {ar_queue_time} | Resolution time = {tot_resolution_time} | Resolution type = {res_type}\n")
     
-
-# satisfied = 0
-
-'''
-def extractRefinedPolicy():
-    global user_attr, obj_attr, policy
-    blockOfRefinedCode = []
-    flg = 0
-    # Iterate through each line in the file
-    with open('./database/policy/refined_policy.abac', 'r') as file:
-        for line in file:
-            # Process the current line (e.g., print it)
-
-            line = line.strip(' \n')
-            # print(line)
-            if line == '':
-                continue
-            if line == 'OUTPUT RULES':
-                flg = 1
-                # print(line)
-                continue
-            if flg == 1:
-                # print(line)
-                if line.startswith('='):
-                    break
-                blockOfRefinedCode.append(line)
-    # print(blockOfRefinedCode)
-
-    modified_rules = {}
-    no_of_rules = 0
-    # modified_rules['sub'] = {}
-    # modified_rules['obj'] = {}
-
-    # modified_rules['op'] =
-    for line in blockOfRefinedCode:
-        # if re.match(r'^\d', line) is not None:
-        if line.startswith('rule'):
-            no_of_rules += 1
-            rule_ID = 'rule_' + str(no_of_rules)
-            modified_rules[rule_ID] = {}
-            modified_rules[rule_ID]['sub'] = {}
-            modified_rules[rule_ID]['obj'] = {}
-
-            # print(line)
-            line = line.strip(' \n')[:-1].strip(' \n')
-            new_line = line.split('(')[1].strip(' \n')
-            # new_line = line.strip()[:-1].strip().split('(')
-            attributes_list = new_line.split(';')
-            # print(attributes_list)
-            encountered_sub_attr = []
-            encountered_obj_attr = []
-
-            for i in range(len(attributes_list)):
-                ind_attr_val = attributes_list[i].split(',')
-                if i == 0:
-                    # Subject attributes
-                    for x in ind_attr_val:
-                        x = x.strip(' \n')
-                        if x == '':
-                            continue
-                        temp_list = x.split(' in ')
-                        possible_attr = temp_list[0].strip(' \n')
-                        encountered_sub_attr.append(possible_attr)
-
-                        temp_list[1] = temp_list[1].strip(
-                            ' \n')[1:-1].strip(' \n')
-                        possible_attr_values = temp_list[1].split(' ')
-                        modified_rules[rule_ID]['sub'][possible_attr] = [
-                            val for val in possible_attr_values if val != '']
-
-                    for attr in user_attr:
-                        if attr not in encountered_sub_attr:
-                            modified_rules[rule_ID]['sub'][attr] = ['*']
-                    if "uid" not in encountered_sub_attr:
-                        modified_rules[rule_ID]['sub']['uid'] = ['*']
-                elif i == 1:
-                    # Object attributes
-                    for x in ind_attr_val:
-                        x = x.strip(' \n')
-                        if x == '':
-                            continue
-                        # print(x, end=' ')
-                        temp_list = x.split(' in ')
-                        possible_attr = temp_list[0].strip(' \n')
-                        encountered_obj_attr.append(possible_attr)
-
-                        temp_list[1] = temp_list[1].strip(
-                            ' \n')[1:-1].strip(' \n')
-                        possible_attr_values = temp_list[1].split(' ')
-                        modified_rules[rule_ID]['obj'][possible_attr] = [
-                            val for val in possible_attr_values if val != '']
-
-                    for attr in obj_attr:
-                        if attr not in encountered_obj_attr:
-                            modified_rules[rule_ID]['obj'][attr] = ['*']
-                    if "rid" not in encountered_obj_attr:
-                        modified_rules[rule_ID]['obj']["rid"] = ['*']
-                elif i == 2:
-                    # Allowed operation
-                    modified_rules[rule_ID]['op'] = ind_attr_val[0].strip(' \n')[
-                        1:-1].strip(' \n')
-                    # for x in attr_val:
-                    #     x = x.strip(' \n')
-                    #     temp_list = x.split('in')
-                    #     temp_list[0] = temp_list[0].strip()
-                    #     temp_list[1] = temp_list[1].strip()
-                    #     modified_rules[rule_ID]['o'][temp_list[0]] = temp_list[1][1:-1]
-                else:
-                    continue
-                # print()
-
-            # Last endline
-            # print("\n")
-
-    print(f"\n\n------------------------- Modified ABAC Policy -------------------------\n")
-    print(f"Refined number of rules = {no_of_rules}")
-    with open("database/policy/curr_policy.json", "w") as db:
-        json.dump(modified_rules, db)
-    with policy_lock:
-        policy = modified_rules
-'''
 first_vac_dur = 0
 def resolveAccessRequest():
-    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, curr_server_state, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur
+    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, global_start_timer, ar_stats, NO_OF_VACATIONS
+    global first_vac_dur, NO_OF_ACCESS_REQUESTS_SERVED, MAX_ACCESS_REQUESTS_PER_VACATION, CLIENT_THREAD_FIRST_EVENT, RUNNING, CURRENT_VACATION_MODEL, MAX_NO_OF_VACATIONS, VacationModel
     satisfied = 0
-    
-    while True:
+    curr_time = None
+    CLIENT_THREAD_FIRST_EVENT.wait()
+    while RUNNING:
         with access_request_lock:
-            condn_check = len(access_request_queue)
-        # if curr_server_state == 1 or condn_check == 0:
+            match CURRENT_VACATION_MODEL:
+                case VacationModel.ACCESS_QUEUE:
+                    condn_check = len(access_request_queue)==0
+                case VacationModel.ACCESS_SERVED:
+                    condn_check = NO_OF_ACCESS_REQUESTS_SERVED >= MAX_ACCESS_REQUESTS_PER_VACATION
+                case VacationModel.AUX_LIST:
+                    condn_check = len(aux_list) >= MAX_AUX_LIST_LEN_PER_VACATION
+                case _:
+                    condn_check = len(access_request_queue)==0
+        
         curr_time = time.perf_counter()
-        # print(f'')
-        if condn_check == 0 and curr_server_state == 1 and (curr_time - global_start_timer) > 6:
-            
-            print('Mining process starting... stay tuned!')
+
+        if condn_check == 1 and curr_server_state == 1 and (CURRENT_VACATION_MODEL != VacationModel.ACCESS_QUEUE or (curr_time - global_start_timer) >= 3):
+            logging.debug(f'Time elapsed: {curr_time - global_start_timer}')
+            logging.debug(f'Number of access requests served: {NO_OF_ACCESS_REQUESTS_SERVED}')
+            logging.info('Mining process starting... stay tuned!')
             if NO_OF_VACATIONS >= 2:
-                ar_stats.write('Normal period {NO_OF_VACATIONS} ended!\n')
+                ar_stats.write(f'Normal period {NO_OF_VACATIONS} ended!\n')
             ar_stats.write('\n----- VACATION Started -----\n')
             ar_stats.write(f'Start time: {time.perf_counter() - global_start_timer}\n')
             # Follow the Policy Mining Procedure
@@ -577,10 +467,9 @@ def resolveAccessRequest():
             # Generate the input file
             generateStollerInput()
 
-            # print('Mining policy!!!')
             # Run the ABAC Mining Algorithm
             minePolicy()
-            # print('Mining over!!')
+            
             # Extract the refined policy
             extractRefinedPolicy()
 
@@ -594,14 +483,14 @@ def resolveAccessRequest():
                 no_of_jobs = len(access_request_queue)
             ar_stats.write(f'Jobs in the system: {no_of_jobs}\n')
             ar_stats.write('------ VACATION ENDED ------\n\n')
-            if NO_OF_VACATIONS == 5:
-                print('Handling clients must be stopped!')
+            if NO_OF_VACATIONS == MAX_NO_OF_VACATIONS:
+                logging.info('Handling clients must be stopped!')
                 ar_stats.close()
                 break
             ar_stats.write(f'--- Normal Period {NO_OF_VACATIONS} starts... ---\n')
+            NO_OF_ACCESS_REQUESTS_SERVED = 0
+            curr_server_state = 0
         else:
-            # ar_stats.write('\n----- NORMAL PERIOD -----\n')
-            # access_request = {request_ID, Access_request_object, start_time}
             ar_ACM_time = 0
             ar_policy_time = 0
             ar_queue_time = 0
@@ -626,7 +515,6 @@ def resolveAccessRequest():
 
             resolution_type = 0
             if result == 1:
-                # print("Access granted from policy!")
                 resolution_type = 1
                 satisfied += 1
                 ar_queue_time = time.perf_counter() - access_request[2]
@@ -643,13 +531,16 @@ def resolveAccessRequest():
                     resolution_type = 3
                     ar_queue_time = time.perf_counter() - access_request[2]
             
-            # print("Access denied from auxliary list as well!")
             reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
+            NO_OF_ACCESS_REQUESTS_SERVED += 1
+            if CURRENT_VACATION_MODEL in [VacationModel.ACCESS_QUEUE, VacationModel.ACCESS_SERVED]:
+                curr_server_state = 1
+
+    logging.info('Stopped access request resolution')
 
 # Perform the ABAC Mining Procedure
 def minePolicy():
     # Set the PATH environment variable to include the location of Java
-    # print('here!')
     os.environ['PATH'] = 'C:/Program Files/Java/jdk-15.0.1/bin' + os.environ['PATH']
     bash_command = "./bash_script.sh"
     # Run the bash script
@@ -661,29 +552,22 @@ def extractRefinedPolicy():
     blockOfRefinedCode = []
     flg = 0
     # Iterate through each line in the file
-    with open('./database/policy/refined_policy.abac', 'r') as file:
+    with open(DATABASE_DIR / 'policy' / 'refined_policy.abac', 'r') as file:
         for line in file:
-            # Process the current line (e.g., print it)
             line = line.strip(' \n')
-            # print(line)
             if line == '':
                 continue
             if line == 'OUTPUT RULES':
                 flg = 1
-                # print(line)
                 continue
             if flg == 1:
-                # print(line)
                 if line.startswith('='):
                     break
                 blockOfRefinedCode.append(line)
-    # print(blockOfRefinedCode)
-    # print('extractrefinedpolicy!!!!!')
     modified_rules = {}
     no_of_rules = 0
     
     for line in blockOfRefinedCode:
-        # if re.match(r'^\d', line) is not None:
         if line.startswith('rule'):
             no_of_rules += 1
             rule_ID = 'rule_' + str(no_of_rules)
@@ -691,12 +575,9 @@ def extractRefinedPolicy():
             modified_rules[rule_ID]['sub'] = {}
             modified_rules[rule_ID]['obj'] = {}
 
-            # print(line)
             line = line.strip(' \n')[:-1].strip(' \n')
             new_line = line.split('(')[1].strip(' \n')
-            # new_line = line.strip()[:-1].strip().split('(')
             attributes_list = new_line.split(';')
-            # print(attributes_list)
             encountered_sub_attr = []
             encountered_obj_attr = []
 
@@ -729,7 +610,6 @@ def extractRefinedPolicy():
                         x = x.strip(' \n')
                         if x == '':
                             continue
-                        # print(x, end=' ')
                         temp_list = x.split(' in ')
                         possible_attr = temp_list[0].strip(' \n')
                         encountered_obj_attr.append(possible_attr)
@@ -749,156 +629,133 @@ def extractRefinedPolicy():
                     # Allowed operation
                     modified_rules[rule_ID]['op'] = ind_attr_val[0].strip(' \n')[
                         1:-1].strip(' \n')
-                    # for x in attr_val:
-                    #     x = x.strip(' \n')
-                    #     temp_list = x.split('in')
-                    #     temp_list[0] = temp_list[0].strip()
-                    #     temp_list[1] = temp_list[1].strip()
-                    #     modified_rules[rule_ID]['o'][temp_list[0]] = temp_list[1][1:-1]
                 else:
                     continue
-                # print()
 
-            # Last endline
-            # print("\n")
-
-    # print(f"\n\n------------------------- Modified ABAC Policy -------------------------\n")
     with policy_lock:
         policy = modified_rules.copy()
-    print(f"Refined number of rules = {no_of_rules}")
-    with open("database/policy/refined_policy.json", "w") as db:
+    logging.debug(f"Refined number of rules = {no_of_rules}")
+    with open(DATABASE_DIR / "policy" / "refined_policy.json", "w") as db:
         json.dump(modified_rules, db)
-    with open("database/policy/curr_policy.json", "w") as db:
+    with open(DATABASE_DIR / "policy" / "curr_policy.json", "w") as db:
         json.dump(modified_rules, db)
 
-    
-
-'''
-# Running mode of the server depending on the curr_server_state bit
-# 0 - Normal mode
-# 1 - Vacation mode
-def flipServerMode():
-    global curr_server_state
-    while True:
-        # lambda_param = random.randint(1, 3)
-        lambda_param = 10
-        rand_time_period = max(1, np.random.exponential(
-            lambda_param, 1)[0])
-        # print("Current server state: ", end = '')
-        with access_request_lock:
-            if len(access_request_queue) == 0:
-                # Take a vacation
-                curr_server_state = 1
-                
-                
-        if curr_server_state == 0:
-            print("Normal Mode")
-            print(f"Jobs in the queue: {len(access_request_queue)}")
-        else:
-            print("Vacation Mode")
-            print(f"Jobs in the queue: {len(access_request_queue)}")
-
-        curr_server_state = 1 - curr_server_state
-        time.sleep(rand_time_period)
-'''
 
 def init():
     global sub_attr, obj_attr, sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken,userbase, objectbase, policy
-    with open('database/userbase/sub_attr.json', 'r') as db:
+    with open(DATABASE_DIR / "userbase" / "sub_attr.json", 'r') as db:
         sub_attr = json.load(db)
-    with open('database/objectbase/obj_attr.json', 'r') as db:
+    with open(DATABASE_DIR / "objectbase" / "obj_attr.json", 'r') as db:
         obj_attr = json.load(db)
-    with open('database/userbase/sub_attr_val.json', 'r') as db:
+    with open(DATABASE_DIR / "userbase" / "sub_attr_val.json", 'r') as db:
         sub_attr_val = json.load(db)
-    with open('database/objectbase/obj_attr_val.json', 'r') as db:
+    with open(DATABASE_DIR / "objectbase" / "obj_attr_val.json", 'r') as db:
         obj_attr_val = json.load(db)
-    with open('database/userbase/userbase.json') as db:
+    with open(DATABASE_DIR / "userbase" / "userbase.json") as db:
         userbase = json.load(db)
-    with open('database/objectbase/objectbase.json') as db:
+    with open(DATABASE_DIR / "objectbase" / "objectbase.json") as db:
         objectbase = json.load(db)
-    with open('database/policy/policy.json', 'r') as db:
+    with open(DATABASE_DIR / "policy" / "policy.json", 'r') as db:
         policy = json.load(db)
 
-    # with open('database/policy/curr_policy.json', 'w') as db:
-    #     json.dump(policy, db)
 
     # Make a copy of the original policy
-    original_file_name = "database/policy/policy.json"
-    copy_file_name = "database/policy/curr_policy.json"
+    original_file_name = DATABASE_DIR / "policy" / "policy.json"
+    copy_file_name = DATABASE_DIR / "policy" / "curr_policy.json"
 
     shutil.copyfile(original_file_name, copy_file_name)
 
-    file_ptr = open('database/aux_list/sub_obj_pairs_not_taken.txt', 'r')
+    file_ptr = open(DATABASE_DIR / "aux_list" / "sub_obj_pairs_not_taken.txt", 'r')
     for line in file_ptr.readlines():
         line = line.strip(' \n')
         if line == '':
             continue
         usr_obj_pair = line.split(', ')[:2]
         sub_obj_pairs_not_taken.append([usr_obj_pair[0][1:], usr_obj_pair[1]])
-    
-    # print(f"\nSubject object pairs not taken: {sub_obj_pairs_not_taken}\n")
-    # print()
-        
-    # Pass initial ABAC Policy to the ABAC Mining algorithm
-    # Generate the input file
-    # generateStollerInput()
 
-    # # Run the ABAC Mining Algorithm
-    # minePolicy()
+    logging.debug("Init process over !\n")
 
-    # # Extract the refined policy
-    # extractRefinedPolicy()
-    
-
-    print("Init process over !\n")
-
-if __name__ == "__main__":
+SERVER = None
+def main():
+    global sub_attr_val, obj_attr_val, policy, userbase, objectbase, SERVER, RUNNING, THREAD_EVENT, CLIENT_THREAD_FIRST_EVENT
     # Initialize variable with test data
     init()
 
-    print('+' * 45 + " Server Side " + '+' * 45)
-    # Server Initialization
-    # Generate test data
-    # gen_test_data = gtd.GenTestData()
-    # gtd.main()
-
+    logging.info('+' * 45 + " Server Side " + '+' * 45)
+    
     # Wait for access requests from the client
     ADDR = ('127.0.0.1', 8080)
     SERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
     # Reuse the port if already in use
     SERVER.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     SERVER.bind(ADDR)
-    print(f"[ -- LISTENING -- ] Server is listening on {ADDR[0]}:{ADDR[1]}...")
+    logging.info(f"[ -- LISTENING -- ] Server is listening on {ADDR[0]}:{ADDR[1]}...")
+    logging.info(f"Vacation Model: {CURRENT_VACATION_MODEL.name}")
 
     SERVER.listen(5)
-    print("Waiting for a connection...")
+    logging.info("Waiting for a connection...")
+    
+    THREAD_EVENT = Event()
+    CLIENT_THREAD_FIRST_EVENT = Event()
 
-    # while True:
-    #     client, client_address = SERVER.accept()
-    #     print("%s:%s has connected." % client_address)
     # Accept the connection from the client
     ACCEPT_THREAD = Thread(target=accept_client, daemon=True)
 
     # Start the thread
     ACCEPT_THREAD.start()
 
-    print("Main hello world! This works as well!")
+    logging.debug("Main hello world! This works as well!")
     # Spawn a thread for updating the auxiliary list
     UPDATE_AUX_LIST_THREAD = Thread(target=updateAuxList, daemon=True)
     UPDATE_AUX_LIST_THREAD.start()
 
     ACCESS_REQUEST_RESOLVER = Thread(target=resolveAccessRequest, daemon=True)
     ACCESS_REQUEST_RESOLVER.start()
-
-    # STATS_REPORTER = Thread(target=statsReporter, daemon=True)
-    # STATS_REPORTER.start()
     
     # Wait for the thread to finish
+    ACCESS_REQUEST_RESOLVER.join()
+    THREAD_EVENT.wait()
+    RUNNING = False
     ACCEPT_THREAD.join()
     UPDATE_AUX_LIST_THREAD.join()
-    ACCESS_REQUEST_RESOLVER.join()
-
 
     # Close the server
     SERVER.close()
-    print("------------- Server Closed ! -------------")
+    logging.info("------------- Server Closed ! -------------")
+
+if __name__ == "__main__":
+    argparser = ArgumentParser()
+    argparser.add_argument('-a', '--al_update_rate', type=int, help='Auxiliary list update rate')
+    argparser.add_argument('-v', '--vacation_model', type=int, default=3, help="""Vacation model:
+    1: Access Queue - The server goes on vacation when the access request queue is empty
+    2: Access Served - The server goes on vacation after serving a certain number of access requests
+    3: Aux List - The server goes on vacation when the auxiliary list reaches a certain length
+    """)
+    argparser.add_argument('-mal', '--max_aux_list_len', type=int, default=100, help='Maximum length of the auxiliary list per vacation')
+    argparser.add_argument('-mar', '--max_access_requests', type=int, default=500, help='Maximum number of access requests per vacation')
+    argparser.add_argument('-mv', '--max_no_of_vacations', type=int, default=5, help='Maximum number of vacations')
+    
+    args = argparser.parse_args()
+    
+    if args.al_update_rate:
+        AL_UPDATE_RATE = args.al_update_rate
+    if args.vacation_model:
+        CURRENT_VACATION_MODEL = VacationModel(args.vacation_model)
+    if args.max_aux_list_len:
+        MAX_AUX_LIST_LEN_PER_VACATION = args.max_aux_list_len
+    if args.max_access_requests:
+        MAX_ACCESS_REQUESTS_PER_VACATION = args.max_access_requests
+    if args.max_no_of_vacations:
+        MAX_NO_OF_VACATIONS = args.max_no_of_vacations
+    
+    os.chdir(CURRENT_DIR)
+    logging.info(f'Current directory: {os.getcwd()}')
+    try:
+        main()
+    except KeyboardInterrupt:
+        logging.info('Closing the server...')
+        SERVER.close()
+        logging.info('------------- Server Closed ! -------------')
+        sys.exit(0)
+        
