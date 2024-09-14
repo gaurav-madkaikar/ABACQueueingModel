@@ -11,6 +11,7 @@ import random
 from collections import deque
 from argparse import ArgumentParser
 import logging
+from enum import Enum
 
 # Generate test data
 # import gen_test_data as gtd
@@ -72,7 +73,15 @@ NO_OF_VACATIONS = 1
 # Change in vacation model
 NO_OF_ACCESS_REQUESTS_SERVED = 0
 MAX_AUX_LIST_LEN_PER_VACATION = 100
+MAX_ACCESS_REQUESTS_PER_VACATION = 500
+MAX_NO_OF_VACATIONS = 5
 
+class VacationModel(Enum):
+    ACCESS_QUEUE = 1
+    ACCESS_SERVED = 2
+    AUX_LIST = 3
+
+CURRENT_VACATION_MODEL = VacationModel.ACCESS_QUEUE
 
 # Helper Functions
 # -- SEND AND RECEIVE DATA --
@@ -80,6 +89,7 @@ HEADERSIZE = 16
 FORMAT = 'utf-8'
 
 THREAD_EVENT: Event = None
+CLIENT_THREAD_FIRST_EVENT: Event = None
 RUNNING = True
 
 def sendMessage(conn, message):
@@ -98,6 +108,7 @@ def receiveMessage(conn, _type='str'):
 
     recv_msg_len = conn.recv(16).decode('utf-8')
     if recv_msg_len == '':
+        # Handle case where connection is closed
         return ''
     recv_msg_len = int(recv_msg_len)
     recv_msg = b''
@@ -242,17 +253,23 @@ def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
 
 def handle_client(conn, address):
     """ Access Request """
-    global sub_attr_val, obj_attr_val, policy, THREAD_EVENT, RUNNING
+    global sub_attr_val, obj_attr_val, policy, THREAD_EVENT, RUNNING, CURRENT_VACATION_MODEL, VacationModel, curr_server_state
+    global MAX_NO_OF_VACATIONS, NO_OF_VACATIONS, CLIENT_THREAD_FIRST_EVENT, global_start_timer
 
     # Send attribute-value pairs to the client
     sendMessage(conn, sub_attr_val)
     sendMessage(conn, obj_attr_val)
     sendMessage(conn, policy)
+    
+    global_start_timer = time.perf_counter()
+    CLIENT_THREAD_FIRST_EVENT.set()
 
     ar_cnt = 0
     while True:
         # Receive access request from the client
         access_request = receiveMessage(conn, 'dict')
+        if access_request == '':
+            break
         ar_cnt += 1
 
         # print(f"Request No. {ar_cnt}: Received access request on server side:")
@@ -260,11 +277,8 @@ def handle_client(conn, address):
             # Add the access request to a queue
             access_request_queue.append([ar_cnt, access_request, time.perf_counter()])
 
-            if NO_OF_VACATIONS == 5:
-                # print('Client must be closed immediately!\nVACATIONS ARE DONE!!!!\n')
+            if NO_OF_VACATIONS == MAX_NO_OF_VACATIONS:
                 break
-        # if ar_cnt == 100:
-        #     break
     
     # Close the connection
     conn.close()
@@ -274,15 +288,13 @@ def handle_client(conn, address):
 
 def accept_client():
     global sub_attr_val, obj_attr_val, sub_obj_pairs_not_taken, curr_server_state, global_start_timer, RUNNING
+    global CURRENT_VACATION_MODEL, VacationModel, CLIENT_THREAD_FIRST_EVENT, SERVER
     try:
         while RUNNING:
             # Accept the connection from the client
             client, client_address = SERVER.accept()
 
             logging.info("%s:%s has connected." % client_address)
-
-            # curr_server_state = 1
-            global_start_timer = time.perf_counter()
 
             HANDLE_CLIENT = Thread(target=handle_client, args=(client, client_address), daemon=True)
             HANDLE_CLIENT.start()
@@ -297,7 +309,7 @@ def accept_client():
 def updateAuxList():
     """ Update the auxiliary list with random accesses
         Introduce slightly larger delays"""
-    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase, RUNNING, curr_server_state
+    global sub_obj_pairs_not_taken, sub_attr_val, obj_attr_val, aux_list, aux_list_lock, userbase, objectbase, RUNNING, curr_server_state, AL_UPDATE_RATE, CURRENT_VACATION_MODEL, VacationModel
 
     number_of_users = len(userbase)
     number_of_objects = len(objectbase)
@@ -313,12 +325,15 @@ def updateAuxList():
         else:
             with aux_list_lock:
                 aux_list.append(['sub_'+str(random.randint(1, number_of_users)), 'obj_'+str(random.randint(1, number_of_objects)), 'read'])
-        curr_server_state = 1
+        if CURRENT_VACATION_MODEL == VacationModel.AUX_LIST:
+            curr_server_state = 1
 
         # Exponential delay (for now consider constant delay)
         mean_tw = 1000 / AL_UPDATE_RATE
         tw = max(1, np.random.poisson(mean_tw, 1)[0]) * 1e-3
         time.sleep(tw)
+    
+    logging.info('Stopped auxiliary list updates')
 
 def generateCombinedPolicy():
     """Combine policy P and auxiliary list to generate a new policy P' which is then passed to the ABAC mining algorithm"""
@@ -416,23 +431,31 @@ def reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, a
     
 first_vac_dur = 0
 def resolveAccessRequest():
-    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, global_start_timer, ar_stats, NO_OF_VACATIONS, first_vac_dur, NO_OF_ACCESS_REQUESTS_SERVED, MAX_ACCESS_REQUESTS_PER_VACATION
+    global sub_attr_val, obj_attr_val, policy, curr_server_state, access_request_queue, access_request_lock, policy, global_start_timer, ar_stats, NO_OF_VACATIONS
+    global first_vac_dur, NO_OF_ACCESS_REQUESTS_SERVED, MAX_ACCESS_REQUESTS_PER_VACATION, CLIENT_THREAD_FIRST_EVENT, RUNNING, CURRENT_VACATION_MODEL, MAX_NO_OF_VACATIONS, VacationModel
     satisfied = 0
     curr_time = None
-    while True:
+    CLIENT_THREAD_FIRST_EVENT.wait()
+    while RUNNING:
         with access_request_lock:
-            # condn_check = len(access_request_queue)==0 # Initial vacation model
-            condn_check = len(aux_list) >= MAX_AUX_LIST_LEN_PER_VACATION
-        # if curr_server_state == 1 or condn_check == 0:
-        last_time = curr_time if curr_time else global_start_timer
+            match CURRENT_VACATION_MODEL:
+                case VacationModel.ACCESS_QUEUE:
+                    condn_check = len(access_request_queue)==0
+                case VacationModel.ACCESS_SERVED:
+                    condn_check = NO_OF_ACCESS_REQUESTS_SERVED >= MAX_ACCESS_REQUESTS_PER_VACATION
+                case VacationModel.AUX_LIST:
+                    condn_check = len(aux_list) >= MAX_AUX_LIST_LEN_PER_VACATION
+                case _:
+                    condn_check = len(access_request_queue)==0
+        
         curr_time = time.perf_counter()
-        # print(f'')
-        # if condn_check == 1 and curr_server_state == 1 and (curr_time - global_start_timer) > 6: # Initial vacation model
-        if condn_check == 1 and curr_server_state == 1:
-            logging.debug(f'NO_OF_ACCESS_REQUESTS: {NO_OF_ACCESS_REQUESTS_SERVED}')
+
+        if condn_check == 1 and curr_server_state == 1 and (CURRENT_VACATION_MODEL != VacationModel.ACCESS_QUEUE or (curr_time - global_start_timer) >= 3):
+            logging.debug(f'Time elapsed: {curr_time - global_start_timer}')
+            logging.debug(f'Number of access requests served: {NO_OF_ACCESS_REQUESTS_SERVED}')
             logging.info('Mining process starting... stay tuned!')
             if NO_OF_VACATIONS >= 2:
-                ar_stats.write('Normal period {NO_OF_VACATIONS} ended!\n')
+                ar_stats.write(f'Normal period {NO_OF_VACATIONS} ended!\n')
             ar_stats.write('\n----- VACATION Started -----\n')
             ar_stats.write(f'Start time: {time.perf_counter() - global_start_timer}\n')
             # Follow the Policy Mining Procedure
@@ -461,7 +484,7 @@ def resolveAccessRequest():
                 no_of_jobs = len(access_request_queue)
             ar_stats.write(f'Jobs in the system: {no_of_jobs}\n')
             ar_stats.write('------ VACATION ENDED ------\n\n')
-            if NO_OF_VACATIONS == 5:
+            if NO_OF_VACATIONS == MAX_NO_OF_VACATIONS:
                 logging.info('Handling clients must be stopped!')
                 ar_stats.close()
                 break
@@ -515,6 +538,10 @@ def resolveAccessRequest():
             # print("Access denied from auxliary list as well!")
             reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
             NO_OF_ACCESS_REQUESTS_SERVED += 1
+            if CURRENT_VACATION_MODEL in [VacationModel.ACCESS_QUEUE, VacationModel.ACCESS_SERVED]:
+                curr_server_state = 1
+
+    logging.info('Stopped access request resolution')
 
 # Perform the ABAC Mining Procedure
 def minePolicy():
@@ -547,8 +574,6 @@ def extractRefinedPolicy():
                 if line.startswith('='):
                     break
                 blockOfRefinedCode.append(line)
-    # print(blockOfRefinedCode)
-    # print('extractrefinedpolicy!!!!!')
     modified_rules = {}
     no_of_rules = 0
     
@@ -561,12 +586,10 @@ def extractRefinedPolicy():
             modified_rules[rule_ID]['sub'] = {}
             modified_rules[rule_ID]['obj'] = {}
 
-            # print(line)
             line = line.strip(' \n')[:-1].strip(' \n')
             new_line = line.split('(')[1].strip(' \n')
             # new_line = line.strip()[:-1].strip().split('(')
             attributes_list = new_line.split(';')
-            # print(attributes_list)
             encountered_sub_attr = []
             encountered_obj_attr = []
 
@@ -680,7 +703,7 @@ def init():
 
 SERVER = None
 def main():
-    global sub_attr_val, obj_attr_val, policy, userbase, objectbase, SERVER, RUNNING, THREAD_EVENT
+    global sub_attr_val, obj_attr_val, policy, userbase, objectbase, SERVER, RUNNING, THREAD_EVENT, CLIENT_THREAD_FIRST_EVENT
     # Initialize variable with test data
     init()
 
@@ -694,11 +717,13 @@ def main():
     SERVER.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     SERVER.bind(ADDR)
     logging.info(f"[ -- LISTENING -- ] Server is listening on {ADDR[0]}:{ADDR[1]}...")
+    logging.info(f"Vacation Model: {CURRENT_VACATION_MODEL.name}")
 
     SERVER.listen(5)
     logging.info("Waiting for a connection...")
     
     THREAD_EVENT = Event()
+    CLIENT_THREAD_FIRST_EVENT = Event()
 
     # Accept the connection from the client
     ACCEPT_THREAD = Thread(target=accept_client, daemon=True)
@@ -728,10 +753,28 @@ def main():
 if __name__ == "__main__":
     argparser = ArgumentParser()
     argparser.add_argument('-a', '--al_update_rate', type=int, help='Auxiliary list update rate')
+    argparser.add_argument('-v', '--vacation_model', type=int, default=3, help="""Vacation model:
+    1: Access Queue - The server goes on vacation when the access request queue is empty
+    2: Access Served - The server goes on vacation after serving a certain number of access requests
+    3: Aux List - The server goes on vacation when the auxiliary list reaches a certain length
+    """)
+    argparser.add_argument('-mal', '--max_aux_list_len', type=int, default=100, help='Maximum length of the auxiliary list per vacation')
+    argparser.add_argument('-mar', '--max_access_requests', type=int, default=500, help='Maximum number of access requests per vacation')
+    argparser.add_argument('-mv', '--max_no_of_vacations', type=int, default=5, help='Maximum number of vacations')
+    
     args = argparser.parse_args()
     
     if args.al_update_rate:
         AL_UPDATE_RATE = args.al_update_rate
+    if args.vacation_model:
+        CURRENT_VACATION_MODEL = VacationModel(args.vacation_model)
+    if args.max_aux_list_len:
+        MAX_AUX_LIST_LEN_PER_VACATION = args.max_aux_list_len
+    if args.max_access_requests:
+        MAX_ACCESS_REQUESTS_PER_VACATION = args.max_access_requests
+    if args.max_no_of_vacations:
+        MAX_NO_OF_VACATIONS = args.max_no_of_vacations
+    
     os.chdir(CURRENT_DIR)
     logging.info(f'Current directory: {os.getcwd()}')
     try:
