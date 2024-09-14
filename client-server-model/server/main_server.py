@@ -357,7 +357,7 @@ def generateCombinedPolicy():
             combined_policy[rule_key]["sub"] = {}  
             combined_policy[rule_key]["obj"] = {}
             combined_policy[rule_key]["op"] = op
-            # print(f'2 Userbase: {userbase}\nUser: {usr}')
+            
             # Add subject attributes
             for attr in userbase[usr]:
                 if attr == "uid":
@@ -467,10 +467,9 @@ def resolveAccessRequest():
             # Generate the input file
             generateStollerInput()
 
-            # print('Mining policy!!!')
             # Run the ABAC Mining Algorithm
             minePolicy()
-            # print('Mining over!!')
+            
             # Extract the refined policy
             extractRefinedPolicy()
 
@@ -492,8 +491,6 @@ def resolveAccessRequest():
             NO_OF_ACCESS_REQUESTS_SERVED = 0
             curr_server_state = 0
         else:
-            # ar_stats.write('\n----- NORMAL PERIOD -----\n')
-            # access_request = {request_ID, Access_request_object, start_time}
             ar_ACM_time = 0
             ar_policy_time = 0
             ar_queue_time = 0
@@ -518,7 +515,6 @@ def resolveAccessRequest():
 
             resolution_type = 0
             if result == 1:
-                # print("Access granted from policy!")
                 resolution_type = 1
                 satisfied += 1
                 ar_queue_time = time.perf_counter() - access_request[2]
@@ -535,7 +531,6 @@ def resolveAccessRequest():
                     resolution_type = 3
                     ar_queue_time = time.perf_counter() - access_request[2]
             
-            # print("Access denied from auxliary list as well!")
             reportResult(access_request, resolution_type, ar_policy_time, ar_ACM_time, ar_queue_time, no_of_jobs)
             NO_OF_ACCESS_REQUESTS_SERVED += 1
             if CURRENT_VACATION_MODEL in [VacationModel.ACCESS_QUEUE, VacationModel.ACCESS_SERVED]:
@@ -546,7 +541,6 @@ def resolveAccessRequest():
 # Perform the ABAC Mining Procedure
 def minePolicy():
     # Set the PATH environment variable to include the location of Java
-    # print('here!')
     os.environ['PATH'] = 'C:/Program Files/Java/jdk-15.0.1/bin' + os.environ['PATH']
     bash_command = "./bash_script.sh"
     # Run the bash script
@@ -560,17 +554,13 @@ def extractRefinedPolicy():
     # Iterate through each line in the file
     with open(DATABASE_DIR / 'policy' / 'refined_policy.abac', 'r') as file:
         for line in file:
-            # Process the current line (e.g., print it)
             line = line.strip(' \n')
-            # print(line)
             if line == '':
                 continue
             if line == 'OUTPUT RULES':
                 flg = 1
-                # print(line)
                 continue
             if flg == 1:
-                # print(line)
                 if line.startswith('='):
                     break
                 blockOfRefinedCode.append(line)
@@ -578,7 +568,6 @@ def extractRefinedPolicy():
     no_of_rules = 0
     
     for line in blockOfRefinedCode:
-        # if re.match(r'^\d', line) is not None:
         if line.startswith('rule'):
             no_of_rules += 1
             rule_ID = 'rule_' + str(no_of_rules)
@@ -588,7 +577,6 @@ def extractRefinedPolicy():
 
             line = line.strip(' \n')[:-1].strip(' \n')
             new_line = line.split('(')[1].strip(' \n')
-            # new_line = line.strip()[:-1].strip().split('(')
             attributes_list = new_line.split(';')
             encountered_sub_attr = []
             encountered_obj_attr = []
@@ -622,7 +610,6 @@ def extractRefinedPolicy():
                         x = x.strip(' \n')
                         if x == '':
                             continue
-                        # print(x, end=' ')
                         temp_list = x.split(' in ')
                         possible_attr = temp_list[0].strip(' \n')
                         encountered_obj_attr.append(possible_attr)
@@ -642,20 +629,9 @@ def extractRefinedPolicy():
                     # Allowed operation
                     modified_rules[rule_ID]['op'] = ind_attr_val[0].strip(' \n')[
                         1:-1].strip(' \n')
-                    # for x in attr_val:
-                    #     x = x.strip(' \n')
-                    #     temp_list = x.split('in')
-                    #     temp_list[0] = temp_list[0].strip()
-                    #     temp_list[1] = temp_list[1].strip()
-                    #     modified_rules[rule_ID]['o'][temp_list[0]] = temp_list[1][1:-1]
                 else:
                     continue
-                # print()
 
-            # Last endline
-            # print("\n")
-
-    # print(f"\n\n------------------------- Modified ABAC Policy -------------------------\n")
     with policy_lock:
         policy = modified_rules.copy()
     logging.debug(f"Refined number of rules = {no_of_rules}")
@@ -684,9 +660,7 @@ def init():
 
 
     # Make a copy of the original policy
-    # original_file_name = "database/policy/policy.json"
     original_file_name = DATABASE_DIR / "policy" / "policy.json"
-    # copy_file_name = "database/policy/curr_policy.json"
     copy_file_name = DATABASE_DIR / "policy" / "curr_policy.json"
 
     shutil.copyfile(original_file_name, copy_file_name)
