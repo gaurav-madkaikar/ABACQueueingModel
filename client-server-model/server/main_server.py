@@ -12,6 +12,7 @@ from collections import deque
 from argparse import ArgumentParser
 import logging
 from enum import Enum
+from poltree import NPolTree
 
 # Generate test data
 # import gen_test_data as gtd
@@ -82,6 +83,12 @@ class VacationModel(Enum):
     AUX_LIST = 3
 
 CURRENT_VACATION_MODEL = VacationModel.ACCESS_QUEUE
+
+class PolicyResolution(Enum):
+    LINEAR = 1
+    POLICY_TREE = 2
+CURRENT_POLICY_RESOLUTION = PolicyResolution.POLICY_TREE
+PolTree: NPolTree = None
 
 # Helper Functions
 # -- SEND AND RECEIVE DATA --
@@ -205,6 +212,7 @@ def generateStollerInput():
     file_ptr.close()
 
 
+# TODO: Implement PolTree
 def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
     """ Resolve access request from policy"""
     # result = 0 implies access not granted, result = 1 implies access granted
@@ -249,6 +257,12 @@ def resolveAccessRequestfromPolicy(access_request, policy, type_=1):
         else:
             result = 1
             break
+    return result
+
+def resolveAccessRequestfromPolicyTree(access_request):
+    """ Resolve access request from policy tree"""
+    global PolTree
+    result = PolTree.resolve(access_request)
     return result
 
 def handle_client(conn, address):
@@ -472,6 +486,10 @@ def resolveAccessRequest():
             
             # Extract the refined policy
             extractRefinedPolicy()
+            
+            # Update the policy tree
+            if CURRENT_POLICY_RESOLUTION == PolicyResolution.POLICY_TREE:
+                PolTree.update_policy(policy)
 
             t_end = time.perf_counter()
             vac_dur = t_end - t_start
@@ -507,7 +525,12 @@ def resolveAccessRequest():
             t_start = time.perf_counter()
             with policy_lock:
                 policy_ = policy
-            result = resolveAccessRequestfromPolicy(access_request[1], policy_)
+            result = None
+            match CURRENT_POLICY_RESOLUTION:
+                case PolicyResolution.LINEAR:
+                    result = resolveAccessRequestfromPolicy(access_request[1], policy_)
+                case PolicyResolution.POLICY_TREE:
+                    result = resolveAccessRequestfromPolicyTree(access_request[1])
             t_end = time.perf_counter()
 
             ar_policy_time = t_end - t_start
@@ -692,6 +715,17 @@ def main():
     SERVER.bind(ADDR)
     logging.info(f"[ -- LISTENING -- ] Server is listening on {ADDR[0]}:{ADDR[1]}...")
     logging.info(f"Vacation Model: {CURRENT_VACATION_MODEL.name}")
+    logging.info(f"Max Aux List Length per Vacation: {MAX_AUX_LIST_LEN_PER_VACATION}")
+    logging.info(f"Max Access Requests per Vacation: {MAX_ACCESS_REQUESTS_PER_VACATION}")
+    logging.info(f"Max Number of Vacations: {MAX_NO_OF_VACATIONS}")
+    logging.info(f"Auxiliary List Update Rate: {AL_UPDATE_RATE}")
+    logging.info(f"Policy Resolution: {CURRENT_POLICY_RESOLUTION.name}")
+    
+    logging.info("Building the policy tree...")
+    global PolTree
+    build_time = time.perf_counter()
+    PolTree = NPolTree(policy)
+    logging.info(f"Policy tree built in {time.perf_counter() - build_time} seconds")
 
     SERVER.listen(5)
     logging.info("Waiting for a connection...")
@@ -727,14 +761,18 @@ def main():
 if __name__ == "__main__":
     argparser = ArgumentParser()
     argparser.add_argument('-a', '--al_update_rate', type=int, help='Auxiliary list update rate')
-    argparser.add_argument('-v', '--vacation_model', type=int, default=3, help="""Vacation model:
-    1: Access Queue - The server goes on vacation when the access request queue is empty
-    2: Access Served - The server goes on vacation after serving a certain number of access requests
-    3: Aux List - The server goes on vacation when the auxiliary list reaches a certain length
-    """)
     argparser.add_argument('-mal', '--max_aux_list_len', type=int, default=100, help='Maximum length of the auxiliary list per vacation')
     argparser.add_argument('-mar', '--max_access_requests', type=int, default=500, help='Maximum number of access requests per vacation')
     argparser.add_argument('-mv', '--max_no_of_vacations', type=int, default=5, help='Maximum number of vacations')
+    argparser.add_argument('-pr', '--policy_resolution', type=int, default=2, help="""Policy resolution mode:
+    1: Linear Search
+    2: Policy Tree Based
+    """)
+    argparser.add_argument('-v', '--vacation_model', type=int, default=3, help="""Vacation model:
+    1: Access Queue Empty
+    2: Fixed Number of Access Requests Served
+    3: Aux List Full
+    """)
     
     args = argparser.parse_args()
     
